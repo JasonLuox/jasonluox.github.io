@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/en/Vue.js性能优化技巧/">
+  <title>
+    
+      Vue.js性能优化技巧 - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">JasonLuo&#39;s Blog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/beauty_girl.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/beauty_girl.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Vue性能优化" title="Vue性能优化">Vue性能优化</a>
+              
+            </div>
+            <h1>Vue.js性能优化技巧</h1>
+            <h2 class="subheading">vue代码层性能优化技巧...</h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2021-04-10
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">24</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">5.4k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="Vue-js性能优化技巧">Vue.js性能优化技巧</h2>
+<p>这篇文章主要参考了 Vue.js 核心成员 Guillaume Chau 在 19 年美国的 Vue conf 分享的主题：9 Performance secrets revealed，分享中提到了九个 Vue.js 性能优化的技巧。</p>
+<p>Guillaume Chau : <a target="_blank" rel="noopener" href="https://github.com/Akryum">https://github.com/Akryum</a></p>
+<p>PPT : <a target="_blank" rel="noopener" href="https://slides.com/akryum/vueconfus-2019">https://slides.com/akryum/vueconfus-2019</a></p>
+<p>项目源码 : <a target="_blank" rel="noopener" href="https://github.com/Akryum/vue-9-perf-secrets/">https://github.com/Akryum/vue-9-perf-secrets/</a></p>
+<p>本文主要还是针对 Vue.js 2.x 版本，毕竟接下来一段时间，Vue.js 2.x 还是我们工作中的主流版本。</p>
+<h3 id="Functional-components">Functional components</h3>
+<p><strong>函数式组件</strong></p>
+<blockquote>
+<p>注意： 在3.x中，函数式组件2.x的性能提升可以忽略不计，因此我们建议只使用有状态的组件</p>
+</blockquote>
+<p><strong>什么是函数式组件？</strong></p>
+<p>我们可以将函数式组件想象成组件里的一个函数，入参是渲染上下文（render context），返回值是渲染好的HTML</p>
+<p>对于函数式组件，可以这样定义：</p>
+<ul>
+<li>stateless（无状态）：组件自身是没有状态的</li>
+<li>instanceless（无实例）：组件自身没有实例，即没有this</li>
+</ul>
+<p><strong>函数式组件和普通组件的区别</strong></p>
+<ol>
+<li>
+<p>不维护响应数据</p>
+</li>
+<li>
+<p>没有instance实例</p>
+<p>所以在组件内部没有像传统组件一样通过this来访问组件属性</p>
+</li>
+<li>
+<p>渲染速度快</p>
+</li>
+<li>
+<p>没有生命周期（没有钩子函数，没有响应式数据）</p>
+</li>
+</ol>
+<p><strong>函数式组件的应用</strong></p>
+<p>优化前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;cell&quot;&gt;</span><br><span class="line">    &lt;div v-if&#x3D;&quot;value&quot; class&#x3D;&quot;on&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;section v-else class&#x3D;&quot;off&quot;&gt;&lt;&#x2F;section&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;value&#39;],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;cell&quot;&gt;</span><br><span class="line">    &lt;div v-if&#x3D;&quot;value&quot; class&#x3D;&quot;on&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;section v-else class&#x3D;&quot;off&quot;&gt;&lt;&#x2F;section&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;value&#39;],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数式组件和普通的对象类型的组件不同，它不会被看作成一个真正的组件，我们知道在 <code>patch</code> 过程中，如果遇到一个节点是组件 <code>vnode</code>，会递归执行子组件的初始化过程；而函数式组件的 <code>render</code> 生成的是普通的 <code>vnode</code>，不会有递归子组件的过程，因此渲染开销会低很多。</p>
+<p>你可以把它当成把普通组件模板中的一部分 DOM 剥离出来，通过函数的方式渲染出来，是一种在 DOM 层面的复用。</p>
+<p>虽然速度和性能方面是函数式组件的优势、但不等于就可以滥用，所以还需要根据实际情况选择和权衡。比如在一些展示组件。例如， buttons， tags, cards，或者页面是静态文本，就很适合使用函数式组件。</p>
+<h3 id="Child-component-splitting">Child component splitting</h3>
+<p>父组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;Benchmark title&#x3D;&quot;Child component splitting&quot;&gt;</span><br><span class="line">    &lt;template #toolbar&gt;</span><br><span class="line">      &lt;PlayToggle v-model&#x3D;&quot;play&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">    &lt;template #on&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;grid&quot;&gt;</span><br><span class="line">        &lt;ChildOn</span><br><span class="line">          v-for&#x3D;&quot;(n, index) of list&quot;</span><br><span class="line">          :key&#x3D;&quot;index&quot;</span><br><span class="line">          :number&#x3D;&quot;n&quot;</span><br><span class="line">          class&#x3D;&quot;cell&quot;</span><br><span class="line">        &#x2F;&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">    &lt;template #off&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;grid&quot;&gt;</span><br><span class="line">        &lt;ChildOff</span><br><span class="line">          v-for&#x3D;&quot;(n, index) of list&quot;</span><br><span class="line">          :key&#x3D;&quot;index&quot;</span><br><span class="line">          :number&#x3D;&quot;n&quot;</span><br><span class="line">          class&#x3D;&quot;cell&quot;</span><br><span class="line">        &#x2F;&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;template&gt;</span><br><span class="line">  &lt;&#x2F;Benchmark&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import ChildOn from &#39;.&#x2F;ChildOn.vue&#39;</span><br><span class="line">import ChildOff from &#39;.&#x2F;ChildOff.vue&#39;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    ChildOn,</span><br><span class="line">    ChildOff,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      play: false,</span><br><span class="line">      list: [],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  watch: &#123;</span><br><span class="line">    play (value) &#123;</span><br><span class="line">      if (value) this.generate()</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  created () &#123;</span><br><span class="line">    this.count &#x3D; 300</span><br><span class="line">    this.generate()</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  methods: &#123;</span><br><span class="line">    generate () &#123;</span><br><span class="line">      const data &#x3D; []</span><br><span class="line">      for (let i &#x3D; 0; i &lt; this.count; i++) &#123;</span><br><span class="line">        data.push(Math.random() * 300)</span><br><span class="line">      &#125;</span><br><span class="line">      this.list &#x3D; data</span><br><span class="line">      this.play &amp;&amp; requestAnimationFrame(this.generate)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;stylus&quot; scoped&gt;</span><br><span class="line">.grid</span><br><span class="line">  margin 24px auto</span><br><span class="line">  max-width (20 * 36px)</span><br><span class="line"></span><br><span class="line">.cell</span><br><span class="line">  float left</span><br><span class="line">  width 32px</span><br><span class="line">  height @width</span><br><span class="line">  margin 2px</span><br><span class="line">  color transparent</span><br><span class="line">  background #42b983</span><br><span class="line">  border-radius 50%</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>子组件拆分</strong></p>
+<p>优化前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div :style&#x3D;&quot;&#123; opacity: number &#x2F; 300 &#125;&quot;&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123; heavy() &#125;&#125;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;number&#39;],</span><br><span class="line">  methods: &#123;</span><br><span class="line">    heavy () &#123;</span><br><span class="line">      const n &#x3D; 100000</span><br><span class="line">      let result &#x3D; 0</span><br><span class="line">      for (let i &#x3D; 0; i &lt; n; i++) &#123;</span><br><span class="line">        result +&#x3D; Math.sqrt(Math.cos(Math.sin(42)))</span><br><span class="line">      &#125;</span><br><span class="line">      return result</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div :style&#x3D;&quot;&#123; opacity: number &#x2F; 300 &#125;&quot;&gt;</span><br><span class="line">    &lt;ChildComp&#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    ChildComp: &#123;</span><br><span class="line">      methods: &#123;</span><br><span class="line">        heavy () &#123;</span><br><span class="line">          const n &#x3D; 100000</span><br><span class="line">          let result &#x3D; 0</span><br><span class="line">          for (let i &#x3D; 0; i &lt; n; i++) &#123;</span><br><span class="line">            result +&#x3D; Math.sqrt(Math.cos(Math.sin(42)))</span><br><span class="line">          &#125;</span><br><span class="line">          return result</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      render (h) &#123;</span><br><span class="line">        return h(&#39;div&#39;, this.heavy())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: [&#39;number&#39;]</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>我们来看优化前的组件，示例通过一个 <code>heavy</code> 函数模拟了一个耗时的任务，且这个函数在每次渲染的时候都会执行一次，所以每次组件的渲染都会消耗较长的时间执行 JavaScript。</p>
+<p>而优化后的方式是把这个耗时任务 <code>heavy</code> 函数的执行逻辑用子组件 <code>ChildComp</code> 封装了，由于 Vue 的更新是组件粒度的，虽然每一帧都通过数据修改导致了父组件的重新渲染，但是 <code>ChildComp</code> 却不会重新渲染，因为它的内部也没有任何响应式数据的变化。所以优化后的组件不会在每次渲染都执行耗时任务，自然执行的 JavaScript 时间就变少了。</p>
+<h3 id="Local-variable">Local variable</h3>
+<p><strong>局部变量</strong></p>
+<p>优化前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div :style&#x3D;&quot;&#123; opacity: start &#x2F; 300 &#125;&quot;&gt;&#123;&#123; result &#125;&#125;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;start&#39;],</span><br><span class="line">  computed: &#123;</span><br><span class="line">    base () &#123;</span><br><span class="line">      return 42</span><br><span class="line">    &#125;,</span><br><span class="line">    result () &#123;</span><br><span class="line">      let result &#x3D; this.start</span><br><span class="line">      for (let i &#x3D; 0; i &lt; 1000; i++) &#123;</span><br><span class="line">        result +&#x3D; Math.sqrt(Math.cos(Math.sin(this.base))) + this.base * this.base + this.base + this.base * 2 + this.base * 3</span><br><span class="line">      &#125;</span><br><span class="line">      return result</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div :style&#x3D;&quot;&#123; opacity: start &#x2F; 300 &#125;&quot;&gt;&#123;&#123; result &#125;&#125;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;start&#39;],</span><br><span class="line">  computed: &#123;</span><br><span class="line">    base () &#123;</span><br><span class="line">      return 42</span><br><span class="line">    &#125;,</span><br><span class="line">    result (&#123; base, start &#125;) &#123;</span><br><span class="line">      let result &#x3D; start</span><br><span class="line">      for (let i &#x3D; 0; i &lt; 1000; i++) &#123;</span><br><span class="line">        result +&#x3D; Math.sqrt(Math.cos(Math.sin(base))) + base * base + base + base * 2 + base * 3</span><br><span class="line">      &#125;</span><br><span class="line">      return result</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>这里主要是优化前后的组件的计算属性 <code>result</code> 的实现差异，优化前的组件多次在计算过程中访问 <code>this.base</code>，而优化后的组件会在计算前先用局部变量 <code>base</code>，缓存 <code>this.base</code>，后面直接访问 <code>base</code>。</p>
+<p>那么为啥这个差异会造成性能上的差异呢，原因是你每次访问 <code>this.base</code> 的时候，由于 <code>this.base</code> 是一个响应式对象，所以会触发它的 <code>getter</code>，进而会执行依赖收集相关逻辑代码。类似的逻辑执行多了，像示例这样，几百次循环更新几百个组件，每个组件触发 <code>computed</code> 重新计算，然后又多次执行依赖收集相关逻辑，性能自然就下降了。</p>
+<p>从需求上来说，<code>this.base</code> 执行一次依赖收集就够了，把它的 <code>getter</code> 求值结果返回给局部变量 <code>base</code>，后续再次访问 <code>base</code> 的时候就不会触发 <code>getter</code>，也不会走依赖收集的逻辑了，性能自然就得到了提升。</p>
+<p>这是一个非常实用的性能优化技巧。因为很多人在开发 Vue.js 项目的时候，每当取变量的时候就习惯性直接写 <code>this.xxx</code> 了，因为大部分人并不会注意到访问 <code>this.xxx</code> 背后做的事情。在访问次数不多的时候，性能问题并没有凸显，但是一旦访问次数变多，比如在一个大循环中多次访问，类似示例这种场景，就会产生性能问题了。</p>
+<h3 id="Reuse-DOM-with-v-show">Reuse DOM with v-show</h3>
+<p><strong>使用v-show复用DOM</strong></p>
+<p>优化前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template functional&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;cell&quot;&gt;</span><br><span class="line">    &lt;div v-if&#x3D;&quot;props.value&quot; class&#x3D;&quot;on&quot;&gt;</span><br><span class="line">      &lt;Heavy :n&#x3D;&quot;10000&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;section v-else class&#x3D;&quot;off&quot;&gt;</span><br><span class="line">      &lt;Heavy :n&#x3D;&quot;10000&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;section&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template functional&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;cell&quot;&gt;</span><br><span class="line">    &lt;div v-show&#x3D;&quot;props.value&quot; class&#x3D;&quot;on&quot;&gt;</span><br><span class="line">      &lt;Heavy :n&#x3D;&quot;10000&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;section v-show&#x3D;&quot;!props.value&quot; class&#x3D;&quot;off&quot;&gt;</span><br><span class="line">      &lt;Heavy :n&#x3D;&quot;10000&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;section&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<p>优化前后的主要区别是用 <code>v-show</code> 指令替代了 <code>v-if</code> 指令来替代组件的显隐，虽然从表现上看，<code>v-show</code> 和 <code>v-if</code> 类似，都是控制组件的显隐，但内部实现差距还是很大的。</p>
+<p><code>v-if</code> 指令在编译阶段就会编译成一个三元运算符，条件渲染，比如优化前的组件模板经过编译后生成如下渲染函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">with</span>(<span class="params"><span class="built_in">this</span></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> _c(<span class="string">&#x27;div&#x27;</span>, &#123;</span><br><span class="line">      staticClass: <span class="string">&quot;cell&quot;</span></span><br><span class="line">    &#125;, [(props.value) ? _c(<span class="string">&#x27;div&#x27;</span>, &#123;</span><br><span class="line">      staticClass: <span class="string">&quot;on&quot;</span></span><br><span class="line">    &#125;, [_c(<span class="string">&#x27;Heavy&#x27;</span>, &#123;</span><br><span class="line">      attrs: &#123;</span><br><span class="line">        <span class="string">&quot;n&quot;</span>: <span class="number">10000</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)], <span class="number">1</span>) : _c(<span class="string">&#x27;section&#x27;</span>, &#123;</span><br><span class="line">      staticClass: <span class="string">&quot;off&quot;</span></span><br><span class="line">    &#125;, [_c(<span class="string">&#x27;Heavy&#x27;</span>, &#123;</span><br><span class="line">      attrs: &#123;</span><br><span class="line">        <span class="string">&quot;n&quot;</span>: <span class="number">10000</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)], <span class="number">1</span>)])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>当条件 <code>props.value</code> 的值变化的时候，会触发对应的组件更新，对于 <code>v-if</code> 渲染的节点，由于新旧节点 <code>vnode</code> 不一致，在核心 diff 算法比对过程中，会移除旧的 <code>vnode</code> 节点，创建新的 <code>vnode</code> 节点，那么就会创建新的 <code>Heavy</code> 组件，又会经历 <code>Heavy</code> 组件自身初始化、渲染 <code>vnode</code>、<code>patch</code> 等过程。</p>
+<p>因此使用 <code>v-if</code> 每次更新组件都会创建新的 <code>Heavy</code> 子组件，当更新的组件多了，自然就会造成性能压力。</p>
+<p>而当我们使用 <code>v-show</code> 指令，优化后的组件模板经过编译后生成如下渲染函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">with</span>(<span class="params"><span class="built_in">this</span></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> _c(<span class="string">&#x27;div&#x27;</span>, &#123;</span><br><span class="line">      staticClass: <span class="string">&quot;cell&quot;</span></span><br><span class="line">    &#125;, [_c(<span class="string">&#x27;div&#x27;</span>, &#123;</span><br><span class="line">      directives: [&#123;</span><br><span class="line">        name: <span class="string">&quot;show&quot;</span>,</span><br><span class="line">        rawName: <span class="string">&quot;v-show&quot;</span>,</span><br><span class="line">        value: (props.value),</span><br><span class="line">        expression: <span class="string">&quot;props.value&quot;</span></span><br><span class="line">      &#125;],</span><br><span class="line">      staticClass: <span class="string">&quot;on&quot;</span></span><br><span class="line">    &#125;, [_c(<span class="string">&#x27;Heavy&#x27;</span>, &#123;</span><br><span class="line">      attrs: &#123;</span><br><span class="line">        <span class="string">&quot;n&quot;</span>: <span class="number">10000</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)], <span class="number">1</span>), _c(<span class="string">&#x27;section&#x27;</span>, &#123;</span><br><span class="line">      directives: [&#123;</span><br><span class="line">        name: <span class="string">&quot;show&quot;</span>,</span><br><span class="line">        rawName: <span class="string">&quot;v-show&quot;</span>,</span><br><span class="line">        value: (!props.value),</span><br><span class="line">        expression: <span class="string">&quot;!props.value&quot;</span></span><br><span class="line">      &#125;],</span><br><span class="line">      staticClass: <span class="string">&quot;off&quot;</span></span><br><span class="line">    &#125;, [_c(<span class="string">&#x27;Heavy&#x27;</span>, &#123;</span><br><span class="line">      attrs: &#123;</span><br><span class="line">        <span class="string">&quot;n&quot;</span>: <span class="number">10000</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)], <span class="number">1</span>)])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>当条件 <code>props.value</code> 的值变化的时候，会触发对应的组件更新，对于 <code>v-show</code> 渲染的节点，由于新旧 <code>vnode</code> 一致，它们只需要一直 <code>patchVnode</code> 即可，那么它又是怎么让 DOM 节点显示和隐藏的呢？</p>
+<p>原来在 <code>patchVnode</code> 过程中，内部会对执行 <code>v-show</code> 指令对应的钩子函数 <code>update</code>，然后它会根据 <code>v-show</code> 指令绑定的值来设置它作用的 DOM 元素的 <code>style.display</code> 的值控制显隐。</p>
+<p>因此相比于 <code>v-if</code> 不断删除和创建函数新的 DOM，<code>v-show</code> 仅仅是在更新现有 DOM 的显隐值，所以 <code>v-show</code> 的开销要比 <code>v-if</code> 小的多，当其内部 DOM 结构越复杂，性能的差异就会越大。</p>
+<p>但是 <code>v-show</code> 相比于 <code>v-if</code> 的性能优势是在组件的更新阶段，如果仅仅是在初始化阶段，<code>v-if</code> 性能还要高于 <code>v-show</code>，原因是在于它仅仅会渲染一个分支，而 <code>v-show</code> 把两个分支都渲染了，通过 <code>style.display</code> 来控制对应 DOM 的显隐。</p>
+<p>在使用 <code>v-show</code> 的时候，所有分支内部的组件都会渲染，对应的生命周期钩子函数都会执行，而使用 <code>v-if</code> 的时候，没有命中的分支内部的组件是不会渲染的，对应的生命周期钩子函数都不会执行。</p>
+<h3 id="KeepAlive">KeepAlive</h3>
+<p><strong>使用keepalive组件缓存DOM</strong></p>
+<p>优化前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;router-view&#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;keep-alive&gt;</span><br><span class="line">      &lt;router-view&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;keep-alive&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<p>在非优化场景下，我们每次点击按钮切换路由视图，都会重新渲染一次组件，渲染组件就会经过组件初始化，<code>render</code>、<code>patch</code> 等过程，如果组件比较复杂，或者嵌套较深，那么整个渲染耗时就会很长。</p>
+<p>而在使用 <code>KeepAlive</code> 后，被 <code>KeepAlive</code> 包裹的组件在经过第一次渲染后，的 <code>vnode</code> 以及 DOM 都会被缓存起来，然后再下一次再次渲染该组件的时候，直接从缓存中拿到对应的 <code>vnode</code> 和 DOM，然后渲染，并不需要再走一次组件初始化，<code>render</code> 和 <code>patch</code> 等一系列流程，减少了 <code>script</code> 的执行时间，性能更好。</p>
+<p>但是使用 <code>KeepAlive</code> 组件并非没有成本，因为它会占用更多的内存去做缓存，这是一种典型的空间换时间优化思想的应用。</p>
+<h3 id="Deferred-features">Deferred features</h3>
+<p><strong>使用Deferred组件延时分批渲染组件</strong></p>
+<p>优化前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;deferred-off&quot;&gt;</span><br><span class="line">    &lt;VueIcon icon&#x3D;&quot;fitness_center&quot; class&#x3D;&quot;gigantic&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h2&gt;I&#39;m an heavy page&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Heavy v-for&#x3D;&quot;n in 8&quot; :key&#x3D;&quot;n&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Heavy class&#x3D;&quot;super-heavy&quot; :n&#x3D;&quot;9999999&quot;&#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;deferred-on&quot;&gt;</span><br><span class="line">    &lt;VueIcon icon&#x3D;&quot;fitness_center&quot; class&#x3D;&quot;gigantic&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h2&gt;I&#39;m an heavy page&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">    &lt;template v-if&#x3D;&quot;defer(2)&quot;&gt;</span><br><span class="line">      &lt;Heavy v-for&#x3D;&quot;n in 8&quot; :key&#x3D;&quot;n&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Heavy v-if&#x3D;&quot;defer(3)&quot; class&#x3D;&quot;super-heavy&quot; :n&#x3D;&quot;9999999&quot;&#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Defer from &#39;@&#x2F;mixins&#x2F;Defer&#39;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  mixins: [</span><br><span class="line">    Defer(),</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>优化前后的差距主要是后者使用了 <code>Defer</code> 这个 <code>mixin</code>，那么它具体是怎么工作的，我们来一探究竟：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">count = <span class="number">10</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    data () &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        displayPriority: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    mounted () &#123;</span><br><span class="line">      <span class="built_in">this</span>.runDisplayPriority()</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    methods: &#123;</span><br><span class="line">      runDisplayPriority () &#123;</span><br><span class="line">        <span class="keyword">const</span> step = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">          requestAnimationFrame(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.displayPriority++</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">this</span>.displayPriority &lt; count) &#123;</span><br><span class="line">              step()</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        step()</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      defer (priority) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.displayPriority &gt;= priority</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Defer</code> 的主要思想就是把一个组件的一次渲染拆成多次，它内部维护了 <code>displayPriority</code> 变量，然后在通过 <code>requestAnimationFrame</code> 在每一帧渲染的时候自增，最多加到 <code>count</code>。然后使用 <code>Defer mixin</code> 的组件内部就可以通过 <code>v-if=&quot;defer(xxx)&quot;</code> 的方式来控制在 <code>displayPriority</code> 增加到 <code>xxx</code> 的时候渲染某些区块了。</p>
+<p>当你有渲染耗时的组件，使用 <code>Deferred</code> 做渐进式渲染是不错的注意，它能避免一次 <code>render</code> 由于 JS 执行时间过长导致渲染卡住的现象。</p>
+<h3 id="Time-slicing">Time slicing</h3>
+<p><strong>时间片切割</strong></p>
+<p>utils.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">splitArray</span> (<span class="params">list, chunkLength</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> chunks = []</span><br><span class="line">  <span class="keyword">let</span> chunk = []</span><br><span class="line">  <span class="keyword">let</span> i = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> l = <span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> n = list.length</span><br><span class="line">  <span class="keyword">while</span> (i &lt; n) &#123;</span><br><span class="line">    chunk.push(list[i])</span><br><span class="line">    l++</span><br><span class="line">    <span class="keyword">if</span> (l === chunkLength) &#123;</span><br><span class="line">      chunks.push(chunk)</span><br><span class="line">      chunk = []</span><br><span class="line">      l = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    i++</span><br><span class="line">  &#125;</span><br><span class="line">  chunk.length &amp;&amp; chunks.push(chunk)</span><br><span class="line">  <span class="keyword">return</span> chunks</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">JobQueue</span> </span>&#123;</span><br><span class="line">  <span class="title">constructor</span> (<span class="params">&#123; autoStart = <span class="literal">false</span> &#125; = &#123;&#125;</span>) &#123;</span><br><span class="line">    <span class="built_in">this</span>.autoStart = autoStart</span><br><span class="line"></span><br><span class="line">    <span class="built_in">this</span>._queue = []</span><br><span class="line">    <span class="built_in">this</span>._running = <span class="literal">false</span></span><br><span class="line">    <span class="built_in">this</span>._results = []</span><br><span class="line">    <span class="built_in">this</span>._resolves = []</span><br><span class="line">    <span class="built_in">this</span>._rejects = []</span><br><span class="line">    <span class="built_in">this</span>._runId = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  get length () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>._queue.length</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  addJob (func) &#123;</span><br><span class="line">    <span class="built_in">this</span>._queue.push(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> runId = <span class="built_in">this</span>._runId</span><br><span class="line">        <span class="keyword">const</span> result = func(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// Run not cancelled</span></span><br><span class="line">          <span class="keyword">if</span> (runId === <span class="built_in">this</span>._runId) &#123;</span><br><span class="line">            <span class="built_in">this</span>._results.push(result)</span><br><span class="line">            <span class="built_in">this</span>._next()</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="built_in">this</span>._reject(error)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.autoStart &amp;&amp; <span class="built_in">this</span>.length === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.start()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  clear () &#123;</span><br><span class="line">    <span class="built_in">this</span>._running = <span class="literal">false</span></span><br><span class="line">    <span class="built_in">this</span>._queue.length = <span class="number">0</span></span><br><span class="line">    <span class="built_in">this</span>._resolves.length = <span class="number">0</span></span><br><span class="line">    <span class="built_in">this</span>._rejects.length = <span class="number">0</span></span><br><span class="line">    <span class="built_in">this</span>._results.length = <span class="number">0</span></span><br><span class="line">    <span class="built_in">this</span>._runId++</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  cancel () &#123;</span><br><span class="line">    <span class="built_in">this</span>._resolve()</span><br><span class="line">    <span class="built_in">this</span>.clear()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  start () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (!<span class="built_in">this</span>._running &amp;&amp; <span class="built_in">this</span>.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">this</span>._running = <span class="literal">true</span></span><br><span class="line">        <span class="built_in">this</span>._queue[<span class="number">0</span>]()</span><br><span class="line">        <span class="built_in">this</span>._resolves.push(resolve)</span><br><span class="line">        <span class="built_in">this</span>._rejects.push(reject)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _next () &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>._running &amp;&amp; <span class="built_in">this</span>.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>._queue.shift()</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.length === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">this</span>._resolve()</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>._queue[<span class="number">0</span>]()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _resolve () &#123;</span><br><span class="line">    <span class="built_in">this</span>._resolves.forEach(<span class="function"><span class="params">f</span> =&gt;</span> f(<span class="built_in">this</span>._results))</span><br><span class="line">    <span class="built_in">this</span>.clear()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _reject (error) &#123;</span><br><span class="line">    <span class="built_in">this</span>._rejects.forEach(<span class="function"><span class="params">f</span> =&gt;</span> f(error))</span><br><span class="line">    <span class="built_in">this</span>.clear()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>优化前</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fetchItems (&#123; commit &#125;, &#123; items &#125;) &#123;</span><br><span class="line">  commit(<span class="string">&#x27;clearItems&#x27;</span>)</span><br><span class="line">  commit(<span class="string">&#x27;addItems&#x27;</span>, items) <span class="comment">// 当items特别大的时候回特别慢</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fetchItems (&#123; commit &#125;, &#123; items, splitCount &#125;) &#123;</span><br><span class="line">  commit(<span class="string">&#x27;clearItems&#x27;</span>)</span><br><span class="line">  <span class="keyword">const</span> queue = <span class="keyword">new</span> JobQueue()</span><br><span class="line">  splitArray(items, splitCount).forEach(</span><br><span class="line">    chunk =&gt; queue.addJob(<span class="function"><span class="params">done</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 分时间片提交数据</span></span><br><span class="line">      requestAnimationFrame(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        commit(<span class="string">&#x27;addItems&#x27;</span>, chunk)</span><br><span class="line">        done()</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">  <span class="keyword">await</span> queue.start()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优化前总的 <code>script</code> 执行时间要比优化后的还要少一些，但是从实际的观感上看，优化前点击提交按钮，页面会卡死 1.2 秒左右，在优化后，页面不会完全卡死，但仍然会有渲染卡顿的感觉。</p>
+<p>那么为什么在优化前页面会卡死呢？因为一次性提交的数据过多，内部 JS 执行时间过长，阻塞了 UI 线程，导致页面卡死。</p>
+<p>优化后，页面仍有卡顿，是因为我们拆分数据的粒度是 1000 条，这种情况下，重新渲染组件仍然有压力，我们观察 fps 只有十几，会有卡顿感。通常只要让页面的 fps 达到 60，页面就会非常流畅，如果我们把数据拆分粒度变成 100 条，基本上 fps 能达到 50 以上，虽然页面渲染变流畅了，但是完成 10000 条数据总的提交时间还是变长了。</p>
+<p>使用 <code>Time slicing</code> 技术可以避免页面卡死，通常我们在这种耗时任务处理的时候会加一个 loading 效果，在这个示例中，我们可以开启 <code>loading animation</code>，然后提交数据。对比发现，优化前由于一次性提交数据过多，JS 一直长时间运行，阻塞 UI 线程，这个 loading 动画是不会展示的，而优化后，由于我们拆成多个时间片去提交数据，单次 JS 运行时间变短了，这样 loading 动画就有机会展示了。</p>
+<blockquote>
+<p>这里要注意的一点，虽然我们拆时间片使用了 <code>requestAnimationFrame</code> API，但是使用 <code>requestAnimationFrame</code> 本身是不能保证满帧运行的，<code>requestAnimationFrame</code> 保证的是在浏览器每一次重绘后会执行对应传入的回调函数，想要保证满帧，只能让 JS 在一个 Tick 内的运行时间不超过 17ms。</p>
+</blockquote>
+<h3 id="Non-reactive-data">Non-reactive data</h3>
+<p><strong>非响应式数据</strong></p>
+<p>优化前</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = items.map(</span><br><span class="line">  item =&gt; (&#123;</span><br><span class="line">    id: uid++,</span><br><span class="line">    data: item,</span><br><span class="line">    vote: <span class="number">0</span></span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = items.map(</span><br><span class="line">  item =&gt; optimizeItem(item)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">optimizeItem</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> itemData = &#123;</span><br><span class="line">    id: uid++,</span><br><span class="line">    vote: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(itemData, <span class="string">&#x27;data&#x27;</span>, &#123;</span><br><span class="line">    <span class="comment">// Mark as non-reactive</span></span><br><span class="line">    configurable: <span class="literal">false</span>,</span><br><span class="line">    value: item</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> itemData</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>内部提交的数据的时候，会默认把新提交的数据也定义成响应式，如果数据的子属性是对象形式，还会递归让子属性也变成响应式，因此当提交数据很多的时候，这个过程就变成了一个耗时过程。</p>
+<p>而优化后我们把新提交的数据中的对象属性 <code>data</code> 手动变成了 <code>configurable</code> 为 <code>false</code>，这样内部在 <code>walk</code> 时通过 <code>Object.keys(obj)</code> 获取对象属性数组会忽略 <code>data</code>，也就不会为 <code>data</code> 这个属性 <code>defineReactive</code>，由于 <code>data</code> 指向的是一个对象，这样也就会减少递归响应式的逻辑，相当于减少了这部分的性能损耗。数据量越大，这种优化的效果就会更明显。</p>
+<p>其实类似这种优化的方式还有很多，比如我们在组件中定义的一些数据，也不一定都要在 <code>data</code> 中定义。有些数据我们并不是用在模板中，也不需要监听它的变化，只是想在组件的上下文中共享这个数据，这个时候我们可以仅仅把这个数据挂载到组件实例 <code>this</code> 上，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">created</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.scroll = <span class="literal">null</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">mounted</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.scroll = <span class="keyword">new</span> BScroll(<span class="built_in">this</span>.$el)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样我们就可以在组件上下文中共享 <code>scroll</code> 对象了，尽管它不是一个响应式对象。</p>
+<h3 id="Virtual-scrolling">Virtual scrolling</h3>
+<p><strong>虚拟滚动组件</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Akryum/vue-virtual-scroller%60%60">https://github.com/Akryum/vue-virtual-scroller``</a></p>
+<p>优化前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;items no-v&quot;&gt;</span><br><span class="line">  &lt;FetchItemViewFunctional</span><br><span class="line">    v-for&#x3D;&quot;item of items&quot;</span><br><span class="line">    :key&#x3D;&quot;item.id&quot;</span><br><span class="line">    :item&#x3D;&quot;item&quot;</span><br><span class="line">    @vote&#x3D;&quot;voteItem(item)&quot;</span><br><span class="line">  &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>优化后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;recycle-scroller</span><br><span class="line">  class&#x3D;&quot;items&quot;</span><br><span class="line">  :items&#x3D;&quot;items&quot;</span><br><span class="line">  :item-size&#x3D;&quot;24&quot;</span><br><span class="line">&gt;</span><br><span class="line">  &lt;template v-slot&#x3D;&quot;&#123; item &#125;&quot;&gt;</span><br><span class="line">    &lt;FetchItemView</span><br><span class="line">      :item&#x3D;&quot;item&quot;</span><br><span class="line">      @vote&#x3D;&quot;voteItem(item)&quot;</span><br><span class="line">    &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;template&gt;</span><br><span class="line">&lt;&#x2F;recycle-scroller&gt;</span><br></pre></td></tr></table></figure>
+<p>因为虚拟滚动的实现方式，是只渲染视口内的 DOM，这样总共渲染的 DOM 数量就很少了，自然性能就会好很多。</p>
+<p>虚拟滚动组件也是 Guillaume Chau 写的，感兴趣的同学可以去研究它的源码实现。它的基本原理就是监听滚动事件，动态更新需要显示的 DOM 元素，计算出它们在视图中的位移。</p>
+<p>虚拟滚动组件也并非没有成本，因为它需要在滚动的过程中实时去计算，所以会有一定的 <code>script</code> 执行的成本。因此如果列表的数据量不是很大的情况，我们使用普通的滚动就足够了。</p>
+<p><strong>通过这篇文章，我希望你能了解到 Vue.js 的九种性能优化技巧，并能运用到实际的开发项目中。除了上述技巧之外，还有懒加载图片、懒加载组件、异步组件等等常用的性能优化手段。</strong></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/How-to-apply-JsDelivr-CDN-in-Hexo-theme-livemylife-Theme/" data-toggle="tooltip" data-placement="top" title="How to apply JsDelivr CDN in Hexo-theme-livemylife Theme">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Sat Apr 10 2021 23:24:17 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Vue-js%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Vue.js性能优化技巧</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Functional-components"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Functional components</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Child-component-splitting"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Child component splitting</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Local-variable"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Local variable</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Reuse-DOM-with-v-show"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Reuse DOM with v-show</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#KeepAlive"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">KeepAlive</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Deferred-features"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">Deferred features</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Time-slicing"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">Time slicing</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Non-reactive-data"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">Non-reactive data</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Virtual-scrolling"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">Virtual scrolling</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Vue性能优化" title="Vue性能优化">Vue性能优化</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
