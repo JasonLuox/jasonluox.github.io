@@ -135,10 +135,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://jasonluox.github.io/en/Github-加速优化/">
+  <link rel="canonical" href="https://jasonluox.github.io/archives/2021/05/">
   <title>
     
-      Github 加速优化 - 流年风尘 | 我的前端之路
+      流年风尘 | 我的前端之路
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -286,7 +286,29 @@
           <!-- LangSelect -->
           
           
-          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="archives/2021/05/index.html">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="cn" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
           
           
         </ul>
@@ -338,19 +360,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/beauty_girl.jpg');
-      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/afternoon.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/beauty_girl.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/afternoon.jpg');
     }
 
     header.intro-header {
-       /*post*/
-        background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/lml_bg.jpg'); */
+       /*page*/
+        background-image: var(--intro-header-background-image-url-page);
+        /* background-image: url('/img/header_img/afternoon.jpg'); */
       
     }
 
@@ -372,42 +394,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#Git" title="Git">Git</a>
-              
-            </div>
-            <h1>Github 加速优化</h1>
-            <h2 class="subheading">What is the DNS and CDN...</h2>
-            <span class="meta">
-              Posted by Jason Luo on
-              2020-07-15
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">5</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">1.4k</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- WordCount end -->
-            
-            
-            <!-- 不蒜子统计 start -->
-            <span class="meta" id="busuanzi_container_page_pv">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            
-
-
+          <div class="site-heading">
+            <h1>JasonLuo&#39;s Blog</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">welcome to my blog, have a good time!</span>
           </div>
           
         </div>
@@ -432,266 +422,429 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+		<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
 
-        <p>在本章开始前我们先来了解两个名词的概念：</p>
-<ul>
-<li>DNS：域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。（出自维基百科）</li>
-<li>CDN：CDN 的全称是 Content Delivery Network，即内容分发网络。CDN 是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN 的关键技术主要有内容存储和分发技术。（出自百度百科）</li>
-</ul>
-<h2 id="Github-访问提速">Github 访问提速</h2>
-<p>由于种种原因，国内访问 Github 的体验一直不是很好。本文通过绕过外部 DNS 解析，添加 Github 的 DNS 记录的方式，在本地直接绑定 host，来改善 Github 的访问速度。该方法也可加速其他因为 CDN 被屏蔽导致访问慢的网站。</p>
-<h3 id="查询-Github-的-DNS-解析">查询 Github 的 DNS 解析</h3>
-<p>访问 <a target="_blank" rel="noopener" href="https://www.ipaddress.com/">IPAddress.com</a>，分别查询下面三个域名的 DNS 地址。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://github.com">github.com</a></li>
-<li><a target="_blank" rel="noopener" href="http://assets-cdn.github.com">assets-cdn.github.com</a></li>
-<li><a target="_blank" rel="noopener" href="http://github.global.ssl.fastly.net">github.global.ssl.fastly.net</a></li>
-</ul>
-<p><img src="1.png" alt="1"></p>
-<p>我的查询结果，查询结果可能有差异，以你实际的查询结果为准。</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">140.82.114.3</span> github.com</span><br><span class="line"><span class="number">185.199.108.153</span> assets-cdn.github.com</span><br><span class="line"><span class="number">199.232.69.194</span> github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
-<p>或者打开 <a target="_blank" rel="noopener" href="http://tool.chinaz.com/dns">Chinaz.com</a>，这是一个查询域名映射关系的工具。通过这个工具多查几次上面的域名，选择一个稳定，延迟较低的 ip 。</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">140.82.114.3</span> github.com</span><br><span class="line"><span class="number">185.199.108.153</span> assets-cdn.github.com</span><br><span class="line"><span class="number">151.101.109.194</span> github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure>
-<p>两种方式都可以，可自行选择。</p>
-<h3 id="添加到-host-文件">添加到 host 文件</h3>
-<p>将上述查询出的结果，添加至 host 文件中。</p>
-<h3 id="添加-DNS-服务器">添加 DNS 服务器</h3>
-<p>DNS 服务器添加 <code>8.8.8.8</code>（不加也可以）。当我们添加 DNS 服务器时，可能会看到 DNS 配置里已经有了 <code>114.114.114.114</code>。有人可能会问这两个 DNS 有什么区别？</p>
-<ul>
-<li><code>114.114.114.114</code>：是国内移动、电信和联通通用的 DNS，手机和电脑端都可以使用，干净无广告，解析成功率相对来说更高，国内用户使用的比较多，而且速度相对快、稳定，是国内用户上网常用的 DNS。</li>
-<li><code>8.8.8.8</code>：是 GOOGLE 公司提供的 DNS，该地址是全球通用的，相对来说，更适合国外以及访问国外网站的用户使用。</li>
-</ul>
-<h3 id="刷新-DNS">刷新 DNS</h3>
-<ul>
-<li>Windows：<code>ipconfig /flushdns</code></li>
-<li>Mac：<code>sudo dscacheutil -flushcache</code></li>
-</ul>
-<h2 id="免费-CDN-提速-Github-静态资源访问">免费 CDN 提速 Github 静态资源访问</h2>
-<p><a target="_blank" rel="noopener" href="https://www.jsdelivr.com/?docs=gh">JSDelivr</a> 是一个免费开源的 CDN 解决方案，用于帮助开发者和站长。包含 JavaScript 库、jQuery 插件、CSS 框架、字体等等 Web 上常用的静态资源。我们来到其官网，可以看到它的介绍 Open Source CDN free, fast, and reliable。（免费、快速、可靠，不过据说可能会投毒广告，表示目前还没见过广告）</p>
-<p>上篇文章 <a target="_blank" rel="noopener" href="https://v_vincen.gitee.io/2020/07/14/Four-Ways-to-Deploy-Hexo/">Four Ways to Deploy Hexo</a> 中 提到过，用 <code>Github Pages</code> 部署 <code>Hexo</code>，用户体验一直不是很好。为了提高用户体验，不妨结合 <code>JSDelivr</code> 来搭建我的个人博客。下面我就来看看 <code>JSDeliver + Github</code> 如何是实现静态资源加速。</p>
-<h3 id="新建-Github-仓库">新建 Github 仓库</h3>
-<p>新建 Github 仓库。</p>
-<p><img src="2.png" alt="2"></p>
-<p>接着在本地电脑克隆上图仓库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd your file</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;V-Vincen&#x2F;jsDeliver.git</span><br></pre></td></tr></table></figure>
-<h3 id="上传需要的资源">上传需要的资源</h3>
-<p>复制需要的静态资源到本地git仓库中，提交到 Github 仓库上。</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd 到 git 仓库目录下</span><br><span class="line">git <span class="built_in">status</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m &#x27;<span class="built_in">first</span> commit&#x27;</span><br><span class="line">git <span class="built_in">push</span></span><br></pre></td></tr></table></figure>
-<p><strong>注</strong>：JSDelivr 不支持加载超过 <strong>20M</strong> 的资源，所以一些视频最好压缩到 <strong>20M</strong> 以下。</p>
-<h3 id="发布仓库">发布仓库</h3>
-<p>其实不发布也可以，可根据实际情况自行决定。</p>
-<p><img src="3.png" alt="3"></p>
-<p>发布版本号为1.0.0（自定义）。</p>
-<p><img src="4.png" alt="4"></p>
-<h3 id="通过-JSDelivr-引用资源">通过 JSDelivr 引用资源</h3>
-<p>官网给的使用方法：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span> load any GitHub release, commit, or branch</span><br><span class="line"><span class="regexp">//</span> note: we recommend using npm <span class="keyword">for</span> projects that support it</span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/u</span>ser<span class="regexp">/repo@version/</span>file</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> load jQuery v3.<span class="number">2.1</span></span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>jquery<span class="regexp">/jquery@3.2.1/</span>dist/jquery.min.js</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> use a version range instead of a specific version</span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>jquery<span class="regexp">/jquery@3.2/</span>dist/jquery.min.js</span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>jquery<span class="regexp">/jquery@3/</span>dist/jquery.min.js</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> omit the version completely to get the latest one</span><br><span class="line"><span class="regexp">//</span> you should NOT use this <span class="keyword">in</span> production</span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>jquery<span class="regexp">/jquery/</span>dist/jquery.min.js</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> add <span class="string">&quot;.min&quot;</span> to any JS/CSS file to get a minified version</span><br><span class="line"><span class="regexp">//</span> <span class="keyword">if</span> one doesn<span class="string">&#x27;t exist, we&#x27;</span>ll generate it <span class="keyword">for</span> you</span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>jquery<span class="regexp">/jquery@3.2.1/</span>src/core.min.js</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span> add / at the end to get a directory listing</span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>jquery<span class="regexp">/jquery/</span></span><br></pre></td></tr></table></figure>
-<p>结合我创建的 jsDeliver 项目：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>V-Vincen<span class="regexp">/jsDeliver@1.0.0/</span>header_img/newhome_bg.jpg</span><br><span class="line"></span><br><span class="line">https:<span class="regexp">//</span>cdn.jsdelivr.net<span class="regexp">/gh/</span>V-Vincen<span class="regexp">/jsDeliver/</span>header_img/newhome_bg.jpg</span><br></pre></td></tr></table></figure>
-<h2 id="Github-克隆加速">Github 克隆加速</h2>
-<p>我们经常会碰到需要克隆 Github 上的一些开源资源到本地。但是由于种种原因，<code>git clone https://github.com/&lt;yourAccount&gt;/&lt;repo&gt;.git</code> 时，其下载速率犹如龟速。让人恨不得把电脑砸了，博主在这里推荐一款 Chrome 插件。</p>
-<p><img src="5.png" alt="5"></p>
-<p>当然访问 Chrome 网上应用店，需要个人自行翻墙。安装完成后再访问 Github 时，会多出几个按钮，如下图。这时候我们只要用 <strong>加速</strong> 按钮内的克隆地址进行克隆。你会发现下载速率就像开了飞机一样快。</p>
-<p><img src="6.png" alt="6"></p>
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
+      <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
+      
+
+      <!-- 归档列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+          <span class="tag-text">2021</span>
+        </span>
+        <ul>
           
-          <li class="previous">
-            <a href="/en/Analytics-and-Sitemap-Settings/" data-toggle="tooltip" data-placement="top" title="Analytics and Sitemap Settings">&larr; Previous Post</a>
+          <li>
+            05-30
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/hexo部署指南/" style="color: #0085a1">
+              <span>
+                Untitled
+                
+              </span>
+            </a>
           </li>
           
+          <li>
+            04-10
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Vue.js性能优化技巧/" style="color: #0085a1">
+              <span>
+                Vue.js性能优化技巧
+                
+              </span>
+            </a>
+          </li>
           
-          <li class="next">
-            <a href="/en/Four-Ways-to-Deploy-Hexo/" data-toggle="tooltip" data-placement="top" title="Four Ways to Deploy Hexo">Next Post &rarr;</a>
+          <li>
+            04-04
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/How-to-apply-JsDelivr-CDN-in-Hexo-theme-livemylife-Theme/" style="color: #0085a1">
+              <span>
+                How to apply JsDelivr CDN in Hexo-theme-livemylife Theme
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/How-to-Use-Internationalization（i18n）/" style="color: #0085a1">
+              <span>
+                How to Use Internationalization（i18n）
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-03
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/How-to-Use-Mathjax/" style="color: #0085a1">
+              <span>
+                How to Use Mathjax
+                
+              </span>
+            </a>
           </li>
           
         </ul>
-
-        
-        <!-- tip start -->
-        <!-- tip -->
-<!-- tip start -->
-<div class="tip">
-  <p>
-    
-      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
-    
-  </p>
-</div>
-<!-- tip end -->
-
-        <!-- tip end -->
-        
-
-        
-        <hr>
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-  <!-- gitalk start -->
-  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-  <div id="gitalk-container"></div>
-
-  
-    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
-    <script src="/js/comment/gitalk.js"></script>
-  
-
-  <script>
-    var gitalk = new Gitalk({
-      clientID: 'be77013e3cb3cb9e89f1',
-      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
-      repo: 'jasonluox',
-      owner: 'JasonLuox',
-      admin: 'JasonLuox',
-      id: 'Wed Jul 15 2020 19:41:43 GMT+0800', // Ensure uniqueness and length less than 50
-      distractionFreeMode: false, // Facebook-like distraction free mode
-      perPage: 10,
-      pagerDirection: 'last',
-      createIssueManually: false,
-      language: 'en',
-      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
-    });
-    gitalk.render('gitalk-container');
-
-    var gtFolded = () => {
-      setTimeout(function () {
-        let markdownBody = document.getElementsByClassName("markdown-body");
-        let list = Array.from(markdownBody);
-        list.forEach(item => {
-          if (item.clientHeight > 250) {
-            item.classList.add('gt-comment-body-folded');
-            item.style.maxHeight = '250px';
-            item.title = 'Click to Expand';
-            item.onclick = function () {
-              item.classList.remove('gt-comment-body-folded');
-              item.style.maxHeight = '';
-              item.title = '';
-              item.onclick = null;
-            };
-          }
-        })
-      }, 800);
-    }
-  </script>
-
-  <!-- gitalk end -->
-
-
-<!-- 2. gitment comment -->
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
-
       </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Github-%E8%AE%BF%E9%97%AE%E6%8F%90%E9%80%9F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Github 访问提速</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2-Github-%E7%9A%84-DNS-%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">查询 Github 的 DNS 解析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%B0-host-%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">添加到 host 文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B7%BB%E5%8A%A0-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">添加 DNS 服务器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%B7%E6%96%B0-DNS"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">刷新 DNS</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%8D%E8%B4%B9-CDN-%E6%8F%90%E9%80%9F-Github-%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">免费 CDN 提速 Github 静态资源访问</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%96%B0%E5%BB%BA-Github-%E4%BB%93%E5%BA%93"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">新建 Github 仓库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%8A%E4%BC%A0%E9%9C%80%E8%A6%81%E7%9A%84%E8%B5%84%E6%BA%90"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">上传需要的资源</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8F%91%E5%B8%83%E4%BB%93%E5%BA%93"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">发布仓库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%80%9A%E8%BF%87-JSDelivr-%E5%BC%95%E7%94%A8%E8%B5%84%E6%BA%90"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">通过 JSDelivr 引用资源</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Github-%E5%85%8B%E9%9A%86%E5%8A%A0%E9%80%9F"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Github 克隆加速</span></a></li></ol>
-        
-        </div>
-      </aside>
-    
-
-
-
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">FEATURED TAGS</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#Git" title="Git">Git</a>
-            
-          </div>
-        </section>
-        
-
-        <!-- Friends Blog -->
-        
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
+          <span class="tag-text">2020</span>
+        </span>
+        <ul>
+          
+          <li>
+            07-21
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Analytics-and-Sitemap-Settings/" style="color: #0085a1">
+              <span>
+                Analytics and Sitemap Settings
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            07-14
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Four-Ways-to-Deploy-Hexo/" style="color: #0085a1">
+              <span>
+                Four Ways to Deploy Hexo
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
+              <span>
+                Hexo-Theme-LiveMyLife
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
+              <span>
+                Hexo-Theme-LiveMyLife
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
       </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2019">
+          <span class="tag-text">2019</span>
+        </span>
+        <ul>
+          
+          <li>
+            06-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/IDEA-IDEA-26款实用插件/" style="color: #0085a1">
+              <span>
+                [IDEA] IDEA 26款实用插件
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            06-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-4-Hexo-图片插入/" style="color: #0085a1">
+              <span>
+                [Hexo] 4 Hexo 图片插入
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            06-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-3-Hexo-修改主题/" style="color: #0085a1">
+              <span>
+                [Hexo] 3 Hexo 修改主题
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            06-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-2-开始搭建-Github-Pages/" style="color: #0085a1">
+              <span>
+                [Hexo] 2 开始搭建 Github Pages
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            06-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-1-3-指令/" style="color: #0085a1">
+              <span>
+                [Hexo] 1.3 指令
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            06-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-1-2-配置/" style="color: #0085a1">
+              <span>
+                [Hexo] 1.2 配置
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            06-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-1-1-建站/" style="color: #0085a1">
+              <span>
+                [Hexo] 1.1 建站
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            06-08
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/en/Hexo-1-搭建个人博客/" style="color: #0085a1">
+              <span>
+                [Hexo] 1 搭建个人博客
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
     </div>
   </div>
-</article>
+</div>
 
 
+      <!-- 如果开启评论功能 -->
+      
+    </div>
 
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Visitors -->
+<h5><a href="/">VISITORS</a></h5>
 
-<!-- anchorjs end -->
+<div class="widget">
+  <span>
+    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
+  </span>
+  <br />
+  <span>
+    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
+  </span>
+</div>
 
+
+        <hr>
+    
+        <!-- Featured Tags -->
+
+<section>
+  <h5><a href="/tags/">FEATURED TAGS</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="7">Hexo-Theme-LiveMyLife</a>
+    
+    
+    
+    <a href="/tags/#Hexo" title="Hexo" rel="7">Hexo</a>
+    
+    
+    
+    <a href="/tags/#IDEA" title="IDEA" rel="1">IDEA</a>
+    
+    
+    
+    <a href="/tags/#Vue性能优化" title="Vue性能优化" rel="1">Vue性能优化</a>
+    
+    
+  </div>
+</section>
+
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+
+    
+    <img id="avatar_pic" src="/img/avatar/logo.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
+    
+
+    
+    <p>神一样的男人</p>
+    
+
+    <!-- SNS Link -->
+    <ul class="list-inline">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    </ul>
+  </div>
+</section>
+
+        <hr>
+    
+        <!-- RECENT POSTS -->
+
+<h5><a href="/">RECENT POSTS</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../../en/hexo%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">
+      <li>(no title)</li>
+    </a>
+    
+    <a href="../../../en/Vue.js%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/">
+      <li>Vue.js性能优化技巧</li>
+    </a>
+    
+    <a href="../../../en/How-to-apply-JsDelivr-CDN-in-Hexo-theme-livemylife-Theme/">
+      <li>How to apply JsDelivr CDN in Hexo-theme-livemylife Theme</li>
+    </a>
+    
+    <a href="../../../en/How-to-Use-Internationalization%EF%BC%88i18n%EF%BC%89/">
+      <li>How to Use Internationalization（i18n）</li>
+    </a>
+    
+    <a href="../../../en/How-to-Use-Mathjax/">
+      <li>How to Use Mathjax</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+        <!-- Friends Blog -->
+
+
+        <hr>
+    
+        <!-- Archives -->
+
+<h5><a href="/archives/">archives</a></h5>
+<div class="widget">
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="">May 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../04/">April 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2020/07/">July 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2020/04/">April 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2019/06/">June 2019</a><span class="archive-list-count">8</span></li></ul>
+</div>
+
+
+        <hr>
+    
+        <!-- Categories -->
+
+<h5><a href="/categories/">categories</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#Hexo-Theme-LiveMyLife">
+      <li>Hexo-Theme-LiveMyLife</li>
+    </a>
+    
+    <a href="/categories/#Hexo">
+      <li>Hexo</li>
+    </a>
+    
+    <a href="/categories/#IDEA">
+      <li>IDEA</li>
+    </a>
+    
+    <a href="/categories/#Vue性能优化">
+      <li>Vue性能优化</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+</div>
+
+
+    
+  </div>
+</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->

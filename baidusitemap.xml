@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://jasonluox.github.io/en/hexo%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2021-05-30</lastmod>
+  </url>
+  <url>
     <loc>https://jasonluox.github.io/en/Vue.js%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2021-04-10</lastmod>
   </url>
@@ -19,10 +23,6 @@
   <url>
     <loc>https://jasonluox.github.io/en/Analytics-and-Sitemap-Settings/</loc>
     <lastmod>2020-07-21</lastmod>
-  </url>
-  <url>
-    <loc>https://jasonluox.github.io/en/Github-%E5%8A%A0%E9%80%9F%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2020-07-15</lastmod>
   </url>
   <url>
     <loc>https://jasonluox.github.io/en/Four-Ways-to-Deploy-Hexo/</loc>
