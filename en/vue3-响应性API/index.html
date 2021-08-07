@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://jasonluox.github.io/en/vue3-响应性API/">
+  <title>
+    
+      响应性API - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Jason Luo&#39;s Golden House</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-post: url('/img/header_img/scenery/tree_stars.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/scenery/tree_stars.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/tree_stars.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/tree_stars.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/scenery/tree_stars.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
+              
+              <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+              
+            </div>
+            <h1>响应性API</h1>
+            <h2 class="subheading">一文带你深入理解响应性API</h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2021-06-08
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">18</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h3 id="响应性API"><a href="#响应性API" class="headerlink" title="响应性API"></a>响应性API</h3><p>好文： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/264373175">https://zhuanlan.zhihu.com/p/264373175</a></p>
+<h4 id="响应性基础API"><a href="#响应性基础API" class="headerlink" title="响应性基础API"></a>响应性基础API</h4><h5 id="reactive"><a href="#reactive" class="headerlink" title="reactive"></a>reactive</h5><p>返回对象的响应式副本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = reactive(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span><br></pre></td></tr></table></figure>
+<p>响应式转换是“深层”的——它影响所有嵌套 property。在基于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">ES2015 Proxy</a> 的实现中，返回的代理是<strong>不</strong>等于原始对象。建议只使用响应式代理，避免依赖原始对象。</p>
+<p>类型声明：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reactive</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">object</span>&gt;(<span class="params">target: T</span>): <span class="title">UnwrapNestedRefs</span>&lt;<span class="title">T</span>&gt;	</span></span><br></pre></td></tr></table></figure>
+<h5 id="readonly"><a href="#readonly" class="headerlink" title="readonly"></a>readonly</h5><p>获取一个对象 (响应式或纯对象) 或 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/refs-api.html#ref">ref</a> 并返回原始代理的只读代理。只读代理是深层的：访问的任何嵌套 property 也是只读的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> original = reactive(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> copy = readonly(original)</span><br><span class="line"></span><br><span class="line">watchEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 适用于响应性追踪</span></span><br><span class="line">  <span class="built_in">console</span>.log(copy.count)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 变更original 会触发侦听器依赖副本</span></span><br><span class="line">original.count++</span><br><span class="line"></span><br><span class="line"><span class="comment">// 变更副本将失败并导致警告： Attempt to assign to const or readonly variable</span></span><br><span class="line">copy.count++ </span><br><span class="line"><span class="comment">// 警告!reactivity.esm-bundler.js:337 Set operation on key &quot;count&quot; failed: target is readonly</span></span><br></pre></td></tr></table></figure>
+<h5 id="isProxy"><a href="#isProxy" class="headerlink" title="isProxy"></a>isProxy</h5><p>检查对象是 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#reactive"><code>reactive</code></a> 还是 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#readonly"><code>readonly</code></a>创建的代理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; isReactive &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> handler = &#123;</span><br><span class="line">    <span class="function"><span class="title">get</span>(<span class="params">obj, prop</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> prop <span class="keyword">in</span> obj ? obj[prop] : <span class="number">37</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;, handler)</span><br><span class="line"><span class="keyword">const</span> original = reactive(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">0</span> &#125;</span><br><span class="line"><span class="keyword">const</span> refObj = ref(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">isProxy(original)	<span class="comment">// true</span></span><br><span class="line">isProxy(obj)		<span class="comment">// true</span></span><br><span class="line">isProxy(refObj)		<span class="comment">// false</span></span><br><span class="line">isProxy(p)			<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h5 id="isReactive"><a href="#isReactive" class="headerlink" title="isReactive"></a>isReactive</h5><p>检查对象是否是 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#reactive"><code>reactive</code></a>创建的响应式 proxy。</p>
+<p>注： 如果 proxy 是 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#readonly"><code>readonly</code></a> 创建的，但还包装了由 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#reactive"><code>reactive</code></a> 创建的另一个 proxy，它也会返回 <code>true</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; reactive, isReactive, readonly &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> state = reactive(&#123;</span><br><span class="line">      name: <span class="string">&#x27;John&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 从普通对象创建的只读代理</span></span><br><span class="line">    <span class="keyword">const</span> plain = readonly(&#123;</span><br><span class="line">      name: <span class="string">&#x27;Mary&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">console</span>.log(isReactive(plain)) <span class="comment">// -&gt; false</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 从响应式代理创建的只读代理</span></span><br><span class="line">    <span class="keyword">const</span> stateCopy = readonly(state)</span><br><span class="line">    <span class="built_in">console</span>.log(isReactive(stateCopy)) <span class="comment">// -&gt; true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="isReadonly"><a href="#isReadonly" class="headerlink" title="isReadonly"></a>isReadonly</h5><p>检查对象是否是由<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#readonly"><code>readonly</code></a>创建的只读代理。</p>
+<p><strong>综合例子</strong> isProxy &amp; isReactive &amp; isReadonly</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    reactive, readonly, isProxy, isReactive, isReadonly</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> original = reactive(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span><br><span class="line">    <span class="keyword">const</span> copy = readonly(original)</span><br><span class="line">    <span class="keyword">const</span> plain = readonly(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span><br><span class="line">    </span><br><span class="line">    isProxy(original)		<span class="comment">// true</span></span><br><span class="line">    isReactive(original)	<span class="comment">// true</span></span><br><span class="line">    isReadonly(original)	<span class="comment">// false</span></span><br><span class="line">    </span><br><span class="line">    isProxy(copy)			<span class="comment">// true</span></span><br><span class="line">    isReactive(copy)		<span class="comment">// true</span></span><br><span class="line">    isReadonly(copy)		<span class="comment">// true</span></span><br><span class="line">    </span><br><span class="line">    isProxy(plain)			<span class="comment">// true</span></span><br><span class="line">    isReactive(plain)		<span class="comment">// false</span></span><br><span class="line">    isReadonly(plain)		<span class="comment">// true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="toRaw"><a href="#toRaw" class="headerlink" title="toRaw"></a>toRaw</h5><p>返回 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#reactive"><code>reactive</code></a> 或 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#readonly"><code>readonly</code></a> 代理的原始对象。这是一个转义口，可用于临时读取而不会引起代理访问/跟踪开销，也可用于写入而不会触发更改。不建议保留对原始对象的持久引用。请谨慎使用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> reactiveFoo = reactive(foo)</span><br><span class="line"><span class="keyword">const</span> copyFoo = readonly(reactiveFoo)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(toRaw(reactiveFoo) === foo) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(toRaw(copyFoo) === foo) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h5 id="markRaw"><a href="#markRaw" class="headerlink" title="markRaw"></a>markRaw</h5><p>标记一个对象，使其永远不会转换为代理。返回对象本身。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = markRaw(&#123;&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(isReactive(reactive(foo))) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 嵌套在其他响应式对象中时也可以使用</span></span><br><span class="line"><span class="keyword">const</span> bar = reactive(&#123; foo &#125;)</span><br><span class="line"><span class="built_in">console</span>.log(isReactive(bar.foo)) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj)			<span class="comment">// &#123;a: 1&#125;</span></span><br><span class="line"><span class="comment">// 通过markRaw 对obj增加属性 __v_skip: true</span></span><br><span class="line"><span class="built_in">console</span>.log(markRaw(obj))	<span class="comment">// &#123;a: 1,  __v_skip: true&#125;</span></span><br><span class="line"><span class="keyword">const</span> state = reactive(obj)</span><br><span class="line"><span class="built_in">console</span>.log(state) <span class="comment">// &#123;count: 0, __v_skip: true&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(isReactive(state)) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>有些值不应被设置为响应式的，例如复杂的第三方类实例或 Vue 组件对象。</li>
+<li>当渲染具有不可变数据源的大列表时，跳过代理转换可以提高性能。</li>
+</ul>
+<h5 id="shallowReactive"><a href="#shallowReactive" class="headerlink" title="shallowReactive"></a>shallowReactive</h5><p>定义浅响应式数据，仅代理对象自身的属性，嵌套对象属性不进行代理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = shallowReactive(&#123;</span><br><span class="line">    name: <span class="string">&#x27;Jason luo&#x27;</span>,</span><br><span class="line">    place: &#123;</span><br><span class="line">        province: <span class="string">&#x27;Jiang Xi&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">watch(<span class="function">() =&gt;</span> person.name, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`person&#x27;s name is changed to <span class="subst">$&#123;person.name&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br><span class="line">watch(<span class="function">() =&gt;</span> person.place.province, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`person&#x27;s province is changed to <span class="subst">$&#123;person.place.province&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    person.name = <span class="string">&#x27;Helen Li&#x27;</span></span><br><span class="line">    person.place.province = <span class="string">&#x27;HuBei&#x27;</span></span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// person&#x27;s name is changed to Helen Li</span></span><br></pre></td></tr></table></figure>
+<p>注：watch只能监听响应式数据</p>
+<h5 id="shallowReadonly"><a href="#shallowReadonly" class="headerlink" title="shallowReadonly"></a>shallowReadonly</h5><p>创建一个代理对象，使其自身属性为只读，嵌套属性不进行处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> state = shallowReadonly(&#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  nested: &#123;</span><br><span class="line">    bar: <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改变状态本身的property将失败 Attempt to assign to const or readonly variable</span></span><br><span class="line">state.foo++</span><br><span class="line"><span class="comment">// ...但适用于嵌套对象</span></span><br><span class="line">isReadonly(state.nested) <span class="comment">// false</span></span><br><span class="line">state.nested.bar++ <span class="comment">// 适用</span></span><br></pre></td></tr></table></figure>
+<h4 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h4><h5 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h5><p>接收一个内布置并返回一个响应式且可变的ref对象。ref对象具有指向内部值的单个property <code>value</code>。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count = ref(<span class="number">0</span>)</span><br><span class="line"><span class="built_in">console</span>.log(count.value) <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line">count.value++</span><br><span class="line"><span class="built_in">console</span>.log(count.value) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>如果将对象分配为 ref 值，则可以通过 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/basic-reactivity.html#reactive">reactive</a> 方法使该对象具有高度的响应式。</p>
+<p>类型声明：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Ref&lt;T&gt; &#123;</span><br><span class="line">  value: T</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ref</span>&lt;<span class="title">T</span>&gt;(<span class="params">value: T</span>): <span class="title">Ref</span>&lt;<span class="title">T</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>有时我们可能需要为 ref 的内部值指定复杂类型。我们可以通过在调用 <code>ref</code> 来覆盖默认推断时传递一个泛型参数来简洁地做到这一点：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = ref&lt;<span class="built_in">string</span> | <span class="built_in">number</span>&gt;(<span class="string">&#x27;foo&#x27;</span>) <span class="comment">// foo&#x27;s type: Ref&lt;string | number&gt;</span></span><br><span class="line"></span><br><span class="line">foo.value = <span class="number">123</span> <span class="comment">// ok!</span></span><br></pre></td></tr></table></figure>
+<p>如果泛型的类型未知，建议将 <code>ref</code> 转换为 <code>Ref</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useState</span>&lt;<span class="title">State</span> <span class="title">extends</span> <span class="title">string</span>&gt;(<span class="params">initial: State</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> state = ref(initial) <span class="keyword">as</span> Ref&lt;State&gt; <span class="comment">// state.value -&gt; State extends string</span></span><br><span class="line">  <span class="keyword">return</span> state</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>模板中访问</p>
+<p>当 <code>ref</code> 作为渲染上下文的属性返回（即在<code>setup()</code> 返回的对象中）并在模板中使用时，它会自动解套，无需在模板内额外书写 <code>.value</code>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line">                count: ref(0),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>作为响应式对象的属性访问</p>
+<p>当 ref 作为 reactive 对象的 property 被访问或修改时，也将自动解套 value 值，其行为类似普通属性：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count = ref(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">const</span> state = reactive(&#123;</span><br><span class="line">    count,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(state.count) <span class="comment">// 0</span></span><br><span class="line">state.count = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(count.value) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>注意如果将一个新的 ref 分配给现有的 ref， 将替换旧的 ref：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> otherCount = ref(<span class="number">2</span>)</span><br><span class="line">state.count = otherCount</span><br><span class="line"><span class="built_in">console</span>.log(state.count) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(count.value) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>注意当嵌套在 reactive Object 中时，ref 才会解套。从 Array 或者 Map 等原生集合类中访问 ref 时，不会自动解套：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = reactive([ref(<span class="number">0</span>)])</span><br><span class="line"><span class="comment">// 这里需要 .value</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>].value)</span><br><span class="line"><span class="keyword">const</span> map = reactive(<span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">&#x27;foo&#x27;</span>, ref(<span class="number">0</span>)]]))</span><br><span class="line"><span class="comment">// 这里需要 .value</span></span><br><span class="line"><span class="built_in">console</span>.log(map.get(<span class="string">&#x27;foo&#x27;</span>).value)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="unref"><a href="#unref" class="headerlink" title="unref"></a>unref</h5><p>如果参数是ref则返回内部值，否则返回参数本身。实现为 <code>val = isRef(val) ? val.value : val</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useFoo</span>(<span class="params">x: number | Ref&lt;number&gt;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> unwrapped = unref(x) <span class="comment">// unwrapped 确保现在是数字类型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>isRef</p>
+<p>判断一个值是否是ref对象</p>
+<h5 id="toRef"><a href="#toRef" class="headerlink" title="toRef"></a>toRef</h5><p>可以用来为源响应式对象上的 property 性创建一个 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/refs-api.html#ref"><code>ref</code></a>。然后可以将 ref 传递出去，从而保持对其源 property 的响应式连接。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> state = reactive(&#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  bar: <span class="number">2</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fooRef = toRef(state, <span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line"></span><br><span class="line">fooRef.value++</span><br><span class="line"><span class="built_in">console</span>.log(state.foo) <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">state.foo++</span><br><span class="line"><span class="built_in">console</span>.log(fooRef.value) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>当您要将 prop 的 ref 传递给复合函数时，<code>toRef</code> 很有用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">setup</span>(<span class="params">props</span>)</span> &#123;</span><br><span class="line">    useSomeFeature(toRef(props, <span class="string">&#x27;foo&#x27;</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="toRefs"><a href="#toRefs" class="headerlink" title="toRefs"></a>toRefs</h5><p>将响应式对象转换为普通对象，其中结果对象的每个 property 都是指向原始对象相应 property 的<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/refs-api.html#ref"><code>ref</code></a>。</p>
+<p>toRefs用于将一个reactive对象转化为属性全部为ref对象的普通对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> state = reactive(&#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  bar: <span class="number">2</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> stateAsRefs = toRefs(state)</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Type of stateAsRefs:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">  foo: Ref&lt;number&gt;,</span></span><br><span class="line"><span class="comment">  bar: Ref&lt;number&gt;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ref 和 原始property “链接”</span></span><br><span class="line">state.foo++</span><br><span class="line"><span class="built_in">console</span>.log(stateAsRefs.foo.value) <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">stateAsRefs.foo.value++</span><br><span class="line"><span class="built_in">console</span>.log(state.foo) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>当从合成函数返回响应式对象时，<code>toRefs</code> 非常有用，这样消费组件就可以在不丢失响应性的情况下对返回的对象进行分解/扩散：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useFeatureX</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> state = reactive(&#123;</span><br><span class="line">    foo: <span class="number">1</span>,</span><br><span class="line">    bar: <span class="number">2</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 逻辑运行状态</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 返回时转换为ref</span></span><br><span class="line">  <span class="keyword">return</span> toRefs(state)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 可以在不失去响应性的情况下破坏结构</span></span><br><span class="line">    <span class="keyword">const</span> &#123; foo, bar &#125; = useFeatureX()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      foo,</span><br><span class="line">      bar</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="customRef"><a href="#customRef" class="headerlink" title="customRef"></a>customRef</h5><p>创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行显式控制。它需要一个工厂函数，该函数接收 <code>track</code> 和 <code>trigger</code> 函数作为参数，并应返回一个带有 <code>get</code> 和 <code>set</code> 的对象。</p>
+<ul>
+<li>使用 <code>v-model</code> 使用自定义 ref 实现 <code>debounce</code> 的示例：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useDebouncedRef</span>(<span class="params">value, delay = <span class="number">200</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> customRef(<span class="function">(<span class="params">track, trigger</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="function"><span class="title">get</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        track()</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="function"><span class="title">set</span>(<span class="params">newValue</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(timeout)</span><br><span class="line">        timeout = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          value = newValue</span><br><span class="line">          trigger()</span><br><span class="line">        &#125;, delay)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: useDebouncedRef(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Typing：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">customRef</span>&lt;<span class="title">T</span>&gt;(<span class="params">factory: CustomRefFactory&lt;T&gt;</span>): <span class="title">Ref</span>&lt;<span class="title">T</span>&gt;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">type</span> <span class="title">CustomRefFactory</span>&lt;<span class="title">T</span>&gt; = (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  track: () =&gt; <span class="built_in">void</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">  trigger: () =&gt; <span class="built_in">void</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>) =&gt; </span>&#123;</span><br><span class="line">  get: <span class="function">() =&gt;</span> T</span><br><span class="line">  set: <span class="function">(<span class="params">value: T</span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="shallowRef"><a href="#shallowRef" class="headerlink" title="shallowRef"></a>shallowRef</h5><p>创建一个 ref，它跟踪自己的 <code>.value</code> 更改，但不会使其值成为响应式的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用ref</span></span><br><span class="line"><span class="comment">// 如果传入 ref 的是一个对象，将调用 reactive 方法进行深层响应转换。</span></span><br><span class="line"><span class="keyword">const</span> refObj = ref(&#123;&#125;)</span><br><span class="line">refObj.value = &#123; <span class="attr">b</span>: <span class="number">2</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(refObj)</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    &quot;_rawValue&quot;: &#123; &quot;b&quot;: 2 &#125;,</span></span><br><span class="line"><span class="comment">    &quot;_shallow&quot;: false,</span></span><br><span class="line"><span class="comment">    &quot;__v_isRef&quot;: true,</span></span><br><span class="line"><span class="comment">    &quot;_value&quot;: &#123; &quot;b&quot;: 2 &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">console</span>.log(isReactive(refObj.value))  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用shallowRef</span></span><br><span class="line"><span class="keyword">const</span> shallowRefObj = shallowRef(&#123;&#125;)</span><br><span class="line">shallowRefObj.value = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(shallowRefObj)</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    &quot;_rawValue&quot;: &#123; &quot;a&quot;: 1 &#125;,</span></span><br><span class="line"><span class="comment">    &quot;_shallow&quot;: true,</span></span><br><span class="line"><span class="comment">    &quot;__v_isRef&quot;: true,</span></span><br><span class="line"><span class="comment">    &quot;_value&quot;: &#123; &quot;a&quot;: 1 &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">console</span>.log(isReactive(shallowRefObj.value))  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h5 id="triggerRef"><a href="#triggerRef" class="headerlink" title="triggerRef"></a>triggerRef</h5><p><code>shallowRef()</code> 函数不会代理 <code>.value</code> 所引用的对象，因此我们修改对象值的时候不会触发响应，这时我们可以通过 <code>triggerRef()</code> 函数强制触发响应：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> shallow = shallowRef(&#123;</span><br><span class="line">  greet: <span class="string">&#x27;Hello, world&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第一次运行时记录一次 &quot;Hello, world&quot;</span></span><br><span class="line">watchEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(shallow.value.greet)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这不会触发watchEffect，因为 ref 很浅层</span></span><br><span class="line">shallow.value.greet = <span class="string">&#x27;Hello, universe&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Logs &quot;Hello, universe&quot;</span></span><br><span class="line">triggerRef(shallow)</span><br></pre></td></tr></table></figure>
+<h4 id="computed-amp-watch"><a href="#computed-amp-watch" class="headerlink" title="computed &amp; watch"></a>computed &amp; watch</h4><h5 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h5><p>使用 getter 函数，并为从 getter 返回的值返回一个不变的响应式 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/api/refs-api.html#ref">ref</a> 对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count = ref(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">const</span> plusOne = computed(<span class="function">() =&gt;</span> count.value + <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(plusOne.value) <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">plusOne.value++ <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<p>或者，它可以使用具有 <code>get</code> 和 <code>set</code> 函数的对象来创建可写的 ref 对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count = ref(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">const</span> plusOne = computed(&#123;</span><br><span class="line">  get: <span class="function">() =&gt;</span> count.value + <span class="number">1</span>,</span><br><span class="line">  set: <span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    count.value = val - <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">plusOne.value = <span class="number">1</span></span><br><span class="line"><span class="built_in">console</span>.log(count.value) <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<p><strong>类型声明：</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// read-only</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">declare</span> <span class="function"><span class="keyword">function</span> <span class="title">computed</span>&lt;<span class="title">T</span>&gt;(<span class="params">getter: ComputedGetter&lt;T&gt;</span>): <span class="title">ComputedRef</span>&lt;<span class="title">T</span>&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// writable</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">declare</span> <span class="function"><span class="keyword">function</span> <span class="title">computed</span>&lt;<span class="title">T</span>&gt;(<span class="params">options: WritableComputedOptions&lt;T&gt;</span>): <span class="title">WritableComputedRef</span>&lt;<span class="title">T</span>&gt;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">declare</span> <span class="keyword">type</span> ComputedGetter&lt;T&gt; = <span class="function">(<span class="params">ctx?: <span class="built_in">any</span></span>) =&gt;</span> T;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">declare</span> <span class="keyword">interface</span> WritableComputedOptions&lt;T&gt; &#123;</span><br><span class="line">    get: ComputedGetter&lt;T&gt;;</span><br><span class="line">    set: ComputedSetter&lt;T&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="watchEffect"><a href="#watchEffect" class="headerlink" title="watchEffect"></a>watchEffect</h5><p>在响应式地跟踪其依赖项时立即运行一个函数，并在更改依赖项时重新运行它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count = ref(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">watchEffect(<span class="function">() =&gt;</span> <span class="built_in">console</span>.log(count.value))</span><br><span class="line"><span class="comment">// -&gt; logs 0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  count.value++</span><br><span class="line">  <span class="comment">// -&gt; logs 1</span></span><br><span class="line">&#125;, <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>类型声明：</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">watchEffect</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  effect: (onInvalidate: InvalidateCbRegistrator) =&gt; <span class="built_in">void</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">  options?: WatchEffectOptions</span></span></span><br><span class="line"><span class="function"><span class="params"></span>): <span class="title">StopHandle</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">interface</span> <span class="title">WatchEffectOptions</span> </span>&#123;</span><br><span class="line">  flush?: <span class="string">&#x27;pre&#x27;</span> | <span class="string">&#x27;post&#x27;</span> | <span class="string">&#x27;sync&#x27;</span>  <span class="comment">// default: &#x27;pre&#x27;</span></span><br><span class="line">  onTrack?: <span class="function">(<span class="params">event: DebuggerEvent</span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line">  onTrigger?: <span class="function">(<span class="params">event: DebuggerEvent</span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> DebuggerEvent &#123;</span><br><span class="line">  effect: ReactiveEffect</span><br><span class="line">  target: <span class="built_in">any</span></span><br><span class="line">  <span class="keyword">type</span>: OperationTypes</span><br><span class="line">  key: <span class="built_in">string</span> | symbol | <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> InvalidateCbRegistrator = <span class="function">(<span class="params">invalidate: () =&gt; <span class="built_in">void</span></span>) =&gt;</span> <span class="built_in">void</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> StopHandle = <span class="function">() =&gt;</span> <span class="built_in">void</span></span><br></pre></td></tr></table></figure>
+<p><strong>停止侦听</strong></p>
+<p>当<code>watchEffect</code>在组件的 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/composition-api-setup.html">setup()</a> 函数或<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/composition-api-lifecycle-hooks.html">生命周期钩子</a>被调用时，侦听器会被链接到该组件的生命周期，并在组件卸载时自动停止。</p>
+<p>在一些情况下，也可以显式调用返回值以停止侦听：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stop = watchEffect(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// later</span></span><br><span class="line">stop()</span><br></pre></td></tr></table></figure>
+<p><strong>清除副作用</strong></p>
+<p>有时副作用函数会执行一些异步的副作用，这些响应需要在其失效时清除 (即完成之前状态已改变了) 。所以侦听副作用传入的函数可以接收一个 <code>onInvalidate</code> 函数作入参，用来注册清理失效时的回调。当以下情况发生时，这个失效回调会被触发：</p>
+<ul>
+<li>副作用即将重新执行时</li>
+<li>侦听器被停止 (如果在 <code>setup()</code> 或生命周期钩子函数中使用了 <code>watchEffect</code>，则在组件卸载时)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">watchEffect(<span class="function"><span class="params">onInvalidate</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> token = performAsyncOperation(id.value)</span><br><span class="line">  onInvalidate(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// id has changed or watcher is stopped.</span></span><br><span class="line">    <span class="comment">// invalidate previously pending async operation</span></span><br><span class="line">    token.cancel()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我们之所以是通过传入一个函数去注册失效回调，而不是从回调返回它，是因为返回值对于异步错误处理很重要。</p>
+<p>在执行数据请求时，副作用函数往往是一个异步函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = ref(<span class="literal">null</span>)</span><br><span class="line">watchEffect(<span class="keyword">async</span> onInvalidate =&gt; &#123;</span><br><span class="line">  onInvalidate(<span class="function">() =&gt;</span> &#123;...&#125;) <span class="comment">// 我们在Promise解析之前注册清除函数</span></span><br><span class="line">  data.value = <span class="keyword">await</span> fetchData(props.id)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我们知道异步函数都会隐式地返回一个 Promise，但是清理函数必须要在 Promise 被 resolve 之前被注册。另外，Vue 依赖这个返回的 Promise 来自动处理 Promise 链上的潜在错误。</p>
+<p><strong>副作用刷新时机</strong></p>
+<p>Vue 的响应性系统会缓存副作用函数，并异步地刷新它们，这样可以避免同一个“tick” 中多个状态改变导致的不必要的重复调用。在核心的具体实现中，组件的 <code>update</code> 函数也是一个被侦听的副作用。当一个用户定义的副作用函数进入队列时，默认情况下，会在所有的组件 <code>update</code> <strong>前</strong>执行：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; count &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">const</span> count = ref(<span class="number">0</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">      watchEffect(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(count.value)</span></span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line">        count</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中：</p>
+<ul>
+<li><code>count</code> 会在初始运行时同步打印出来</li>
+<li>更改 <code>count</code> 时，将在组件<strong>更新前</strong>执行副作用。</li>
+</ul>
+<p>如果需要在组件更新后重新运行侦听器副作用，我们可以传递带有 <code>flush</code> 选项的附加 <code>options</code> 对象 (默认为 <code>&#39;pre&#39;</code>)：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fire before component updates</span></span><br><span class="line">watchEffect(</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    flush: <span class="string">&#x27;post&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><code>flush</code> 选项还接受 <code>sync</code>，这将强制效果始终同步触发。然而，这是低效的，应该很少需要。</p>
+<p><strong>侦听器调试</strong></p>
+<p><code>onTrack</code> 和 <code>onTrigger</code> 选项可用于调试侦听器的行为。</p>
+<ul>
+<li><code>onTrack</code> 将在响应式 property 或 ref 作为依赖项被追踪时被调用。</li>
+<li><code>onTrigger</code> 将在依赖项变更导致副作用被触发时被调用。</li>
+</ul>
+<p>这两个回调都将接收到一个包含有关所依赖项信息的调试器事件。建议在以下回调中编写 <code>debugger</code> 语句来检查依赖关系：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">watchEffect(</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    <span class="comment">/* 副作用 */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="function"><span class="title">onTrigger</span>(<span class="params">e</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">debugger</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><code>onTrack</code> 和 <code>onTrigger</code> 只能在开发模式下工作。</p>
+<h5 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h5><p><code>watch</code> API 完全等同于组件<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/computed.html#侦听器">侦听器</a> property。<code>watch</code> 需要侦听特定的数据源，并在回调函数中执行副作用。默认情况下，它也是惰性的，即只有当被侦听的源发生变化时才执行回调。</p>
+<ul>
+<li>与 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#watcheffect">watchEffect</a> 比较，<code>watch</code> 允许我们：<ul>
+<li>懒执行副作用；</li>
+<li>更具体地说明什么状态应该触发侦听器重新运行；</li>
+<li>访问侦听状态变化前后的值。</li>
+</ul>
+</li>
+</ul>
+<p><strong>侦听单个数据源</strong></p>
+<p>侦听器数据源可以是返回值的 getter 函数，也可以直接是 <code>ref</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 侦听一个 getter</span></span><br><span class="line"><span class="keyword">const</span> state = reactive(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;)</span><br><span class="line">watch(</span><br><span class="line">  () =&gt; state.count,</span><br><span class="line">  (count, prevCount) =&gt; &#123;</span><br><span class="line">    <span class="comment">/* ... */</span></span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 直接侦听ref</span></span><br><span class="line"><span class="keyword">const</span> count = ref(<span class="number">0</span>)</span><br><span class="line">watch(count, <span class="function">(<span class="params">count, prevCount</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>侦听多个数据源</strong></p>
+<p>侦听器还可以使用数组同时侦听多个源：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">watch([fooRef, barRef], <span class="function">(<span class="params">[foo, bar], [prevFoo, prevBar]</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>与<code>watchEffect</code>共享的行为</strong></p>
+<p><code>watch</code> 与 <a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#watcheffect"><code>watchEffect</code></a>共享<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#停止侦听">停止侦听</a>，<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#清除副作用">清除副作用</a> (相应地 <code>onInvalidate</code> 会作为回调的第三个参数传入)、<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#副作用刷新时机">副作用刷新时机</a>和<a target="_blank" rel="noopener" href="https://vue3js.cn/docs/zh/guide/reactivity-computed-watchers.html#侦听器调试">侦听器调试</a>行为。</p>
+<h5 id="watchEffect和watch的区别"><a href="#watchEffect和watch的区别" class="headerlink" title="watchEffect和watch的区别"></a>watchEffect和watch的区别</h5><ul>
+<li><code>watch</code>是需要传入侦听的数据源，而<code>watchEffect</code> 是自动收集数据源作为依赖</li>
+<li><code>watch</code>可以访问侦听状态变化前后的值，而<code>watchEffect</code>获取的是改变后的值</li>
+<li>watchEffect是立即执行，没有惰性，页面的首次加载就会执行，自动检测内部代码，代码中有依赖 便会执行。watch可以通过<code>immediate</code>参数来控制是否是惰性的</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><h5 id="ref和reactive的区别"><a href="#ref和reactive的区别" class="headerlink" title="ref和reactive的区别"></a>ref和reactive的区别</h5><p>使用 ref 和 reactive 的区别，可以通过如何撰写标准的 JavaScript 逻辑来比较：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 风格 1: 将变量分离</span></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">0</span></span><br><span class="line"><span class="keyword">let</span> y = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updatePosition</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  x = e.pageX</span><br><span class="line">  y = e.pageY</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --- 与下面的相比较 ---</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 风格 2: 单个对象</span></span><br><span class="line"><span class="keyword">const</span> pos = &#123;</span><br><span class="line">  x: <span class="number">0</span>,</span><br><span class="line">  y: <span class="number">0</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updatePosition</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  pos.x = e.pageX</span><br><span class="line">  pos.y = e.pageY</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>如果使用 <code>ref</code>，我们实际上就是将风格 (1) 转换为使用 ref (为了让基础类型值具有响应性) 的更细致的写法。</p>
+</li>
+<li><p>使用 <code>reactive</code> 和风格 (2) 一致。我们只需要通过 <code>reactive</code> 创建这个对象。</p>
+</li>
+</ul>
+<p>而只使用 reactive 的问题是，使用组合函数时必须始终保持对这个所返回对象的引用以保持响应性。这个对象不能被解构或展开：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组合函数：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useMousePosition</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> pos = reactive(&#123;</span><br><span class="line">    x: <span class="number">0</span>,</span><br><span class="line">    y: <span class="number">0</span>,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> pos</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 消费者组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 这里会丢失响应性!</span></span><br><span class="line">    <span class="keyword">const</span> &#123; x, y &#125; = useMousePosition()</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      x,</span><br><span class="line">      y,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里会丢失响应性!</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      ...useMousePosition(),</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这是保持响应性的唯一办法！</span></span><br><span class="line">    <span class="comment">// 你必须返回 `pos` 本身，并按 `pos.x` 和 `pos.y` 的方式在模板中引用 x 和 y。</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      pos: useMousePosition(),</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>toRefs</code> API 用来提供解决此约束的办法——它将响应式对象的每个 property 都转成了相应的 ref。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useMousePosition</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> pos = reactive(&#123;</span><br><span class="line">    x: <span class="number">0</span>,</span><br><span class="line">    y: <span class="number">0</span>,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> toRefs(pos)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// x &amp; y 现在是 ref 形式了!</span></span><br><span class="line"><span class="keyword">const</span> &#123; x, y &#125; = useMousePosition()</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/vue3-深入响应式原理/" data-toggle="tooltip" data-placement="top" title="深入响应式原理">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Tue Jun 08 2021 12:34:17 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%93%8D%E5%BA%94%E6%80%A7API"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">响应性API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%93%8D%E5%BA%94%E6%80%A7%E5%9F%BA%E7%A1%80API"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">响应性基础API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#reactive"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">reactive</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#readonly"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">readonly</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#isProxy"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">isProxy</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#isReactive"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">isReactive</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#isReadonly"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">isReadonly</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#toRaw"><span class="toc-nav-number">1.1.6.</span> <span class="toc-nav-text">toRaw</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#markRaw"><span class="toc-nav-number">1.1.7.</span> <span class="toc-nav-text">markRaw</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#shallowReactive"><span class="toc-nav-number">1.1.8.</span> <span class="toc-nav-text">shallowReactive</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#shallowReadonly"><span class="toc-nav-number">1.1.9.</span> <span class="toc-nav-text">shallowReadonly</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Refs"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Refs</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ref"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">ref</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#unref"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">unref</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#toRef"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">toRef</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#toRefs"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">toRefs</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#customRef"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">customRef</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#shallowRef"><span class="toc-nav-number">1.2.6.</span> <span class="toc-nav-text">shallowRef</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#triggerRef"><span class="toc-nav-number">1.2.7.</span> <span class="toc-nav-text">triggerRef</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#computed-amp-watch"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">computed &amp; watch</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#computed"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">computed</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#watchEffect"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">watchEffect</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#watch"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">watch</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#watchEffect%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">watchEffect和watch的区别</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">其他</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#ref%E5%92%8Creactive%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">ref和reactive的区别</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
+            
+            <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='我要变强，为此不惜一切...,一念往，尽作尘泥罢...,玻璃晴朗，橘子辉煌...,我心即地狱，管他罪孽滔天...,我要这天，再遮不住我眼...,我要这地，再埋不了我心...,斯若晴空，何惧冰寒...,这灯红酒绿的世界啊...,不要放弃，哪怕付出所有...' color='#CDF0EA,#F9F9F9,#F7DBF0,#BEAEE2,#F38181,#FCE38A,#EAFFD0,#95E1D3,#80D6FF'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://jasonluox.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

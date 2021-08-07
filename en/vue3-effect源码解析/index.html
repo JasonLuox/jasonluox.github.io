@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://jasonluox.github.io/en/vue3-effect源码解析/">
+  <title>
+    
+      effect源码解析 - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Jason Luo&#39;s Golden House</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-post: url('/img/header_img/scenery/tree_stars.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/scenery/tree_stars.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/tree_stars.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/tree_stars.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/scenery/tree_stars.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
+              
+              <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+              
+            </div>
+            <h1>effect源码解析</h1>
+            <h2 class="subheading">分析vue3中effect的实现</h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2021-06-06
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">12</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2.9k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="effect源码解析"><a href="#effect源码解析" class="headerlink" title="effect源码解析"></a>effect源码解析</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29582173/article/details/109851515">https://blog.csdn.net/qq_29582173/article/details/109851515</a></p>
+<p>Vue3 的核心就是响应式系统，effect是vue3响应式系统的核心。</p>
+<h3 id="什么是effect"><a href="#什么是effect" class="headerlink" title="什么是effect"></a>什么是effect</h3><p>effect 一直穿插在 tranger 和 track 之间。其实单纯的响应式原理，根本不需要 effect，那么 effect 到底是什么呢？<br>下面我们来看一下 effect 源码中的测试用例：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package/reactivity/__tests__/effect.spec.ts</span></span><br><span class="line">it(<span class="string">&#x27;should observe multiple properties&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dummy</span><br><span class="line">    <span class="keyword">const</span> counter = reactive(&#123; <span class="attr">num1</span>: <span class="number">0</span>, <span class="attr">num2</span>: <span class="number">0</span> &#125;)</span><br><span class="line">    effect(<span class="function">() =&gt;</span> (dummy = counter.num1 + counter.num1 + counter.num2))</span><br><span class="line"></span><br><span class="line">    expect(dummy).toBe(<span class="number">0</span>)</span><br><span class="line">    counter.num1 = counter.num2 = <span class="number">7</span></span><br><span class="line">    expect(dummy).toBe(<span class="number">21</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我们先看一下这段代码是用来干啥的：</p>
+<ul>
+<li>声明 dummy 变量，和响应式的 counter 对象</li>
+<li>在 effect 回调函数中把 counter 的 num1 num2 属性的和赋值给 dummy</li>
+<li>断言 dummy 是否等于 0</li>
+<li>修改 counter 的 num1 和 num2 属性</li>
+<li>然后断言 dummy 是否是 21</li>
+</ul>
+<p>这个和我们经常用的一个东西是不是很熟悉？没错，就是 <strong>computed</strong><br>下面我们来看一下 computed 的测试用例来对比一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/reactivity/__tests__/computed.spec.ts</span></span><br><span class="line">it(<span class="string">&#x27;should return updated value&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> value = reactive&lt;&#123; foo?: number &#125;&gt;(&#123;&#125;)</span><br><span class="line">    <span class="keyword">const</span> cValue = computed(<span class="function">() =&gt;</span> value.foo)</span><br><span class="line">    expect(cValue.value).toBe(<span class="literal">undefined</span>)</span><br><span class="line">    value.foo = <span class="number">1</span></span><br><span class="line">    expect(cValue.value).toBe(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面的代码很好理解，计算属性 cValue 和 value.foo 关联，当 value.foo 变化的时候断言 cValue.value.<br>这样看下来 effect 和 computed 的作用是不是很相似.</p>
+<p>从这里就可以看出来，effect 就是副作用的意思。顾名思义就是响应式的副产品。每次发出了 get 时收集 effect，每次 set 时触发我们收集的 effect。这样我们就可以做一些响应式数据之外的一些事情了。<br>那么，下面我们来看一下 effect 到底是怎么实现的。</p>
+<h3 id="effect的实现原理"><a href="#effect的实现原理" class="headerlink" title="effect的实现原理"></a>effect的实现原理</h3><p>在看 effect 源码之前，我们首先要明确一点：effect 应该如何实现</p>
+<ul>
+<li>首先，在我们给 effect 传递的回调参数中的响应式数据的 get 被触发后，我们的 effect 就会被收集起来</li>
+<li>然后，每个响应式数据被触发的时候都可能有多个相关联的 effect，所以每个数据都需要有一个用来收集 effect 的收集器，即源码中的 deps，当响应式的数据 set 属性被触发时执行这些 effect</li>
+<li>最后，为了数据的单一性，我们的 deps 不能放在响应式数据本身，所以我们需要有个集合来储存响应式数据 target 和 deps 的关系</li>
+</ul>
+<h3 id="effect源码"><a href="#effect源码" class="headerlink" title="effect源码"></a>effect源码</h3><p><code>export function effect</code></p>
+<p>effect 的源码都在<strong>effect.ts</strong>这个文件里面，我们这里先看一下暴露的 effect 函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">effect</span>&lt;<span class="title">T</span> = <span class="title">any</span>&gt;(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    fn: () =&gt; T, <span class="comment">//回调函数</span></span></span></span><br><span class="line"><span class="function"><span class="params">    options: ReactiveEffectOptions = EMPTY_OBJ <span class="comment">//传入的参数</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>): <span class="title">ReactiveEffect</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//先判断fn是不是effect，如果是则取出原始值</span></span><br><span class="line">    <span class="keyword">if</span> (isEffect(fn)) &#123;</span><br><span class="line">    	fn = fn.raw</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//创建新的effect</span></span><br><span class="line">	<span class="keyword">const</span> effect = createReactiveEffect(fn, options)</span><br><span class="line">	<span class="comment">//如果传入的lazy参数为false</span></span><br><span class="line">	<span class="keyword">if</span> (!options.lazy) &#123;</span><br><span class="line">    	<span class="comment">//立即执行我们创建的effect</span></span><br><span class="line">    	effect()</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> effect</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>整个函数的结构很简单：</p>
+<ul>
+<li>接收一个回调函数和 options 参数(options 参数后面介绍)</li>
+<li>判断传入的回调函数是不是 effect，如果是取出原始值</li>
+<li>调用 createReactiveEffect 创建 effect</li>
+<li>如果传入的 options 参数中的 lazy 为 false 则执行 effect</li>
+<li>最后返回 effect</li>
+</ul>
+<p>这里，我们顺便介绍一下 effect 的 options 参数：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> ReactiveEffectOptions &#123;</span><br><span class="line">  lazy?: <span class="built_in">boolean</span> <span class="comment">//是否延迟触发effect</span></span><br><span class="line">  scheduler?: <span class="function">(<span class="params">job: ReactiveEffect</span>) =&gt;</span> <span class="built_in">void</span> <span class="comment">//调度函数</span></span><br><span class="line">  onTrack?: <span class="function">(<span class="params">event: DebuggerEvent</span>) =&gt;</span> <span class="built_in">void</span> <span class="comment">//追踪时触发</span></span><br><span class="line">  onTrigger?: <span class="function">(<span class="params">event: DebuggerEvent</span>) =&gt;</span> <span class="built_in">void</span> <span class="comment">//触发回调时触发</span></span><br><span class="line">  onStop?: <span class="function">() =&gt;</span> <span class="built_in">void</span> <span class="comment">//停止监听时触发</span></span><br><span class="line">  allowRecurse?: <span class="built_in">boolean</span> <span class="comment">//是否允许递归调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的源码可以看出，该函数的核心就是 createReactiveEffect。</p>
+<p><code>ceateReactiveEffect</code></p>
+<p><code>createReactiveEffect</code> 函数主要是用来创建<code>effect</code>，下面我们看一下<code>createReactiveEffect</code>的实现：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createReactiveEffect</span>&lt;<span class="title">T</span> = <span class="title">any</span>&gt;(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  fn: () =&gt; T,</span></span></span><br><span class="line"><span class="function"><span class="params">  options: ReactiveEffectOptions <span class="comment">//选项</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>): <span class="title">ReactiveEffect</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> effect = <span class="function"><span class="keyword">function</span> <span class="title">reactiveEffect</span>(<span class="params"></span>): <span class="title">unknown</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!effect.active) &#123;<span class="comment">//判断是否是激活状态</span></span><br><span class="line">      <span class="keyword">return</span> options.scheduler ? <span class="literal">undefined</span> : fn()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!effectStack.includes(effect)) &#123;</span><br><span class="line">      cleanup(effect)</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//然后重新进行依赖收集</span></span><br><span class="line">        enableTracking()</span><br><span class="line">        <span class="comment">//effect入栈</span></span><br><span class="line">        effectStack.push(effect)</span><br><span class="line">        activeEffect = effect</span><br><span class="line">        <span class="keyword">return</span> fn()</span><br><span class="line">      &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        effectStack.pop()</span><br><span class="line">        resetTracking()</span><br><span class="line">        activeEffect = effectStack[effectStack.length - <span class="number">1</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">as</span> ReactiveEffect</span><br><span class="line">  <span class="comment">//将各种数据挂载到effect上，覆盖更新</span></span><br><span class="line">  effect.id = uid++ <span class="comment">//自增ID，唯一标识</span></span><br><span class="line">  effect.allowRecurse = !!options.allowRecurse</span><br><span class="line">  effect._isEffect = <span class="literal">true</span> <span class="comment">//用于标识方法是不是effect</span></span><br><span class="line">  effect.active = <span class="literal">true</span> <span class="comment">//effect是否激活</span></span><br><span class="line">  effect.raw = fn <span class="comment">//effect传入的fn</span></span><br><span class="line">  effect.deps = [] <span class="comment">//持有当前effect的dep数组</span></span><br><span class="line">  effect.options = options <span class="comment">//创建effect传入的options</span></span><br><span class="line">  <span class="keyword">return</span> effect</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们先来看一下这里面的<code>reactiveEffect</code>函数：</p>
+<ul>
+<li>先判断是否是激活状态，如果不是激活状态，根据调度函数的状态返回不同的结果</li>
+<li>如果当前 effect 收集器effectStack不包含当前 effect 则进行后续处理</li>
+<li>接着cleanup清除依赖</li>
+<li>然后重新收集依赖，将 effect入栈<code>effectStack</code>，并将 <code>activeEffect</code> 设置为当前的 effect(主要是为了收集依赖的时候使用)，返回执行的回调函数</li>
+<li>最后将当前 effect 出栈，恢复之前的状态</li>
+</ul>
+<p><code>reactiveEffect</code>函数之后，将各种数据挂载到 effect 上，覆盖更新。下面我们来介绍一下 effect 的其他属性：</p>
+<ul>
+<li><code>id</code>  effect 自增 ID，唯一标识</li>
+<li><code>allowRecurse</code>  是否允许递归，默认为 false</li>
+<li><code>_isEffect</code>  用于标识当前函数是不是 effect，默认为 true</li>
+<li><code>active</code>  当前 effect 是否激活，默认为 false。调用 stop 函数之后，修改为 false</li>
+<li><code>raw</code>  effect 传入的 fn 回调函数(就是我们上面提到的原始值)</li>
+<li><code>deps</code>  持有当前 effect 的 deps 数组</li>
+<li><code>options</code>  创建 effect 传入的 options 参数</li>
+</ul>
+<p>上面提到了 stop 函数，我们先看一下 stop 方法的实现：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">stop</span>(<span class="params">effect: ReactiveEffect</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (effect.active) &#123;</span><br><span class="line">    cleanup(effect)</span><br><span class="line">    <span class="keyword">if</span> (effect.options.onStop) &#123;</span><br><span class="line">      effect.options.onStop()</span><br><span class="line">    &#125;</span><br><span class="line">    effect.active = <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>stop 函数的主要作用就是停止当前的 effect，当调用该方法以后，会清空其他对象的 effect 依赖，同时调用 onStop 回调，最后将 effect 激活状态设为 false。</p>
+<p>这样的话，下次调用 effect 的时候不会进行依赖的收集。</p>
+<p>接着，我们来看一下 cleanup 函数：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cleanup</span>(<span class="params">effect: ReactiveEffect</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; deps &#125; = effect</span><br><span class="line">  <span class="keyword">if</span> (deps.length) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; deps.length; i++) &#123;</span><br><span class="line">      deps[i].delete(effect)</span><br><span class="line">    &#125;</span><br><span class="line">    deps.length = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，deps 就是持有 effect 的依赖数组。其中每个数组元素是对应对象某个 key 的全部依赖。cleanup 的大概实现就是先把 effect 从 deps 数组中移除，然后清空 deps 数组。</p>
+<p>总的来说，createReactiveEffect 函数，创建了 effect 并挂载了各种属性。而 effect 函数，会在执行过程中完成依赖的收集。</p>
+<p>那么，effect 是怎么收集依赖的呢，我们上面提到过，当 effect 运行的时候，当前的对象的 key 的依赖 set 集合会把 effect 收集进去。</p>
+<h3 id="track"><a href="#track" class="headerlink" title="track"></a>track</h3><p>Vue3 中在数据劫持的过程中，get 会触发 track 函数进行依赖的收集，set 会触发 trigger 方法执行我们收集到的依赖方法。</p>
+<p>下面，我们来看一下 track 函数是怎么进行依赖收集的。</p>
+<p>下面我们来分析一下 track 方法：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">track</span>(<span class="params">target: <span class="built_in">object</span>, <span class="keyword">type</span>: TrackOpTypes, key: unknown</span>) </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<p>该方法接收三个参数</p>
+<ul>
+<li><code>target</code>  触发 track 的对象</li>
+<li><code>type</code>  表示触发 track 的类型(主要有 get、has、iterate 三种类型)</li>
+<li><code>key</code>  表示触发当前 track 方法对应的 object 属性 key</li>
+</ul>
+<p>首先根据<code>shouldTrack</code>和<code>activeEffect</code>判断是否进行依赖收集。（这里的<strong>activeEffect</strong>就是我们上面提到的跟收集依赖相关的属性）</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!shouldTrack || activeEffect === <span class="literal">undefined</span>) &#123;</span><br><span class="line">    <span class="comment">//满足该条件则不进行依赖收集</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接着，判断 targetMap 是否包含当前对象对应的依赖集合，则创建新的依赖集合</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> depsMap = targetMap.get(target)</span><br><span class="line"><span class="keyword">if</span> (!depsMap) &#123;</span><br><span class="line">    targetMap.set(target, (depsMap = <span class="keyword">new</span> <span class="built_in">Map</span>()))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>判断有无当前 key 对应的 dep，没有则创建</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dep = depsMap.get(key)</span><br><span class="line"><span class="keyword">if</span> (!dep) &#123;</span><br><span class="line">    depsMap.set(key, (dep = <span class="keyword">new</span> <span class="built_in">Set</span>()))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，如果当前 key 的依赖集合没有当前 activeEffect(就是当前的 effect)，则把 activeEffect 加入到集合中，同时把 dep 加入到 deps 数组中。最后如果是开发环境并且 onTrack 函数存在，则触发 onTrack 函数</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!dep.has(activeEffect)) &#123;</span><br><span class="line">    dep.add(activeEffect)</span><br><span class="line">    activeEffect.deps.push(dep)</span><br><span class="line">    <span class="keyword">if</span> (__DEV__ &amp;&amp; activeEffect.options.onTrack) &#123;</span><br><span class="line">        activeEffect.options.onTrack(&#123;</span><br><span class="line">            effect: activeEffect,</span><br><span class="line">            target,</span><br><span class="line">            <span class="keyword">type</span>,</span><br><span class="line">            key</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结一下，track 方法主要用来收集依赖，当响应式对象的 get 的时候触发。首先根据当前响应式对象处理<strong>targetMap</strong>集合的状态，然后根据当前触发的属性 key 来处理 dep 的集合。最后判断是否触发 onTrack 函数。</p>
+<p>结合之前的代码分析，deps 是 effect 中依赖的 key 对应的 Set 集合。因为正常情况下，effect 和对象是多对多的关系。</p>
+<p>依赖收集完毕后，当对象 set 的时候则触发相应的依赖</p>
+<h3 id="trigger"><a href="#trigger" class="headerlink" title="trigger"></a>trigger</h3><p>trigger 方法的作用就是触发收集的依赖。因为 trigger 的方法比较长，这里我们来简单分析一下</p>
+<p> 类型声明</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">trigger</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  target: <span class="built_in">object</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="keyword">type</span>: TriggerOpTypes,	<span class="comment">// 触发数据更新的类型，主要有四种类型： set、add、delete、clear</span></span></span></span><br><span class="line"><span class="function"><span class="params">  key?: unknown,</span></span></span><br><span class="line"><span class="function"><span class="params">  newValue?: unknown,</span></span></span><br><span class="line"><span class="function"><span class="params">  oldValue?: unknown,</span></span></span><br><span class="line"><span class="function"><span class="params">  oldTarget?: <span class="built_in">Map</span>&lt;unknown, unknown&gt; | <span class="built_in">Set</span>&lt;unknown&gt;</span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">declare</span> <span class="keyword">const</span> <span class="built_in">enum</span> TriggerOpTypes &#123;</span><br><span class="line">    SET = <span class="string">&quot;set&quot;</span>,</span><br><span class="line">    ADD = <span class="string">&quot;add&quot;</span>,</span><br><span class="line">    DELETE = <span class="string">&quot;delete&quot;</span>,</span><br><span class="line">    CLEAR = <span class="string">&quot;clear&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>add 方法是根据将 effect 添加进不同的分组。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建effect集合，用来存放effect</span></span><br><span class="line"><span class="keyword">const</span> effects = <span class="keyword">new</span> <span class="built_in">Set</span>&lt;ReactiveEffect&gt;()</span><br><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">effectsToAdd: <span class="built_in">Set</span>&lt;ReactiveEffect&gt; | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (effectsToAdd) &#123;</span><br><span class="line">        effectsToAdd.forEach(<span class="function"><span class="params">effect</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (effect !== activeEffect || effect.allowRecurse) &#123;	<span class="comment">// 避免死循环</span></span><br><span class="line">                effects.add(effect)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里，我们利用一个官方的测试用例来说明一下为何要避免死循环</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">&#x27;should avoid infinite loops with other effects&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">   <span class="keyword">const</span> nums = reactive(&#123; <span class="attr">num1</span>: <span class="number">0</span>, <span class="attr">num2</span>: <span class="number">1</span> &#125;)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">const</span> spy1 = jest.fn(<span class="function">() =&gt;</span> (nums.num1 = nums.num2))</span><br><span class="line">   <span class="keyword">const</span> spy2 = jest.fn(<span class="function">() =&gt;</span> (nums.num2 = nums.num1))</span><br><span class="line">   effect(spy1)</span><br><span class="line">   effect(spy2)</span><br><span class="line">   expect(nums.num1).toBe(<span class="number">1</span>)</span><br><span class="line">   expect(nums.num2).toBe(<span class="number">1</span>)</span><br><span class="line">   expect(spy1).toHaveBeenCalledTimes(<span class="number">1</span>)</span><br><span class="line">   expect(spy2).toHaveBeenCalledTimes(<span class="number">1</span>)</span><br><span class="line">   nums.num2 = <span class="number">4</span></span><br><span class="line">   expect(nums.num1).toBe(<span class="number">4</span>)</span><br><span class="line">   expect(nums.num2).toBe(<span class="number">4</span>)</span><br><span class="line">   expect(spy1).toHaveBeenCalledTimes(<span class="number">2</span>)</span><br><span class="line">   expect(spy2).toHaveBeenCalledTimes(<span class="number">2</span>)</span><br><span class="line">   nums.num1 = <span class="number">10</span></span><br><span class="line">   expect(nums.num1).toBe(<span class="number">10</span>)</span><br><span class="line">   expect(nums.num2).toBe(<span class="number">10</span>)</span><br><span class="line">   expect(spy1).toHaveBeenCalledTimes(<span class="number">3</span>)</span><br><span class="line">   expect(spy2).toHaveBeenCalledTimes(<span class="number">3</span>)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<p>之前的判断，主要是为了规避在 effect 中循环触发 set 操作。</p>
+<p>之后根据触发类型，对 effect 进行不同的处理。如果是<strong>clear</strong>类型则触发这个对象的所有 effect。如果为数组的 set 操作，则会触发 key 为 length 的 effects</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">type</span> === TriggerOpTypes.CLEAR) &#123;</span><br><span class="line">    depsMap.forEach(add)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (key === <span class="string">&#x27;length&#x27;</span> &amp;&amp; isArray(target)) &#123;</span><br><span class="line">    depsMap.forEach(<span class="function">(<span class="params">dep, key</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (key === <span class="string">&#x27;length&#x27;</span> || key &gt;= (newValue <span class="keyword">as</span> <span class="built_in">number</span>)) &#123;</span><br><span class="line">            add(dep)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (key !== <span class="built_in">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">        add(depsMap.get(key))</span><br><span class="line">    &#125;</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>下面都是根据 type 对正常的新增、修改、删除进行 effect 的分组</p>
+<p>最后，批量运行 effect。其中如果 scheduler 传入了调度函数，则通过 scheduler 函数去运行 effect，但是 scheduler 不一定使用了 effect.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> run = <span class="function">(<span class="params">effect: ReactiveEffect</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (__DEV__ &amp;&amp; effect.options.onTrigger) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (effect.options.scheduler) &#123;</span><br><span class="line">      effect.options.scheduler(effect)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      effect()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  effects.forEach(run)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结一下，trigger 是在数据触发 Set 的时候执行，目的是根据我们的操作对 effect 进行分组处理。</p>
+<h3 id="lazy的effect"><a href="#lazy的effect" class="headerlink" title="lazy的effect()"></a>lazy的effect()</h3><p><code>effect()</code> 用来运行副作用函数，默认是立即执行的，但它可以是 <code>lazy</code> 的，这时我们可以手动执行它：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> runner = effect(</span><br><span class="line">    () =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">&#x27;xxx&#x27;</span>) &#125;,</span><br><span class="line">    &#123; <span class="attr">lazy</span>: <span class="literal">true</span> &#125;  <span class="comment">// 指定 lazy</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">runner() <span class="comment">// 手动执行副作用函数</span></span><br></pre></td></tr></table></figure>
+<p>它有什么用呢？实际上 <code>computed()</code> 就是一个 <code>lazy</code> 的 <code>effect</code>。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/vue3-vue3源码结构、核心模块及运行过程/" data-toggle="tooltip" data-placement="top" title="vue3源码结构、核心模块及运行过程">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/vue3-组合式API/" data-toggle="tooltip" data-placement="top" title="组合式API">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Sun Jun 06 2021 12:34:17 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">effect源码解析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFeffect"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">什么是effect</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#effect%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">effect的实现原理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#effect%E6%BA%90%E7%A0%81"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">effect源码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#track"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">track</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#trigger"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">trigger</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#lazy%E7%9A%84effect"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">lazy的effect()</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
+            
+            <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='我要变强，为此不惜一切...,一念往，尽作尘泥罢...,玻璃晴朗，橘子辉煌...,我心即地狱，管他罪孽滔天...,我要这天，再遮不住我眼...,我要这地，再埋不了我心...,斯若晴空，何惧冰寒...,这灯红酒绿的世界啊...,不要放弃，哪怕付出所有...' color='#CDF0EA,#F9F9F9,#F7DBF0,#BEAEE2,#F38181,#FCE38A,#EAFFD0,#95E1D3,#80D6FF'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://jasonluox.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
