@@ -138,7 +138,7 @@
   <link rel="canonical" href="https://jasonluox.github.io/en/vue3-effect源码解析/">
   <title>
     
-      effect源码解析 - 流年风尘 | 我的前端之路
+      [vue3] effect源码解析 - 流年风尘 | 我的前端之路
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -337,12 +337,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('/img/header_img/scenery/tree_stars.jpg');
       --intro-header-background-image-url-page: url('//img/header_img/scenery/tree_stars.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/tree_stars.jpg');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/tree_stars.jpg');
     }
@@ -380,7 +380,7 @@
               <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
               
             </div>
-            <h1>effect源码解析</h1>
+            <h1>[vue3] effect源码解析</h1>
             <h2 class="subheading">分析vue3中effect的实现</h2>
             <span class="meta">
               Posted by Jason Luo on
@@ -442,9 +442,12 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="effect源码解析"><a href="#effect源码解析" class="headerlink" title="effect源码解析"></a>effect源码解析</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29582173/article/details/109851515">https://blog.csdn.net/qq_29582173/article/details/109851515</a></p>
+        <h2 id="effect源码解析">effect源码解析</h2>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29582173/article/details/109851515">https://blog.csdn.net/qq_29582173/article/details/109851515</a></p>
 <p>Vue3 的核心就是响应式系统，effect是vue3响应式系统的核心。</p>
-<h3 id="什么是effect"><a href="#什么是effect" class="headerlink" title="什么是effect"></a>什么是effect</h3><p>effect 一直穿插在 tranger 和 track 之间。其实单纯的响应式原理，根本不需要 effect，那么 effect 到底是什么呢？<br>下面我们来看一下 effect 源码中的测试用例：</p>
+<h3 id="什么是effect">什么是effect</h3>
+<p>effect 一直穿插在 tranger 和 track 之间。其实单纯的响应式原理，根本不需要 effect，那么 effect 到底是什么呢？<br>
+下面我们来看一下 effect 源码中的测试用例：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//package/reactivity/__tests__/effect.spec.ts</span></span><br><span class="line">it(<span class="string">&#x27;should observe multiple properties&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dummy</span><br><span class="line">    <span class="keyword">const</span> counter = reactive(&#123; <span class="attr">num1</span>: <span class="number">0</span>, <span class="attr">num2</span>: <span class="number">0</span> &#125;)</span><br><span class="line">    effect(<span class="function">() =&gt;</span> (dummy = counter.num1 + counter.num1 + counter.num2))</span><br><span class="line"></span><br><span class="line">    expect(dummy).toBe(<span class="number">0</span>)</span><br><span class="line">    counter.num1 = counter.num2 = <span class="number">7</span></span><br><span class="line">    expect(dummy).toBe(<span class="number">21</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>我们先看一下这段代码是用来干啥的：</p>
 <ul>
@@ -454,17 +457,22 @@
 <li>修改 counter 的 num1 和 num2 属性</li>
 <li>然后断言 dummy 是否是 21</li>
 </ul>
-<p>这个和我们经常用的一个东西是不是很熟悉？没错，就是 <strong>computed</strong><br>下面我们来看一下 computed 的测试用例来对比一下：</p>
+<p>这个和我们经常用的一个东西是不是很熟悉？没错，就是 <strong>computed</strong><br>
+下面我们来看一下 computed 的测试用例来对比一下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// packages/reactivity/__tests__/computed.spec.ts</span></span><br><span class="line">it(<span class="string">&#x27;should return updated value&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> value = reactive&lt;&#123; foo?: number &#125;&gt;(&#123;&#125;)</span><br><span class="line">    <span class="keyword">const</span> cValue = computed(<span class="function">() =&gt;</span> value.foo)</span><br><span class="line">    expect(cValue.value).toBe(<span class="literal">undefined</span>)</span><br><span class="line">    value.foo = <span class="number">1</span></span><br><span class="line">    expect(cValue.value).toBe(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>上面的代码很好理解，计算属性 cValue 和 value.foo 关联，当 value.foo 变化的时候断言 cValue.value.<br>这样看下来 effect 和 computed 的作用是不是很相似.</p>
-<p>从这里就可以看出来，effect 就是副作用的意思。顾名思义就是响应式的副产品。每次发出了 get 时收集 effect，每次 set 时触发我们收集的 effect。这样我们就可以做一些响应式数据之外的一些事情了。<br>那么，下面我们来看一下 effect 到底是怎么实现的。</p>
-<h3 id="effect的实现原理"><a href="#effect的实现原理" class="headerlink" title="effect的实现原理"></a>effect的实现原理</h3><p>在看 effect 源码之前，我们首先要明确一点：effect 应该如何实现</p>
+<p>上面的代码很好理解，计算属性 cValue 和 value.foo 关联，当 value.foo 变化的时候断言 cValue.value.<br>
+这样看下来 effect 和 computed 的作用是不是很相似.</p>
+<p>从这里就可以看出来，effect 就是副作用的意思。顾名思义就是响应式的副产品。每次发出了 get 时收集 effect，每次 set 时触发我们收集的 effect。这样我们就可以做一些响应式数据之外的一些事情了。<br>
+那么，下面我们来看一下 effect 到底是怎么实现的。</p>
+<h3 id="effect的实现原理">effect的实现原理</h3>
+<p>在看 effect 源码之前，我们首先要明确一点：effect 应该如何实现</p>
 <ul>
 <li>首先，在我们给 effect 传递的回调参数中的响应式数据的 get 被触发后，我们的 effect 就会被收集起来</li>
 <li>然后，每个响应式数据被触发的时候都可能有多个相关联的 effect，所以每个数据都需要有一个用来收集 effect 的收集器，即源码中的 deps，当响应式的数据 set 属性被触发时执行这些 effect</li>
 <li>最后，为了数据的单一性，我们的 deps 不能放在响应式数据本身，所以我们需要有个集合来储存响应式数据 target 和 deps 的关系</li>
 </ul>
-<h3 id="effect源码"><a href="#effect源码" class="headerlink" title="effect源码"></a>effect源码</h3><p><code>export function effect</code></p>
+<h3 id="effect源码">effect源码</h3>
+<p><code>export function effect</code></p>
 <p>effect 的源码都在<strong>effect.ts</strong>这个文件里面，我们这里先看一下暴露的 effect 函数</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">effect</span>&lt;<span class="title">T</span> = <span class="title">any</span>&gt;(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    fn: () =&gt; T, <span class="comment">//回调函数</span></span></span></span><br><span class="line"><span class="function"><span class="params">    options: ReactiveEffectOptions = EMPTY_OBJ <span class="comment">//传入的参数</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>): <span class="title">ReactiveEffect</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//先判断fn是不是effect，如果是则取出原始值</span></span><br><span class="line">    <span class="keyword">if</span> (isEffect(fn)) &#123;</span><br><span class="line">    	fn = fn.raw</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//创建新的effect</span></span><br><span class="line">	<span class="keyword">const</span> effect = createReactiveEffect(fn, options)</span><br><span class="line">	<span class="comment">//如果传入的lazy参数为false</span></span><br><span class="line">	<span class="keyword">if</span> (!options.lazy) &#123;</span><br><span class="line">    	<span class="comment">//立即执行我们创建的effect</span></span><br><span class="line">    	effect()</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> effect</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>整个函数的结构很简单：</p>
@@ -479,7 +487,7 @@
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> ReactiveEffectOptions &#123;</span><br><span class="line">  lazy?: <span class="built_in">boolean</span> <span class="comment">//是否延迟触发effect</span></span><br><span class="line">  scheduler?: <span class="function">(<span class="params">job: ReactiveEffect</span>) =&gt;</span> <span class="built_in">void</span> <span class="comment">//调度函数</span></span><br><span class="line">  onTrack?: <span class="function">(<span class="params">event: DebuggerEvent</span>) =&gt;</span> <span class="built_in">void</span> <span class="comment">//追踪时触发</span></span><br><span class="line">  onTrigger?: <span class="function">(<span class="params">event: DebuggerEvent</span>) =&gt;</span> <span class="built_in">void</span> <span class="comment">//触发回调时触发</span></span><br><span class="line">  onStop?: <span class="function">() =&gt;</span> <span class="built_in">void</span> <span class="comment">//停止监听时触发</span></span><br><span class="line">  allowRecurse?: <span class="built_in">boolean</span> <span class="comment">//是否允许递归调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>从上面的源码可以看出，该函数的核心就是 createReactiveEffect。</p>
 <p><code>ceateReactiveEffect</code></p>
-<p><code>createReactiveEffect</code> 函数主要是用来创建<code>effect</code>，下面我们看一下<code>createReactiveEffect</code>的实现：</p>
+<p><code>createReactiveEffect</code> 函数主要是用来创建<code> effect</code>，下面我们看一下<code>createReactiveEffect</code>的实现：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createReactiveEffect</span>&lt;<span class="title">T</span> = <span class="title">any</span>&gt;(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  fn: () =&gt; T,</span></span></span><br><span class="line"><span class="function"><span class="params">  options: ReactiveEffectOptions <span class="comment">//选项</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>): <span class="title">ReactiveEffect</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> effect = <span class="function"><span class="keyword">function</span> <span class="title">reactiveEffect</span>(<span class="params"></span>): <span class="title">unknown</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!effect.active) &#123;<span class="comment">//判断是否是激活状态</span></span><br><span class="line">      <span class="keyword">return</span> options.scheduler ? <span class="literal">undefined</span> : fn()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!effectStack.includes(effect)) &#123;</span><br><span class="line">      cleanup(effect)</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//然后重新进行依赖收集</span></span><br><span class="line">        enableTracking()</span><br><span class="line">        <span class="comment">//effect入栈</span></span><br><span class="line">        effectStack.push(effect)</span><br><span class="line">        activeEffect = effect</span><br><span class="line">        <span class="keyword">return</span> fn()</span><br><span class="line">      &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        effectStack.pop()</span><br><span class="line">        resetTracking()</span><br><span class="line">        activeEffect = effectStack[effectStack.length - <span class="number">1</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">as</span> ReactiveEffect</span><br><span class="line">  <span class="comment">//将各种数据挂载到effect上，覆盖更新</span></span><br><span class="line">  effect.id = uid++ <span class="comment">//自增ID，唯一标识</span></span><br><span class="line">  effect.allowRecurse = !!options.allowRecurse</span><br><span class="line">  effect._isEffect = <span class="literal">true</span> <span class="comment">//用于标识方法是不是effect</span></span><br><span class="line">  effect.active = <span class="literal">true</span> <span class="comment">//effect是否激活</span></span><br><span class="line">  effect.raw = fn <span class="comment">//effect传入的fn</span></span><br><span class="line">  effect.deps = [] <span class="comment">//持有当前effect的dep数组</span></span><br><span class="line">  effect.options = options <span class="comment">//创建effect传入的options</span></span><br><span class="line">  <span class="keyword">return</span> effect</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们先来看一下这里面的<code>reactiveEffect</code>函数：</p>
 <ul>
@@ -489,7 +497,7 @@
 <li>然后重新收集依赖，将 effect入栈<code>effectStack</code>，并将 <code>activeEffect</code> 设置为当前的 effect(主要是为了收集依赖的时候使用)，返回执行的回调函数</li>
 <li>最后将当前 effect 出栈，恢复之前的状态</li>
 </ul>
-<p><code>reactiveEffect</code>函数之后，将各种数据挂载到 effect 上，覆盖更新。下面我们来介绍一下 effect 的其他属性：</p>
+<p><code>reactiveEffect </code>函数之后，将各种数据挂载到 effect 上，覆盖更新。下面我们来介绍一下 effect 的其他属性：</p>
 <ul>
 <li><code>id</code>  effect 自增 ID，唯一标识</li>
 <li><code>allowRecurse</code>  是否允许递归，默认为 false</li>
@@ -508,7 +516,8 @@
 <p>其中，deps 就是持有 effect 的依赖数组。其中每个数组元素是对应对象某个 key 的全部依赖。cleanup 的大概实现就是先把 effect 从 deps 数组中移除，然后清空 deps 数组。</p>
 <p>总的来说，createReactiveEffect 函数，创建了 effect 并挂载了各种属性。而 effect 函数，会在执行过程中完成依赖的收集。</p>
 <p>那么，effect 是怎么收集依赖的呢，我们上面提到过，当 effect 运行的时候，当前的对象的 key 的依赖 set 集合会把 effect 收集进去。</p>
-<h3 id="track"><a href="#track" class="headerlink" title="track"></a>track</h3><p>Vue3 中在数据劫持的过程中，get 会触发 track 函数进行依赖的收集，set 会触发 trigger 方法执行我们收集到的依赖方法。</p>
+<h3 id="track">track</h3>
+<p>Vue3 中在数据劫持的过程中，get 会触发 track 函数进行依赖的收集，set 会触发 trigger 方法执行我们收集到的依赖方法。</p>
 <p>下面，我们来看一下 track 函数是怎么进行依赖收集的。</p>
 <p>下面我们来分析一下 track 方法：</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">track</span>(<span class="params">target: <span class="built_in">object</span>, <span class="keyword">type</span>: TrackOpTypes, key: unknown</span>) </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
@@ -529,8 +538,9 @@
 <p>总结一下，track 方法主要用来收集依赖，当响应式对象的 get 的时候触发。首先根据当前响应式对象处理<strong>targetMap</strong>集合的状态，然后根据当前触发的属性 key 来处理 dep 的集合。最后判断是否触发 onTrack 函数。</p>
 <p>结合之前的代码分析，deps 是 effect 中依赖的 key 对应的 Set 集合。因为正常情况下，effect 和对象是多对多的关系。</p>
 <p>依赖收集完毕后，当对象 set 的时候则触发相应的依赖</p>
-<h3 id="trigger"><a href="#trigger" class="headerlink" title="trigger"></a>trigger</h3><p>trigger 方法的作用就是触发收集的依赖。因为 trigger 的方法比较长，这里我们来简单分析一下</p>
-<p> 类型声明</p>
+<h3 id="trigger">trigger</h3>
+<p>trigger 方法的作用就是触发收集的依赖。因为 trigger 的方法比较长，这里我们来简单分析一下</p>
+<p>类型声明</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">trigger</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  target: <span class="built_in">object</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="keyword">type</span>: TriggerOpTypes,	<span class="comment">// 触发数据更新的类型，主要有四种类型： set、add、delete、clear</span></span></span></span><br><span class="line"><span class="function"><span class="params">  key?: unknown,</span></span></span><br><span class="line"><span class="function"><span class="params">  newValue?: unknown,</span></span></span><br><span class="line"><span class="function"><span class="params">  oldValue?: unknown,</span></span></span><br><span class="line"><span class="function"><span class="params">  oldTarget?: <span class="built_in">Map</span>&lt;unknown, unknown&gt; | <span class="built_in">Set</span>&lt;unknown&gt;</span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">declare</span> <span class="keyword">const</span> <span class="built_in">enum</span> TriggerOpTypes &#123;</span><br><span class="line">    SET = <span class="string">&quot;set&quot;</span>,</span><br><span class="line">    ADD = <span class="string">&quot;add&quot;</span>,</span><br><span class="line">    DELETE = <span class="string">&quot;delete&quot;</span>,</span><br><span class="line">    CLEAR = <span class="string">&quot;clear&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>add 方法是根据将 effect 添加进不同的分组。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建effect集合，用来存放effect</span></span><br><span class="line"><span class="keyword">const</span> effects = <span class="keyword">new</span> <span class="built_in">Set</span>&lt;ReactiveEffect&gt;()</span><br><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">effectsToAdd: <span class="built_in">Set</span>&lt;ReactiveEffect&gt; | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (effectsToAdd) &#123;</span><br><span class="line">        effectsToAdd.forEach(<span class="function"><span class="params">effect</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (effect !== activeEffect || effect.allowRecurse) &#123;	<span class="comment">// 避免死循环</span></span><br><span class="line">                effects.add(effect)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -545,7 +555,8 @@
 <p>最后，批量运行 effect。其中如果 scheduler 传入了调度函数，则通过 scheduler 函数去运行 effect，但是 scheduler 不一定使用了 effect.</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> run = <span class="function">(<span class="params">effect: ReactiveEffect</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (__DEV__ &amp;&amp; effect.options.onTrigger) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (effect.options.scheduler) &#123;</span><br><span class="line">      effect.options.scheduler(effect)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      effect()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  effects.forEach(run)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>总结一下，trigger 是在数据触发 Set 的时候执行，目的是根据我们的操作对 effect 进行分组处理。</p>
-<h3 id="lazy的effect"><a href="#lazy的effect" class="headerlink" title="lazy的effect()"></a>lazy的effect()</h3><p><code>effect()</code> 用来运行副作用函数，默认是立即执行的，但它可以是 <code>lazy</code> 的，这时我们可以手动执行它：</p>
+<h3 id="lazy的effect">lazy的effect()</h3>
+<p><code>effect()</code> 用来运行副作用函数，默认是立即执行的，但它可以是 <code>lazy</code> 的，这时我们可以手动执行它：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> runner = effect(</span><br><span class="line">    () =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">&#x27;xxx&#x27;</span>) &#125;,</span><br><span class="line">    &#123; <span class="attr">lazy</span>: <span class="literal">true</span> &#125;  <span class="comment">// 指定 lazy</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">runner() <span class="comment">// 手动执行副作用函数</span></span><br></pre></td></tr></table></figure>
 <p>它有什么用呢？实际上 <code>computed()</code> 就是一个 <code>lazy</code> 的 <code>effect</code>。</p>
 
@@ -555,12 +566,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/vue3-vue3源码结构、核心模块及运行过程/" data-toggle="tooltip" data-placement="top" title="vue3源码结构、核心模块及运行过程">&larr; Previous Post</a>
+            <a href="/en/vue3-vue3源码结构、核心模块及运行过程/" data-toggle="tooltip" data-placement="top" title="[vue3] vue3源码结构、核心模块及运行过程">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/vue3-组合式API/" data-toggle="tooltip" data-placement="top" title="组合式API">Next Post &rarr;</a>
+            <a href="/en/vue3-组合式API/" data-toggle="tooltip" data-placement="top" title="[vue3] 组合式API">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -1225,5 +1236,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

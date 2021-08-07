@@ -49,7 +49,19 @@
     <lastmod>2021-05-10</lastmod>
   </url>
   <url>
+    <loc>https://jasonluox.github.io/en/vue-vue%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8%E5%88%B7%E6%96%B0%E7%BD%91%E9%A1%B5%E5%90%8Evuex%E7%9A%84state%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2021-04-11</lastmod>
+  </url>
+  <url>
     <loc>https://jasonluox.github.io/en/css-css%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E5%9B%BE%E6%A0%87%E6%97%8B%E8%BD%AC90%E5%BA%A6%E6%B0%B4%E5%B9%B3%E7%BF%BB%E8%BD%AC%E5%9E%82%E7%9B%B4%E7%BF%BB%E8%BD%AC/</loc>
+    <lastmod>2021-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/vue-Vue%20Router%E8%BF%9B%E9%98%B6/</loc>
+    <lastmod>2021-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/vue-vue%20+vuex%20%E5%AE%9E%E7%8E%B0%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2021-04-10</lastmod>
   </url>
   <url>
@@ -69,6 +81,74 @@
     <lastmod>2021-04-03</lastmod>
   </url>
   <url>
+    <loc>https://jasonluox.github.io/en/Echarts-tooltip%E5%AE%8C%E7%BE%8E%E4%BD%8D%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2020-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JS-%E9%98%B2%E6%8A%96%E4%B8%8E%E8%8A%82%E6%B5%81/</loc>
+    <lastmod>2020-08-13</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JSPlugin-%E5%AF%BC%E5%87%BApdf/</loc>
+    <lastmod>2020-08-13</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JSPlugin-mockjs%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2020-08-13</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JS-Object.create()%E3%80%81new%20Object()%E5%92%8C%7B%7D%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2020-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JS-Object.defineProperty/</loc>
+    <lastmod>2020-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JS-bind,%20apply,%20call%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2020-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0/</loc>
+    <lastmod>2020-08-11</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JS-Arguments%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2020-08-11</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JS-__proto__%20vs%20prototype/</loc>
+    <lastmod>2020-08-11</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-Class%E7%9A%84%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2020-08-11</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-Reflect/</loc>
+    <lastmod>2020-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-Proxy%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2020-08-10</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-Generator%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2020-08-09</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-Map%E5%92%8CWeakMap%E7%9A%84%E5%B7%AE%E5%BC%82/</loc>
+    <lastmod>2020-08-09</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-Class%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2020-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/ES6-ES6%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2020-08-08</lastmod>
+  </url>
+  <url>
     <loc>https://jasonluox.github.io/en/Four-Ways-to-Deploy-Hexo/</loc>
     <lastmod>2020-07-14</lastmod>
   </url>
@@ -81,8 +161,16 @@
     <lastmod>2020-04-16</lastmod>
   </url>
   <url>
-    <loc>https://jasonluox.github.io/en/jsPlugin-Better%20Scroll%20%E6%BB%9A%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
+    <loc>https://jasonluox.github.io/en/JSPlugin-Better%20Scroll%20%E6%BB%9A%E5%8A%A8%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
     <lastmod>2020-04-10</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/webpack-webstorm%E8%A7%A3%E6%9E%90vue-cli%E7%9A%84%E5%88%AB%E5%90%8D%E8%B7%AF%E5%BE%84%EF%BC%88alias%EF%BC%89/</loc>
+    <lastmod>2020-03-03</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/webpack-%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2020-03-02</lastmod>
   </url>
   <url>
     <loc>https://jasonluox.github.io/en/Hexo-Hexo%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/</loc>
@@ -93,12 +181,28 @@
     <lastmod>2020-01-08</lastmod>
   </url>
   <url>
+    <loc>https://jasonluox.github.io/en/Html5-HTML5%20Web%20Audio%20API%E4%B8%8Ejs%E4%BA%A4%E4%BA%92%E5%A2%9E%E5%8A%A0%E5%A3%B0%E9%9F%B3/</loc>
+    <lastmod>2019-12-28</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/mobile-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B5%E9%9D%A2%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2019-12-28</lastmod>
+  </url>
+  <url>
     <loc>https://jasonluox.github.io/en/css-css%E5%AE%9E%E7%8E%B0%E6%8A%96%E5%8A%A8%E7%89%B9%E6%95%88/</loc>
     <lastmod>2019-12-21</lastmod>
   </url>
   <url>
     <loc>https://jasonluox.github.io/en/css-%E9%AA%A8%E6%9E%B6%E5%B1%8FLoading%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</loc>
     <lastmod>2019-11-30</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/JSPlugin-Visjs%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2019-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonluox.github.io/en/SVG-SVG%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2019-07-20</lastmod>
   </url>
   <url>
     <loc>https://jasonluox.github.io/en/Hexo-4-Hexo-%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/</loc>

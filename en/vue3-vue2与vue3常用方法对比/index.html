@@ -138,7 +138,7 @@
   <link rel="canonical" href="https://jasonluox.github.io/en/vue3-vue2与vue3常用方法对比/">
   <title>
     
-      vue2与vue3常用方法对比 - 流年风尘 | 我的前端之路
+      [vue3] vue2与vue3常用方法对比 - 流年风尘 | 我的前端之路
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -337,12 +337,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('/img/header_img/scenery/tree_stars.jpg');
       --intro-header-background-image-url-page: url('//img/header_img/scenery/tree_stars.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/tree_stars.jpg');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/tree_stars.jpg');
     }
@@ -380,7 +380,7 @@
               <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
               
             </div>
-            <h1>vue2与vue3常用方法对比</h1>
+            <h1>[vue3] vue2与vue3常用方法对比</h1>
             <h2 class="subheading">对比vue2与vue3的不同</h2>
             <span class="meta">
               Posted by Jason Luo on
@@ -396,7 +396,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">762</span> In Total
+              Words <span class="post-count">763</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -442,18 +442,22 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="vue2与vue3常用方法对比"><a href="#vue2与vue3常用方法对比" class="headerlink" title="vue2与vue3常用方法对比"></a>vue2与vue3常用方法对比</h2><p>参考 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6901087576195760141">https://juejin.cn/post/6901087576195760141</a></p>
-<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><p>vue2</p>
+        <h2 id="vue2与vue3常用方法对比">vue2与vue3常用方法对比</h2>
+<p>参考 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6901087576195760141">https://juejin.cn/post/6901087576195760141</a></p>
+<h3 id="获取数据">获取数据</h3>
+<p>vue2</p>
 <p>在Vue2的各个组件中，我们频繁地使用 <code>this</code> ，即获取当前组件实例，是因为每个组件的数据变量、方法都要通过组件实例去获取。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      name: &#39;前端印象&#39;,</span><br><span class="line">      age: 22</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    increase() &#123;</span><br><span class="line">      this.age +&#x3D; 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    this.increase()</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>vue3</p>
 <p>大部分甚至可以说全部的关键代码都集中写在了 <code>setup</code> 函数内，并且在该函数内是无法通过 <code>this</code> 获取到当前组件实例的，那是因为所有的变量、方法都可以直接使用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import &#123;ref, onMounted&#125; from &#39;vue&#39;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  setup() &#123;</span><br><span class="line">    const name &#x3D; ref(&#39;前端印象&#39;)</span><br><span class="line">    const age &#x3D; ref(22)</span><br><span class="line"></span><br><span class="line">    function increase() &#123;</span><br><span class="line">      age.value +&#x3D; 1</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    onMounted(() &#x3D;&gt; &#123;</span><br><span class="line">      increase()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    return &#123;name, age&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>vue2</p>
+<h3 id="使用方法">使用方法</h3>
+<p>vue2</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">      console.log(&#39;show方法被调用&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    this.show()</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>vue3</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import &#123;onMounted&#125; from &#39;vue&#39;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  setup() &#123;</span><br><span class="line">    function show() &#123;</span><br><span class="line">      console.log(&#39;show方法被调用&#39;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    onMounted(() &#x3D;&gt; &#123;</span><br><span class="line">      show()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="获取当前组件的根元素"><a href="#获取当前组件的根元素" class="headerlink" title="获取当前组件的根元素"></a>获取当前组件的根元素</h3><p>vue2</p>
+<h3 id="获取当前组件的根元素">获取当前组件的根元素</h3>
+<p>vue2</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot; ref&#x3D;&quot;root&quot;&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;child&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    const el &#x3D; this.$refs.root</span><br><span class="line">    console.log(el)</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>vue3</p>
 <p>在template中的写法跟vue2一样，给元素添加个ref=”xxx”</p>
@@ -461,11 +465,13 @@
 <p>当元素被创建出来的适合，就会给对应的响应数据赋值</p>
 <p>当响应式数据被赋值之后，就可以利用生命周期方法，在生命周期方法中获取对应的响应式数据，即DOM元素</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot; ref&#x3D;&quot;root&quot;&gt;</span><br><span class="line">    &lt;p class&#x3D;&quot;child&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123;ref, onMounted&#125; from &#39;vue&#39;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;App&#39;,</span><br><span class="line">  setup() &#123;</span><br><span class="line">    const root &#x3D; ref(null)</span><br><span class="line"></span><br><span class="line">    onMounted(() &#x3D;&gt; &#123;</span><br><span class="line">      console.log(root)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  return &#123;</span><br><span class="line">    root</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="子组件向父组件通信"><a href="#子组件向父组件通信" class="headerlink" title="子组件向父组件通信"></a>子组件向父组件通信</h3><p>vue2</p>
+<h3 id="子组件向父组件通信">子组件向父组件通信</h3>
+<p>vue2</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &#39;App&#39;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            change() &#123;</span><br><span class="line">                this.$emit(&#39;valueChange&#39;, 3)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>vue3</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &#39;App&#39;,</span><br><span class="line">        setup(props, context) &#123;</span><br><span class="line">            function change() &#123;</span><br><span class="line">                context.emit(&#39;valueChange&#39;, 3)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="获取vuex"><a href="#获取vuex" class="headerlink" title="获取vuex"></a>获取vuex</h3><p>vue2</p>
+<h3 id="获取vuex">获取vuex</h3>
+<p>vue2</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &#39;App&#39;,</span><br><span class="line">        mounted() &#123;</span><br><span class="line">            console.log(this.$store.state.name)</span><br><span class="line">            this.$store.commit(&#39;show&#39;)</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <p>vue3</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    import &#123;onMounted&#125; from &#39;vue&#39;</span><br><span class="line">    import &#123;useStore&#125; from &#39;vuex&#39;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &#39;App&#39;,</span><br><span class="line">        setup(props, context) &#123;</span><br><span class="line">            const store &#x3D; useStore()</span><br><span class="line"></span><br><span class="line">            onMounted(() &#x3D;&gt; &#123;</span><br><span class="line">                console.log(store.name)</span><br><span class="line">                store.commit(&#39;show&#39;)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
@@ -476,12 +482,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/vue3-组合式API/" data-toggle="tooltip" data-placement="top" title="组合式API">&larr; Previous Post</a>
+            <a href="/en/vue3-组合式API/" data-toggle="tooltip" data-placement="top" title="[vue3] 组合式API">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/vue3-渲染器原理及实现/" data-toggle="tooltip" data-placement="top" title="渲染器原理及实现">Next Post &rarr;</a>
+            <a href="/en/vue3-渲染器原理及实现/" data-toggle="tooltip" data-placement="top" title="[vue3] 渲染器原理及实现">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -1146,5 +1152,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

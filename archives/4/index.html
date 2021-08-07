@@ -359,12 +359,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('');
       --intro-header-background-image-url-page: url('/img/header_img/afternoon.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/afternoon.jpg');
     }
@@ -372,7 +372,7 @@
     header.intro-header {
        /*config*/
         background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/comic/about_stars2.png'); */
+        /* background-image: url('/img/header_img/comic/about_stars3.jpg'); */
       
     }
 
@@ -448,25 +448,34 @@
   <!-- top end -->
   
 
-  <a href="/en/Hexo-1-1-建站/">
+  <a href="/en/JS-__proto__ vs prototype/">
     <h2 class="post-title">
-      [Hexo] 1.1 建站
+      [JS] __proto__ vs prototype
     </h2>
     <h3 class="post-subtitle">
-      Hexo 建站
+      隐式原型与显式原型...
     </h3>
     <div class="post-content-preview">
-      安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。123$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install新建完成后，指定文件夹的目录如下：12345678.├── _config.yml├── package.json├── scaffolds├── source|   ├── _draf......
+      
+__proto__（隐式原型）与prototype（显式原型）
+prototype
+每一个函数在创建之后都会拥有一个名为prototype的属性，这个属性指向函数的原型对象。
+
+tips: 通过Function.prototype.bind方法构造出来的函数是个例外，它没有prototype属性。
+
+定义：为其他对象提供共享属性的对象(object that provides shared......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2019-06-08
+    2020-08-11
   </p>
   <div class="tags">
     
-    <a href="/tags/#Hexo" title="Hexo">Hexo</a>
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+    <a href="/tags/#原型" title="原型">原型</a>
     
   </div>
   
@@ -481,32 +490,324 @@
   <!-- top end -->
   
 
-  <a href="/en/Hexo-1-搭建个人博客/">
+  <a href="/en/ES6-Class的继承/">
     <h2 class="post-title">
-      [Hexo] 1 搭建个人博客
+      [ES6] Class的继承
     </h2>
     <h3 class="post-subtitle">
-      Hexo 的安装
+      Class 可以通过 extends 关键字实现继承...
     </h3>
     <div class="post-content-preview">
-      什么是 Hexo ？
-Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
-安装
-安装 Hexo 只需几分钟时间，若您在安装过程中遇到问题或无法找到解决方式，请提交问题，我会尽力解决您的问题。
-安装前提
-安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：
-
-Node.j......
+      简介
+Class 可以通过extends关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。
+12345class Point &#123;&#125;class ColorPoint extends Point &#123;&#125;
+上面代码定义了一个ColorPoint类，该类通过extends关键字，继承了Point类的所有属性和方法。但是由于没有部署任何代码......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2019-06-08
+    2020-08-11
   </p>
   <div class="tags">
     
-    <a href="/tags/#Hexo" title="Hexo">Hexo</a>
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+    <a href="/tags/#class" title="class">class</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Reflect/">
+    <h2 class="post-title">
+      [ES6] Reflect详解
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      为什么要用reflect
+举一个简单例子
+12345678let obj = &#123; a: 1&#125;let proxiedObj = new Proxy(obj, &#123;  get(target, key) &#123;    console.log(&#x27;Get&#x27;)    return target[key]  &#125;&#125;)console.l......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Proxy详解/">
+    <h2 class="post-title">
+      [ES6] Proxy详解
+    </h2>
+    <h3 class="post-subtitle">
+      Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”...
+    </h3>
+    <div class="post-content-preview">
+      参考 https://es6.ruanyifeng.com/#docs/proxy
+概述
+Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”(meta programming)，即对编程语言进行编程。
+Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Pro......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Generator详解/">
+    <h2 class="post-title">
+      [ES6] Generator详解
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      参考： https://blog.csdn.net/qq_35605231/article/details/81912156
+参考： https://blog.csdn.net/tcy83/article/details/80427195
+什么是Generator函数
+先看一个Generator函数
+123function* helloGenerator() &#123;    consol......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+    <a href="/tags/#异步与同步" title="异步与同步">异步与同步</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Map和WeakMap的差异/">
+    <h2 class="post-title">
+      [ES6] Map和WeakMap的差异
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      构造函数名不同
+12let map = new Map();let weakmap = new WeakMap();
+内置API有差异
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map
+https://developer.mozilla.org/zh-CN/docs/Web......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Class的用法/">
+    <h2 class="post-title">
+      [ES6] Class的用法
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      参考文章： https://es6.ruanyifeng.com/#docs/class
+简介
+类的由来
+示例：
+123456789101112class Point &#123;  // 构造方法  constructor(x, y) &#123;    // this关键字则代表实例对象    this.x = x;    this.y = y;  &#125;  toString() ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+    <a href="/tags/#class" title="class">class</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-ES6基础/">
+    <h2 class="post-title">
+      [ES6] ES6基础
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      let 与 const
+let 声明的变量只在 let 命令所在的代码块内有效。
+123456789&#123;  let a = 0;  a   // 0  var b = 1;  b   // 1&#125;a   // 报错 ReferenceError: a is not definedb   // 1
+let 只能声明一次 var 可以声明多次:
+123456let a = 1;l......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-08
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/Four-Ways-to-Deploy-Hexo/">
+    <h2 class="post-title">
+      [Hexo] Four Ways to Deploy Hexo
+    </h2>
+    <h3 class="post-subtitle">
+      How to deploy hexo...
+    </h3>
+    <div class="post-content-preview">
+      Github Pages 部署
+如果对 Github Pages 还不是很了解的话，可以先参考 [Hexo] 2 开始搭建 Github Pages。很多同学都不会满足于让其他人用 username.github.io 这样奇奇怪怪的域名来访问自己的个人博客。
+购买个性域名
+这里推荐 阿里云，毕竟国内大公司，另外还有很多人推荐的 GoDaddy 也可以，这里再推荐一个 NameSilo。本篇......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-07-14
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/Hexo-Theme-LiveMyLife/">
+    <h2 class="post-title">
+      Hexo-Theme-LiveMyLife
+    </h2>
+    <h3 class="post-subtitle">
+      A succinct hexo theme...
+    </h3>
+    <div class="post-content-preview">
+      
+Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
+This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-04-17
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
     
   </div>
   
@@ -522,6 +823,10 @@ Node.j......
       <a href="/archives/3/">&larr; Older Posts</a>
     </li>
     
+    
+    <li class="next">
+      <a href="/archives/5/">Newer Posts &rarr;</a>
+    </li>
     
   </ul>
 
@@ -566,23 +871,39 @@ Node.j......
     
     
     
+    <a href="/tags/#ES6" title="ES6" rel="8">ES6</a>
+    
+    
+    
+    <a href="/tags/#异步与同步" title="异步与同步" rel="1">异步与同步</a>
+    
+    
+    
+    <a href="/tags/#Echarts" title="Echarts" rel="1">Echarts</a>
+    
+    
+    
+    <a href="/tags/#tooltips" title="tooltips" rel="1">tooltips</a>
+    
+    
+    
     <a href="/tags/#Hexo" title="Hexo" rel="9">Hexo</a>
     
     
     
-    <a href="/tags/#css动画特效" title="css动画特效" rel="1">css动画特效</a>
+    <a href="/tags/#Html5 API" title="Html5 API" rel="1">Html5 API</a>
     
     
     
-    <a href="/tags/#css元素翻转" title="css元素翻转" rel="1">css元素翻转</a>
+    <a href="/tags/#h5" title="h5" rel="2">h5</a>
     
     
     
-    <a href="/tags/#css" title="css" rel="2">css</a>
+    <a href="/tags/#JS" title="JS" rel="6">JS</a>
     
     
     
-    <a href="/tags/#骨架屏" title="骨架屏" rel="1">骨架屏</a>
+    <a href="/tags/#原型" title="原型" rel="1">原型</a>
     
     
     
@@ -590,7 +911,31 @@ Node.j......
     
     
     
-    <a href="/tags/#vue2" title="vue2" rel="2">vue2</a>
+    <a href="/tags/#JSPlugin" title="JSPlugin" rel="4">JSPlugin</a>
+    
+    
+    
+    <a href="/tags/#css动画特效" title="css动画特效" rel="1">css动画特效</a>
+    
+    
+    
+    <a href="/tags/#css" title="css" rel="4">css</a>
+    
+    
+    
+    <a href="/tags/#骨架屏" title="骨架屏" rel="1">骨架屏</a>
+    
+    
+    
+    <a href="/tags/#vue router" title="vue router" rel="1">vue router</a>
+    
+    
+    
+    <a href="/tags/#vue2" title="vue2" rel="5">vue2</a>
+    
+    
+    
+    <a href="/tags/#vuex" title="vuex" rel="2">vuex</a>
     
     
     
@@ -602,7 +947,31 @@ Node.j......
     
     
     
+    <a href="/tags/#webpack" title="webpack" rel="2">webpack</a>
+    
+    
+    
+    <a href="/tags/#vue-cli2.0" title="vue-cli2.0" rel="2">vue-cli2.0</a>
+    
+    
+    
+    <a href="/tags/#class" title="class" rel="2">class</a>
+    
+    
+    
+    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
+    
+    
+    
+    <a href="/tags/#SVG" title="SVG" rel="1">SVG</a>
+    
+    
+    
     <a href="/tags/#TypeScript" title="TypeScript" rel="3">TypeScript</a>
+    
+    
+    
+    <a href="/tags/#移动端开发" title="移动端开发" rel="1">移动端开发</a>
     
     
     
@@ -661,23 +1030,23 @@ Node.j......
   <ul>
     
     <a href="../../en/vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
-      <li>响应性API</li>
+      <li>[vue3] 响应性API</li>
     </a>
     
     <a href="../../en/vue3-%E6%B7%B1%E5%85%A5%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">
-      <li>深入响应式原理</li>
+      <li>[vue3] 深入响应式原理</li>
     </a>
     
     <a href="../../en/vue3-vue3%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84%E3%80%81%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E5%8F%8A%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B/">
-      <li>vue3源码结构、核心模块及运行过程</li>
+      <li>[vue3] vue3源码结构、核心模块及运行过程</li>
     </a>
     
     <a href="../../en/vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
-      <li>effect源码解析</li>
+      <li>[vue3] effect源码解析</li>
     </a>
     
     <a href="../../en/vue3-%E7%BB%84%E5%90%88%E5%BC%8FAPI/">
-      <li>组合式API</li>
+      <li>[vue3] 组合式API</li>
     </a>
     
   </ul>
@@ -695,7 +1064,7 @@ Node.j......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
@@ -711,28 +1080,56 @@ Node.j......
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
+    <a href="/categories/#ES6">
+      <li>ES6</li>
+    </a>
+    
+    <a href="/categories/#Echarts">
+      <li>Echarts</li>
+    </a>
+    
     <a href="/categories/#Hexo">
       <li>Hexo</li>
+    </a>
+    
+    <a href="/categories/#Html5 API">
+      <li>Html5 API</li>
+    </a>
+    
+    <a href="/categories/#JS">
+      <li>JS</li>
+    </a>
+    
+    <a href="/categories/#JSPlugin">
+      <li>JSPlugin</li>
     </a>
     
     <a href="/categories/#css">
       <li>css</li>
     </a>
     
-    <a href="/categories/#滚动加载">
-      <li>滚动加载</li>
+    <a href="/categories/#vue">
+      <li>vue</li>
     </a>
     
     <a href="/categories/#vue3">
       <li>vue3</li>
     </a>
     
+    <a href="/categories/#webpack">
+      <li>webpack</li>
+    </a>
+    
+    <a href="/categories/#SVG">
+      <li>SVG</li>
+    </a>
+    
     <a href="/categories/#TypeScript">
       <li>TypeScript</li>
     </a>
     
-    <a href="/categories/#vue性能优化">
-      <li>vue性能优化</li>
+    <a href="/categories/#移动端开发">
+      <li>移动端开发</li>
     </a>
     
   </ul>
@@ -1230,5 +1627,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

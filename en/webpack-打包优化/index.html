@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://jasonluox.github.io/en/webpack-打包优化/">
+  <title>
+    
+      [webpack] webpack打包优化 - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Jason Luo&#39;s Golden House</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/cartoon/sea_boat.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/cartoon/sea_boat.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/cartoon/sea_boat.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/cartoon/sea_boat.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/cartoon/sea_boat.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#webpack" title="webpack">webpack</a>
+              
+              <a class="tag" href="/tags/#vue-cli2.0" title="vue-cli2.0">vue-cli2.0</a>
+              
+              <a class="tag" href="/tags/#webpack优化" title="webpack优化">webpack优化</a>
+              
+            </div>
+            <h1>[webpack] webpack打包优化</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2020-03-02
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">9</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.9k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>此篇分享为 vue-cli2.0 中 webpack 的优化配置。</p>
+<p><img src="816806-3bc6dfc465ce1a51.webp" alt="img"></p>
+<h3 id="按需引入组件">按需引入组件</h3>
+<h4 id="示例一：按需引入element">示例一：按需引入element</h4>
+<p>参考https://element.eleme.cn/#/zh-CN/component/quickstart</p>
+<p>借助 <a target="_blank" rel="noopener" href="https://github.com/QingWei-Li/babel-plugin-component">babel-plugin-component</a>，我们可以只引入需要的组件，以达到减小项目体积的目的。</p>
+<p>首先，安装 babel-plugin-component：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-component -D</span><br></pre></td></tr></table></figure>
+<p>然后，将ui/.babelrc修改成：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;presets&quot;</span>: [</span><br><span class="line">        [</span><br><span class="line">            <span class="string">&quot;env&quot;</span>,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;modules&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="attr">&quot;targets&quot;</span>: &#123;</span><br><span class="line">                    <span class="attr">&quot;browsers&quot;</span>: [</span><br><span class="line">                        <span class="string">&quot;&gt; 1%&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;last 2 versions&quot;</span>,</span><br><span class="line">                        <span class="string">&quot;not ie &lt;= 8&quot;</span></span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">&quot;stage-2&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;plugins&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;transform-vue-jsx&quot;</span>,</span><br><span class="line">        <span class="string">&quot;transform-runtime&quot;</span>,</span><br><span class="line">        [</span><br><span class="line">            <span class="string">&quot;component&quot;</span>,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">&quot;libraryName&quot;</span>: <span class="string">&quot;element-ui&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;styleLibraryName&quot;</span>: <span class="string">&quot;theme-chalk&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>接下来，我们框架默认是，那么需要在 main.js 中写入以下内容：</p>
+<p>我们目前框架使用了element导航栏菜单，以下三个为必须：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; MenuItem, Menu, Submenu&#125; <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span></span><br><span class="line"></span><br><span class="line">Vue.use(Menu);</span><br><span class="line">Vue.use(MenuItem);</span><br><span class="line">Vue.use(Submenu);</span><br></pre></td></tr></table></figure>
+<p>完整组件列表和引入方式,（完整组件列表以 <a target="_blank" rel="noopener" href="https://github.com/ElemeFE/element/blob/master/components.json">components.json</a> 为准）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  Pagination,</span><br><span class="line">  Dialog,</span><br><span class="line">  Autocomplete,</span><br><span class="line">  Dropdown,</span><br><span class="line">  DropdownMenu,</span><br><span class="line">  DropdownItem,</span><br><span class="line">  Menu,</span><br><span class="line">  Submenu,</span><br><span class="line">  MenuItem,</span><br><span class="line">  MenuItemGroup,</span><br><span class="line">  Input,</span><br><span class="line">  InputNumber,</span><br><span class="line">  Radio,</span><br><span class="line">  RadioGroup,</span><br><span class="line">  RadioButton,</span><br><span class="line">  Checkbox,</span><br><span class="line">  CheckboxButton,</span><br><span class="line">  CheckboxGroup,</span><br><span class="line">  Switch,</span><br><span class="line">  Select,</span><br><span class="line">  Option,</span><br><span class="line">  OptionGroup,</span><br><span class="line">  Button,</span><br><span class="line">  ButtonGroup,</span><br><span class="line">  Table,</span><br><span class="line">  TableColumn,</span><br><span class="line">  DatePicker,</span><br><span class="line">  TimeSelect,</span><br><span class="line">  TimePicker,</span><br><span class="line">  Popover,</span><br><span class="line">  Tooltip,</span><br><span class="line">  Breadcrumb,</span><br><span class="line">  BreadcrumbItem,</span><br><span class="line">  Form,</span><br><span class="line">  FormItem,</span><br><span class="line">  Tabs,</span><br><span class="line">  TabPane,</span><br><span class="line">  Tag,</span><br><span class="line">  Tree,</span><br><span class="line">  Alert,</span><br><span class="line">  Slider,</span><br><span class="line">  Icon,</span><br><span class="line">  Row,</span><br><span class="line">  Col,</span><br><span class="line">  Upload,</span><br><span class="line">  Progress,</span><br><span class="line">  Spinner,</span><br><span class="line">  Badge,</span><br><span class="line">  Card,</span><br><span class="line">  Rate,</span><br><span class="line">  Steps,</span><br><span class="line">  Step,</span><br><span class="line">  Carousel,</span><br><span class="line">  CarouselItem,</span><br><span class="line">  Collapse,</span><br><span class="line">  CollapseItem,</span><br><span class="line">  Cascader,</span><br><span class="line">  ColorPicker,</span><br><span class="line">  Transfer,</span><br><span class="line">  Container,</span><br><span class="line">  Header,</span><br><span class="line">  Aside,</span><br><span class="line">  Main,</span><br><span class="line">  Footer,</span><br><span class="line">  Timeline,</span><br><span class="line">  TimelineItem,</span><br><span class="line">  Link,</span><br><span class="line">  Divider,</span><br><span class="line">  Image,</span><br><span class="line">  Calendar,</span><br><span class="line">  Backtop,</span><br><span class="line">  PageHeader,</span><br><span class="line">  CascaderPanel,</span><br><span class="line">  Loading,</span><br><span class="line">  MessageBox,</span><br><span class="line">  Message,</span><br><span class="line">  Notification</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(Pagination);</span><br><span class="line">Vue.use(Dialog);</span><br><span class="line">Vue.use(Autocomplete);</span><br><span class="line">Vue.use(Dropdown);</span><br><span class="line">Vue.use(DropdownMenu);</span><br><span class="line">Vue.use(DropdownItem);</span><br><span class="line">Vue.use(Menu);</span><br><span class="line">Vue.use(Submenu);</span><br><span class="line">Vue.use(MenuItem);</span><br><span class="line">Vue.use(MenuItemGroup);</span><br><span class="line">Vue.use(Input);</span><br><span class="line">Vue.use(InputNumber);</span><br><span class="line">Vue.use(Radio);</span><br><span class="line">Vue.use(RadioGroup);</span><br><span class="line">Vue.use(RadioButton);</span><br><span class="line">Vue.use(Checkbox);</span><br><span class="line">Vue.use(CheckboxButton);</span><br><span class="line">Vue.use(CheckboxGroup);</span><br><span class="line">Vue.use(Switch);</span><br><span class="line">Vue.use(Select);</span><br><span class="line">Vue.use(Option);</span><br><span class="line">Vue.use(OptionGroup);</span><br><span class="line">Vue.use(Button);</span><br><span class="line">Vue.use(ButtonGroup);</span><br><span class="line">Vue.use(Table);</span><br><span class="line">Vue.use(TableColumn);</span><br><span class="line">Vue.use(DatePicker);</span><br><span class="line">Vue.use(TimeSelect);</span><br><span class="line">Vue.use(TimePicker);</span><br><span class="line">Vue.use(Popover);</span><br><span class="line">Vue.use(Tooltip);</span><br><span class="line">Vue.use(Breadcrumb);</span><br><span class="line">Vue.use(BreadcrumbItem);</span><br><span class="line">Vue.use(Form);</span><br><span class="line">Vue.use(FormItem);</span><br><span class="line">Vue.use(Tabs);</span><br><span class="line">Vue.use(TabPane);</span><br><span class="line">Vue.use(Tag);</span><br><span class="line">Vue.use(Tree);</span><br><span class="line">Vue.use(Alert);</span><br><span class="line">Vue.use(Slider);</span><br><span class="line">Vue.use(Icon);</span><br><span class="line">Vue.use(Row);</span><br><span class="line">Vue.use(Col);</span><br><span class="line">Vue.use(Upload);</span><br><span class="line">Vue.use(Progress);</span><br><span class="line">Vue.use(Spinner);</span><br><span class="line">Vue.use(Badge);</span><br><span class="line">Vue.use(Card);</span><br><span class="line">Vue.use(Rate);</span><br><span class="line">Vue.use(Steps);</span><br><span class="line">Vue.use(Step);</span><br><span class="line">Vue.use(Carousel);</span><br><span class="line">Vue.use(CarouselItem);</span><br><span class="line">Vue.use(Collapse);</span><br><span class="line">Vue.use(CollapseItem);</span><br><span class="line">Vue.use(Cascader);</span><br><span class="line">Vue.use(ColorPicker);</span><br><span class="line">Vue.use(Transfer);</span><br><span class="line">Vue.use(Container);</span><br><span class="line">Vue.use(Header);</span><br><span class="line">Vue.use(Aside);</span><br><span class="line">Vue.use(Main);</span><br><span class="line">Vue.use(Footer);</span><br><span class="line">Vue.use(Timeline);</span><br><span class="line">Vue.use(TimelineItem);</span><br><span class="line">Vue.use(Link);</span><br><span class="line">Vue.use(Divider);</span><br><span class="line">Vue.use(Image);</span><br><span class="line">Vue.use(Calendar);</span><br><span class="line">Vue.use(Backtop);</span><br><span class="line">Vue.use(PageHeader);</span><br><span class="line">Vue.use(CascaderPanel);</span><br><span class="line"></span><br><span class="line">Vue.use(Loading.directive);</span><br><span class="line"></span><br><span class="line">Vue.prototype.$loading = Loading.service;</span><br><span class="line">Vue.prototype.$msgbox = MessageBox;</span><br><span class="line">Vue.prototype.$alert = MessageBox.alert;</span><br><span class="line">Vue.prototype.$confirm = MessageBox.confirm;</span><br><span class="line">Vue.prototype.$prompt = MessageBox.prompt;</span><br><span class="line">Vue.prototype.$notify = Notification;</span><br><span class="line">Vue.prototype.$message = Message;</span><br></pre></td></tr></table></figure>
+<h4 id="示例二：按需引入magicbox">示例二：按需引入magicbox</h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    bkButton, bkCheckbox, bkCheckboxGroup, bkCol, bkCollapse, bkCollapseItem, bkContainer, bkDatePicker,</span><br><span class="line">    bkDialog, bkDropdownMenu, bkException, bkForm, bkFormItem, bkInfoBox, bkInput, bkLoading, bkMessage,</span><br><span class="line">    bkNavigation, bkNavigationMenu, bkNavigationMenuItem, bkNotify, bkOption, bkOptionGroup, bkPagination,</span><br><span class="line">    bkPopover, bkProcess, bkProgress, bkRadio, bkRadioGroup, bkRoundProgress, bkRow, bkSearchSelect, bkSelect,</span><br><span class="line">    bkSideslider, bkSlider, bkSteps, bkSwitcher, bkTab, bkTabPanel, bkTable, bkTableColumn, bkTagInput, bkTimePicker,</span><br><span class="line">    bkTimeline, bkTree, bkClickoutside, bkTooltips, bkBigTree, bkOverflowTips, bkCascade, bkVirtualScroll, bkIcon</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;bk-magic-vue&#x27;</span></span><br><span class="line"><span class="comment">// import &#123; Select, Option &#125; from &#x27;element-ui&#x27;</span></span><br><span class="line"><span class="comment">// Vue.use(Select)</span></span><br><span class="line"><span class="comment">// Vue.use(Option)</span></span><br><span class="line"><span class="comment">// bkDiff 组件体积较大且不是很常用，因此注释掉。如果需要，打开注释即可</span></span><br><span class="line"><span class="comment">// import &#123; bkDiff &#125; from &#x27;@tencent/bk-magic-vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// components use</span></span><br><span class="line"><span class="comment">// Vue.use(bkBadge)</span></span><br><span class="line">Vue.use(bkButton)</span><br><span class="line">Vue.use(bkCheckbox)</span><br><span class="line">Vue.use(bkCheckboxGroup)</span><br><span class="line">Vue.use(bkCol)</span><br><span class="line">Vue.use(bkCollapse)</span><br><span class="line">Vue.use(bkCollapseItem)</span><br><span class="line">Vue.use(bkContainer)</span><br><span class="line">Vue.use(bkDatePicker)</span><br><span class="line">Vue.use(bkDialog)</span><br><span class="line">Vue.use(bkDropdownMenu)</span><br><span class="line">Vue.use(bkException)</span><br><span class="line">Vue.use(bkForm)</span><br><span class="line">Vue.use(bkFormItem)</span><br><span class="line">Vue.use(bkInput)</span><br><span class="line"><span class="comment">// Vue.use(bkMemberSelector)</span></span><br><span class="line">Vue.use(bkNavigation)</span><br><span class="line">Vue.use(bkNavigationMenu)</span><br><span class="line">Vue.use(bkNavigationMenuItem)</span><br><span class="line">Vue.use(bkOption)</span><br><span class="line">Vue.use(bkOptionGroup)</span><br><span class="line">Vue.use(bkPagination)</span><br><span class="line">Vue.use(bkPopover)</span><br><span class="line">Vue.use(bkProcess)</span><br><span class="line">Vue.use(bkProgress)</span><br><span class="line">Vue.use(bkRadio)</span><br><span class="line">Vue.use(bkRadioGroup)</span><br><span class="line">Vue.use(bkRoundProgress)</span><br><span class="line">Vue.use(bkRow)</span><br><span class="line">Vue.use(bkSearchSelect)</span><br><span class="line">Vue.use(bkSelect)</span><br><span class="line">Vue.use(bkSideslider)</span><br><span class="line">Vue.use(bkSlider)</span><br><span class="line">Vue.use(bkSteps)</span><br><span class="line">Vue.use(bkSwitcher)</span><br><span class="line">Vue.use(bkTab)</span><br><span class="line">Vue.use(bkTabPanel)</span><br><span class="line">Vue.use(bkTable)</span><br><span class="line">Vue.use(bkTableColumn)</span><br><span class="line">Vue.use(bkTagInput)</span><br><span class="line">Vue.use(bkTimePicker)</span><br><span class="line">Vue.use(bkTimeline)</span><br><span class="line"><span class="comment">// Vue.use(bkTransfer)</span></span><br><span class="line">Vue.use(bkTree)</span><br><span class="line"><span class="comment">// Vue.use(bkUpload)</span></span><br><span class="line">Vue.use(bkBigTree)</span><br><span class="line">Vue.use(bkCascade)</span><br><span class="line">Vue.use(bkVirtualScroll)</span><br><span class="line">Vue.use(bkIcon)</span><br><span class="line"></span><br><span class="line"><span class="comment">// directives use</span></span><br><span class="line">Vue.use(bkClickoutside)</span><br><span class="line">Vue.use(bkTooltips)</span><br><span class="line">Vue.use(bkLoading)</span><br><span class="line">Vue.use(bkOverflowTips)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Vue prototype mount</span></span><br><span class="line">Vue.prototype.$bkInfo = bkInfoBox</span><br><span class="line">Vue.prototype.$bkMessage = bkMessage</span><br><span class="line">Vue.prototype.$bkNotify = bkNotify</span><br><span class="line">Vue.prototype.$bkLoading = bkLoading</span><br></pre></td></tr></table></figure>
+<h4 id="示例三：按需引入iview">示例三：按需引入iview</h4>
+<p>借助插件 <a target="_blank" rel="noopener" href="https://github.com/ant-design/babel-plugin-import">babel-plugin-import</a>可以实现按需加载组件，减少文件体积。首先安装，并在文件 <code>.babelrc</code> 中配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-<span class="keyword">import</span> --save-dev</span><br><span class="line"></span><br><span class="line"><span class="comment">// .babelrc</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>: [[<span class="string">&quot;import&quot;</span>, &#123;</span><br><span class="line">    <span class="string">&quot;libraryName&quot;</span>: <span class="string">&quot;view-design&quot;</span>,</span><br><span class="line">    <span class="string">&quot;libraryDirectory&quot;</span>: <span class="string">&quot;src/components&quot;</span></span><br><span class="line">  &#125;]]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后这样按需引入组件，就可以减小体积了：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Button, Table &#125; <span class="keyword">from</span> <span class="string">&#x27;view-design&#x27;</span>;</span><br><span class="line">Vue.component(<span class="string">&#x27;Button&#x27;</span>, Button);</span><br><span class="line">Vue.component(<span class="string">&#x27;Table&#x27;</span>, Table);</span><br></pre></td></tr></table></figure>
+<h3 id="外部扩展externals属性">外部扩展externals属性</h3>
+<p>使用<code>vue-cli</code>创建项目，使用<code>webpack</code>打包。其中，有一个<code>webpack</code>插件<code>webpack.optimize.CommonsChunkPlugin</code>，它会将<code>node_modules</code>中的必需模块提取到<code>vendor</code>文件中，项目开发中，增加第三方模块，比如<code>element-ui</code>、<code>vue-echarts</code>等，<code>vendor</code>的包都会增大。这个时候，就需要考虑减轻<code>vendor</code>包的大小，增加构建速度。我们可以使用<code>webpack</code>的外部扩展(<code>externals</code>)功能。</p>
+<p><code>externals</code>配置选项，将指定的内容排除在构建的<code>vendor</code>中，但是，指定的内容需要出现在用户环境中。</p>
+<h4 id="用法">用法</h4>
+<p>防止将某些 <code>import</code>的包打包到<code>bundle</code>中，而是在运行时(<code>runtime</code>)再去外部获取这些扩展依赖(<code>external dependencies</code>)<br>
+可以通过多种编写方式实现：<code>string</code>,<code>array</code>,<code>object</code>,<code>function</code>,<code>regex</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  externals: [ <span class="comment">// array形式</span></span><br><span class="line">    &#123; <span class="comment">// object形式</span></span><br><span class="line">      <span class="string">&#x27;./a&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="comment">// string形式</span></span><br><span class="line">      jquery: <span class="string">&#x27;jQuery&#x27;</span>, </span><br><span class="line">      vue: <span class="string">&#x27;Vue&#x27;</span>，</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">context, request, callback</span>) </span>&#123; <span class="comment">// function形式</span></span><br><span class="line">      <span class="keyword">if</span>(request.substr(<span class="number">0</span>, <span class="number">1</span>) !== <span class="string">&#x27;.&#x27;</span>) callback(<span class="literal">null</span>, <span class="string">&#x27;commonjs &#x27;</span> + request)</span><br><span class="line">      callback()</span><br><span class="line">    &#125;,</span><br><span class="line">    /^[a-z\-<span class="number">0</span>-<span class="number">9</span>]+$/, <span class="comment">// regex形式</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除了<code>function形式</code>，必须在<code>array形式</code>中，其他形式，都可以提升，直接作为<code>externals</code>属性使用。比如<code>string</code>形式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">externals: &#123;</span><br><span class="line">    <span class="string">&#x27;./a&#x27;</span>: <span class="string">&#x27;a&#x27;</span>,</span><br><span class="line">    jquery: <span class="string">&#x27;jQuery&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>string</strong></p>
+<p>属性名称是<code>jquery</code>，表示应该排除<code>import $ from 'jquery'</code>中的 <code>jquery</code>模块。为了替换这个模块，<code>jquery</code>的值将被用来检索一个全局的<code>$</code>变量。换句话说，当设置为一个字符串时，它将被视为<strong>全局的</strong>，我们需要在全局变量中，找到<code>$</code>，才能使程序正确运行。</p>
+<p><strong>array</strong></p>
+<p>数组内的每一个元素都可以是多种形式，包括<code>object</code>, <code>regex</code>, <code>function</code>, <code>string</code>四种：</p>
+<p><strong>object</strong></p>
+<p><code>object</code>形式，可以直接作为<code>externals</code>的值，这种形式是绝大部分项目中的配置形式。它里面一定是键值对（key: value)的形式。</p>
+<p><strong>function</strong></p>
+<p><code>function</code>的使用，只能在<code>array形式</code>中作为一个元素传入。</p>
+<p><strong>regex</strong></p>
+<p>正则匹配的形式，通过传入正则表达式来实现匹配。这个可以放在数组形式中，也可以直接作为<code>externals</code>的属性。</p>
+<h4 id="示例">示例</h4>
+<p><code>build/webpack.base.conf.js</code>中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    externals: &#123;</span><br><span class="line">        Vue: <span class="string">&#x27;Vue&#x27;</span>,</span><br><span class="line">        Axios: <span class="string">&#x27;axios&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 其中的 key--对应 import Axios名称，value--对应原始方法名称</span></span><br></pre></td></tr></table></figure>
+<p><code>index.html</code>中引入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/vue@2.6.11/dist/vue.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios@0.19.2/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="给定文件匹配范围">给定文件匹配范围</h3>
+<p>include 规定需要处理的文件有哪些</p>
+<p>exclude 排除不需要处理的文件夹</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">    loader: <span class="string">&#x27;babel-loader&#x27;</span>,</span><br><span class="line">    include: [resolve(<span class="string">&#x27;src&#x27;</span>)],</span><br><span class="line">    exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="noParse属性">noParse属性</h3>
+<p>webpack noParse作用主要是过滤不需要解析的文件，比如打包的时候依赖了三方库（jquery、lodash）等，而这些三方库里面没有其他依赖，可以通过配置noParse不去解析文件，提高打包效率。</p>
+<p>需要在webpack.config.js 的 module节点添加noParse配置，多个以|分割</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  noParse: <span class="string">&#x27;/jquery|lodash/&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="cacheDirectory-缓存属性">cacheDirectory 缓存属性</h3>
+<p><code>babel-loader</code>提供了<code>cacheDirectory</code>选项参数，默认为false。</p>
+<p>设置空或true时，会利用系统的临时文件夹缓存经过 babel 处理好的模块，对于 rebuild js 有着非常大的性能提升。</p>
+<p><code>webpack.base.conf.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">    loader: <span class="string">&#x27;babel-loader?cacheDirectory=true&#x27;</span>,</span><br><span class="line">    include: [resolve(<span class="string">&#x27;src&#x27;</span>)],</span><br><span class="line">    exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/webpack-webstorm解析vue-cli的别名路径（alias）/" data-toggle="tooltip" data-placement="top" title="[webpack] webstorm解析vue-cli的别名路径（alias）">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/Hexo-Hexo部署指南/" data-toggle="tooltip" data-placement="top" title="[Hexo] Hexo部署指南">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Mon Mar 02 2020 19:22:26 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5%E7%BB%84%E4%BB%B6"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">按需引入组件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%A4%BA%E4%BE%8B%E4%B8%80%EF%BC%9A%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5element"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">示例一：按需引入element</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%A4%BA%E4%BE%8B%E4%BA%8C%EF%BC%9A%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5magicbox"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">示例二：按需引入magicbox</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%A4%BA%E4%BE%8B%E4%B8%89%EF%BC%9A%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5iview"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">示例三：按需引入iview</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%96%E9%83%A8%E6%89%A9%E5%B1%95externals%E5%B1%9E%E6%80%A7"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">外部扩展externals属性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%94%A8%E6%B3%95"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">用法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">示例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BB%99%E5%AE%9A%E6%96%87%E4%BB%B6%E5%8C%B9%E9%85%8D%E8%8C%83%E5%9B%B4"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">给定文件匹配范围</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#noParse%E5%B1%9E%E6%80%A7"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">noParse属性</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cacheDirectory-%E7%BC%93%E5%AD%98%E5%B1%9E%E6%80%A7"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">cacheDirectory 缓存属性</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#webpack" title="webpack">webpack</a>
+            
+            <a class="tag" href="/tags/#vue-cli2.0" title="vue-cli2.0">vue-cli2.0</a>
+            
+            <a class="tag" href="/tags/#webpack优化" title="webpack优化">webpack优化</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='我要变强，为此不惜一切...,一念往，尽作尘泥罢...,玻璃晴朗，橘子辉煌...,我心即地狱，管他罪孽滔天...,我要这天，再遮不住我眼...,我要这地，再埋不了我心...,斯若晴空，何惧冰寒...,这灯红酒绿的世界啊...,不要放弃，哪怕付出所有...' color='#CDF0EA,#F9F9F9,#F7DBF0,#BEAEE2,#F38181,#FCE38A,#EAFFD0,#95E1D3,#80D6FF'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://jasonluox.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -359,12 +359,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('');
       --intro-header-background-image-url-page: url('/img/header_img/afternoon.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/afternoon.jpg');
     }
@@ -372,7 +372,7 @@
     header.intro-header {
        /*config*/
         background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/comic/about_stars2.png'); */
+        /* background-image: url('/img/header_img/comic/about_stars3.jpg'); */
       
     }
 
@@ -450,15 +450,18 @@
 
   <a href="/en/vue3-渲染机制/">
     <h2 class="post-title">
-      渲染机制
+      [vue3] 渲染机制
     </h2>
     <h3 class="post-subtitle">
       探究vue渲染机制
     </h3>
     <div class="post-content-preview">
-      vue3渲染机制Virtual DomVirtual DOM简介Virtual DOM 就是用 JavaScript 对象来描述真实的 DOM 节点。
+      vue3渲染机制
+Virtual Dom
+Virtual DOM简介
+Virtual DOM 就是用 JavaScript 对象来描述真实的 DOM 节点。
 例如，有这样一段 HTML：
-123&lt;div id=&quot;div&quot;&gt;  &lt;button @click=&quot;click&quot;&gt;click&lt;/button&gt;&lt;/div&gt;......
+123&lt;div id=&quot;div&quot;&gt;  &lt;button @click=&quot;click&quot;&gt;click&lt;/button&gt;&lt;/div&......
     </div>
   </a>
   
@@ -485,14 +488,17 @@
 
   <a href="/en/TS-Decorator装饰器/">
     <h2 class="post-title">
-      Decorator装饰器
+      [TypeScript] Decorator装饰器
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      TS Decorator装饰器介绍背景随着TypeScript和ES6里引入了类，在一些场景下我们需要额外的特性来支持标注或修改类及其成员。 装饰器（Decorators）为我们在类的声明及成员上通过元编程语法添加标注提供了一种方式。 Javascript里的装饰器目前处在建议征集的第二阶段，但在TypeScript里已做为一项实验性特性予以支持。
-Decorator 是 ES7 添加的新特......
+      TS Decorator装饰器
+介绍
+背景
+随着TypeScript和ES6里引入了类，在一些场景下我们需要额外的特性来支持标注或修改类及其成员。 装饰器（Decorators）为我们在类的声明及成员上通过元编程语法添加标注提供了一种方式。 Javascript里的装饰器目前处在建议征集的第二阶段，但在TypeScript里已做为一项实验性特性予以支持。
+Decorator 是 ES7 添加......
     </div>
   </a>
   
@@ -519,7 +525,7 @@ Decorator 是 ES7 添加的新特......
 
   <a href="/en/TS-typescript基础/">
     <h2 class="post-title">
-      TypeScript基础
+      [TypeScript] TypeScript基础
     </h2>
     <h3 class="post-subtitle">
       
@@ -553,16 +559,63 @@ Typescript 中文网 https://www.tslang.cn/docs/......
   <!-- top end -->
   
 
+  <a href="/en/vue-vue单页面应用刷新网页后vuex的state数据丢失的解决方案/">
+    <h2 class="post-title">
+      [vue] vuex缓存
+    </h2>
+    <h3 class="post-subtitle">
+      vue单页面应用刷新网页后vuex的state数据丢失的解决方案
+    </h3>
+    <div class="post-content-preview">
+      问题
+用vuex做全局的状态管理时，刷新网页后，保存在vuex示例store里的数据会丢失
+产生原因
+store里的数据是保存在运行内存中的,当页面刷新时，页面会重新加载vue实例，store里面的数据就会被重新赋值。
+解决思路
+将state里的数据保存一份到本地存储(localStorage、sessionStorage、cookie）中
+解决方案
+
+localStorage
+sessio......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-04-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue2" title="vue2">vue2</a>
+    
+    <a href="/tags/#vuex" title="vuex">vuex</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/en/css-css实现文字图标旋转90度水平翻转垂直翻转/">
     <h2 class="post-title">
-      css实现文字/图标旋转90度/水平翻转/垂直翻转
+      [CSS] css实现文字/图标旋转90度/水平翻转/垂直翻转
     </h2>
     <h3 class="post-subtitle">
       css各种翻转效果的实现...
     </h3>
     <div class="post-content-preview">
-      css实现文字/图标旋转90度/水平翻转/垂直翻转一 、css实现图片旋转90度1234.icon&#123;  -moz-transform:rotate(-90deg);  -webkit-transform:rotate(-90deg);&#125;
-二、 水平翻转123456789.icon &#123;    color: #f64e78;    font-size: 20px; ......
+      css实现文字/图标旋转90度/水平翻转/垂直翻转
+一 、css实现图片旋转90度
+1234.icon&#123;  -moz-transform:rotate(-90deg);  -webkit-transform:rotate(-90deg);&#125;
+二、 水平翻转
+123456789.icon &#123;    color: #f64e78;    font-size: 20p......
     </div>
   </a>
   
@@ -572,7 +625,86 @@ Typescript 中文网 https://www.tslang.cn/docs/......
   </p>
   <div class="tags">
     
-    <a href="/tags/#css元素翻转" title="css元素翻转">css元素翻转</a>
+    <a href="/tags/#css" title="css">css</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue-Vue Router进阶/">
+    <h2 class="post-title">
+      [vue] Vue Router进阶
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      导航守卫
+
+导航表示路由正在发生变化
+
+全局前置守卫
+可以使用router.beforeEach注册一个前置守卫
+12345678910111213const router &#x3D; new VueRouter(&#123;...&#125;)router.beforeEach((to, from, next) &#x3D;&gt; &#123;&#125;)&#x2F;&#x2F; t......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-04-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue router" title="vue router">vue router</a>
+    
+    <a href="/tags/#vue2" title="vue2">vue2</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue-vue +vuex 实现权限管理/">
+    <h2 class="post-title">
+      [vue] vue + vuex实现路由权限控制
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      定义权限路由
+在路由中通过meta.role定义能访问该路由的权限组
+router/index.js
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546import Home from &#x27;@views/home&#x27;import Test1 from &#x27......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-04-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue2" title="vue2">vue2</a>
+    
+    <a href="/tags/#vuex" title="vuex">vuex</a>
     
   </div>
   
@@ -589,14 +721,15 @@ Typescript 中文网 https://www.tslang.cn/docs/......
 
   <a href="/en/vue-Vue.js性能优化技巧/">
     <h2 class="post-title">
-      Vue.js性能优化技巧
+      [vue] Vue.js性能优化技巧
     </h2>
     <h3 class="post-subtitle">
       vue代码层性能优化技巧...
     </h3>
     <div class="post-content-preview">
-      Vue.js性能优化技巧这篇文章主要参考了 Vue.js 核心成员 Guillaume Chau 在 19 年美国的 Vue conf 分享的主题：9 Performance secrets revealed，分享中提到了九个 Vue.js 性能优化的技巧。
- Guillaume Chau : https://github.com/Akryum
+      Vue.js性能优化技巧
+这篇文章主要参考了 Vue.js 核心成员 Guillaume Chau 在 19 年美国的 Vue conf 分享的主题：9 Performance secrets revealed，分享中提到了九个 Vue.js 性能优化的技巧。
+Guillaume Chau : https://github.com/Akryum
 PPT : https://slides.co......
     </div>
   </a>
@@ -626,13 +759,13 @@ PPT : https://slides.co......
 
   <a href="/en/How-to-apply-JsDelivr-CDN-in-Hexo-theme-livemylife-Theme/">
     <h2 class="post-title">
-      How to apply JsDelivr CDN in Hexo-theme-livemylife Theme
+      [Hexo] How to apply JsDelivr CDN in Hexo-theme-livemylife Theme
     </h2>
     <h3 class="post-subtitle">
       A free CDN for Open Source fast, reliable, and automated...
     </h3>
     <div class="post-content-preview">
-      在早期之前博主，就写过一篇有关 JsDelivr CDN 加速的博文 — 免费 CDN 提速 Github 静态资源访问 ，如果还不知道 JsDelivr 是什么的小伙伴，可以先看上面这篇文章。
+      在早期之前博主，就写过一篇有关 JsDelivr CDN 加速的博文 – 免费 CDN 提速 Github 静态资源访问 ，如果还不知道 JsDelivr 是什么的小伙伴，可以先看上面这篇文章。
 今天博主想在这里讲一下，在 hexo-theme-livemylife 主题中，JsDelivr CDN 应用加速。众所周知，国内访问 Github 的体验一直不是很好，具体原因就不在这里阐述了。而......
     </div>
   </a>
@@ -660,7 +793,7 @@ PPT : https://slides.co......
 
   <a href="/en/How-to-Use-Internationalization（i18n）/">
     <h2 class="post-title">
-      How to Use Internationalization（i18n）
+      [Hexo] How to Use Internationalization（i18n）
     </h2>
     <h3 class="post-subtitle">
       Hexo-Theme-LiveMyLife supports multiple languages...
@@ -674,110 +807,6 @@ Hexo: You can use internationalization to present your site in different languag
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
     2021-04-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/How-to-Use-Mathjax/">
-    <h2 class="post-title">
-      How to Use Mathjax
-    </h2>
-    <h3 class="post-subtitle">
-      Beautiful and accessible math in all browsers...
-    </h3>
-    <div class="post-content-preview">
-      博主本人自己改编的 hexo-theme-livemylife 主题，有小伙伴在用时，问我是否支持 Mathjax 数学公式，由于工作原因未能增加此功能，在此次的 hexo-theme-livemylife 主题升级中，博主对之前小伙伴们提出的问题做了一个统一的修复和升级。那么让我们来看看 Mathjax 在 hexo-theme-livemylife 主题中是如何应用的。
-
-Mathjax......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2021-04-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/Four-Ways-to-Deploy-Hexo/">
-    <h2 class="post-title">
-      Four Ways to Deploy Hexo
-    </h2>
-    <h3 class="post-subtitle">
-      How to deploy hexo...
-    </h3>
-    <div class="post-content-preview">
-      Github Pages 部署如果对 Github Pages 还不是很了解的话，可以先参考 [Hexo] 2 开始搭建 Github Pages。很多同学都不会满足于让其他人用 username.github.io 这样奇奇怪怪的域名来访问自己的个人博客。
-购买个性域名这里推荐 阿里云，毕竟国内大公司，另外还有很多人推荐的 GoDaddy 也可以，这里再推荐一个 NameSilo。本篇以阿......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-07-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Hexo-Theme-LiveMyLife/">
-    <h2 class="post-title">
-      Hexo-Theme-LiveMyLife
-    </h2>
-    <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
-      
-Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
-This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-04-17
   </p>
   <div class="tags">
     
@@ -845,23 +874,39 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
+    <a href="/tags/#ES6" title="ES6" rel="8">ES6</a>
+    
+    
+    
+    <a href="/tags/#异步与同步" title="异步与同步" rel="1">异步与同步</a>
+    
+    
+    
+    <a href="/tags/#Echarts" title="Echarts" rel="1">Echarts</a>
+    
+    
+    
+    <a href="/tags/#tooltips" title="tooltips" rel="1">tooltips</a>
+    
+    
+    
     <a href="/tags/#Hexo" title="Hexo" rel="9">Hexo</a>
     
     
     
-    <a href="/tags/#css动画特效" title="css动画特效" rel="1">css动画特效</a>
+    <a href="/tags/#Html5 API" title="Html5 API" rel="1">Html5 API</a>
     
     
     
-    <a href="/tags/#css元素翻转" title="css元素翻转" rel="1">css元素翻转</a>
+    <a href="/tags/#h5" title="h5" rel="2">h5</a>
     
     
     
-    <a href="/tags/#css" title="css" rel="2">css</a>
+    <a href="/tags/#JS" title="JS" rel="6">JS</a>
     
     
     
-    <a href="/tags/#骨架屏" title="骨架屏" rel="1">骨架屏</a>
+    <a href="/tags/#原型" title="原型" rel="1">原型</a>
     
     
     
@@ -869,7 +914,31 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
-    <a href="/tags/#vue2" title="vue2" rel="2">vue2</a>
+    <a href="/tags/#JSPlugin" title="JSPlugin" rel="4">JSPlugin</a>
+    
+    
+    
+    <a href="/tags/#css动画特效" title="css动画特效" rel="1">css动画特效</a>
+    
+    
+    
+    <a href="/tags/#css" title="css" rel="4">css</a>
+    
+    
+    
+    <a href="/tags/#骨架屏" title="骨架屏" rel="1">骨架屏</a>
+    
+    
+    
+    <a href="/tags/#vue router" title="vue router" rel="1">vue router</a>
+    
+    
+    
+    <a href="/tags/#vue2" title="vue2" rel="5">vue2</a>
+    
+    
+    
+    <a href="/tags/#vuex" title="vuex" rel="2">vuex</a>
     
     
     
@@ -881,7 +950,31 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
+    <a href="/tags/#webpack" title="webpack" rel="2">webpack</a>
+    
+    
+    
+    <a href="/tags/#vue-cli2.0" title="vue-cli2.0" rel="2">vue-cli2.0</a>
+    
+    
+    
+    <a href="/tags/#class" title="class" rel="2">class</a>
+    
+    
+    
+    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
+    
+    
+    
+    <a href="/tags/#SVG" title="SVG" rel="1">SVG</a>
+    
+    
+    
     <a href="/tags/#TypeScript" title="TypeScript" rel="3">TypeScript</a>
+    
+    
+    
+    <a href="/tags/#移动端开发" title="移动端开发" rel="1">移动端开发</a>
     
     
     
@@ -940,23 +1033,23 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   <ul>
     
     <a href="../../en/vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
-      <li>响应性API</li>
+      <li>[vue3] 响应性API</li>
     </a>
     
     <a href="../../en/vue3-%E6%B7%B1%E5%85%A5%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">
-      <li>深入响应式原理</li>
+      <li>[vue3] 深入响应式原理</li>
     </a>
     
     <a href="../../en/vue3-vue3%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84%E3%80%81%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E5%8F%8A%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B/">
-      <li>vue3源码结构、核心模块及运行过程</li>
+      <li>[vue3] vue3源码结构、核心模块及运行过程</li>
     </a>
     
     <a href="../../en/vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
-      <li>effect源码解析</li>
+      <li>[vue3] effect源码解析</li>
     </a>
     
     <a href="../../en/vue3-%E7%BB%84%E5%90%88%E5%BC%8FAPI/">
-      <li>组合式API</li>
+      <li>[vue3] 组合式API</li>
     </a>
     
   </ul>
@@ -974,7 +1067,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
@@ -990,28 +1083,56 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
+    <a href="/categories/#ES6">
+      <li>ES6</li>
+    </a>
+    
+    <a href="/categories/#Echarts">
+      <li>Echarts</li>
+    </a>
+    
     <a href="/categories/#Hexo">
       <li>Hexo</li>
+    </a>
+    
+    <a href="/categories/#Html5 API">
+      <li>Html5 API</li>
+    </a>
+    
+    <a href="/categories/#JS">
+      <li>JS</li>
+    </a>
+    
+    <a href="/categories/#JSPlugin">
+      <li>JSPlugin</li>
     </a>
     
     <a href="/categories/#css">
       <li>css</li>
     </a>
     
-    <a href="/categories/#滚动加载">
-      <li>滚动加载</li>
+    <a href="/categories/#vue">
+      <li>vue</li>
     </a>
     
     <a href="/categories/#vue3">
       <li>vue3</li>
     </a>
     
+    <a href="/categories/#webpack">
+      <li>webpack</li>
+    </a>
+    
+    <a href="/categories/#SVG">
+      <li>SVG</li>
+    </a>
+    
     <a href="/categories/#TypeScript">
       <li>TypeScript</li>
     </a>
     
-    <a href="/categories/#vue性能优化">
-      <li>vue性能优化</li>
+    <a href="/categories/#移动端开发">
+      <li>移动端开发</li>
     </a>
     
   </ul>
@@ -1509,5 +1630,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -138,7 +138,7 @@
   <link rel="canonical" href="https://jasonluox.github.io/en/css-骨架屏Loading效果实现方案/">
   <title>
     
-      骨架屏Loading效果实现方案 - 流年风尘 | 我的前端之路
+      [CSS] 骨架屏Loading效果实现方案 - 流年风尘 | 我的前端之路
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -337,12 +337,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('/img/header_img/scenery/stars2.jpg');
       --intro-header-background-image-url-page: url('//img/header_img/scenery/stars2.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/stars2.jpg');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/stars2.jpg');
     }
@@ -380,7 +380,7 @@
               <a class="tag" href="/tags/#骨架屏" title="骨架屏">骨架屏</a>
               
             </div>
-            <h1>骨架屏Loading效果实现方案</h1>
+            <h1>[CSS] 骨架屏Loading效果实现方案</h1>
             <h2 class="subheading">骨架屏实现方案...</h2>
             <span class="meta">
               Posted by Jason Luo on
@@ -442,9 +442,11 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>Luke Wroblewski在2013年11月首次提出了骨架屏这个概念，建议开发者们使用”骨架屏”替换传统页面的spinners加载效果</p>
-<h2 id="纯CSS实现"><a href="#纯CSS实现" class="headerlink" title="纯CSS实现"></a>纯CSS实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;animated-background&quot; :style&#x3D;&quot;&#123;width: width, height: height&#125;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;loading-wrap&#39;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    width: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      default: &#39;200px&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    height: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      default: &#39;20px&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">@keyframes placeHolderShimmer &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    background-position: -968px 0</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    background-position: 968px 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.animated-background &#123;</span><br><span class="line">  webkit-transform: translate3d(0,0,0);</span><br><span class="line">  -moz-transform: translate3d(0,0,0);</span><br><span class="line">  -ms-transform: translate3d(0,0,0);</span><br><span class="line">  -o-transform: translate3d(0,0,0);</span><br><span class="line">  transform: translate3d(0,0,0);</span><br><span class="line">  animation-duration: 2s;</span><br><span class="line">  animation-fill-mode: forwards;</span><br><span class="line">  animation-iteration-count: infinite;</span><br><span class="line">  animation-name: placeHolderShimmer;</span><br><span class="line">  animation-timing-function: linear;</span><br><span class="line">  background: #f6f7f8;</span><br><span class="line">  background: linear-gradient(to right, #eeeeee 12%, #dddddd 58%, #eeeeee 83%);</span><br><span class="line">  background-size: 800px 104px;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="keyFrames详解"><a href="#keyFrames详解" class="headerlink" title="keyFrames详解"></a>keyFrames详解</h3><ul>
+        <p>Luke Wroblewski在2013年11月首次提出了骨架屏这个概念，建议开发者们使用&quot;骨架屏”替换传统页面的spinners加载效果</p>
+<h2 id="纯CSS实现">纯CSS实现</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;animated-background&quot; :style&#x3D;&quot;&#123;width: width, height: height&#125;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;loading-wrap&#39;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    width: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      default: &#39;200px&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    height: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      default: &#39;20px&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">@keyframes placeHolderShimmer &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    background-position: -968px 0</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    background-position: 968px 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.animated-background &#123;</span><br><span class="line">  webkit-transform: translate3d(0,0,0);</span><br><span class="line">  -moz-transform: translate3d(0,0,0);</span><br><span class="line">  -ms-transform: translate3d(0,0,0);</span><br><span class="line">  -o-transform: translate3d(0,0,0);</span><br><span class="line">  transform: translate3d(0,0,0);</span><br><span class="line">  animation-duration: 2s;</span><br><span class="line">  animation-fill-mode: forwards;</span><br><span class="line">  animation-iteration-count: infinite;</span><br><span class="line">  animation-name: placeHolderShimmer;</span><br><span class="line">  animation-timing-function: linear;</span><br><span class="line">  background: #f6f7f8;</span><br><span class="line">  background: linear-gradient(to right, #eeeeee 12%, #dddddd 58%, #eeeeee 83%);</span><br><span class="line">  background-size: 800px 104px;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="keyFrames详解">keyFrames详解</h3>
+<ul>
 <li>创建动画的原理是，将一套 CSS 样式逐渐变化为另一套样式。</li>
 <li>通过 @keyframes 规则，您能够创建动画。</li>
 <li>@keyframes定义一个动画，并定义具体的动画效果，比如是放大还是位移等等。</li>
@@ -454,8 +456,8 @@
 </ul>
 <p>Keyframes被称为关键帧，其类似于Flash中的关键帧。在CSS3中其主要以“@keyframes”开头，后面紧跟着是动画名称加上一对花括号“{…}”，括号中就是一些不同时间段样式规则。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> changecolor&#123;</span><br><span class="line">  <span class="number">0%</span>&#123;</span><br><span class="line">   <span class="attribute">background</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100%</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: green;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="animation"><a href="#animation" class="headerlink" title="animation"></a><strong>animation</strong></h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">animation</span>: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state];</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<h4 id="animation"><strong>animation</strong></h4>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">animation</span>: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state];</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -512,16 +514,18 @@
 <td>play-state</td>
 <td>animation-play-state</td>
 <td>指定动画是否正在运行或已暂停</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>示例：创建一个动画名叫“changecolor”，在“0%”时背景色为red,在20%时背景色为blue，在40%背景色为orange，在60%背景色为green，在80%时背景色yellow，在100%处时背景色为red。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>css3动画<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="keyword">@keyframes</span> changecolor&#123;</span></span><br><span class="line">  0%&#123;</span><br><span class="line"><span class="css">    <span class="attribute">background</span>: red;</span></span><br><span class="line">  &#125;</span><br><span class="line">  20%&#123;</span><br><span class="line"><span class="css">    <span class="attribute">background</span>:blue;</span></span><br><span class="line">  &#125;</span><br><span class="line">  40%&#123;</span><br><span class="line"><span class="css">    <span class="attribute">background</span>:orange;</span></span><br><span class="line">  &#125;</span><br><span class="line">  60%&#123;</span><br><span class="line"><span class="css">    <span class="attribute">background</span>:green;</span></span><br><span class="line">  &#125;</span><br><span class="line">  80%&#123;</span><br><span class="line"><span class="css">    <span class="attribute">background</span>:yellow;</span></span><br><span class="line">  &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line"><span class="css">    <span class="attribute">background</span>: red;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="css">  <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="css">  <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">  <span class="attribute">background</span>: red;</span></span><br><span class="line"><span class="css">  <span class="attribute">color</span>:<span class="number">#fff</span>;</span></span><br><span class="line"><span class="css">  <span class="attribute">margin</span>: <span class="number">20px</span> auto;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">  <span class="attribute">animation</span>: changecolor <span class="number">5s</span> ease-out .<span class="number">2s</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>hover颜色改变<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="设置动画播放方式"><a href="#设置动画播放方式" class="headerlink" title="设置动画播放方式"></a>设置动画播放方式</h4><p>语法规则</p>
+<h4 id="设置动画播放方式">设置动画播放方式</h4>
+<p>语法规则</p>
 <p><code>animation-timing-function:ease(由快到慢，逐渐变慢) | linear | ease-in | ease-out | ease-in-out | cubic-bezier(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;)]*</code></p>
 <p><img src="3698455-30615dfce27c06b8.webp" alt="img"></p>
-<h4 id="设置动画播放方向"><a href="#设置动画播放方向" class="headerlink" title="设置动画播放方向"></a>设置动画播放方向</h4><p>animation-direction属性主要用来设置动画播放方向，其语法规则如下：</p>
+<h4 id="设置动画播放方向">设置动画播放方向</h4>
+<p>animation-direction属性主要用来设置动画播放方向，其语法规则如下：</p>
 <ul>
 <li>animation-direction:normal | alternate [, normal | alternate]*</li>
 </ul>
@@ -530,7 +534,8 @@
 <li>normal是默认值，如果设置为normal时，动画的每次循环都是向前播放；</li>
 <li>另一个值是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放。</li>
 </ul>
-<h4 id="设置动画的播放状态"><a href="#设置动画的播放状态" class="headerlink" title="设置动画的播放状态"></a>设置动画的播放状态</h4><p>animation-play-state属性主要用来控制元素动画的播放状态。</p>
+<h4 id="设置动画的播放状态">设置动画的播放状态</h4>
+<p>animation-play-state属性主要用来控制元素动画的播放状态。</p>
 <p>参数：</p>
 <ul>
 <li>其主要有两个值：running和paused。</li>
@@ -540,18 +545,22 @@
 <ul>
 <li>animation-play-state:paused;</li>
 </ul>
-<h4 id="设置动画时间外属性"><a href="#设置动画时间外属性" class="headerlink" title="设置动画时间外属性"></a>设置动画时间外属性</h4><ul>
+<h4 id="设置动画时间外属性">设置动画时间外属性</h4>
+<ul>
 <li>animation-fill-mode属性定义在动画开始之前和结束之后发生的操作。主要具有四个属性值：none、forwards、backwords和both。其四个属性值对应效果如下：</li>
 <li>none        | 默认值，表示动画将按预期进行和结束，在动画完成其最后一帧时，动画会反转到初始帧处</li>
 <li>forwards   | 表示动画在结束后继续应用最后的关键帧的位置</li>
 <li>backwards | 会在向元素应用动画样式时迅速应用动画的初始帧</li>
 <li>both         | 元素动画同时具有forwards和backwards效果</li>
 </ul>
-<h2 id="vue-content-loader实现"><a href="#vue-content-loader实现" class="headerlink" title="vue-content-loader实现"></a>vue-content-loader实现</h2><p>git地址：<code>https://github.com/egoist/vue-content-loader</code></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>yarn add vue-content-loader</code></p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ContentLoader&gt;</span><br><span class="line">      &lt;rect x&#x3D;&quot;0&quot; y&#x3D;&quot;0&quot; rx&#x3D;&quot;3&quot; ry&#x3D;&quot;3&quot; width&#x3D;&quot;250&quot; height&#x3D;&quot;10&quot;&#x2F;&gt;</span><br><span class="line">      &lt;rect x&#x3D;&quot;20&quot; y&#x3D;&quot;20&quot; rx&#x3D;&quot;3&quot; ry&#x3D;&quot;3&quot; width&#x3D;&quot;220&quot; height&#x3D;&quot;10&quot;&#x2F;&gt;</span><br><span class="line">      &lt;rect x&#x3D;&quot;20&quot; y&#x3D;&quot;40&quot; rx&#x3D;&quot;3&quot; ry&#x3D;&quot;3&quot; width&#x3D;&quot;170&quot; height&#x3D;&quot;10&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;ContentLoader&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; ContentLoader &#125; from &#39;vue-content-loader&#39;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    ContentLoader</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="内置loaders"><a href="#内置loaders" class="headerlink" title="内置loaders"></a>内置loaders</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  ContentLoader,</span><br><span class="line">  FacebookLoader,</span><br><span class="line">  CodeLoader,</span><br><span class="line">  BulletListLoader,</span><br><span class="line">  InstagramLoader,</span><br><span class="line">  ListLoader</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;vue-content-loader&#x27;</span></span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<h2 id="vue-content-loader实现">vue-content-loader实现</h2>
+<p>git地址：<code>https://github.com/egoist/vue-content-loader</code></p>
+<h3 id="安装">安装</h3>
+<p><code>yarn add vue-content-loader</code></p>
+<h3 id="使用">使用</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ContentLoader&gt;</span><br><span class="line">      &lt;rect x&#x3D;&quot;0&quot; y&#x3D;&quot;0&quot; rx&#x3D;&quot;3&quot; ry&#x3D;&quot;3&quot; width&#x3D;&quot;250&quot; height&#x3D;&quot;10&quot;&#x2F;&gt;</span><br><span class="line">      &lt;rect x&#x3D;&quot;20&quot; y&#x3D;&quot;20&quot; rx&#x3D;&quot;3&quot; ry&#x3D;&quot;3&quot; width&#x3D;&quot;220&quot; height&#x3D;&quot;10&quot;&#x2F;&gt;</span><br><span class="line">      &lt;rect x&#x3D;&quot;20&quot; y&#x3D;&quot;40&quot; rx&#x3D;&quot;3&quot; ry&#x3D;&quot;3&quot; width&#x3D;&quot;170&quot; height&#x3D;&quot;10&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;ContentLoader&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; ContentLoader &#125; from &#39;vue-content-loader&#39;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    ContentLoader</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="内置loaders">内置loaders</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  ContentLoader,</span><br><span class="line">  FacebookLoader,</span><br><span class="line">  CodeLoader,</span><br><span class="line">  BulletListLoader,</span><br><span class="line">  InstagramLoader,</span><br><span class="line">  ListLoader</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;vue-content-loader&#x27;</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -630,7 +639,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 
 
         <hr>
@@ -638,12 +646,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/css-css实现抖动特效/" data-toggle="tooltip" data-placement="top" title="css实现抖动特效">&larr; Previous Post</a>
+            <a href="/en/css-css实现抖动特效/" data-toggle="tooltip" data-placement="top" title="[CSS] css实现抖动特效">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/Hexo-4-Hexo-图片插入/" data-toggle="tooltip" data-placement="top" title="[Hexo] 4 Hexo 图片插入">Next Post &rarr;</a>
+            <a href="/en/JSPlugin-Visjs详解/" data-toggle="tooltip" data-placement="top" title="[JSPlugin] Vis.js详解">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -1308,5 +1316,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

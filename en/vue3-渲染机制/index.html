@@ -138,7 +138,7 @@
   <link rel="canonical" href="https://jasonluox.github.io/en/vue3-渲染机制/">
   <title>
     
-      渲染机制 - 流年风尘 | 我的前端之路
+      [vue3] 渲染机制 - 流年风尘 | 我的前端之路
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -337,12 +337,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('/img/header_img/scenery/tree_stars.jpg');
       --intro-header-background-image-url-page: url('//img/header_img/scenery/tree_stars.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/tree_stars.jpg');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/tree_stars.jpg');
     }
@@ -378,7 +378,7 @@
               <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
               
             </div>
-            <h1>渲染机制</h1>
+            <h1>[vue3] 渲染机制</h1>
             <h2 class="subheading">探究vue渲染机制</h2>
             <span class="meta">
               Posted by Jason Luo on
@@ -440,28 +440,37 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="vue3渲染机制"><a href="#vue3渲染机制" class="headerlink" title="vue3渲染机制"></a>vue3渲染机制</h2><h3 id="Virtual-Dom"><a href="#Virtual-Dom" class="headerlink" title="Virtual Dom"></a>Virtual Dom</h3><h4 id="Virtual-DOM简介"><a href="#Virtual-DOM简介" class="headerlink" title="Virtual DOM简介"></a>Virtual DOM简介</h4><p>Virtual DOM 就是用 JavaScript 对象来描述真实的 DOM 节点。</p>
+        <h2 id="vue3渲染机制">vue3渲染机制</h2>
+<h3 id="Virtual-Dom">Virtual Dom</h3>
+<h4 id="Virtual-DOM简介">Virtual DOM简介</h4>
+<p>Virtual DOM 就是用 JavaScript 对象来描述真实的 DOM 节点。</p>
 <p>例如，有这样一段 HTML：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;div&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;click&quot;</span>&gt;</span>click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>用 Virtual DOM 来表示可以是这样的（为什么说可以是这样，因为这完全取决于你的设计）：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vDom = &#123;</span><br><span class="line">  tag: <span class="string">&#x27;div&#x27;</span>,</span><br><span class="line">  id: <span class="string">&#x27;div&#x27;</span>,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    tag: <span class="string">&#x27;button&#x27;</span>,</span><br><span class="line">    onClick: <span class="built_in">this</span>.click</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="为什么要使用Virtual-DOM"><a href="#为什么要使用Virtual-DOM" class="headerlink" title="为什么要使用Virtual DOM"></a>为什么要使用Virtual DOM</h4><ol>
+<h4 id="为什么要使用Virtual-DOM">为什么要使用Virtual DOM</h4>
+<ol>
 <li><strong>可跨平台</strong>，Virtual DOM 使组件的渲染逻辑和真实 DOM 彻底解耦，因此你可以很方便的在不同环境使用它，例如，当你开发的不是面向浏览器的，而是 IOS 或 Android 或小程序，你可以利用编写自己的 <code>render</code> 函数，把 Virtual DOM 渲染成自己想要的东西，而不仅仅是 DOM。</li>
 <li><strong>可程序式修改</strong>，Virtual DOM 提供了一种可以通过编程的方式修改、检查、克隆 DOM 结构的能力，你可以在把 DOM 返回给渲染引擎之前，先利用基本的 JavaScript 来处理好。</li>
 <li><strong>提升性能</strong>，当页面中有大量的 DOM 节点操作时，如果涉及到了浏览器的回流和重绘，性能是十分糟糕的，就像第二条说的，在 DOM 返回给渲染引擎之前，我们可以先用 JavaScript 处理 Virtual DOM，最终才返回真实 DOM，极大减少回流和重绘次数。</li>
 </ol>
-<h3 id="render函数"><a href="#render函数" class="headerlink" title="render函数"></a>render函数</h3><h4 id="render函数是什么"><a href="#render函数是什么" class="headerlink" title="render函数是什么"></a>render函数是什么</h4><p>首先我们知道，当你在编写 Vue 组件或页面时，一般会提供一个 <code>template</code> 选项来写 HTML 内容。根据<a target="_blank" rel="noopener" href="https://github.com/natee/build-your-own-vue-next/blob/master/course/chapter2/RENDERER.md#vue-3-总览">Vue 3 总览</a>这一部分内容的介绍，Vue 会先走编译阶段，把 <code>template</code> 编译成 <code>render</code> 函数，所以说最终的 DOM 一定是从 <code>render</code> 函数输出的。因此 <code>render</code> 函数可以用来代替 <code>template</code>，它返回的内容就是 <code>VNode</code>。直接使用 <code>render</code> 反而可以省去 <code>complier</code> 过程。</p>
-<h4 id="render函数的作用"><a href="#render函数的作用" class="headerlink" title="render函数的作用"></a>render函数的作用</h4><p>Vue 中提供的 <code>render</code> 函数是非常有用的，因为有些情况用 <code>template</code> 来表达业务逻辑会一定程度受到限制，这种情况你需要一种比较灵活的编程方式来表达底层的逻辑。</p>
+<h3 id="render函数">render函数</h3>
+<h4 id="render函数是什么">render函数是什么</h4>
+<p>首先我们知道，当你在编写 Vue 组件或页面时，一般会提供一个 <code>template</code> 选项来写 HTML 内容。根据<a target="_blank" rel="noopener" href="https://github.com/natee/build-your-own-vue-next/blob/master/course/chapter2/RENDERER.md#vue-3-%E6%80%BB%E8%A7%88">Vue 3 总览</a>这一部分内容的介绍，Vue 会先走编译阶段，把 <code>template</code> 编译成 <code>render</code> 函数，所以说最终的 DOM 一定是从 <code>render</code> 函数输出的。因此 <code>render</code> 函数可以用来代替 <code>template</code>，它返回的内容就是 <code>VNode</code>。直接使用 <code>render</code> 反而可以省去 <code>complier</code> 过程。</p>
+<h4 id="render函数的作用">render函数的作用</h4>
+<p>Vue 中提供的 <code>render</code> 函数是非常有用的，因为有些情况用 <code>template</code> 来表达业务逻辑会一定程度受到限制，这种情况你需要一种比较灵活的编程方式来表达底层的逻辑。</p>
 <p>例如，当你有一个需求是大量的文本输入框，这中需求你要写的标签并不多，但是却揉了大量的交互逻辑，你需要在模板上添加大量的逻辑代码（比如控制关联标签的显示），然而，你的 JavaScript 代码中也有大量的逻辑代码。</p>
 <p><code>render</code> 函数的存在可以让你在一个地方写业务逻辑，这时你就不用太多的去考虑标签的问题了。</p>
-<h4 id="render函数的用法"><a href="#render函数的用法" class="headerlink" title="render函数的用法"></a>render函数的用法</h4><p>有一段 <code>template</code> 如下：</p>
+<h4 id="render函数的用法">render函数的用法</h4>
+<p>有一段 <code>template</code> 如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">template: &#x27;<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;foo&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;onClick&quot;</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#x27;</span><br></pre></td></tr></table></figure>
 <p>Vue 3 中用 <code>render</code> 函数实现如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; h &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"> <span class="keyword">return</span> h(<span class="string">&#x27;div&#x27;</span>, &#123;</span><br><span class="line">   id: <span class="string">&#x27;foo&#x27;</span>,</span><br><span class="line">   onClick: <span class="built_in">this</span>.onClick</span><br><span class="line"> &#125;, <span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于这是纯粹的 JavaScript，所以如果你需要实现 <code>template</code> 中类似 <code>v-if</code>、<code>v-for</code> 这样的功能，直接通过三元表达式做到。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; h &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line"> <span class="keyword">let</span> nodeToReturn</span><br><span class="line"></span><br><span class="line"> <span class="comment">// v-if=&quot;ok&quot;</span></span><br><span class="line"> <span class="keyword">if</span>(<span class="built_in">this</span>.ok) &#123;</span><br><span class="line">   nodeToReturn = h(<span class="string">&#x27;div&#x27;</span>, &#123; </span><br><span class="line">     id: <span class="string">&#x27;foo&#x27;</span>, </span><br><span class="line">     onClick: <span class="built_in">this</span>.onClick </span><br><span class="line">   &#125;, <span class="string">&#x27;ok&#x27;</span>)</span><br><span class="line"> &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">   <span class="comment">// v-for=&quot;item in list&quot;</span></span><br><span class="line">   <span class="keyword">const</span> children = <span class="built_in">this</span>.list.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> h(<span class="string">&#x27;p&#x27;</span>, &#123; </span><br><span class="line">       key: item.id </span><br><span class="line">     &#125;, item.text)</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   nodeToReturn = h(<span class="string">&#x27;div&#x27;</span>, &#123;&#125;, children)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> nodeToReturn</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这就是 <code>render</code> 基本使用用法，就是 JavaScript 代码而已。</p>
-<h4 id="render函数使用场景"><a href="#render函数使用场景" class="headerlink" title="render函数使用场景"></a>render函数使用场景</h4><p>一般来说我们用 <code>tempate</code> 可以满足大多数场景了，但是你一定了解过 <code>slot</code> 这个东西，如果只使用 <code>tempate</code> 你将无法操作 <code>slot</code> 中的内容，如果你需要程序式地修改传进来的 <code>slot</code> 内容，你就必须用到 <code>render</code> 函数了（这也是大多数使用 <code>render</code> 函数的场景）。</p>
+<h4 id="render函数使用场景">render函数使用场景</h4>
+<p>一般来说我们用 <code>tempate</code> 可以满足大多数场景了，但是你一定了解过 <code>slot</code> 这个东西，如果只使用 <code>tempate</code> 你将无法操作 <code>slot</code> 中的内容，如果你需要程序式地修改传进来的 <code>slot</code> 内容，你就必须用到 <code>render</code> 函数了（这也是大多数使用 <code>render</code> 函数的场景）。</p>
 <p>下面我们用一个例子来说明。</p>
 <p>比如我们要实现这样一个组件：实现层级缩进效果，即类似 HTML 中嵌套的 UL 标签，看起来就像这样：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">level <span class="number">1</span></span><br><span class="line">  level <span class="number">1</span>-<span class="number">1</span></span><br><span class="line">  level <span class="number">1</span>-<span class="number">2</span></span><br><span class="line">    level <span class="number">1</span>-<span class="number">2</span>-<span class="number">1</span></span><br><span class="line">    level <span class="number">1</span>-<span class="number">2</span>-<span class="number">2</span></span><br></pre></td></tr></table></figure>
@@ -477,12 +486,14 @@
 <p><code>render</code> 函数中我们可以通过 <code>this.$slots</code> 拿到插槽内容，通过 JavaScript 把它处理成任何我们想要的东西，这里我们给每一项 <code>slot</code> 添加了一个 <code>margin-left: 10px</code> 缩进，看下效果：</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">level</span> <span class="number">1</span></span><br><span class="line">  <span class="attribute">level</span> <span class="number">1</span>-<span class="number">1</span></span><br><span class="line">  <span class="attribute">level</span> <span class="number">1</span>-<span class="number">2</span></span><br><span class="line">    <span class="attribute">level</span> <span class="number">1</span>-<span class="number">2</span>-<span class="number">1</span></span><br><span class="line">    <span class="attribute">level</span> <span class="number">1</span>-<span class="number">2</span>-<span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>完美，我们实现了一个用 <code>template</code> 几乎实现不了的功能。</p>
-<h4 id="render原则"><a href="#render原则" class="headerlink" title="render原则"></a>render原则</h4><ul>
+<h4 id="render原则">render原则</h4>
+<ul>
 <li>一般来说开发一些公共组件时才会用到 <code>render</code></li>
 <li>当你发现用 JavaScript 才能更好的表达你的逻辑时，那么就用 <code>render</code> 函数</li>
 <li>日常开发的功能性组件使用 <code>template</code>，这样更高效，且 <code>template</code> 更容易被 <code>complier</code> 优化</li>
 </ul>
-<h4 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h4><p>你可能会想，为什么不直接编译成 <code>VNode</code> ，而要在中间加一层 <code>render</code> 呢？</p>
+<h4 id="反思">反思</h4>
+<p>你可能会想，为什么不直接编译成 <code>VNode</code> ，而要在中间加一层 <code>render</code> 呢？</p>
 <p>这是因为 <code>VNode</code> 本身包含的信息比较多，手写太麻烦，也许你写着写着不自觉就封装成了一个 <code>helper</code> 函数，<code>h</code> 函数就是这样的，它把<strong>公用、灵活、复杂的逻辑封装成函数，并交给运行时</strong>，使用这样的函数将大大降低你的编写成本。</p>
 <p>知道了为什么要有 <code>render</code> 后，才需要去设计实现它，其实主要是实现 <code>h</code> 函数。</p>
 
@@ -492,12 +503,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/vue3-渲染器的核心diff算法/" data-toggle="tooltip" data-placement="top" title="渲染器的核心diff算法">&larr; Previous Post</a>
+            <a href="/en/vue3-渲染器的核心diff算法/" data-toggle="tooltip" data-placement="top" title="[vue3] 渲染器的核心diff算法">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/TS-Decorator装饰器/" data-toggle="tooltip" data-placement="top" title="Decorator装饰器">Next Post &rarr;</a>
+            <a href="/en/TS-Decorator装饰器/" data-toggle="tooltip" data-placement="top" title="[TypeScript] Decorator装饰器">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -1160,5 +1171,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

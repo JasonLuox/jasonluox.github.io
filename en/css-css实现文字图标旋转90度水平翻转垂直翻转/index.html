@@ -138,7 +138,7 @@
   <link rel="canonical" href="https://jasonluox.github.io/en/css-css实现文字图标旋转90度水平翻转垂直翻转/">
   <title>
     
-      css实现文字/图标旋转90度/水平翻转/垂直翻转 - 流年风尘 | 我的前端之路
+      [CSS] css实现文字/图标旋转90度/水平翻转/垂直翻转 - 流年风尘 | 我的前端之路
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -337,12 +337,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('/img/header_img/comic/magic_theme.jpg');
       --intro-header-background-image-url-page: url('//img/header_img/comic/magic_theme.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/magic_theme.jpg');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/comic/magic_theme.jpg');
     }
@@ -375,10 +375,10 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#css元素翻转" title="css元素翻转">css元素翻转</a>
+              <a class="tag" href="/tags/#css" title="css">css</a>
               
             </div>
-            <h1>css实现文字/图标旋转90度/水平翻转/垂直翻转</h1>
+            <h1>[CSS] css实现文字/图标旋转90度/水平翻转/垂直翻转</h1>
             <h2 class="subheading">css各种翻转效果的实现...</h2>
             <span class="meta">
               Posted by Jason Luo on
@@ -394,7 +394,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">145</span> In Total
+              Words <span class="post-count">146</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -440,10 +440,15 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="css实现文字-图标旋转90度-水平翻转-垂直翻转"><a href="#css实现文字-图标旋转90度-水平翻转-垂直翻转" class="headerlink" title="css实现文字/图标旋转90度/水平翻转/垂直翻转"></a>css实现文字/图标旋转90度/水平翻转/垂直翻转</h2><h3 id="一-、css实现图片旋转90度"><a href="#一-、css实现图片旋转90度" class="headerlink" title="一 、css实现图片旋转90度"></a>一 、css实现图片旋转90度</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span>&#123;</span><br><span class="line">  -moz-<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-<span class="number">90deg</span>);</span><br><span class="line">  -webkit-<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-<span class="number">90deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="二、-水平翻转"><a href="#二、-水平翻转" class="headerlink" title="二、 水平翻转"></a>二、 水平翻转</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f64e78</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    -moz-<span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">    -webkit-<span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">    -o-<span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="三、-垂直翻转"><a href="#三、-垂直翻转" class="headerlink" title="三、 垂直翻转"></a>三、 垂直翻转</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f64e78</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    -moz-<span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>);</span><br><span class="line">    -webkit-<span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>);</span><br><span class="line">    -o-<span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="四、注意"><a href="#四、注意" class="headerlink" title="四、注意"></a>四、注意</h3><p>行内元素无法通过改方法翻转，需转换成块级元素，如：可在外层加<code>div</code>标签，然后css应用在<code>div</code>上即可</p>
+        <h2 id="css实现文字-图标旋转90度-水平翻转-垂直翻转">css实现文字/图标旋转90度/水平翻转/垂直翻转</h2>
+<h3 id="一-、css实现图片旋转90度">一 、css实现图片旋转90度</h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span>&#123;</span><br><span class="line">  -moz-<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-<span class="number">90deg</span>);</span><br><span class="line">  -webkit-<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-<span class="number">90deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、-水平翻转">二、 水平翻转</h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f64e78</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    -moz-<span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">    -webkit-<span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">    -o-<span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">scaleX</span>(-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三、-垂直翻转">三、 垂直翻转</h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.icon</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f64e78</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    -moz-<span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>);</span><br><span class="line">    -webkit-<span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>);</span><br><span class="line">    -o-<span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>);</span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">scaleY</span>(-<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="四、注意">四、注意</h3>
+<p>行内元素无法通过改方法翻转，需转换成块级元素，如：可在外层加<code>div</code>标签，然后css应用在<code>div</code>上即可</p>
 
 
         <hr>
@@ -451,12 +456,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/TS-typescript基础/" data-toggle="tooltip" data-placement="top" title="TypeScript基础">&larr; Previous Post</a>
+            <a href="/en/vue-vue单页面应用刷新网页后vuex的state数据丢失的解决方案/" data-toggle="tooltip" data-placement="top" title="[vue] vuex缓存">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/vue-Vue.js性能优化技巧/" data-toggle="tooltip" data-placement="top" title="Vue.js性能优化技巧">Next Post &rarr;</a>
+            <a href="/en/vue-Vue Router进阶/" data-toggle="tooltip" data-placement="top" title="[vue] Vue Router进阶">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -576,7 +581,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#css元素翻转" title="css元素翻转">css元素翻转</a>
+            <a class="tag" href="/tags/#css" title="css">css</a>
             
           </div>
         </section>
@@ -1119,5 +1124,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://jasonluox.github.io/en/JSPlugin-mockjs使用指南/">
+  <title>
+    
+      [JSPlugin] Mockjs使用指南 - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Jason Luo&#39;s Golden House</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/scenery/golden_beach.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/scenery/golden_beach.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/golden_beach.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/golden_beach.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/scenery/golden_beach.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#JSPlugin" title="JSPlugin">JSPlugin</a>
+              
+            </div>
+            <h1>[JSPlugin] Mockjs使用指南</h1>
+            <h2 class="subheading">Mock.js 是一款模拟数据生成器，旨在帮助前端攻城师独立于后端进行开发，帮助编写单元测试...</h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2020-08-13
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">16</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>官方文档： <a target="_blank" rel="noopener" href="https://github.com/nuysoft/Mock/wiki">https://github.com/nuysoft/Mock/wiki</a></p>
+<h3 id="开始-安装-使用示例">开始 &amp; 安装 &amp; 使用示例</h3>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">npm install mockjs <span class="comment">--save-dev</span></span><br></pre></td></tr></table></figure>
+<p><strong>使用示例</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> origin = <span class="built_in">window</span>.location.origin</span><br><span class="line"><span class="keyword">const</span> url = origin + <span class="string">&#x27;/api/alarm/active/latest/list/?time_delte=10&#x27;</span></span><br><span class="line"><span class="keyword">const</span> type = <span class="string">&#x27;get&#x27;</span></span><br><span class="line">mockData(url, type)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mockData</span>(<span class="params">url, type</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> Mock = <span class="built_in">require</span>(<span class="string">&#x27;mockjs&#x27;</span>)</span><br><span class="line">    Mock.mock(url, type, &#123;</span><br><span class="line">        result: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">&#x27;data|1-3&#x27;</span>: [&#123;</span><br><span class="line">            id: <span class="string">&#x27;457c433b-67c6-4233-85b3-28dd477d101c&#x27;</span>,</span><br><span class="line">            ip: <span class="regexp">/^((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;)(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d&#123;1,2&#125;))&#123;3&#125;$/</span>,</span><br><span class="line">            <span class="string">&#x27;level|1&#x27;</span>: [<span class="string">&#x27;remain&#x27;</span>, <span class="string">&#x27;warning&#x27;</span>, <span class="string">&#x27;fatal&#x27;</span>],</span><br><span class="line">            alarm_type: <span class="string">&#x27;cpu暴毙&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;alarm_content|3&#x27;</span>: <span class="string">&#x27;jashdjkahsjdhwh&#x27;</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>返回结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        alarm_content: <span class="string">&quot;jashdjkahsjdhwhjashdjkahsjdhwhjashdjkahsjdhwh&quot;</span></span><br><span class="line">        alarm_type: <span class="string">&quot;cpu暴毙&quot;</span></span><br><span class="line">        id: <span class="string">&quot;457c433b-67c6-4233-85b3-28dd477d101c&quot;</span></span><br><span class="line">        ip: <span class="string">&quot;254.231.232.172&quot;</span></span><br><span class="line">        level: <span class="string">&quot;warning&quot;</span></span><br><span class="line">	&#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        alarm_content: <span class="string">&quot;jashdjkahsjdhwhjashdjkahsjdhwhjashdjkahsjdhwh&quot;</span></span><br><span class="line">        alarm_type: <span class="string">&quot;cpu暴毙&quot;</span></span><br><span class="line">        id: <span class="string">&quot;457c433b-67c6-4233-85b3-28dd477d101c&quot;</span></span><br><span class="line">        ip: <span class="string">&quot;11.22.232.172&quot;</span></span><br><span class="line">        level: <span class="string">&quot;warning&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="语法规范">语法规范</h3>
+<p>Mock.js的语法规范包括俩部分</p>
+<ol>
+<li>数据模板定义规范（Data Template Definition，DTD）</li>
+<li>数据占位符定义规范（Data Placeholder Definition，DPD）</li>
+</ol>
+<h4 id="数据模板定义规范-DTD">数据模板定义规范 DTD</h4>
+<p><strong>数据模板中的每个属性由 3 部分构成：属性名、生成规则、属性值：</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;name|rule&#x27;</span>: value</span><br><span class="line"><span class="regexp">//</span> 属性名   name</span><br><span class="line"><span class="regexp">//</span> 生成规则 rule</span><br><span class="line"><span class="regexp">//</span> 属性值   value</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong></p>
+<ul>
+<li>
+<p><em>属性名</em> 和 <em>生成规则</em> 之间用竖线 <code>|</code> 分隔。</p>
+</li>
+<li>
+<p><em>生成规则</em> 是可选的。</p>
+</li>
+<li>
+<p>生成规则</p>
+<p>有 7 种格式：</p>
+<ol>
+<li><code>'name|min-max': value</code></li>
+<li><code>'name|count': value</code></li>
+<li><code>'name|min-max.dmin-dmax': value</code></li>
+<li><code>'name|min-max.dcount': value</code></li>
+<li><code>'name|count.dmin-dmax': value</code></li>
+<li><code>'name|count.dcount': value</code></li>
+<li><code>'name|+step': value</code></li>
+</ol>
+</li>
+<li>
+<p>*<strong>生成规则* 的 含义 需要依赖 *属性值的类型* 才能确定。</strong></p>
+</li>
+<li>
+<p><em>属性值</em> 中可以含有 <code>@占位符</code>。</p>
+</li>
+<li>
+<p><em>属性值</em> 还指定了最终值的初始值和类型。</p>
+</li>
+</ul>
+<p><strong>生成规则和示例：</strong></p>
+<h5 id="属性值是字符串-String">属性值是字符串 <code>String</code></h5>
+<ol>
+<li>
+<p><code>'name|min-max': string</code></p>
+<p>通过重复 <code>string</code> 生成一个字符串，重复次数大于等于 <code>min</code>，小于等于 <code>max</code>。</p>
+</li>
+<li>
+<p><code>'name|count': string</code></p>
+<p>通过重复 <code>string</code> 生成一个字符串，重复次数等于 <code>count</code>。</p>
+</li>
+</ol>
+<h5 id="属性值是数字-Number">属性值是数字 <code>Number</code></h5>
+<ol>
+<li>
+<p><code>'name|+1': number</code></p>
+<p>属性值自动加 1，初始值为 <code>number</code>。</p>
+</li>
+<li>
+<p><code>'name|min-max': number</code></p>
+<p>生成一个大于等于 <code>min</code>、小于等于 <code>max</code> 的整数，属性值 <code>number</code> 只是用来确定类型。</p>
+</li>
+<li>
+<p><code>'name|min-max.dmin-dmax': number</code></p>
+<p>生成一个浮点数，整数部分大于等于 <code>min</code>、小于等于 <code>max</code>，小数部分保留 <code>dmin</code> 到 <code>dmax</code> 位。</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123;</span><br><span class="line">    <span class="string">&#x27;number1|1-100.1-10&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;number2|123.1-10&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;number3|123.3&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;number4|123.10&#x27;</span>: <span class="number">1.123</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;number1&quot;</span>: <span class="number">12.92</span>,</span><br><span class="line">    <span class="string">&quot;number2&quot;</span>: <span class="number">123.51</span>,</span><br><span class="line">    <span class="string">&quot;number3&quot;</span>: <span class="number">123.777</span>,</span><br><span class="line">    <span class="string">&quot;number4&quot;</span>: <span class="number">123.1231091814</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="属性值是布尔型-Boolean">属性值是布尔型 <code>Boolean</code></h5>
+<ol>
+<li>
+<p><code>'name|1': boolean</code></p>
+<p>随机生成一个布尔值，值为 true 的概率是 1/2，值为 false 的概率同样是 1/2。</p>
+</li>
+<li>
+<p><code>'name|min-max': value</code></p>
+<p>随机生成一个布尔值，值为 <code>value</code> 的概率是 <code>min / (min + max)</code>，值为 <code>!value</code> 的概率是 <code>max / (min + max)</code></p>
+</li>
+</ol>
+<h5 id="属性值是对象-Object">属性值是对象 <code>Object</code></h5>
+<ol>
+<li>
+<p><code>'name|count': object</code></p>
+<p>从属性值 <code>object</code> 中随机选取 <code>count</code> 个属性。</p>
+</li>
+<li>
+<p><code>'name|min-max': object</code></p>
+<p>从属性值 <code>object</code> 中随机选取 <code>min</code> 到 <code>max</code> 个属性。</p>
+</li>
+</ol>
+<h5 id="属性值是数组-Array">属性值是数组 <code>Array</code></h5>
+<ol>
+<li>
+<p><code>'name|1': array</code></p>
+<p>从属性值 <code>array</code> 中随机选取 1 个元素，作为最终值。</p>
+</li>
+<li>
+<p><code>'name|+1': array</code></p>
+<p>从属性值 <code>array</code> 中顺序选取 1 个元素，作为最终值。</p>
+</li>
+<li>
+<p><code>'name|min-max': array</code></p>
+<p>通过重复属性值 <code>array</code> 生成一个新数组，重复次数大于等于 <code>min</code>，小于等于 <code>max</code>。</p>
+</li>
+<li>
+<p><code>'name|count': array</code></p>
+<p>通过重复属性值 <code>array</code> 生成一个新数组，重复次数为 <code>count</code>。</p>
+</li>
+</ol>
+<h5 id="属性值是函数-Function">属性值是函数 <code>Function</code></h5>
+<ol>
+<li>
+<p><code>'name': function</code></p>
+<p>执行函数 <code>function</code>，取其返回值作为最终的属性值，函数的上下文为属性 <code>'name'</code> 所在的对象。</p>
+</li>
+</ol>
+<h5 id="属性值是正则表达式-RegExp">属性值是正则表达式 <code>RegExp</code></h5>
+<ol>
+<li>
+<p><code>'name': regexp</code></p>
+<p>根据正则表达式 <code>regexp</code> 反向生成可以匹配它的字符串。用于生成自定义格式的字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123;</span><br><span class="line">    <span class="string">&#x27;regexp1&#x27;</span>: <span class="regexp">/[a-z][A-Z][0-9]/</span>,</span><br><span class="line">    <span class="string">&#x27;regexp2&#x27;</span>: <span class="regexp">/\w\W\s\S\d\D/</span>,</span><br><span class="line">    <span class="string">&#x27;regexp3&#x27;</span>: <span class="regexp">/\d&#123;5,10&#125;/</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;regexp1&quot;</span>: <span class="string">&quot;pJ7&quot;</span>,</span><br><span class="line">    <span class="string">&quot;regexp2&quot;</span>: <span class="string">&quot;F)\fp1G&quot;</span>,</span><br><span class="line">    <span class="string">&quot;regexp3&quot;</span>: <span class="string">&quot;561659409&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="数据占位符定义规范-DPD">数据占位符定义规范 DPD</h4>
+<p><em>占位符</em> 只是在属性值字符串中占个位置，并不出现在最终的属性值中。</p>
+<p><em>占位符</em> 的格式为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@占位符</span></span><br><span class="line"><span class="meta">@占位符(<span class="params">参数 [, 参数]</span>)</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong></p>
+<ol>
+<li>用 <code>@</code> 来标识其后的字符串是 <em>占位符</em>。</li>
+<li><em>占位符</em> 引用的是 <code>Mock.Random</code> 中的方法。</li>
+<li>通过 <code>Mock.Random.extend()</code> 来扩展自定义占位符。</li>
+<li><em>占位符</em> 也可以引用 <em>数据模板</em> 中的属性。</li>
+<li><em>占位符</em> 会优先引用 <em>数据模板</em> 中的属性。</li>
+<li><em>占位符</em> 支持 <em>相对路径</em> 和 <em>绝对路径</em>。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Mock.mock(&#123;</span><br><span class="line">    name: &#123;</span><br><span class="line">        first: <span class="string">&#x27;@FIRST&#x27;</span>,</span><br><span class="line">        middle: <span class="string">&#x27;@FIRST&#x27;</span>,</span><br><span class="line">        last: <span class="string">&#x27;@LAST&#x27;</span>,</span><br><span class="line">        full: <span class="string">&#x27;@first @middle @last&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;first&quot;</span>: <span class="string">&quot;Charles&quot;</span>,</span><br><span class="line">        <span class="string">&quot;middle&quot;</span>: <span class="string">&quot;Brenda&quot;</span>,</span><br><span class="line">        <span class="string">&quot;last&quot;</span>: <span class="string">&quot;Lopez&quot;</span>,</span><br><span class="line">        <span class="string">&quot;full&quot;</span>: <span class="string">&quot;Charles Brenda Lopez&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Mock-mock"><code>Mock.mock()</code></h3>
+<h4 id="Mock-mock-rurl-rtype-template-function-options">Mock.mock( rurl?, rtype?, template|function( options ) )</h4>
+<p>根据数据模板生成模拟数据。</p>
+<h5 id="参数解析">参数解析</h5>
+<h6 id="rurl">rurl</h6>
+<p>可选。</p>
+<p>表示需要拦截的 URL，可以是 URL 字符串或 URL 正则。例如 <code>/\/domain\/list\.json/</code>、<code>'/domian/list.json'</code>。</p>
+<h6 id="rtype">rtype</h6>
+<p>可选。</p>
+<p>表示需要拦截的 Ajax 请求类型。例如 <code>GET</code>、<code>POST</code>、<code>PUT</code>、<code>DELETE</code> 等。</p>
+<h6 id="template">template</h6>
+<p>可选。</p>
+<p>表示数据模板，可以是对象或字符串。例如 <code>&#123; 'data|1-10':[&#123;&#125;] &#125;</code>、<code>'@EMAIL'</code>。</p>
+<h6 id="function-options">function(options)</h6>
+<p>可选。</p>
+<p>表示用于生成响应数据的函数。</p>
+<h6 id="options">options</h6>
+<p>指向本次请求的 Ajax 选项集，含有 <code>url</code>、<code>type</code> 和 <code>body</code> 三个属性，参见 <a target="_blank" rel="noopener" href="https://xhr.spec.whatwg.org/">XMLHttpRequest 规范</a>。</p>
+<blockquote>
+<p>从 1.0 开始，Mock.js 通过覆盖和模拟原生 XMLHttpRequest 的行为来拦截 Ajax 请求，不再依赖于第三方 Ajax 工具库（例如 jQuery、Zepto 等）。</p>
+</blockquote>
+<h5 id="Mock-mock-template">Mock.mock( template )</h5>
+<p>根据数据模板生成模拟数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mock.mock( template )</span></span><br><span class="line"><span class="keyword">var</span> template = &#123;</span><br><span class="line">    <span class="string">&#x27;title&#x27;</span>: <span class="string">&#x27;Syntax Demo&#x27;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;string1|1-10&#x27;</span>: <span class="string">&#x27;★&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;string2|3&#x27;</span>: <span class="string">&#x27;value&#x27;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;number1|+1&#x27;</span>: <span class="number">100</span>,</span><br><span class="line">    <span class="string">&#x27;number2|1-100&#x27;</span>: <span class="number">100</span>,</span><br><span class="line">    <span class="string">&#x27;number3|1-100.1-10&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;number4|123.1-10&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;number5|123.3&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;number6|123.10&#x27;</span>: <span class="number">1.123</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;boolean1|1&#x27;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">&#x27;boolean2|1-2&#x27;</span>: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;object1|2-4&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;110000&#x27;</span>: <span class="string">&#x27;北京市&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;120000&#x27;</span>: <span class="string">&#x27;天津市&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;130000&#x27;</span>: <span class="string">&#x27;河北省&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;140000&#x27;</span>: <span class="string">&#x27;山西省&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;object2|2&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;310000&#x27;</span>: <span class="string">&#x27;上海市&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;320000&#x27;</span>: <span class="string">&#x27;江苏省&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;330000&#x27;</span>: <span class="string">&#x27;浙江省&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;340000&#x27;</span>: <span class="string">&#x27;安徽省&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;array1|1&#x27;</span>: [<span class="string">&#x27;AMD&#x27;</span>, <span class="string">&#x27;CMD&#x27;</span>, <span class="string">&#x27;KMD&#x27;</span>, <span class="string">&#x27;UMD&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;array2|1-10&#x27;</span>: [<span class="string">&#x27;Mock.js&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;array3|3&#x27;</span>: [<span class="string">&#x27;Mock.js&#x27;</span>],</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;function&#x27;</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.title</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> data = Mock.mock(template)</span><br></pre></td></tr></table></figure>
+<h5 id="Mock-mock-rurl-template">Mock.mock( rurl, template )</h5>
+<p>记录数据模板。当拦截到匹配 <code>rurl</code> 的 Ajax 请求时，将根据数据模板 <code>template</code> 生成模拟数据，并作为响应数据返回。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mock.mock(rurl, template)</span></span><br><span class="line">Mock.mock(<span class="regexp">/\.json/</span>, &#123;</span><br><span class="line">    <span class="string">&#x27;list|1-10&#x27;</span>: [&#123;</span><br><span class="line">        <span class="string">&#x27;id|+1&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">&#x27;email&#x27;</span>: <span class="string">&#x27;@EMAIL&#x27;</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">data, status, jqXHR</span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="Mock-mock-rurl-function-options">Mock.mock( rurl, function( options ) )</h5>
+<p>记录用于生成响应数据的函数。当拦截到匹配 <code>rurl</code> 的 Ajax 请求时，函数 <code>function(options)</code> 将被执行，并把执行结果作为响应数据返回。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mock.mock(rurl, function(options))</span></span><br><span class="line">Mock.mock(<span class="regexp">/\.json/</span>, <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> options</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">data, status, jqXHR</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        foo: <span class="number">1</span>,</span><br><span class="line">        bar: <span class="number">2</span>,</span><br><span class="line">        faz: <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">data, status, jqXHR</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        foo: <span class="number">1</span>,</span><br><span class="line">        bar: <span class="number">2</span>,</span><br><span class="line">        faz: <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">data, status, jqXHR</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>返回结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;url&quot;</span>: <span class="string">&quot;hello.json&quot;</span>,</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">    <span class="string">&quot;body&quot;</span>: <span class="string">&quot;foo=1&amp;bar=2&amp;faz=3&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;url&quot;</span>: <span class="string">&quot;hello.json&quot;</span>,</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">    <span class="string">&quot;body&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;url&quot;</span>: <span class="string">&quot;hello.json?foo=1&amp;bar=2&amp;faz=3&quot;</span>,</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;GET&quot;</span>,</span><br><span class="line">    <span class="string">&quot;body&quot;</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Mock-mock-rurl-rtype-template">Mock.mock( rurl, rtype, template )</h5>
+<p>记录数据模板。当拦截到匹配 <code>rurl</code> 和 <code>rtype</code> 的 Ajax 请求时，将根据数据模板 <code>template</code> 生成模拟数据，并作为响应数据返回。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mock.mock( rurl, rtype, template )</span></span><br><span class="line">Mock.mock(<span class="regexp">/\.json/</span>, <span class="string">&#x27;get&#x27;</span>, &#123;</span><br><span class="line">    type: <span class="string">&#x27;get&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line">Mock.mock(<span class="regexp">/\.json/</span>, <span class="string">&#x27;post&#x27;</span>, &#123;</span><br><span class="line">    type: <span class="string">&#x27;post&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    type: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params">data, status, jqXHR</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params">data, status, jqXHR</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>返回结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;post&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;get&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Mock-mock-rurl-rtype-function-options">Mock.mock( rurl, rtype, function( options ) )</h5>
+<p>记录用于生成响应数据的函数。当拦截到匹配 <code>rurl</code> 和 <code>rtype</code> 的 Ajax 请求时，函数 <code>function(options)</code> 将被执行，并把执行结果作为响应数据返回。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Mock.mock( rurl, rtype, function(options) )</span></span><br><span class="line">Mock.mock(<span class="regexp">/\.json/</span>, <span class="string">&#x27;get&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> options.type</span><br><span class="line">&#125;)</span><br><span class="line">Mock.mock(<span class="regexp">/\.json/</span>, <span class="string">&#x27;post&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> options.type</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    type: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params">data, status, jqXHR</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">&#x27;hello.json&#x27;</span>,</span><br><span class="line">    type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">    dataType: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params">data, status, jqXHR</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;&lt;pre&gt;&#x27;</span>).text(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>))</span><br><span class="line">        .appendTo(<span class="string">&#x27;body&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>返回结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;GET&quot;</span></span><br><span class="line"><span class="string">&quot;POST&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Mock-setup"><code>Mock.setup()</code></h3>
+<p><code>Mock.setup( settings )</code></p>
+<p>配置拦截 Ajax 请求时的行为。支持的配置项有：<code>timeout</code>。</p>
+<p><code>settings</code></p>
+<p>必选。配置项集合。</p>
+<p><code>timeout</code></p>
+<p>可选。</p>
+<p>指定被拦截的 Ajax 请求的响应时间，单位是毫秒。值可以是正整数，例如 <code>400</code>，表示 400 毫秒 后才会返回响应内容；也可以是横杠 <code>'-'</code> 风格的字符串，例如 <code>'200-600'</code>，表示响应时间介于 200 和 600 毫秒之间。默认值是<code>'10-100'</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mock.setup(&#123;</span><br><span class="line">    timeout: <span class="number">400</span></span><br><span class="line">&#125;)</span><br><span class="line">Mock.setup(&#123;</span><br><span class="line">    timeout: <span class="string">&#x27;200-600&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>目前，接口 <code>Mock.setup( settings )</code> 仅用于配置 Ajax 请求，将来可能用于配置 Mock 的其他行为。</p>
+</blockquote>
+<h3 id="Mock-Random"><code>Mock.Random</code></h3>
+<p>此处只列出基础用法，完整用法请查看https://github.com/nuysoft/Mock/wiki/Mock.Random</p>
+<p>Mock.Random 是一个工具类，用于生成各种随机数据。</p>
+<p><strong>Mock.Random 的方法在数据模板中称为『占位符』，书写格式为 <code>@占位符(参数 [, 参数])</code> 。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Random = Mock.Random</span><br><span class="line">Random.email()</span><br><span class="line"><span class="comment">// =&gt; &quot;n.clark@miller.io&quot;</span></span><br><span class="line">Mock.mock(<span class="string">&#x27;@email&#x27;</span>)</span><br><span class="line"><span class="comment">// =&gt; &quot;y.lee@lewis.org&quot;</span></span><br><span class="line">Mock.mock( &#123; <span class="attr">email</span>: <span class="string">&#x27;@email&#x27;</span> &#125; )</span><br><span class="line"><span class="comment">// =&gt; &#123; email: &quot;v.lewis@hall.gov&quot; &#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法">方法</h4>
+<p>Mock.Random 提供的完整方法（占位符）如下：</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic</td>
+<td>boolean, natural, integer, float, character, string, range, date, time, datetime, now</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>image, dataImage</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>color</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>paragraph, sentence, word, title, cparagraph, csentence, cword, ctitle</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>first, last, name, cfirst, clast, cname</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>url, domain, email, ip, tld</td>
+</tr>
+<tr>
+<td>Address</td>
+<td>area, region</td>
+</tr>
+<tr>
+<td>Helper</td>
+<td>capitalize, upper, lower, pick, shuffle</td>
+</tr>
+<tr>
+<td>Miscellaneous</td>
+<td>guid, id</td>
+</tr>
+</tbody>
+</table>
+<h4 id="扩展">扩展</h4>
+<p>Mock.Random 中的方法与数据模板的 <code>@占位符</code> 一一对应，在需要时还可以为 Mock.Random 扩展方法，然后在数据模板中通过 <code>@扩展方法</code> 引用。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Random.extend(&#123;</span><br><span class="line">    constellation: <span class="function"><span class="keyword">function</span>(<span class="params">date</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> constellations = [<span class="string">&#x27;白羊座&#x27;</span>, <span class="string">&#x27;金牛座&#x27;</span>, <span class="string">&#x27;双子座&#x27;</span>, <span class="string">&#x27;巨蟹座&#x27;</span>, <span class="string">&#x27;狮子座&#x27;</span>, <span class="string">&#x27;处女座&#x27;</span>, <span class="string">&#x27;天秤座&#x27;</span>, <span class="string">&#x27;天蝎座&#x27;</span>, <span class="string">&#x27;射手座&#x27;</span>, <span class="string">&#x27;摩羯座&#x27;</span>, <span class="string">&#x27;水瓶座&#x27;</span>, <span class="string">&#x27;双鱼座&#x27;</span>]</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.pick(constellations)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">Random.constellation()</span><br><span class="line"><span class="comment">// =&gt; &quot;水瓶座&quot;</span></span><br><span class="line">Mock.mock(<span class="string">&#x27;@CONSTELLATION&#x27;</span>)</span><br><span class="line"><span class="comment">// =&gt; &quot;天蝎座&quot;</span></span><br><span class="line">Mock.mock(&#123;</span><br><span class="line">    constellation: <span class="string">&#x27;@CONSTELLATION&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt; &#123; constellation: &quot;射手座&quot; &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Mock-valid"><code>Mock.valid()</code></h3>
+<p><code>Mock.valid(template, data)</code></p>
+<h4 id="template-2">template</h4>
+<p>必选。</p>
+<p>表示数据模板，可以是对象或字符串。例如 <code>&#123; 'list|1-10':[&#123;&#125;] &#125;</code>、<code>'@EMAIL'</code>。</p>
+<h4 id="data">data</h4>
+<p>必选。</p>
+<p>表示真实数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> template = &#123;</span><br><span class="line">    name: <span class="string">&#x27;value1&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">    name: <span class="string">&#x27;value2&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">Mock.valid(template, data)</span><br><span class="line"><span class="comment">// =&gt;</span></span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;path&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;data&quot;</span>,</span><br><span class="line">            <span class="string">&quot;name&quot;</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;value&quot;</span>,</span><br><span class="line">        <span class="string">&quot;actual&quot;</span>: <span class="string">&quot;value2&quot;</span>,</span><br><span class="line">        <span class="string">&quot;expected&quot;</span>: <span class="string">&quot;value1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;action&quot;</span>: <span class="string">&quot;equal to&quot;</span>,</span><br><span class="line">        <span class="string">&quot;message&quot;</span>: <span class="string">&quot;[VALUE] Expect ROOT.name&#x27;value is equal to value1, but is value2&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="Mock-toJSONSchema-template"><code>Mock.toJSONSchema( template )</code></h3>
+<p><code>Mock.toJSONSchema( template )</code></p>
+<p>把 Mock.js 风格的数据模板 <code>template</code> 转换成 <a target="_blank" rel="noopener" href="http://json-schema.org/">JSON Schema</a>。</p>
+<h4 id="template-3">template</h4>
+<p>必选。</p>
+<p>表示数据模板，可以是对象或字符串。例如 <code>&#123; 'list|1-10':[&#123;&#125;] &#125;</code>、<code>'@EMAIL'</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> template = &#123;</span><br><span class="line">    <span class="string">&#x27;key|1-10&#x27;</span>: <span class="string">&#x27;★&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">Mock.toJSONSchema(template)</span><br><span class="line"><span class="comment">// =&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">    <span class="string">&quot;path&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;ROOT&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;object&quot;</span>,</span><br><span class="line">    <span class="string">&quot;template&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;key|1-10&quot;</span>: <span class="string">&quot;★&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;rule&quot;</span>: &#123;&#125;,</span><br><span class="line">    <span class="string">&quot;properties&quot;</span>: [&#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;key&quot;</span>,</span><br><span class="line">        <span class="string">&quot;path&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;ROOT&quot;</span>,</span><br><span class="line">            <span class="string">&quot;key&quot;</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;string&quot;</span>,</span><br><span class="line">        <span class="string">&quot;template&quot;</span>: <span class="string">&quot;★&quot;</span>,</span><br><span class="line">        <span class="string">&quot;rule&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;parameters&quot;</span>: [<span class="string">&quot;key|1-10&quot;</span>, <span class="string">&quot;key&quot;</span>, <span class="literal">null</span>, <span class="string">&quot;1-10&quot;</span>, <span class="literal">null</span>],</span><br><span class="line">            <span class="string">&quot;range&quot;</span>: [<span class="string">&quot;1-10&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;10&quot;</span>],</span><br><span class="line">            <span class="string">&quot;min&quot;</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">&quot;max&quot;</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="string">&quot;count&quot;</span>: <span class="number">3</span>,</span><br><span class="line">            <span class="string">&quot;decimal&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="string">&quot;dmin&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="string">&quot;dmax&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="string">&quot;dcount&quot;</span>: <span class="literal">undefined</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> template = &#123;</span><br><span class="line">    <span class="string">&#x27;list|1-10&#x27;</span>: [&#123;&#125;]</span><br><span class="line">&#125;</span><br><span class="line">Mock.toJSONSchema(template)</span><br><span class="line"><span class="comment">// =&gt;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">    <span class="string">&quot;path&quot;</span>: [<span class="string">&quot;ROOT&quot;</span>],</span><br><span class="line">    <span class="string">&quot;type&quot;</span>: <span class="string">&quot;object&quot;</span>,</span><br><span class="line">    <span class="string">&quot;template&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;list|1-10&quot;</span>: [&#123;&#125;]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;rule&quot;</span>: &#123;&#125;,</span><br><span class="line">    <span class="string">&quot;properties&quot;</span>: [&#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: <span class="string">&quot;list&quot;</span>,</span><br><span class="line">        <span class="string">&quot;path&quot;</span>: [<span class="string">&quot;ROOT&quot;</span>, <span class="string">&quot;list&quot;</span>],</span><br><span class="line">        <span class="string">&quot;type&quot;</span>: <span class="string">&quot;array&quot;</span>,</span><br><span class="line">        <span class="string">&quot;template&quot;</span>: [&#123;&#125;],</span><br><span class="line">        <span class="string">&quot;rule&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;parameters&quot;</span>: [<span class="string">&quot;list|1-10&quot;</span>, <span class="string">&quot;list&quot;</span>, <span class="literal">null</span>, <span class="string">&quot;1-10&quot;</span>, <span class="literal">null</span>],</span><br><span class="line">            <span class="string">&quot;range&quot;</span>: [<span class="string">&quot;1-10&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;10&quot;</span>],</span><br><span class="line">            <span class="string">&quot;min&quot;</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">&quot;max&quot;</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="string">&quot;count&quot;</span>: <span class="number">6</span>,</span><br><span class="line">            <span class="string">&quot;decimal&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="string">&quot;dmin&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="string">&quot;dmax&quot;</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="string">&quot;dcount&quot;</span>: <span class="literal">undefined</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;items&quot;</span>: [&#123;</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="string">&quot;path&quot;</span>: [<span class="string">&quot;data&quot;</span>, <span class="string">&quot;list&quot;</span>, <span class="number">0</span>],</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;object&quot;</span>,</span><br><span class="line">            <span class="string">&quot;template&quot;</span>: &#123;&#125;,</span><br><span class="line">            <span class="string">&quot;rule&quot;</span>: &#123;&#125;,</span><br><span class="line">            <span class="string">&quot;properties&quot;</span>: []</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/JSPlugin-导出pdf/" data-toggle="tooltip" data-placement="top" title="[JSPlugin] 导出Pdf">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/JS-Object.create()、new Object()和{}的区别/" data-toggle="tooltip" data-placement="top" title="[JS] Object.create()、new Object()和{}的区别">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Thu Aug 13 2020 11:42:45 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BC%80%E5%A7%8B-%E5%AE%89%E8%A3%85-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">开始 &amp; 安装 &amp; 使用示例</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">语法规范</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E6%9D%BF%E5%AE%9A%E4%B9%89%E8%A7%84%E8%8C%83-DTD"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">数据模板定义规范 DTD</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2-String"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">属性值是字符串 String</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E6%95%B0%E5%AD%97-Number"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">属性值是数字 Number</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%B8%83%E5%B0%94%E5%9E%8B-Boolean"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">属性值是布尔型 Boolean</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%AF%B9%E8%B1%A1-Object"><span class="toc-nav-number">2.1.4.</span> <span class="toc-nav-text">属性值是对象 Object</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E6%95%B0%E7%BB%84-Array"><span class="toc-nav-number">2.1.5.</span> <span class="toc-nav-text">属性值是数组 Array</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E5%87%BD%E6%95%B0-Function"><span class="toc-nav-number">2.1.6.</span> <span class="toc-nav-text">属性值是函数 Function</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-RegExp"><span class="toc-nav-number">2.1.7.</span> <span class="toc-nav-text">属性值是正则表达式 RegExp</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%A0%E4%BD%8D%E7%AC%A6%E5%AE%9A%E4%B9%89%E8%A7%84%E8%8C%83-DPD"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">数据占位符定义规范 DPD</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mock-mock"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Mock.mock()</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Mock-mock-rurl-rtype-template-function-options"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Mock.mock( rurl?, rtype?, template|function( options ) )</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90"><span class="toc-nav-number">3.1.1.</span> <span class="toc-nav-text">参数解析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#rurl"><span class="toc-nav-number">3.1.1.1.</span> <span class="toc-nav-text">rurl</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#rtype"><span class="toc-nav-number">3.1.1.2.</span> <span class="toc-nav-text">rtype</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#template"><span class="toc-nav-number">3.1.1.3.</span> <span class="toc-nav-text">template</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#function-options"><span class="toc-nav-number">3.1.1.4.</span> <span class="toc-nav-text">function(options)</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#options"><span class="toc-nav-number">3.1.1.5.</span> <span class="toc-nav-text">options</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Mock-mock-template"><span class="toc-nav-number">3.1.2.</span> <span class="toc-nav-text">Mock.mock( template )</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Mock-mock-rurl-template"><span class="toc-nav-number">3.1.3.</span> <span class="toc-nav-text">Mock.mock( rurl, template )</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Mock-mock-rurl-function-options"><span class="toc-nav-number">3.1.4.</span> <span class="toc-nav-text">Mock.mock( rurl, function( options ) )</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Mock-mock-rurl-rtype-template"><span class="toc-nav-number">3.1.5.</span> <span class="toc-nav-text">Mock.mock( rurl, rtype, template )</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Mock-mock-rurl-rtype-function-options"><span class="toc-nav-number">3.1.6.</span> <span class="toc-nav-text">Mock.mock( rurl, rtype, function( options ) )</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mock-setup"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Mock.setup()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mock-Random"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Mock.Random</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">方法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">扩展</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mock-valid"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">Mock.valid()</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#template-2"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">template</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#data"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">data</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mock-toJSONSchema-template"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">Mock.toJSONSchema( template )</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#template-3"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">template</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#JSPlugin" title="JSPlugin">JSPlugin</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='我要变强，为此不惜一切...,一念往，尽作尘泥罢...,玻璃晴朗，橘子辉煌...,我心即地狱，管他罪孽滔天...,我要这天，再遮不住我眼...,我要这地，再埋不了我心...,斯若晴空，何惧冰寒...,这灯红酒绿的世界啊...,不要放弃，哪怕付出所有...' color='#CDF0EA,#F9F9F9,#F7DBF0,#BEAEE2,#F38181,#FCE38A,#EAFFD0,#95E1D3,#80D6FF'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://jasonluox.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

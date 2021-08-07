@@ -138,7 +138,7 @@
   <link rel="canonical" href="https://jasonluox.github.io/en/Hexo-Hexo部署指南/">
   <title>
     
-      Hexo部署指南 - 流年风尘 | 我的前端之路
+      [Hexo] Hexo部署指南 - 流年风尘 | 我的前端之路
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -337,12 +337,12 @@
   <style type="text/css">
     .body--light {
       /* intro-header */
-      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
       --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
-      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars2.png');
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
       --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
@@ -378,7 +378,7 @@
               <a class="tag" href="/tags/#Hexo" title="Hexo">Hexo</a>
               
             </div>
-            <h1>Hexo部署指南</h1>
+            <h1>[Hexo] Hexo部署指南</h1>
             <h2 class="subheading">help u publish your hexo blog</h2>
             <span class="meta">
               Posted by Jason Luo on
@@ -394,7 +394,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">395</span> In Total
+              Words <span class="post-count">398</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -440,25 +440,36 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>github新建一个仓库命名为<code>&lt;你的用户名&gt;.github.io</code>，例如<code>jasonluox.github.io</code></p>
-<h3 id="开启github-pages"><a href="#开启github-pages" class="headerlink" title="开启github pages"></a>开启github pages</h3><p>在仓库的<code>settings/pages</code>中开启、等待网站自动发布成功（有一定延迟，等页面提示成功即可，如下所示）</p>
+        <h2 id="发布">发布</h2>
+<h3 id="新建仓库">新建仓库</h3>
+<p>github新建一个仓库命名为<code>&lt;你的用户名&gt;.github.io</code>，例如<code>jasonluox.github.io</code></p>
+<h3 id="开启github-pages">开启github pages</h3>
+<p>在仓库的<code>settings/pages</code>中开启、等待网站自动发布成功（有一定延迟，等页面提示成功即可，如下所示）</p>
 <p><img src="image-20210530200653700.png" alt="image-20210530200653700"></p>
-<h3 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改<code>_config.yml</code></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/JasonLuox/jasonluox.github.io</span> <span class="comment"># or https://gitee.com/&lt;yourAccount&gt;/&lt;repo&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#URL </span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://jasonluox.github.io/</span>      <span class="comment"># <span class="doctag">Note:</span> don&#x27;t forget to modify the CNAME file to your url</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>执行以下命令部署博客到github上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="成功，登录"><a href="#成功，登录" class="headerlink" title="成功，登录"></a>成功，登录</h3><p><a href="http://jasonluox.github.io">http://jasonluox.github.io</a></p>
+<h3 id="修改-config-yml">修改<code>_config.yml</code></h3>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/JasonLuox/jasonluox.github.io</span> <span class="comment"># or https://gitee.com/&lt;yourAccount&gt;/&lt;repo&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#URL </span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://jasonluox.github.io/</span>      <span class="comment"># <span class="doctag">Note:</span> don&#x27;t forget to modify the CNAME file to your url</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure>
+<h3 id="部署">部署</h3>
+<p>执行以下命令部署博客到github上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="成功，登录">成功，登录</h3>
+<p><a href="http://jasonluox.github.io">http://jasonluox.github.io</a></p>
 <p><img src="image-20210530200824166.png" alt="image-20210530200824166"></p>
-<h2 id="配置Gitalk评论插件"><a href="#配置Gitalk评论插件" class="headerlink" title="配置Gitalk评论插件"></a>配置Gitalk评论插件</h2><h3 id="注册应用"><a href="#注册应用" class="headerlink" title="注册应用"></a>注册应用</h3><p>使用gitalk需要先在github上注册新应用: <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew">https</a> : <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew">//github.com/settings/applications/new</a></p>
+<h2 id="配置Gitalk评论插件">配置Gitalk评论插件</h2>
+<h3 id="注册应用">注册应用</h3>
+<p>使用gitalk需要先在github上注册新应用: <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew">https</a> : <a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsettings%2Fapplications%2Fnew">//github.com/settings/applications/new</a></p>
 <p>填入对应信息即可，记住<code>homepage url</code>和<code>authorization callback url</code>保持一致，都为<code>https://jasonluox.github.io/</code></p>
 <p><img src="image-20210530201652101.png" alt="image-20210530201652101"></p>
 <p>填入完毕点击<code>Register application</code>完成注册即可</p>
-<h3 id="获取id和secrets"><a href="#获取id和secrets" class="headerlink" title="获取id和secrets"></a>获取id和secrets</h3><p>接上一步成功后会跳转到应用详情页</p>
+<h3 id="获取id和secrets">获取id和secrets</h3>
+<p>接上一步成功后会跳转到应用详情页</p>
 <p><img src="image-20210530201845402.png" alt="image-20210530201845402"></p>
 <p>点击生成client secret获取secret</p>
 <p><img src="image-20210530202009935.png" alt="image-20210530202009935"></p>
-<h3 id="填写配置"><a href="#填写配置" class="headerlink" title="填写配置"></a>填写配置</h3><p>接着，只要将上一步获取的信息填入到<code>_config.yml</code>中即可使用Gitalk了</p>
+<h3 id="填写配置">填写配置</h3>
+<p>接着，只要将上一步获取的信息填入到<code>_config.yml</code>中即可使用Gitalk了</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comment Settings</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## Gitalk Settings</span></span><br><span class="line"><span class="comment">## Doc:https://github.com/gitalk/gitalk/blob/master/readme-cn.md</span></span><br><span class="line"><span class="comment">##</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">owner:</span> <span class="string">JasonLuox</span>                       <span class="comment"># &#x27;GitHub repo owner&#x27;</span></span><br><span class="line">  <span class="attr">admin:</span> <span class="string">JasonLuox</span>                       <span class="comment"># [&#x27;GitHub repo owner and collaborators, only these guys can initialize github issues&#x27;]</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">jasonluox</span>               		<span class="comment"># &#x27;GitHub repo&#x27;</span></span><br><span class="line">  <span class="attr">id:</span> <span class="string">window.location.pathname</span></span><br><span class="line">  <span class="attr">clientID:</span> <span class="string">xxxxxx</span>                    	  <span class="comment"># &#x27;GitHub Application Client ID&#x27;</span></span><br><span class="line">  <span class="attr">clientSecret:</span> <span class="string">xxxxxxx</span>                   <span class="comment"># &#x27;GitHub Application Client Secret&#x27;</span></span><br><span class="line">  <span class="attr">perPage:</span> <span class="number">10</span>                    </span><br><span class="line">  <span class="attr">pagerDirection:</span> <span class="string">last</span>           </span><br><span class="line">  <span class="attr">createIssueManually:</span> <span class="literal">false</span>			<span class="comment"># By default, Gitalk will create a corresponding github issue for your every single page automatically when the logined user is belong to the admin users. You can create it manually by setting this option to true </span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">en</span>             </span><br><span class="line">  <span class="attr">maxCommentHeight:</span> <span class="number">250</span>          </span><br><span class="line">  <span class="attr">proxy:</span> <span class="string">https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token</span>  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h3><p><img src="image-20210530202258383.png" alt="image-20210530202258383"></p>
+<h3 id="使用效果">使用效果</h3>
+<p><img src="image-20210530202258383.png" alt="image-20210530202258383"></p>
 
 
         <hr>
@@ -466,12 +477,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/jsPlugin-Better Scroll 滚动加载的实现/" data-toggle="tooltip" data-placement="top" title="Better-Scroll 滚动加载的实现方案之一">&larr; Previous Post</a>
+            <a href="/en/webpack-打包优化/" data-toggle="tooltip" data-placement="top" title="[webpack] webpack打包优化">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/css-nth-child详解/" data-toggle="tooltip" data-placement="top" title="nth-child详解">Next Post &rarr;</a>
+            <a href="/en/css-nth-child详解/" data-toggle="tooltip" data-placement="top" title="[CSS] nth-child详解">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -1134,5 +1145,5 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"display":null,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://jasonluox.github.io/en/ES6-Reflect/">
+  <title>
+    
+      [ES6] Reflect详解 - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Jason Luo&#39;s Golden House</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/comic/galaxy.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/comic/galaxy.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/galaxy.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/comic/galaxy.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/comic/galaxy.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#ES6" title="ES6">ES6</a>
+              
+            </div>
+            <h1>[ES6] Reflect详解</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2020-08-10
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">15</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.3k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h3 id="为什么要用reflect">为什么要用reflect</h3>
+<p>举一个简单例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>&#125;</span><br><span class="line"><span class="keyword">let</span> proxiedObj = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">  <span class="function"><span class="title">get</span>(<span class="params">target, key</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;Get&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> target[key]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(proxiedObj.a) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>这段代码中，我们直接使用 <code>target[key]</code> 返回值，它直接返回了<strong>原始对象</strong>的值，不做任何其它操作，这对于这个简单的示例来说没任何问题，。</p>
+<p>那么变复杂一点：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  <span class="keyword">get</span> <span class="title">b</span>() &#123; <span class="keyword">return</span> <span class="built_in">this</span>.a &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> proxiedObj = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">  <span class="function"><span class="title">get</span>(<span class="params">target, key, receiver</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> target[key] <span class="comment">// 这里的target是obj</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> childObj = <span class="built_in">Object</span>.create(proxiedObj)</span><br><span class="line">childObj.a = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(childObj.b) <span class="comment">// 期望得到2 实际输出1</span></span><br></pre></td></tr></table></figure>
+<p>这段代码的输出结果就是错误的，这是什么情况？难道是原型继承写错了吗？我们尝试把<code>Proxy</code>相关代码去掉，发现输出是正常的… 这个问题其实就出在 <code>return target[key]</code>这一行：</p>
+<ol>
+<li>当读取 <code>childObj.b</code> 时，<code>childObj</code> 上没有属性 <code>b</code>，因此会从原型链上查找</li>
+<li>原型链是 <code>proxiedObj</code></li>
+<li>读取 <code>proxiedObj.b</code> 时，会触发<code>Proxy</code>捕捉器（trap）中的 <code>get</code>，这直接从<strong>原始对象</strong>中返回了 <code>target[key]</code></li>
+<li>这里<code>target[key]</code> 中 <code>key</code> 是一个 <code>getter</code>，因此这个 <code>getter</code> 中的上下文 <code>this</code> 即为target，这里的 <code>target</code> 就是 <code>obj</code>，因此直接返回了 <code>1</code>。</li>
+</ol>
+<p>那么我们怎么解决这个<code>this</code>出错的问题</p>
+<p>捕获器 <code>get</code> 有第三个参数叫做 <code>receiver</code>。</p>
+<blockquote>
+<p><code>Proxy</code> 中 <code>handler.get(target, prop, receiver)</code> 中的参数 <code>receiver</code> ：<code>Proxy</code> 或者继承 <code>Proxy</code> 的对象。</p>
+</blockquote>
+<blockquote>
+<p><code>Reflect.get(target, prop, receiver)</code> 中的参数 <code>receiver</code> ：如果<code>target</code> 对象中指定了 <code>getter</code>，<code>receiver</code> 则为 <code>getter</code> 调用时的 <code>this</code> 值。</p>
+</blockquote>
+<p>这确保了当我们的对象从另一个对象继承了值或函数时使用 <code>this</code> 值的正确性。</p>
+<p>我们修改刚才的示例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  <span class="keyword">get</span> <span class="title">b</span>() &#123; <span class="keyword">return</span> <span class="built_in">this</span>.a &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> proxiedObj = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">  <span class="comment">// 本例中这里的receiver为调用时的对象childOjb</span></span><br><span class="line">  <span class="function"><span class="title">get</span>(<span class="params">target, key, receiver</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 这里的target是obj</span></span><br><span class="line">    <span class="comment">// 这意思是把receiver作为this去调用target[key]</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, key, receiver)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> childObj = <span class="built_in">Object</span>.create(proxiedObj)</span><br><span class="line">childObj.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(childObj.b) <span class="comment">// 期望得到2 实际输出2</span></span><br></pre></td></tr></table></figure>
+<h3 id="概述">概述</h3>
+<p><code>Reflect</code>对象与<code>Proxy</code>对象一样，也是 ES6 为了操作对象而提供的新 API。<code>Reflect</code>对象的设计目的有这样几个。</p>
+<p>（1） 将<code>Object</code>对象的一些明显属于语言内部的方法（比如<code>Object.defineProperty</code>），放到<code>Reflect</code>对象上。现阶段，某些方法同时在<code>Object</code>和<code>Reflect</code>对象上部署，未来的新方法将只部署在<code>Reflect</code>对象上。也就是说，从<code>Reflect</code>对象上可以拿到语言内部的方法。</p>
+<p>（2） 修改某些<code>Object</code>方法的返回结果，让其变得更合理。比如，<code>Object.defineProperty(obj, name, desc)</code>在无法定义属性时，会抛出一个错误，而<code>Reflect.defineProperty(obj, name, desc)</code>则会返回<code>false</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 老写法</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="built_in">Object</span>.defineProperty(target, property, attributes);</span><br><span class="line">  <span class="comment">// success</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="comment">// failure</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">Reflect</span>.defineProperty(target, property, attributes)) &#123;</span><br><span class="line">  <span class="comment">// success</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// failure</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（3） 让<code>Object</code>操作都变成函数行为。某些<code>Object</code>操作是命令式，比如<code>name in obj</code>和<code>delete obj[name]</code>，而<code>Reflect.has(obj, name)</code>和<code>Reflect.deleteProperty(obj, name)</code>让它们变成了函数行为。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 老写法</span></span><br><span class="line"><span class="string">&#x27;assign&#x27;</span> <span class="keyword">in</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.has(<span class="built_in">Object</span>, <span class="string">&#x27;assign&#x27;</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>（4）<code>Reflect</code>对象的方法与<code>Proxy</code>对象的方法一一对应，只要是<code>Proxy</code>对象的方法，就能在<code>Reflect</code>对象上找到对应的方法。这就让<code>Proxy</code>对象可以方便地调用对应的<code>Reflect</code>方法，完成默认行为，作为修改行为的基础。也就是说，不管<code>Proxy</code>怎么修改默认行为，你总可以在<code>Reflect</code>上获取默认行为。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Proxy</span>(target, &#123;</span><br><span class="line">  set: <span class="function"><span class="keyword">function</span>(<span class="params">target, name, value, receiver</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> success = <span class="built_in">Reflect</span>.set(target, name, value, receiver);</span><br><span class="line">    <span class="keyword">if</span> (success) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;property &#x27;</span> + name + <span class="string">&#x27; on &#x27;</span> + target + <span class="string">&#x27; set to &#x27;</span> + value);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> success;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，<code>Proxy</code>方法拦截<code>target</code>对象的属性赋值行为。它采用<code>Reflect.set</code>方法将值赋值给对象的属性，确保完成原有的行为，然后再部署额外的功能。</p>
+<p>下面是另一个例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> loggedObj = <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">  <span class="function"><span class="title">get</span>(<span class="params">target, name</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;get&#x27;</span>, target, name);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.get(target, name);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">deleteProperty</span>(<span class="params">target, name</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;delete&#x27;</span> + name);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.deleteProperty(target, name);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">has</span>(<span class="params">target, name</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;has&#x27;</span> + name);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.has(target, name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，每一个<code>Proxy</code>对象的拦截操作（<code>get</code>、<code>delete</code>、<code>has</code>），内部都调用对应的<code>Reflect</code>方法，保证原生行为能够正常执行。添加的工作，就是将每一个操作输出一行日志。</p>
+<p>有了<code>Reflect</code>对象以后，很多操作会更易读。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 老写法</span></span><br><span class="line"><span class="built_in">Function</span>.prototype.apply.call(<span class="built_in">Math</span>.floor, <span class="literal">undefined</span>, [<span class="number">1.75</span>]) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.apply(<span class="built_in">Math</span>.floor, <span class="literal">undefined</span>, [<span class="number">1.75</span>]) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="静态方法">静态方法</h3>
+<p><code>Reflect</code>对象一共有 13 个静态方法。</p>
+<ul>
+<li>Reflect.apply(target, thisArg, args)</li>
+<li>Reflect.construct(target, args)</li>
+<li>Reflect.get(target, name, receiver)</li>
+<li>Reflect.set(target, name, value, receiver)</li>
+<li>Reflect.defineProperty(target, name, desc)</li>
+<li>Reflect.deleteProperty(target, name)</li>
+<li>Reflect.has(target, name)</li>
+<li>Reflect.ownKeys(target)</li>
+<li>Reflect.isExtensible(target)</li>
+<li>Reflect.preventExtensions(target)</li>
+<li>Reflect.getOwnPropertyDescriptor(target, name)</li>
+<li>Reflect.getPrototypeOf(target)</li>
+<li>Reflect.setPrototypeOf(target, prototype)</li>
+</ul>
+<p>上面这些方法的作用，大部分与<code>Object</code>对象的同名方法的作用都是相同的，而且它与<code>Proxy</code>对象的方法是一一对应的。下面是对它们的解释。</p>
+<h4 id="Reflect-get-target-name-receiver">Reflect.get(target, name, receiver)</h4>
+<p><code>Reflect.get</code>方法查找并返回<code>target</code>对象的<code>name</code>属性，如果没有该属性，则返回<code>undefined</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  bar: <span class="number">2</span>,</span><br><span class="line">  <span class="keyword">get</span> <span class="title">baz</span>() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.foo + <span class="built_in">this</span>.bar;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.get(myObject, <span class="string">&#x27;foo&#x27;</span>) <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">Reflect</span>.get(myObject, <span class="string">&#x27;bar&#x27;</span>) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">Reflect</span>.get(myObject, <span class="string">&#x27;baz&#x27;</span>) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>如果<code>name</code>属性部署了读取函数（getter），则读取函数的<code>this</code>绑定<code>receiver</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  bar: <span class="number">2</span>,</span><br><span class="line">  <span class="keyword">get</span> <span class="title">baz</span>() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.foo + <span class="built_in">this</span>.bar;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myReceiverObject = &#123;</span><br><span class="line">  foo: <span class="number">4</span>,</span><br><span class="line">  bar: <span class="number">4</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.get(myObject, <span class="string">&#x27;baz&#x27;</span>, myReceiverObject) <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+<p>如果第一个参数不是对象，<code>Reflect.get</code>方法会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Reflect</span>.get(<span class="number">1</span>, <span class="string">&#x27;foo&#x27;</span>) <span class="comment">// 报错</span></span><br><span class="line"><span class="built_in">Reflect</span>.get(<span class="literal">false</span>, <span class="string">&#x27;foo&#x27;</span>) <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-set-target-name-value-receiver">Reflect.set(target, name, value, receiver)</h4>
+<p>target必须是是对象</p>
+<p><code>Reflect.set</code>方法设置<code>target</code>对象的<code>name</code>属性等于<code>value</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  <span class="keyword">set</span> <span class="title">bar</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.foo = value;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myObject.foo <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.set(myObject, <span class="string">&#x27;foo&#x27;</span>, <span class="number">2</span>);</span><br><span class="line">myObject.foo <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.set(myObject, <span class="string">&#x27;bar&#x27;</span>, <span class="number">3</span>)</span><br><span class="line">myObject.foo <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>如果<code>name</code>属性设置了赋值函数，则赋值函数的<code>this</code>绑定<code>receiver</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">  foo: <span class="number">4</span>,</span><br><span class="line">  <span class="keyword">set</span> <span class="title">bar</span>(<span class="params">value</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.foo = value;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myReceiverObject = &#123;</span><br><span class="line">  foo: <span class="number">0</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.set(myObject, <span class="string">&#x27;bar&#x27;</span>, <span class="number">1</span>, myReceiverObject);</span><br><span class="line">myObject.foo <span class="comment">// 4</span></span><br><span class="line">myReceiverObject.foo <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>注意，如果 <code>Proxy</code>对象和 <code>Reflect</code>对象联合使用，前者拦截赋值操作，后者完成赋值的默认行为，而且传入了<code>receiver</code>，那么<code>Reflect.set</code>会触发<code>Proxy.defineProperty</code>拦截。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> p = &#123;</span><br><span class="line">  a: <span class="string">&#x27;a&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> handler = &#123;</span><br><span class="line">  <span class="function"><span class="title">set</span>(<span class="params">target, key, value, receiver</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;set&#x27;</span>);</span><br><span class="line">    <span class="built_in">Reflect</span>.set(target, key, value, receiver)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">defineProperty</span>(<span class="params">target, key, attribute</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;defineProperty&#x27;</span>);</span><br><span class="line">    <span class="built_in">Reflect</span>.defineProperty(target, key, attribute);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Proxy</span>(p, handler);</span><br><span class="line">obj.a = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="comment">// set</span></span><br><span class="line"><span class="comment">// defineProperty</span></span><br></pre></td></tr></table></figure>
+<p>如果第一个参数不是对象，<code>Reflect.set</code>会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Reflect</span>.set(<span class="number">1</span>, <span class="string">&#x27;foo&#x27;</span>, &#123;&#125;) <span class="comment">// 报错</span></span><br><span class="line"><span class="built_in">Reflect</span>.set(<span class="literal">false</span>, <span class="string">&#x27;foo&#x27;</span>, &#123;&#125;) <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-has-obj-name">Reflect.has(obj, name)</h4>
+<p><code>Reflect.has</code>方法对应<code>name in obj</code>里面的<code>in</code>运算符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="string">&#x27;foo&#x27;</span> <span class="keyword">in</span> myObject <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.has(myObject, <span class="string">&#x27;foo&#x27;</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>如果<code>Reflect.has()</code>方法的第一个参数不是对象，会报错。</p>
+<h4 id="Reflect-deleteProperty-obj-name">Reflect.deleteProperty(obj, name)</h4>
+<p><code>Reflect.deleteProperty</code>方法等同于<code>delete obj[name]</code>，用于删除对象的属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObj = &#123; <span class="attr">foo</span>: <span class="string">&#x27;bar&#x27;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="keyword">delete</span> myObj.foo;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.deleteProperty(myObj, <span class="string">&#x27;foo&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>该方法返回一个布尔值。如果删除成功，或者被删除的属性不存在，返回<code>true</code>；删除失败，被删除的属性依然存在，返回<code>false</code>。</p>
+<p>如果<code>Reflect.deleteProperty()</code>方法的第一个参数不是对象，会报错。</p>
+<h4 id="Reflect-construct-target-args">Reflect.construct(target, args)</h4>
+<p><code>Reflect.construct</code>方法等同于<code>new target(...args)</code>，这提供了一种不使用<code>new</code>，来调用构造函数的方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Greeting</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// new 的写法</span></span><br><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> Greeting(<span class="string">&#x27;张三&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Reflect.construct 的写法</span></span><br><span class="line"><span class="keyword">const</span> instance = <span class="built_in">Reflect</span>.construct(Greeting, [<span class="string">&#x27;张三&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+<p>如果<code>Reflect.construct()</code>方法的第一个参数不是函数，会报错。</p>
+<h4 id="Reflect-getPrototypeOf-obj">Reflect.getPrototypeOf(obj)</h4>
+<p><code>Reflect.getPrototypeOf</code>方法用于读取对象的<code>__proto__</code>属性，对应<code>Object.getPrototypeOf(obj)</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObj = <span class="keyword">new</span> FancyThing();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(myObj) === FancyThing.prototype;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.getPrototypeOf(myObj) === FancyThing.prototype;</span><br></pre></td></tr></table></figure>
+<p><code>Reflect.getPrototypeOf</code>和<code>Object.getPrototypeOf</code>的一个区别是，如果参数不是对象，<code>Object.getPrototypeOf</code>会将这个参数转为对象，然后再运行，而<code>Reflect.getPrototypeOf</code>会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getPrototypeOf(<span class="number">1</span>) <span class="comment">// Number &#123;[[PrimitiveValue]]: 0&#125;</span></span><br><span class="line"><span class="built_in">Reflect</span>.getPrototypeOf(<span class="number">1</span>) <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-setPrototypeOf-obj-newProto">Reflect.setPrototypeOf(obj, newProto)</h4>
+<p><code>Reflect.setPrototypeOf</code>方法用于设置目标对象的原型（prototype），对应<code>Object.setPrototypeOf(obj, newProto)</code>方法。它返回一个布尔值，表示是否设置成功。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="built_in">Object</span>.setPrototypeOf(myObj, <span class="built_in">Array</span>.prototype);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.setPrototypeOf(myObj, <span class="built_in">Array</span>.prototype);</span><br><span class="line"></span><br><span class="line">myObj.length <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<p>如果无法设置目标对象的原型（比如，目标对象禁止扩展），<code>Reflect.setPrototypeOf</code>方法返回<code>false</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Reflect</span>.setPrototypeOf(&#123;&#125;, <span class="literal">null</span>)</span><br><span class="line"><span class="comment">// true</span></span><br><span class="line"><span class="built_in">Reflect</span>.setPrototypeOf(<span class="built_in">Object</span>.freeze(&#123;&#125;), <span class="literal">null</span>)	</span><br><span class="line"><span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Object.freeze()冻结对象：其他代码不能删除或更改任何属性。</span></span><br></pre></td></tr></table></figure>
+<p>如果第一个参数不是对象，<code>Object.setPrototypeOf</code>会返回第一个参数本身，而<code>Reflect.setPrototypeOf</code>会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.setPrototypeOf(<span class="number">1</span>, &#123;&#125;)</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.setPrototypeOf(<span class="number">1</span>, &#123;&#125;)</span><br><span class="line"><span class="comment">// TypeError: Reflect.setPrototypeOf called on non-object</span></span><br></pre></td></tr></table></figure>
+<p>如果第一个参数是<code>undefined</code>或<code>null</code>，<code>Object.setPrototypeOf</code>和<code>Reflect.setPrototypeOf</code>都会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.setPrototypeOf(<span class="literal">null</span>, &#123;&#125;)</span><br><span class="line"><span class="comment">// TypeError: Object.setPrototypeOf called on null or undefined</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.setPrototypeOf(<span class="literal">null</span>, &#123;&#125;)</span><br><span class="line"><span class="comment">// TypeError: Reflect.setPrototypeOf called on non-object</span></span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-apply-func-thisArg-args">Reflect.apply(func, thisArg, args)</h4>
+<p><code>Reflect.apply</code>方法等同于<code>Function.prototype.apply.call(func, thisArg, args)</code>，用于绑定<code>this</code>对象后执行给定函数。</p>
+<p>一般来说，如果要绑定一个函数的<code>this</code>对象，可以这样写<code>fn.apply(obj, args)</code>，但是如果函数定义了自己的<code>apply</code>方法，就只能写成<code>Function.prototype.apply.call(fn, obj, args)</code>，采用<code>Reflect</code>对象可以简化这种操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ages = [<span class="number">11</span>, <span class="number">33</span>, <span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">96</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="keyword">const</span> youngest = <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, ages);</span><br><span class="line"><span class="keyword">const</span> oldest = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, ages);</span><br><span class="line"><span class="keyword">const</span> type = <span class="built_in">Object</span>.prototype.toString.call(youngest);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="keyword">const</span> youngest = <span class="built_in">Reflect</span>.apply(<span class="built_in">Math</span>.min, <span class="built_in">Math</span>, ages);</span><br><span class="line"><span class="keyword">const</span> oldest = <span class="built_in">Reflect</span>.apply(<span class="built_in">Math</span>.max, <span class="built_in">Math</span>, ages);</span><br><span class="line"><span class="keyword">const</span> type = <span class="built_in">Reflect</span>.apply(<span class="built_in">Object</span>.prototype.toString, youngest, []);</span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-defineProperty-target-propertyKey-attributes">Reflect.defineProperty(target, propertyKey, attributes)</h4>
+<p><code>Reflect.defineProperty</code>方法基本等同于<code>Object.defineProperty</code>，用来为对象定义属性。未来，后者会被逐渐废除，请从现在开始就使用<code>Reflect.defineProperty</code>代替它。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyDate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">/*…*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(MyDate, <span class="string">&#x27;now&#x27;</span>, &#123;</span><br><span class="line">  value: <span class="function">() =&gt;</span> <span class="built_in">Date</span>.now()</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.defineProperty(MyDate, <span class="string">&#x27;now&#x27;</span>, &#123;</span><br><span class="line">  value: <span class="function">() =&gt;</span> <span class="built_in">Date</span>.now()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果<code>Reflect.defineProperty</code>的第一个参数不是对象，就会抛出错误，比如<code>Reflect.defineProperty(1, 'foo')</code>。</p>
+<p>这个方法可以与<code>Proxy.defineProperty</code>配合使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Proxy</span>(&#123;&#125;, &#123;</span><br><span class="line">  <span class="function"><span class="title">defineProperty</span>(<span class="params">target, prop, descriptor</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(descriptor);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Reflect</span>.defineProperty(target, prop, descriptor);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">p.foo = <span class="string">&#x27;bar&#x27;</span>;</span><br><span class="line"><span class="comment">// &#123;value: &quot;bar&quot;, writable: true, enumerable: true, configurable: true&#125;</span></span><br><span class="line"></span><br><span class="line">p.foo <span class="comment">// &quot;bar&quot;</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，<code>Proxy.defineProperty</code>对属性赋值设置了拦截，然后使用<code>Reflect.defineProperty</code>完成了赋值。</p>
+<h4 id="Reflect-getOwnPropertyDescriptor-target-propertyKey">Reflect.getOwnPropertyDescriptor(target, propertyKey)</h4>
+<p><code>Object.getOwnPropertyDescriptor</code>	返回对象指定的属性配置。</p>
+<p><code>Reflect.getOwnPropertyDescriptor</code>基本等同于<code>Object.getOwnPropertyDescriptor</code>，用于得到指定属性的描述对象，将来会替代掉后者。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObject, <span class="string">&#x27;hidden&#x27;</span>, &#123;</span><br><span class="line">  value: <span class="literal">true</span>,</span><br><span class="line">  enumerable: <span class="literal">false</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="keyword">var</span> theDescriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(myObject, <span class="string">&#x27;hidden&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="keyword">var</span> theDescriptor = <span class="built_in">Reflect</span>.getOwnPropertyDescriptor(myObject, <span class="string">&#x27;hidden&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p><code>Reflect.getOwnPropertyDescriptor</code>和<code>Object.getOwnPropertyDescriptor</code>的一个区别是，如果第一个参数不是对象，<code>Object.getOwnPropertyDescriptor(1, 'foo')</code>不报错，返回<code>undefined</code>，而<code>Reflect.getOwnPropertyDescriptor(1, 'foo')</code>会抛出错误，表示参数非法。</p>
+<h4 id="Reflect-isExtensible-target">Reflect.isExtensible (target)</h4>
+<p><code>Reflect.isExtensible</code>方法对应<code>Object.isExtensible</code>，返回一个布尔值，表示当前对象是否可扩展。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObject = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="built_in">Object</span>.isExtensible(myObject) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.isExtensible(myObject) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>如果参数不是对象，<code>Object.isExtensible</code>会返回<code>false</code>，因为非对象本来就是不可扩展的，而<code>Reflect.isExtensible</code>会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.isExtensible(<span class="number">1</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Reflect</span>.isExtensible(<span class="number">1</span>) <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h3 id="Reflect-preventExtensions-target">Reflect.preventExtensions(target)</h3>
+<p><code>Reflect.preventExtensions</code>对应<code>Object.preventExtensions</code>方法，用于让一个对象变为不可扩展。它返回一个布尔值，表示是否操作成功。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="built_in">Object</span>.preventExtensions(myObject) <span class="comment">// Object &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.preventExtensions(myObject) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>如果参数不是对象，<code>Object.preventExtensions</code>在 ES5 环境报错，在 ES6 环境返回传入的参数，而<code>Reflect.preventExtensions</code>会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5 环境</span></span><br><span class="line"><span class="built_in">Object</span>.preventExtensions(<span class="number">1</span>) <span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 环境</span></span><br><span class="line"><span class="built_in">Object</span>.preventExtensions(<span class="number">1</span>) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.preventExtensions(<span class="number">1</span>) <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<h3 id="Reflect-ownKeys-target">Reflect.ownKeys (target)</h3>
+<p><code>Reflect.ownKeys</code>方法用于返回对象的所有属性，基本等同于<code>Object.getOwnPropertyNames</code>与<code>Object.getOwnPropertySymbols</code>之和。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">  foo: <span class="number">1</span>,</span><br><span class="line">  bar: <span class="number">2</span>,</span><br><span class="line">  [<span class="built_in">Symbol</span>.for(<span class="string">&#x27;baz&#x27;</span>)]: <span class="number">3</span>,</span><br><span class="line">  [<span class="built_in">Symbol</span>.for(<span class="string">&#x27;bing&#x27;</span>)]: <span class="number">4</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旧写法</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(myObject)</span><br><span class="line"><span class="comment">// [&#x27;foo&#x27;, &#x27;bar&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertySymbols(myObject)</span><br><span class="line"><span class="comment">//[Symbol(baz), Symbol(bing)]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新写法</span></span><br><span class="line"><span class="built_in">Reflect</span>.ownKeys(myObject)</span><br><span class="line"><span class="comment">// [&#x27;foo&#x27;, &#x27;bar&#x27;, Symbol(baz), Symbol(bing)]</span></span><br></pre></td></tr></table></figure>
+<p>如果<code>Reflect.ownKeys()</code>方法的第一个参数不是对象，会报错。</p>
+<h3 id="实例：使用Proxy实现观察者模式">实例：使用Proxy实现观察者模式</h3>
+<p>观察者模式（Observer mode）指的是函数自动观察数据对象，一旦对象有变化，函数就会自动执行。</p>
+<p>使用 Proxy 写一个观察者模式的最简单实现，即实现<code>observable</code>和<code>observe</code>这两个函数。思路是<code>observable</code>函数返回一个原始对象的 Proxy 代理，拦截赋值操作，触发充当观察者的各个函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> queuedObservers = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> observe = <span class="function"><span class="params">fn</span> =&gt;</span> queuedObservers.add(fn);</span><br><span class="line"><span class="keyword">const</span> observable = <span class="function"><span class="params">obj</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;set&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">set</span>(<span class="params">target, key, value, receiver</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="built_in">Reflect</span>.set(target, key, value, receiver);</span><br><span class="line">  queuedObservers.forEach(<span class="function"><span class="params">observer</span> =&gt;</span> observer());</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，先定义了一个<code>Set</code>集合，所有观察者函数都放进这个集合。然后，<code>observable</code>函数返回原始对象的代理，拦截赋值操作。拦截函数<code>set</code>之中，会自动执行所有观察者。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = observable(&#123;</span><br><span class="line">  name: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;person.name&#125;</span>, <span class="subst">$&#123;person.age&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">observe(print);</span><br><span class="line">person.name = <span class="string">&#x27;李四&#x27;</span>;</span><br><span class="line"><span class="comment">// 李四, 20</span></span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/ES6-Class的继承/" data-toggle="tooltip" data-placement="top" title="[ES6] Class的继承">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/ES6-Proxy详解/" data-toggle="tooltip" data-placement="top" title="[ES6] Proxy详解">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Mon Aug 10 2020 18:09:32 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8reflect"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">为什么要用reflect</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">概述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">静态方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-get-target-name-receiver"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Reflect.get(target, name, receiver)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-set-target-name-value-receiver"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Reflect.set(target, name, value, receiver)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-has-obj-name"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Reflect.has(obj, name)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-deleteProperty-obj-name"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">Reflect.deleteProperty(obj, name)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-construct-target-args"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">Reflect.construct(target, args)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-getPrototypeOf-obj"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">Reflect.getPrototypeOf(obj)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-setPrototypeOf-obj-newProto"><span class="toc-nav-number">3.7.</span> <span class="toc-nav-text">Reflect.setPrototypeOf(obj, newProto)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-apply-func-thisArg-args"><span class="toc-nav-number">3.8.</span> <span class="toc-nav-text">Reflect.apply(func, thisArg, args)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-defineProperty-target-propertyKey-attributes"><span class="toc-nav-number">3.9.</span> <span class="toc-nav-text">Reflect.defineProperty(target, propertyKey, attributes)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-getOwnPropertyDescriptor-target-propertyKey"><span class="toc-nav-number">3.10.</span> <span class="toc-nav-text">Reflect.getOwnPropertyDescriptor(target, propertyKey)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Reflect-isExtensible-target"><span class="toc-nav-number">3.11.</span> <span class="toc-nav-text">Reflect.isExtensible (target)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Reflect-preventExtensions-target"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Reflect.preventExtensions(target)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Reflect-ownKeys-target"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Reflect.ownKeys (target)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A%E4%BD%BF%E7%94%A8Proxy%E5%AE%9E%E7%8E%B0%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">实例：使用Proxy实现观察者模式</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#ES6" title="ES6">ES6</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='我要变强，为此不惜一切...,一念往，尽作尘泥罢...,玻璃晴朗，橘子辉煌...,我心即地狱，管他罪孽滔天...,我要这天，再遮不住我眼...,我要这地，再埋不了我心...,斯若晴空，何惧冰寒...,这灯红酒绿的世界啊...,不要放弃，哪怕付出所有...' color='#CDF0EA,#F9F9F9,#F7DBF0,#BEAEE2,#F38181,#FCE38A,#EAFFD0,#95E1D3,#80D6FF'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://jasonluox.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
