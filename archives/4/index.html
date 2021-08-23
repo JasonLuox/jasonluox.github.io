@@ -233,17 +233,6 @@
           
           
           <li>
-            <a href="/archive/">
-              
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               ABOUT
@@ -255,9 +244,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -269,6 +258,17 @@
             <a href="/tags/">
               
               TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -448,6 +448,42 @@
   <!-- top end -->
   
 
+  <a href="/en/JS-Arguments对象/">
+    <h2 class="post-title">
+      [JS] Arguments对象
+    </h2>
+    <h3 class="post-subtitle">
+      arguments是一个对应于传递给函数的参数的类数组对象...
+    </h3>
+    <div class="post-content-preview">
+      arguments 是一个对应于传递给函数的参数的类数组对象。
+描述
+12345678910function func1(a, b, c) &#123;  console.log(arguments[0]);  console.log(arguments[1]);  console.log(arguments[2]);&#125;func1(1, 2, 3);	// 1// 2// 3
+类数......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/en/JS-__proto__ vs prototype/">
     <h2 class="post-title">
       [JS] __proto__ vs prototype
@@ -599,6 +635,79 @@ Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界�
   <!-- top end -->
   
 
+  <a href="/en/JS-事件循环/">
+    <h2 class="post-title">
+      [JS] 事件循环
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      事件循环就是在事件驱动模式中用来管理和执行事件的一套流程
+前言
+我们都知道，javascript从诞生之日起就是一门单线程的非阻塞的脚本语言。这是由其最初的用途来决定的：与浏览器交互。
+单线程意味着，javascript代码在执行的任何时候，都只有一个主线程来处理所有的任务。
+而非阻塞则是当代码需要进行一项异步任务（无法立刻返回结果，需要花一定时间才能返回的任务，如I/O事件）的时候，主线程......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/JS-V8引擎/">
+    <h2 class="post-title">
+      [JS] v8引擎
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      什么是 V8 引擎
+V8 是为 Google Chrome 提供支持的 JavaScript 引擎的名称。当使用 Chrome 进行浏览时，它负责处理并执行 JavaScript。
+V8 提供了执行 JavaScript 的运行时环境。DOM 和其他 Web 平台 API 则由浏览器提供。
+JavaScript 引擎独立于托管它的浏览器。 此关键的特性推动了 Node.js 的兴起。 V8 ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/en/ES6-Generator详解/">
     <h2 class="post-title">
       [ES6] Generator详解
@@ -707,114 +816,6 @@ https://developer.mozilla.org/zh-CN/docs/Web......
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/ES6-ES6基础/">
-    <h2 class="post-title">
-      [ES6] ES6基础
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      let 与 const
-let 声明的变量只在 let 命令所在的代码块内有效。
-123456789&#123;  let a = 0;  a   // 0  var b = 1;  b   // 1&#125;a   // 报错 ReferenceError: a is not definedb   // 1
-let 只能声明一次 var 可以声明多次:
-123456let a = 1;l......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-08-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#ES6" title="ES6">ES6</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/Four-Ways-to-Deploy-Hexo/">
-    <h2 class="post-title">
-      [Hexo] Four Ways to Deploy Hexo
-    </h2>
-    <h3 class="post-subtitle">
-      How to deploy hexo...
-    </h3>
-    <div class="post-content-preview">
-      Github Pages 部署
-如果对 Github Pages 还不是很了解的话，可以先参考 [Hexo] 2 开始搭建 Github Pages。很多同学都不会满足于让其他人用 username.github.io 这样奇奇怪怪的域名来访问自己的个人博客。
-购买个性域名
-这里推荐 阿里云，毕竟国内大公司，另外还有很多人推荐的 GoDaddy 也可以，这里再推荐一个 NameSilo。本篇......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-07-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Hexo-Theme-LiveMyLife/">
-    <h2 class="post-title">
-      Hexo-Theme-LiveMyLife
-    </h2>
-    <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
-      
-Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
-This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-04-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -899,7 +900,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
-    <a href="/tags/#JS" title="JS" rel="6">JS</a>
+    <a href="/tags/#JS" title="JS" rel="8">JS</a>
     
     
     
@@ -947,15 +948,15 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     
-    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
-    
-    
-    
     <a href="/tags/#webpack" title="webpack" rel="2">webpack</a>
     
     
     
     <a href="/tags/#vue-cli2.0" title="vue-cli2.0" rel="2">vue-cli2.0</a>
+    
+    
+    
+    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
     
     
     
@@ -976,6 +977,14 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     
     <a href="/tags/#Vue性能优化" title="Vue性能优化" rel="1">Vue性能优化</a>
+    
+    
+    
+    <a href="/tags/#跨域" title="跨域" rel="1">跨域</a>
+    
+    
+    
+    <a href="/tags/#浏览器" title="浏览器" rel="1">浏览器</a>
     
     
   </div>
@@ -1029,6 +1038,10 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 <div class="widget">
   <ul>
     
+    <a href="../../en/%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+      <li>[浏览器] 前端常见跨域解决方案</li>
+    </a>
+    
     <a href="../../en/vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
       <li>[vue3] 响应性API</li>
     </a>
@@ -1043,10 +1056,6 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     <a href="../../en/vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
       <li>[vue3] effect源码解析</li>
-    </a>
-    
-    <a href="../../en/vue3-%E7%BB%84%E5%90%88%E5%BC%8FAPI/">
-      <li>[vue3] 组合式API</li>
     </a>
     
   </ul>
@@ -1064,7 +1073,7 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
@@ -1130,6 +1139,10 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
     
     <a href="/categories/#移动端开发">
       <li>移动端开发</li>
+    </a>
+    
+    <a href="/categories/#浏览器">
+      <li>浏览器</li>
     </a>
     
   </ul>

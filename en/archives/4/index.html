@@ -233,17 +233,6 @@
           
           
           <li>
-            <a href="/archive/">
-              
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               ABOUT
@@ -255,9 +244,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -269,6 +258,17 @@
             <a href="/tags/">
               
               TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -448,6 +448,48 @@
   <!-- top end -->
   
 
+  <a href="/en/JS-__proto__ vs prototype/">
+    <h2 class="post-title">
+      [JS] __proto__ vs prototype
+    </h2>
+    <h3 class="post-subtitle">
+      隐式原型与显式原型...
+    </h3>
+    <div class="post-content-preview">
+      
+__proto__（隐式原型）与prototype（显式原型）
+prototype
+每一个函数在创建之后都会拥有一个名为prototype的属性，这个属性指向函数的原型对象。
+
+tips: 通过Function.prototype.bind方法构造出来的函数是个例外，它没有prototype属性。
+
+定义：为其他对象提供共享属性的对象(object that provides shared......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+    <a href="/tags/#原型" title="原型">原型</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/en/ES6-Class的继承/">
     <h2 class="post-title">
       [ES6] Class的继承
@@ -543,6 +585,79 @@ Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界�
   <div class="tags">
     
     <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/JS-事件循环/">
+    <h2 class="post-title">
+      [JS] 事件循环
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      事件循环就是在事件驱动模式中用来管理和执行事件的一套流程
+前言
+我们都知道，javascript从诞生之日起就是一门单线程的非阻塞的脚本语言。这是由其最初的用途来决定的：与浏览器交互。
+单线程意味着，javascript代码在执行的任何时候，都只有一个主线程来处理所有的任务。
+而非阻塞则是当代码需要进行一项异步任务（无法立刻返回结果，需要花一定时间才能返回的任务，如I/O事件）的时候，主线程......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/JS-V8引擎/">
+    <h2 class="post-title">
+      [JS] v8引擎
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      什么是 V8 引擎
+V8 是为 Google Chrome 提供支持的 JavaScript 引擎的名称。当使用 Chrome 进行浏览时，它负责处理并执行 JavaScript。
+V8 提供了执行 JavaScript 的运行时环境。DOM 和其他 Web 平台 API 则由浏览器提供。
+JavaScript 引擎独立于托管它的浏览器。 此关键的特性推动了 Node.js 的兴起。 V8 ......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
     
   </div>
   
@@ -702,115 +817,6 @@ let 只能声明一次 var 可以声明多次:
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/Four-Ways-to-Deploy-Hexo/">
-    <h2 class="post-title">
-      [Hexo] Four Ways to Deploy Hexo
-    </h2>
-    <h3 class="post-subtitle">
-      How to deploy hexo...
-    </h3>
-    <div class="post-content-preview">
-      Github Pages 部署
-如果对 Github Pages 还不是很了解的话，可以先参考 [Hexo] 2 开始搭建 Github Pages。很多同学都不会满足于让其他人用 username.github.io 这样奇奇怪怪的域名来访问自己的个人博客。
-购买个性域名
-这里推荐 阿里云，毕竟国内大公司，另外还有很多人推荐的 GoDaddy 也可以，这里再推荐一个 NameSilo。本篇......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-07-14
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/Hexo-Theme-LiveMyLife/">
-    <h2 class="post-title">
-      [Hexo] Hexo-Theme-LiveMyLife
-    </h2>
-    <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
-      
-Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
-This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-04-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo" title="Hexo">Hexo</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/JSPlugin-Better Scroll 滚动加载的实现/">
-    <h2 class="post-title">
-      [JSPlugin] Better-Scroll 滚动加载的实现方案之一
-    </h2>
-    <h3 class="post-subtitle">
-      BetterScroll 是一款重点解决移动端...
-    </h3>
-    <div class="post-content-preview">
-      Better-Scroll 滚动加载的实现方案之一
-https://better-scroll.github.io/docs/zh-CN/guide/
-简介
-BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景需求的插件。它的核心是借鉴的 iscroll (opens new window)的实现，它的 API 设计基本兼容 iscroll，在 iscroll 的基础上......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-04-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#滚动加载" title="滚动加载">滚动加载</a>
-    
-    <a href="/tags/#JSPlugin" title="JSPlugin">JSPlugin</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -895,7 +901,7 @@ BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景�
     
     
     
-    <a href="/tags/#JS" title="JS" rel="6">JS</a>
+    <a href="/tags/#JS" title="JS" rel="8">JS</a>
     
     
     
@@ -943,15 +949,15 @@ BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景�
     
     
     
-    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
-    
-    
-    
     <a href="/tags/#webpack" title="webpack" rel="2">webpack</a>
     
     
     
     <a href="/tags/#vue-cli2.0" title="vue-cli2.0" rel="2">vue-cli2.0</a>
+    
+    
+    
+    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
     
     
     
@@ -972,6 +978,14 @@ BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景�
     
     
     <a href="/tags/#Vue性能优化" title="Vue性能优化" rel="1">Vue性能优化</a>
+    
+    
+    
+    <a href="/tags/#跨域" title="跨域" rel="1">跨域</a>
+    
+    
+    
+    <a href="/tags/#浏览器" title="浏览器" rel="1">浏览器</a>
     
     
   </div>
@@ -1025,6 +1039,10 @@ BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景�
 <div class="widget">
   <ul>
     
+    <a href="../../%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+      <li>[浏览器] 前端常见跨域解决方案</li>
+    </a>
+    
     <a href="../../vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
       <li>[vue3] 响应性API</li>
     </a>
@@ -1039,10 +1057,6 @@ BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景�
     
     <a href="../../vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
       <li>[vue3] effect源码解析</li>
-    </a>
-    
-    <a href="../../vue3-%E7%BB%84%E5%90%88%E5%BC%8FAPI/">
-      <li>[vue3] 组合式API</li>
     </a>
     
   </ul>
@@ -1060,7 +1074,7 @@ BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景�
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/08/">August 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
@@ -1126,6 +1140,10 @@ BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景�
     
     <a href="/categories/#移动端开发">
       <li>移动端开发</li>
+    </a>
+    
+    <a href="/categories/#浏览器">
+      <li>浏览器</li>
     </a>
     
   </ul>

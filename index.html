@@ -233,17 +233,6 @@
           
           
           <li>
-            <a href="/archive/">
-              
-              ARCHIVES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               ABOUT
@@ -255,9 +244,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -269,6 +258,17 @@
             <a href="/tags/">
               
               TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
               
               
             </a>
@@ -582,6 +582,47 @@ Complier和 Renderer
   <!-- top end -->
   
 
+  <a href="/en/浏览器-前端常见跨域解决方案/">
+    <h2 class="post-title">
+      [浏览器] 前端常见跨域解决方案
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      什么是跨域
+跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。
+广义的跨域：
+
+资源跳转： A链接、重定向、表单提交
+资源嵌入： &lt;link&gt;、&lt;script&gt;、&lt;img&gt;、&lt;frame&gt;等dom标签，还有样式中background:url()、@font-face()等文件外链
+脚本请求： js发起的ajax请求、do......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-08-23
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#跨域" title="跨域">跨域</a>
+    
+    <a href="/tags/#浏览器" title="浏览器">浏览器</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/en/vue3-响应性API/">
     <h2 class="post-title">
       [vue3] 响应性API
@@ -818,66 +859,6 @@ vue2
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/vue3-渲染器的核心diff算法/">
-    <h2 class="post-title">
-      [vue3] 渲染器的核心diff算法
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      渲染器的核心diff算法
-TODO 暂时鸽了，以后抽空整理
-减小DOM操作的性能开销
-尽可能复用DOM
-
-react采用的算法
-
-key的作用
-找到需要移动的节点
-移动节点
-添加新元素
-移除不存在的元素
-双端比较
-
-vue2采用的算法
-
-双端比较的原理
-双端比较的优势
-非理想情况的处理方式
-添加新元素
-移除不存在的元素
-Interno 核心 Diff  算法及原理
-
-vue3采用的算法
-
-相......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2021-06-04
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
-    
-    <a href="/tags/#vue3" title="vue3">vue3</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -958,7 +939,7 @@ vue3采用的算法
     
     
     
-    <a href="/tags/#JS" title="JS" rel="6">JS</a>
+    <a href="/tags/#JS" title="JS" rel="8">JS</a>
     
     
     
@@ -1006,15 +987,15 @@ vue3采用的算法
     
     
     
-    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
-    
-    
-    
     <a href="/tags/#webpack" title="webpack" rel="2">webpack</a>
     
     
     
     <a href="/tags/#vue-cli2.0" title="vue-cli2.0" rel="2">vue-cli2.0</a>
+    
+    
+    
+    <a href="/tags/#webpack优化" title="webpack优化" rel="1">webpack优化</a>
     
     
     
@@ -1035,6 +1016,14 @@ vue3采用的算法
     
     
     <a href="/tags/#Vue性能优化" title="Vue性能优化" rel="1">Vue性能优化</a>
+    
+    
+    
+    <a href="/tags/#跨域" title="跨域" rel="1">跨域</a>
+    
+    
+    
+    <a href="/tags/#浏览器" title="浏览器" rel="1">浏览器</a>
     
     
   </div>
@@ -1088,6 +1077,10 @@ vue3采用的算法
 <div class="widget">
   <ul>
     
+    <a href="en/%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+      <li>[浏览器] 前端常见跨域解决方案</li>
+    </a>
+    
     <a href="en/vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
       <li>[vue3] 响应性API</li>
     </a>
@@ -1102,10 +1095,6 @@ vue3采用的算法
     
     <a href="en/vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
       <li>[vue3] effect源码解析</li>
-    </a>
-    
-    <a href="en/vue3-%E7%BB%84%E5%90%88%E5%BC%8FAPI/">
-      <li>[vue3] 组合式API</li>
     </a>
     
   </ul>
@@ -1123,7 +1112,7 @@ vue3采用的算法
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
@@ -1189,6 +1178,10 @@ vue3采用的算法
     
     <a href="/categories/#移动端开发">
       <li>移动端开发</li>
+    </a>
+    
+    <a href="/categories/#浏览器">
+      <li>浏览器</li>
     </a>
     
   </ul>
