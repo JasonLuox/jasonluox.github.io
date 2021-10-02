@@ -255,9 +255,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              TAGS
+              CATEGORIES
               
               
             </a>
@@ -266,9 +266,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/tags/">
               
-              CATEGORIES
+              TAGS
               
               
             </a>
@@ -448,25 +448,139 @@
   <!-- top end -->
   
 
-  <a href="/en/ES6-ES6基础/">
+  <a href="/en/JS-Arguments对象/">
     <h2 class="post-title">
-      [ES6] ES6基础
+      [JS] Arguments对象
     </h2>
     <h3 class="post-subtitle">
-      
+      arguments是一个对应于传递给函数的参数的类数组对象...
     </h3>
     <div class="post-content-preview">
-      let 与 const
-let 声明的变量只在 let 命令所在的代码块内有效。
-123456789&#123;  let a = 0;  a   // 0  var b = 1;  b   // 1&#125;a   // 报错 ReferenceError: a is not definedb   // 1
-let 只能声明一次 var 可以声明多次:
-123456let a = 1;l......
+      arguments 是一个对应于传递给函数的参数的类数组对象。
+描述
+12345678910function func1(a, b, c) &#123;  console.log(arguments[0]);  console.log(arguments[1]);  console.log(arguments[2]);&#125;func1(1, 2, 3);	// 1// 2// 3
+类数......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-08-08
+    2020-08-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/JS-__proto__ vs prototype/">
+    <h2 class="post-title">
+      [JS] __proto__ vs prototype
+    </h2>
+    <h3 class="post-subtitle">
+      隐式原型与显式原型...
+    </h3>
+    <div class="post-content-preview">
+      
+__proto__（隐式原型）与prototype（显式原型）
+prototype
+每一个函数在创建之后都会拥有一个名为prototype的属性，这个属性指向函数的原型对象。
+
+tips: 通过Function.prototype.bind方法构造出来的函数是个例外，它没有prototype属性。
+
+定义：为其他对象提供共享属性的对象(object that provides shared......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#JS" title="JS">JS</a>
+    
+    <a href="/tags/#原型" title="原型">原型</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Class的继承/">
+    <h2 class="post-title">
+      [ES6] Class的继承
+    </h2>
+    <h3 class="post-subtitle">
+      Class 可以通过 extends 关键字实现继承...
+    </h3>
+    <div class="post-content-preview">
+      简介
+Class 可以通过extends关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。
+12345class Point &#123;&#125;class ColorPoint extends Point &#123;&#125;
+上面代码定义了一个ColorPoint类，该类通过extends关键字，继承了Point类的所有属性和方法。但是由于没有部署任何代码......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+    <a href="/tags/#class" title="class">class</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Reflect/">
+    <h2 class="post-title">
+      [ES6] Reflect详解
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      为什么要用reflect
+举一个简单例子
+12345678let obj = &#123; a: 1&#125;let proxiedObj = new Proxy(obj, &#123;  get(target, key) &#123;    console.log(&#x27;Get&#x27;)    return target[key]  &#125;&#125;)console.l......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-10
   </p>
   <div class="tags">
     
@@ -485,28 +599,28 @@ let 只能声明一次 var 可以声明多次:
   <!-- top end -->
   
 
-  <a href="/en/Four-Ways-to-Deploy-Hexo/">
+  <a href="/en/ES6-Proxy详解/">
     <h2 class="post-title">
-      [Hexo] Four Ways to Deploy Hexo
+      [ES6] Proxy详解
     </h2>
     <h3 class="post-subtitle">
-      How to deploy hexo...
+      Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”...
     </h3>
     <div class="post-content-preview">
-      Github Pages 部署
-如果对 Github Pages 还不是很了解的话，可以先参考 [Hexo] 2 开始搭建 Github Pages。很多同学都不会满足于让其他人用 username.github.io 这样奇奇怪怪的域名来访问自己的个人博客。
-购买个性域名
-这里推荐 阿里云，毕竟国内大公司，另外还有很多人推荐的 GoDaddy 也可以，这里再推荐一个 NameSilo。本篇......
+      参考 https://es6.ruanyifeng.com/#docs/proxy
+概述
+Proxy用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”(meta programming)，即对编程语言进行编程。
+Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Pro......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-07-14
+    2020-08-10
   </p>
   <div class="tags">
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#ES6" title="ES6">ES6</a>
     
   </div>
   
@@ -521,27 +635,29 @@ let 只能声明一次 var 可以声明多次:
   <!-- top end -->
   
 
-  <a href="/cn/Hexo-Theme-LiveMyLife/">
+  <a href="/en/JS-事件循环/">
     <h2 class="post-title">
-      Hexo-Theme-LiveMyLife
+      [JS] 事件循环
     </h2>
     <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
       
-Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
-This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
+    </h3>
+    <div class="post-content-preview">
+      事件循环就是在事件驱动模式中用来管理和执行事件的一套流程
+前言
+我们都知道，javascript从诞生之日起就是一门单线程的非阻塞的脚本语言。这是由其最初的用途来决定的：与浏览器交互。
+单线程意味着，javascript代码在执行的任何时候，都只有一个主线程来处理所有的任务。
+而非阻塞则是当代码需要进行一项异步任务（无法立刻返回结果，需要花一定时间才能返回的任务，如I/O事件）的时候，主线程......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-04-17
+    2020-08-10
   </p>
   <div class="tags">
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#JS" title="JS">JS</a>
     
   </div>
   
@@ -556,27 +672,28 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   <!-- top end -->
   
 
-  <a href="/en/Hexo-Theme-LiveMyLife/">
+  <a href="/en/JS-V8引擎/">
     <h2 class="post-title">
-      [Hexo] Hexo-Theme-LiveMyLife
+      [JS] v8引擎
     </h2>
     <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
       
-Ported Theme of Hux Blog, Thank Huxpro for designing such a flawless theme.
-This LiveMyLife theme created by Vincent modified from the original Porter YenYuHsuan , refer to the Themes of dusign、Ut......
+    </h3>
+    <div class="post-content-preview">
+      什么是 V8 引擎
+V8 是为 Google Chrome 提供支持的 JavaScript 引擎的名称。当使用 Chrome 进行浏览时，它负责处理并执行 JavaScript。
+V8 提供了执行 JavaScript 的运行时环境。DOM 和其他 Web 平台 API 则由浏览器提供。
+JavaScript 引擎独立于托管它的浏览器。 此关键的特性推动了 Node.js 的兴起。 V8 ......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-04-17
+    2020-08-10
   </p>
   <div class="tags">
     
-    <a href="/tags/#Hexo" title="Hexo">Hexo</a>
+    <a href="/tags/#JS" title="JS">JS</a>
     
   </div>
   
@@ -591,238 +708,107 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
   <!-- top end -->
   
 
-  <a href="/en/JSPlugin-Better Scroll 滚动加载的实现/">
+  <a href="/en/ES6-Generator详解/">
     <h2 class="post-title">
-      [JSPlugin] Better-Scroll 滚动加载的实现方案之一
+      [ES6] Generator详解
     </h2>
     <h3 class="post-subtitle">
-      BetterScroll 是一款重点解决移动端...
+      
     </h3>
     <div class="post-content-preview">
-      Better-Scroll 滚动加载的实现方案之一
-https://better-scroll.github.io/docs/zh-CN/guide/
+      参考： https://blog.csdn.net/qq_35605231/article/details/81912156
+参考： https://blog.csdn.net/tcy83/article/details/80427195
+什么是Generator函数
+先看一个Generator函数
+123function* helloGenerator() &#123;    consol......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+    <a href="/tags/#异步与同步" title="异步与同步">异步与同步</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Map和WeakMap的差异/">
+    <h2 class="post-title">
+      [ES6] Map和WeakMap的差异
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      构造函数名不同
+12let map = new Map();let weakmap = new WeakMap();
+内置API有差异
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map
+https://developer.mozilla.org/zh-CN/docs/Web......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2020-08-09
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#ES6" title="ES6">ES6</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/ES6-Class的用法/">
+    <h2 class="post-title">
+      [ES6] Class的用法
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      参考文章： https://es6.ruanyifeng.com/#docs/class
 简介
-BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景需求的插件。它的核心是借鉴的 iscroll (opens new window)的实现，它的 API 设计基本兼容 iscroll，在 iscroll 的基础上......
+类的由来
+示例：
+123456789101112class Point &#123;  // 构造方法  constructor(x, y) &#123;    // this关键字则代表实例对象    this.x = x;    this.y = y;  &#125;  toString() ......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-04-10
+    2020-08-08
   </p>
   <div class="tags">
     
-    <a href="/tags/#滚动加载" title="滚动加载">滚动加载</a>
+    <a href="/tags/#ES6" title="ES6">ES6</a>
     
-    <a href="/tags/#JSPlugin" title="JSPlugin">JSPlugin</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/webpack-webstorm解析vue-cli的别名路径（alias）/">
-    <h2 class="post-title">
-      [webpack] webstorm解析vue-cli的别名路径（alias）
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      参考 https://my.oschina.net/jeencol/blog/3510001
-vue cli中配置的路径的别名，但是webstorm却无法识别， 没办法自动提示路径和鼠标点击跳转的，解决方法如下：
-在项目根目录中新建一个文件 .ide.alias.resovle.js
-
-如果是多人共同开发建议将此文件添加到版本管理中，如果有的话 ：）
-
-然后在文件中写入如下代码（自行修改代码......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-03-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#webpack" title="webpack">webpack</a>
-    
-    <a href="/tags/#vue-cli2.0" title="vue-cli2.0">vue-cli2.0</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/webpack-打包优化/">
-    <h2 class="post-title">
-      [webpack] webpack打包优化
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      此篇分享为 vue-cli2.0 中 webpack 的优化配置。
-
-按需引入组件
-示例一：按需引入element
-参考https://element.eleme.cn/#/zh-CN/component/quickstart
-借助 babel-plugin-component，我们可以只引入需要的组件，以达到减小项目体积的目的。
-首先，安装 babel-plugin-component：
-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-03-02
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#webpack" title="webpack">webpack</a>
-    
-    <a href="/tags/#vue-cli2.0" title="vue-cli2.0">vue-cli2.0</a>
-    
-    <a href="/tags/#webpack优化" title="webpack优化">webpack优化</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/css-nth-child详解/">
-    <h2 class="post-title">
-      [CSS] nth-child详解
-    </h2>
-    <h3 class="post-subtitle">
-      nth-child是CSS3的一个伪类选择器...
-    </h3>
-    <div class="post-content-preview">
-      nth-child详解
-https://www.webhek.com/post/mastering-nth-child.html
-简介
-语法：E:nth-child(n)&#123;&#125;
-说明：nth-child() 是CSS3的一个伪类选择器，匹配父元素的第n个子元素E，假设该子元素不是E，则选择符无效。
-:nth-child
-:nth-child(8) 选中第8个子元素
-
-123......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-01-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#css" title="css">css</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/Html5-HTML5 Web Audio API与js交互增加声音/">
-    <h2 class="post-title">
-      [HTML5] HTML5 Web Audio API与js交互增加声音
-    </h2>
-    <h3 class="post-subtitle">
-      H5页面开发指南
-    </h3>
-    <div class="post-content-preview">
-      HTML5 Web Audio API与js交互增加声音
-参考https://www.zhangxinxu.com/wordpress/2017/06/html5-web-audio-api-js-ux-voice/
-HTML5 Web Audio API功能介绍：
-
-对简单或复杂的声音进行混合；
-精确控制声音的密度和节奏；
-内置淡入/淡出，颗粒噪点，音调控制等效果；
-灵活的处理在音频流的声......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2019-12-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Html5 API" title="Html5 API">Html5 API</a>
-    
-    <a href="/tags/#h5" title="h5">h5</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/mobile-移动端页面开发指南/">
-    <h2 class="post-title">
-      [Mobile] 移动端开发指南
-    </h2>
-    <h3 class="post-subtitle">
-      H5页面开发指南
-    </h3>
-    <div class="post-content-preview">
-      H5简介
-什么是H5?
-H5全名为HTML5，HTML5是HTML的第五个版本，HTML(Hyper Text Mark-up Language)即超文本标记语言，是目前网络上应用最为广泛的语言，也是构成网页文档的主要语言。
-HTML5本质上不是什么新的技术，但是由于其在功能特性上有了极大的丰富，在加上各大浏览器性能上的支持，HTML5相对以前的HTML4有着更广泛的应用。
-H5新特性
-1 ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2019-12-28
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#h5" title="h5">h5</a>
-    
-    <a href="/tags/#移动端开发" title="移动端开发">移动端开发</a>
+    <a href="/tags/#class" title="class">class</a>
     
   </div>
   
@@ -882,7 +868,7 @@ H5新特性
   <div class="tags">
     
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="5">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
     
     
     
@@ -902,7 +888,7 @@ H5新特性
     
     
     
-    <a href="/tags/#Hexo" title="Hexo" rel="9">Hexo</a>
+    <a href="/tags/#Hexo" title="Hexo" rel="2">Hexo</a>
     
     
     
@@ -954,11 +940,11 @@ H5新特性
     
     
     
-    <a href="/tags/#vue3源码" title="vue3源码" rel="8">vue3源码</a>
+    <a href="/tags/#vue3源码" title="vue3源码" rel="19">vue3源码</a>
     
     
     
-    <a href="/tags/#vue3" title="vue3" rel="7">vue3</a>
+    <a href="/tags/#vue3" title="vue3" rel="19">vue3</a>
     
     
     
@@ -999,6 +985,10 @@ H5新特性
     
     
     <a href="/tags/#浏览器" title="浏览器" rel="1">浏览器</a>
+    
+    
+    
+    <a href="/tags/#微前端" title="微前端" rel="1">微前端</a>
     
     
   </div>
@@ -1052,24 +1042,24 @@ H5新特性
 <div class="widget">
   <ul>
     
-    <a href="../../en/%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-      <li>[浏览器] 前端常见跨域解决方案</li>
+    <a href="../../en/%E5%BE%AE%E5%89%8D%E7%AB%AF-%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84/">
+      <li>[微前端] 字节跳动是如何落地微前端的</li>
     </a>
     
-    <a href="../../en/vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
-      <li>[vue3] 响应性API</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91AST%20%E7%94%9F%E6%88%90%E5%8F%AF%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81/">
+      <li>[vue3 源码解读] AST生成可运行代码</li>
     </a>
     
-    <a href="../../en/vue3-%E6%B7%B1%E5%85%A5%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">
-      <li>[vue3] 深入响应式原理</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91AST%E8%BD%AC%E6%8D%A2/">
+      <li>[vue3 源码解读] AST转换</li>
     </a>
     
-    <a href="../../en/vue3-vue3%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84%E3%80%81%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E5%8F%8A%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B/">
-      <li>[vue3] vue3源码结构、核心模块及运行过程</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91%E5%90%84%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E5%92%8C%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">
+      <li>[vue3 源码解读] 各个生命周期的执行时机和应用场景</li>
     </a>
     
-    <a href="../../en/vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
-      <li>[vue3] effect源码解析</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%EF%BC%9A%E5%AD%90%E5%AD%99%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%EF%BC%9F/">
+      <li>[vue3 源码解读] 依赖注入：子孙组件如何共享数据？</li>
     </a>
     
   </ul>
@@ -1087,7 +1077,7 @@ H5新特性
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/09/">September 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/08/">August 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 
@@ -1157,6 +1147,10 @@ H5新特性
     
     <a href="/categories/#浏览器">
       <li>浏览器</li>
+    </a>
+    
+    <a href="/categories/#微前端">
+      <li>微前端</li>
     </a>
     
   </ul>

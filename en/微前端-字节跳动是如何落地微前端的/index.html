@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://jasonluox.github.io/en/微前端-字节跳动是如何落地微前端的/">
+  <title>
+    
+      [微前端] 字节跳动是如何落地微前端的 - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Jason Luo&#39;s Golden House</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/scenery/golden_beach.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/scenery/golden_beach.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/golden_beach.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/golden_beach.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/scenery/golden_beach.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading" style="height: 200px;">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#微前端" title="微前端">微前端</a>
+              
+            </div>
+            <h1>[微前端] 字节跳动是如何落地微前端的</h1>
+            <h2 class="subheading">微前端是一种类似于微服务的架构...</h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2021-10-01
+            </span>
+
+
+<!--            
+            &lt;!&ndash; WordCount start &ndash;&gt;
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">37</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">10.8k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            &lt;!&ndash; WordCount end &ndash;&gt;
+            
+            
+            &lt;!&ndash; 不蒜子统计 start &ndash;&gt;
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            &lt;!&ndash; 不蒜子统计 end &ndash;&gt;
+            -->
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>转载 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/L9wbfNG5fTXF5bx7dcgj4Q">https://mp.weixin.qq.com/s/L9wbfNG5fTXF5bx7dcgj4Q</a></p>
+<h1>字节跳动是如何落地微前端的</h1>
+<p>微前端是什么：微前端是一种类似于微服务的架构，是一种由独立交付的多个前端应用组成整体的架构风格，将前端应用分解成一些更小、更简单的能够独立开发、测试、部署的应用，而在用户看来仍然是内聚的单个产品。</p>
+<p>微前端诞生在两个大的背景下，在提倡拥抱变化的前端社区可以看到新的框架、技术、概念层出不穷，并且随着 Web 标准的演进，前端应用已经具备更好的性能、更快的开发效率。但随着而来的是应用的复杂程度更高、涉及的团队规模更广、更高的性能要求，应用复杂度已经成为阻塞业务发展的重要瓶颈。</p>
+<p>微前端就是诞生于 Web 应用日益复杂化的场景中，因为随着网络速度、计算机硬件水平的提升和 Web 标准的演进，过去 Web 应用用户体验远不如传统的应用软件时代已逐渐远去，两者之间在用户体验上的差距不断缩减，并且由于 Web 应用开发速度快、用完即走等特性，导致的一个最终结果就是「能用 Web 技术实现的应用，最终都会通过 Web 来实现」。在近几年涌现了一大批之前只能在传统 PC 软件中才能看到的优秀产品，例如：Photoshop、Web Office、Web IDE。尽管随着 Web 标准的演进，前端工程化也在不断演变，从模块化到组件化在到现在的工程化，但在面对跨团队大规模开发、跨团队企业级应用协作，现有的分治设计模式仍然显得有心无力。</p>
+<p><img src="image-20211001141334661.png" alt="image-20211001141334661"></p>
+<h2 id="大规模-Web-应用的困局">大规模 Web 应用的困局</h2>
+<p>尽管 Web 应用的复杂度和参与人数以爆炸式的增长速度，但却没有一种新的架构模式来解决现有的困境，并同时兼顾 DX（developer experience）和 UX（user experience）。</p>
+<p>以字节跳动内「研发中台」举例，在研发日常工作中需要使用非常多的研发系统，例如：代码管理、代码构建、域名管理、应用发布、CDN 资源管理、对象存储等。站在整个公司研发的角度考虑，最好的产品形态就是将所有的研发系统都放置同一个产品内，用户是无法感知他在使用不同的产品，对于用户而言就是单个产品不存割裂感，也不需要去学习多个平台，仅仅需要学习和了解字节跳动内的「研发中台」即可。</p>
+<p>在字节跳动内这一类应用随处可见，由于字节跳动内存在大量业务线，每一条业务线都会诞生大量的中台系统，并且还在指数增长，以字节跳动内电商业务举例，对于电商运营的日常工作来说，其实与研发日常工作一样，围绕在：商品、商家、品牌、风控、营销等工作上，那么对于电商运营来说怎么样才最高效的电商运营系统呢，由于整个系统涉及范围较广，在实际的研发过程中必然会以功能或业务需求垂直的切分成更小的子系统，切分成各种小系统后尽管由于分治的设计理念提升了开发者体验，但是一定程度上降低了用户体验。那能否以一种新的架构模式，既保开发者体验，又能提升用户体验呢。</p>
+<h2 id="传统-Web-应用的利与弊">传统 Web 应用的利与弊</h2>
+<p>这里简单分析一下传统 Web 应用在开发大规模应用和涉及多研发团队协作时遇到的一些困境，以上面案例中的「电商运营平台」举例，对于电商运营而言商品、商家、品牌等都是电商运营平台能力的一部分，而不是独立之间的孤岛。若以传统的前端研发模式进行开发，那么此时有两种项目设计策略：</p>
+<ol>
+<li>将平台内多个系统放置同一个代码仓库维护 ，采用 SPA（Single-page Application） 单页应用模式</li>
+<li>将系统分为多个仓库维护，在首页聚合所有平台的入口，采用 MPA（Multi-page Application）多页应用模式</li>
+</ol>
+<blockquote>
+<p>若采用多个系统放置同一个项目内维护：</p>
+</blockquote>
+<ul>
+<li>优势：
+<ul>
+<li>更好的性能</li>
+<li>具备局部更新，无缝的用户体验</li>
+<li>提前预加载用户下一页的内容</li>
+<li>统一的权限管控、统一的 Open API 开发能力</li>
+<li>更好的代码复用，基础库复用</li>
+<li>统一的运营管理能力</li>
+<li>不同系统可以很好的通信</li>
+<li>SPA 应用特有优势</li>
+</ul>
+</li>
+<li>劣势：
+<ul>
+<li>代码权限管控问题</li>
+<li>项目构建时间长</li>
+<li>需求发布相互阻塞</li>
+<li>代码 commit 混乱、分支混乱</li>
+<li>技术体系要求统一</li>
+<li>无法同时灰度多条产品功能</li>
+<li>代码回滚相互影响</li>
+<li>错误监控无法细粒度拆分</li>
+</ul>
+</li>
+</ul>
+<p>采用方案一的劣势非常明显，在日常开发中研发：代码构建半小时以上、发布需求时被需求阻塞、无法局部灰度局部升级、项目遇到问题时回滚影响其他业务、无法快速引进新的技术体系提高生产力，项目的迭代和维护对于研发同学而言无疑是噩梦。</p>
+<p>尽管降低了开发体验，如果对项目整体的代码拆分，懒加载控制得当，其实对于使用平台的用户而言体验却是提升的，这一切都归咎于 SPA 应用带来的优势，SPA 应用跳转页面时无需刷新整个页面，路由变化时仅更新局部，不用让用户产生在 MPA 应用切换时整个页面刷新带来的抖动感而降低体验，并且由于页面不刷新的特性可以极大程度的复用页面间的资源，降低切换页面时带来的性能损耗，用户也不会感知他在使用不同平台。</p>
+<blockquote>
+<p>若采用拆分成多个仓库维护</p>
+</blockquote>
+<ul>
+<li>优势
+<ul>
+<li>可以以项目维度拆分代码，解决权限管控问题</li>
+<li>仅构建本项目代码，构建速度快</li>
+<li>可以使用不同的技术体系</li>
+<li>不存在同一个仓库维护时的 commit 混乱和分支混乱等问题</li>
+<li>功能灰度互不影响</li>
+</ul>
+</li>
+<li>劣势
+<ul>
+<li>用户在使用时体验割裂，会在不同平台间跳转，无法达到 SPA 应用带来的用户体验</li>
+<li>只能以页面维度拆分，无法拆分至区块部分，只能以业务为维度划分</li>
+<li>多系统同灰度策略困难</li>
+<li>公共包基础库重复加载</li>
+<li>不同系统间不可以直接通信</li>
+<li>公共部分只能每个系统独立实现，同一运维通知困难</li>
+<li>产品权限无法进行统一收敛</li>
+</ul>
+</li>
+</ul>
+<p>采用方案二在一定程度上提升了开发体验，但却降低了用户体验，研发在日常开发工作中需要使用大量的平台，但是却需要跳转到不同的平台上进行日常的研发工作，整体使用体验较差。体验较差的原因在于将由于通过项目维度拆分了整体「研发中台」这样的一个产品，使各个产品之间是独立的孤岛，系统间相互跳转都是传统意义上的 MPA，跳转需要重新加载整个页面的资源，除了性能是远不如 SPA 应用的并且应用间是没法直接通信，这就进一步增强了用户在使用产品时的割裂感。</p>
+<h2 id="背景和意义总结">背景和意义总结</h2>
+<p>通过以上两个场景案例，其实可以发现由于 Web 应用在逐步取代传统的 PC 软件时，大规模 Web 应用在面对高复杂度和涉及团队成员广下无法同时保证 DX 和 UX 的困境。传统的分而治之的策略已经无法应对现代 Web 应用的复杂性，因此衍生出了微前端这样一种新的架构模式，与后端微服务相同，它同样是延续了分而治之的设计模式，不过却以全新的方法来实现。</p>
+<h1>微前端解决方案</h1>
+<p>上一节总结了微前端出现的背景和意义，并且了解了两种传统 Web 应用的研发模式：SPA（Single-page Application）、MPA（Multi-page Application）在涉及人员广和项目复杂度高的场景下带来的劣势，那么期望能有一种新的架构能同时具备 SPA 和 MPA 两种架构优势，并同时提升  DX（developer experience）和 UX（user experience）呢？</p>
+<p>那在理想的情况下，期望能达到，将一个复杂的单体应用以功能或业务需求垂直的切分成更小的子系统，并且能够达到以下能力：</p>
+<ul>
+<li>子系统间的开发、发布从空间上完成隔离</li>
+<li>子系统可以使用不同的技术体系</li>
+<li>子系统间可以完成基础库的代码复用</li>
+<li>子系统间可以快速完成通信</li>
+<li>子系统间需求迭代互不阻塞</li>
+<li>子应用可以增量升级</li>
+<li>子系统可以走向同一个灰度版本控制</li>
+<li>提供集中子系统权限管控</li>
+<li>用户使用体验整个系统是一个单一的产品，而不是彼此的孤岛</li>
+<li>项目的监控可以细化到到子系统</li>
+</ul>
+<p>那么基于上面理想情况，如何从零设计一套全新的架构用于解决现代 Web 应用在面对企业级系统遇到的困境呢。</p>
+<h2 id="微前端的整体架构">微前端的整体架构</h2>
+<p>那么如何提供一套既具备 SPA 的用户体验，又具备 MPA 应用带来的灵活性，并且可以实现应用间同灰度，监控也可以细化到子系统的解决方案呢？目前在字节跳动内应用的微前端解决方案「Garfish」就是这样的一套方案 ，该解决方案主要分为三层：部署侧、框架运行时、调试工具，采用的是 SPA 的架构。</p>
+<blockquote>
+<p>解决方案整体架构</p>
+</blockquote>
+<p><img src="image-20211001141312444.png" alt="image-20211001141312444"></p>
+<p><img src="image-20211001141347232.png" alt="image-20211001141347232"></p>
+<h2 id="微前端部署平台">微前端部署平台</h2>
+<p>部署平台作为微前端研发流程中重要的一环，主要提供了：微前端的服务发现、服务注册、子应用版本控制、多个子应用间同灰度、增量升级子应用、下发子应用信息列表，分析子应用依赖信息提取公共基础库降低不同应用的依赖重复加载。</p>
+<p>用于解决微前端中子应用的独立部署、版本控制和子应用信息管理，通过 Serverless 平台提供的接口或在渲染服务中下发主应用的 HTML 内容中包含子应用列表信息，列表中包括了子应用的详细信息例如：应用 id、激活路径、依赖信息、入口资源等信息，并通过对于子应用的公共依赖进行分析，下发子应用的公共依赖，在运行时获取到子应用的信息后注册给框架，然后在主应用上控制子应用进行渲染和销毁。</p>
+<p><img src="image-20211001141403148.png" alt="图片"></p>
+<h2 id="微前端运行时">微前端运行时</h2>
+<blockquote>
+<p>Why not iframe</p>
+</blockquote>
+<p>谈到微前端绕不开的话题就是为什么不适用 iframe 作为承载微前端子应用的容器，其实从浏览器原生的方案来说，iframe 不从体验角度上来看几乎是最可靠的微前端方案了，主应用通过iframe 来加载子应用，iframe 自带的样式、环境隔离机制使得它具备天然的沙盒机制，但也是由于它的隔离性导致其并不适合作为加载子应用的加载器，iframe 的特性不仅会导致用户体验的下降，也会在研发在日常工作中造成较多困扰，以下总结了 iframe 作为子应用的一些劣势：</p>
+<ul>
+<li>
+<p>使用iframe 会大幅增加内存和计算资源，因为 iframe 内所承载的页面需要一个全新并且完整的文档环境</p>
+</li>
+<li>
+<p>iframe 与上层应用并非同一个文档上下文导致</p>
+</li>
+<li>
+<ul>
+<li>主应用劫持快捷键操作</li>
+<li>事件无法冒泡顶层，针对整个应用统一处理时效</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>事件冒泡不穿透到主文档树上，焦点在子应用时，事件无法传递上一个文档流</li>
+<li>跳转路径无法与上层文档同步，刷新丢失路由状态</li>
+<li>iframe 内元素会被限制在文档树中，视窗宽高限制问题</li>
+<li>iframe 登录态无法共享，子应用需要重新登录</li>
+<li>iframe 在禁用三方 cookie 时，iframe 平台服务不可用</li>
+<li>iframe 应用加载失败，内容发生错误主应用无法感知</li>
+<li>难以计算出 iframe 作为页面一部分时的性能情况</li>
+</ul>
+</li>
+<li>
+<p>无法预加载缓存 iframe 内容</p>
+</li>
+<li>
+<p>无法共享基础库进一步减少包体积</p>
+</li>
+<li>
+<p>事件通信繁琐且限制多</p>
+</li>
+</ul>
+<h3 id="基于-SPA-的微前端架构">基于 SPA 的微前端架构</h3>
+<p>尽管难以将 iframe 作为微前端应用的加载器，但是却可以参考其设计思想，一个传统的 iframe 加载文档的能力可以分为四层：文档的加载能力、HTML 的渲染、执行 JavaScript、隔离样式和 JavaScript 运行环境。那么微前端库的基础能力也可以参考其设计思想。</p>
+<p>从设计层面采取的是基座+子应用分治的概念，部署平台负责进行服务发现和服务注册，将注册的应用列表信息下发至基座，通过基座来动态控制子系统的渲染和销毁，并提供集中式的模式来完成应用间的通信和应用的公共依赖管理，因此 Garfish 在 Runtime 层面主要提供了以下四个核心能力：</p>
+<ul>
+<li>
+<p>加载器（Loader）</p>
+</li>
+<li>
+<ul>
+<li>HTML 入口类型，拆解 HTML Dom、Script、Style</li>
+<li>JS 入口类型，提供基础 Dom 容器</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>负责注册平台侧提供的应用列表</li>
+<li>负责加载和解析子应用入口资源</li>
+<li>预加载能力</li>
+<li>解析子应用导出内容</li>
+</ul>
+</li>
+<li>
+<p>沙箱隔离（Sandbox）</p>
+</li>
+<li>
+<ul>
+<li>提供代码执行能力，收集执行代码时存在的副作用</li>
+<li>提供销毁收集副作用的能力</li>
+<li>支持沙箱多实例，收集不同实例的副作用</li>
+</ul>
+</li>
+<li>
+<p>路由托管（Router）</p>
+</li>
+<li>
+<ul>
+<li>解决不同应用间的路由不同步问题</li>
+<li>提供路由劫持能力，在主应用上管控子应用路由</li>
+<li>提供路由驱动能力来拼装完整的平台的能力</li>
+</ul>
+</li>
+<li>
+<p>子应用通信（Store）</p>
+</li>
+<li>
+<ul>
+<li>建立通信桥梁</li>
+<li>提供共享机制</li>
+</ul>
+</li>
+</ul>
+<p><img src="image-20211001141417844.png" alt="image-20211001141417844"></p>
+<h3 id="应用生命周期">应用生命周期</h3>
+<p>整个微前端子应用的生命周期基本可以总结为：</p>
+<ul>
+<li>
+<p>渲染阶段</p>
+</li>
+<li>
+<ul>
+<li>若入口类型为 HTML 类型，将开始解析和拆解子应用资源</li>
+<li>若入口类型为 JS，创建子应用的挂点 DOM</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>主应用通过路由驱动或手动挂载的方式触发子应用渲染</li>
+<li>开始加载应用的资源内容，并初始化子应用的沙箱运行时环境</li>
+<li>判断入口类型</li>
+<li>将子应用存在”副作用“（对当前页面可能产生影响的内容）交由沙箱处理</li>
+<li>开始渲染子应用的 DOM 树</li>
+<li>触发子应用的渲染 Hook</li>
+</ul>
+</li>
+<li>
+<p>销毁阶段</p>
+</li>
+<li>
+<ul>
+<li>若路由变化离开子应用的激活范围或主动触发销毁函数，触发应用的销毁</li>
+<li>清除应用在渲染时和运行时产生的副作用</li>
+<li>移除子应用的 DOM 元素</li>
+</ul>
+</li>
+</ul>
+<p><img src="image-20211001141508981.png" alt="image-20211001141508981"></p>
+<h3 id="加载器的设计">加载器的设计</h3>
+<p>加载器的整体设计理念其实与 React-loadable 非常类似，具备以下能力：</p>
+<ul>
+<li>异步加载组件资源</li>
+<li>可以预加载资源</li>
+<li>可以缓存组件资源</li>
+<li>缓存组件实例</li>
+</ul>
+<p>与组件不同的是微前端作为一种能够将单体应用拆解成多个子应用的架构模式，不同于组件，这些被拆分出去的子应用最好的研发模式是在开发、测试、部署都与宿主环境分离，子应用本身应具备自治能力，那么此时就与 iframe 提供的能力非常类似，iframe 通过加载 HTML 文档的形式加载整个子应用的资源，那么子应用本身就可作为一个独立站点，天然具备独立开发、测试的能力。因此 Garfish 的加载器提供了两种应用入口类型：HTML 类型和 JS 入口类型，但需要注意的是 Garfish 并非像 iframe 一样将其分为了另一个文档流，而是将其与主应用作为同一个文档流处理，用以规避其不再同一个文档流带来的体验感割裂问题。</p>
+<p>由于 HTML 入口类型天然具备独立、开发、测试的特性，在微前端整体架构设计中，对于跨团队协作而言，最好的研发模式是能降低其沟通成本，而降低沟通成本的最好方式是不沟通，所以一般项目类型都尽可能的推荐用户使用 HTML 的入口类型。</p>
+<p>那么针对 HTML 入口类型的加载器需要做一些什么呢，下面是一张浏览器的渲染过程图：</p>
+<p><img src="image-20211001141528244.png" alt="image-20211001141528244"></p>
+<p>针对浏览器的渲染过程也可将其分为：HTML 文本下载、 HTML 拆解为语法树、拆解语法树中具备”副作用的内容“（对当前页面可能产生影响的内容）如 Script、Style、Link 并交由沙箱处理进行后渲染，与一般的子应用不同的是需要子应用提供 provider，provider 中包含了子应用渲染和销毁的生命周期，这两个 Hook 可以应用缓存模式中进一步增强应用的渲染速度和性能。</p>
+<p><img src="image-20211001141545463.png" alt="image-20211001141545463"></p>
+<h3 id="沙箱的设计">沙箱的设计</h3>
+<h4 id="为什么需要沙箱">为什么需要沙箱</h4>
+<p>其实在过去的 Web 应用中是很少提及到沙箱这一概念的，因为组件的开发一般都会由研发通过研发规范来尽可能的去避免组件对当前应用环境造成副作用，诸如：组件渲染后添加了定时器、全局变量、滚动事件、全局样式并且在组件销毁后会及时的清除子应用对当前环境产生的副作用。</p>
+<p>与组件完全不同的是微前端是由多个独立运行的应用组成的架构风格，这些系统可能分别来自不同的技术体系。项目的开发、测试从空间和时间上都是分离的，由于没有 iframe 一样原生能力的隔离很难应用间不发生冲突，这些冲突可能会导致应用发生异常、报错、甚至不可用等状态。</p>
+<blockquote>
+<p>以 Webpack4 JsonpFunction 为例</p>
+</blockquote>
+<p>在 Webpack5 中提供了一个重要的功能就是 Module Federation，随着 Webpack 5 推出 Module Federation ，与 Webpack 4 发生变化的一个重要配置就是 <code>JsonpFunction</code> 属性变为了 <code>chunkLoadingGlobal</code>，并且由原来的默认值 <code>webpackJsonp</code> 变成了默认使用 <code>output.library</code> 名称或者上下文中的 <code>package.json</code> 的 包名称(package name)作为唯一值（<a target="_blank" rel="noopener" href="http://webpack.js.org/issues/3940%EF%BC%89%E3%80%82">webpack.js.org/issues/3940）。</a></p>
+<p>为什么会发生这个转变呢，如果了解过 Webpack 构建产物的一定会知道 Webpack 通过全局变量存储了分 chunk 后的产物，用于解决分包 chunk 的加载问题。由于 Webpack 5 引入 Module Federation 页面中可能会同时存在两个以上的 Webpack 构建产物，如果还是通过是通过同一个变量存储要加载的 chunk ，必然会造成产物之间的互相影响。</p>
+<p>通过 Webpack 4 到 Webpack 5 支持 Module Federation 之后可以发现，在一个基础库尚未考虑默认兼容多实例的场景下，贸然将其作为多实例使用很可能会造成应用无法按照预期运行，更为严重的是你以为其正常运行了其实应用已经发生了严重的内存泄漏或不可预知的情况，倘若将 Webpack 构建产物的应用多次动态的在页面中运行，将会发现已经造成严重的内存泄漏，因为 Webpack 会增量的向全局存储 chunk 的变量上挂载模块以及依赖信息，简单来说就是每次执行 Webpack 构建的子应用代码都会向 webpackJsonp 数组 push 大量的数据，最终造成内存泄漏，直至页面崩溃。</p>
+<h4 id="沙箱的核心能力">沙箱的核心能力</h4>
+<p>为了保证应用能够稳定的运行且互不影响，需要提供安全的运行环境，能够有效地隔离、收集、清除应用在运行期间所产生的副作用，那应用运行期间主要会产生哪些副作用呢，可以将其分为以下几类：全局变量、全局事件、定时器、网络请求、localStorage、Style 样式、DOM 元素。</p>
+<p>在 Garfish Runtime 中的沙箱主要能力也是围绕在这一块的能力建设上，针对子应用可能产生的副作用类型主要分为两类，一类是：静态副作用、另一类则是：动态副作用。这里静态副作用和动态副作用分别指的是什么呢，静态副作用指的是 HTML 中静态标签内容例如：Script 标签、Style 标签、Link 标签，这些内容属于在 HTML 文档流中就包含的，另外一部分副作用属于动态副作用，动态副作用指的是由 JavaScript 动态创建出来的，例如 JavaScript 可以动态创建 Style、动态创建 Script、动态创建 Link、动态执行代码、动态添加 DOM 元素、添加全局变量、添加定时器、网络请求、localStorage 等对当前页面产生副作用的内容。</p>
+<p>针对子应用的静态副作用的收集比较简单，Loader 核心模块上已经提供了子应用入口资源类型的分析和拆解，可以从子应用 DOM 树中轻松拆解获取副作用内容，那么对于静态副作用已经可以完成有效的收集、清除，但是尚未具备隔离的能力。动态创建的副作用都是通过 JavaScript 来动态创建的，需要收集到 JavaScript 运行时产生的副作用，并提供副作用的隔离和销毁能力。</p>
+<h4 id="沙箱设计的两种思路">沙箱设计的两种思路</h4>
+<p>在 Garfish 微前端中，如何有效收集、隔离、清除应用的副作用是保障应用能够平稳运行的核心能力之一。沙箱的主要能力也在于能够捕获动态创建的副作用，对应用的副作用进行隔离和清除。</p>
+<p>那么如何能够有效的捕获到动态创建的副作用、收集、并隔离呢？目前 Garfish 提供了两种设计思路，一种是快照模式，另外一种是 VM 模式。</p>
+<h4 id="快照沙箱">快照沙箱</h4>
+<p>顾名思义，在应用运行前通过快照的模式来保存当前执行环境，在应用销毁后恢复回应用之前的执行环境，用于实现应用间副作用的隔离和清除。类似于 “SL 大法”，通过 save 存储环境，通过 load 加载环境的模式。</p>
+<blockquote>
+<p>代码实现思路</p>
+</blockquote>
+<p><img src="image-20211001141604532.png" alt="image-20211001141604532"></p>
+<p>核心设计思想简述：</p>
+<ol>
+<li>针对每一种副作用提供一个 Patch 类，这个类需要提供 save 和 load 两个方法</li>
+<li>Save 对应着该副作用的环境快照存储，Load 对应着销毁该副作用的销毁恢复环境</li>
+<li>并且针对每一种 Patch 还可以存储其在运行期间发生的变化，在优化场景时并不用所有代码，仅恢复执行环境即可</li>
+</ol>
+<h4 id="VM-沙箱">VM 沙箱</h4>
+<p>通过快照沙箱的最简化的核心实现后可以发现，它的设计理念依赖于整个代码的执行属于线性的过程，即：存储执行环境=&gt;执行具备副作用的代码=&gt;恢复执行环境，但在实际的场景中对于应用的划分并以页面为维度划分，同一个页面可能存在多个应用，所以它的执行顺序并非线性，可能同时存在多个快照沙箱的实例环境，也就是快照沙箱多实例，以下面代码举例：</p>
+<p><img src="image-20211001141616924.png" alt="image-20211001141616924"></p>
+<p>通过上面的代码可以发现，在同时运行多个快照沙箱实例时，在代码执行顺序非线性的场景下，并不能有效的收集和处理应用的副作用，也基于此快照沙箱无法使用在非线性呢多实例的场景中，因此也进一步推出了 VM（virtual machine） 沙箱。</p>
+<p>维基百科关于 VM  的解释：在计算机科学中的体系结构里，是指一种特殊的软件，可以在计算机平台和终端用户之间创建一种环境，而终端用户则是基于虚拟机这个软件所创建的环境来操作其它软件。虚拟机（VM）是计算机系统的仿真器，通过软件模拟具有完整硬件系统功能的、运行在一个完全隔离环境中的完整计算机系统，能提供物理计算机的功能。</p>
+<p>在 Node 中也提供了 VM 模块，不过不过不同于传统的 VM，它并不具备虚拟机那么强的隔离性，并没有从模拟完整的硬件系统，仅仅将指定代码放置了特定的上下文中编译并执行代码，所以它无法用于不可信来源的代码。</p>
+<p>参考 Node 中 VM 模块的设计，以及 JavaScript 词法作用域 的特性，可以设计出 VM 沙箱，不过与传统的 VM 差异也同样存在，它并能执行不可信的代码，因为它的隔离能力仅限于将其运行在一个指定的上下文环境中。</p>
+<blockquote>
+<p>从而得出以下设计</p>
+</blockquote>
+<p><img src="image-20211001141635944.png" alt="image-20211001141635944"></p>
+<blockquote>
+<p>隔离环境需要哪些上下文</p>
+</blockquote>
+<p>针对副作用的类型：全局变量、全局事件、定时器、网络请求、localStorage、Style 样式、DOM 元素，分别提供了全新的执行上下文：</p>
+<ul>
+<li>
+<p>Window</p>
+</li>
+<li>
+<ul>
+<li>用于隔离全局环境</li>
+</ul>
+</li>
+<li>
+<p>document</p>
+</li>
+<li>
+<ul>
+<li>收集 DOM 副作用</li>
+<li>收集 Style 副作用，进行处理</li>
+<li>收集 Script，继续放置沙箱处理</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>用于捕获动态创建的 DOM 节点、Style、Script</li>
+</ul>
+</li>
+<li>
+<p>timeout、interval</p>
+</li>
+<li>
+<ul>
+<li>处理定时器</li>
+</ul>
+</li>
+<li>
+<p>localstorage</p>
+</li>
+<li>
+<ul>
+<li>隔离 localStorage</li>
+</ul>
+</li>
+<li>
+<p>listener</p>
+</li>
+<li>
+<ul>
+<li>收集全局事件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>新的执行上下文哪里来</p>
+</blockquote>
+<p>新的执行上下文有两个来源，</p>
+<ul>
+<li>来源于当前环境</li>
+<li>来源于 iframe 的执行环境</li>
+</ul>
+<p>由于 iframe 创建后需要需要较多的内存资源和计算资源，而微前端中的 VM 沙箱并不需要一个完全的执行上下文，所以可以基于当前环境。</p>
+<p><img src="image-20211001141650093.png" alt="image-20211001141650093"></p>
+<h4 id="快照沙箱和-VM-沙箱能力对比">快照沙箱和 VM 沙箱能力对比</h4>
+<p><img src="image-20211001141705953.png" alt="image-20211001141705953"></p>
+<h3 id="路由系统的设计">路由系统的设计</h3>
+<p>在于现代 MVC 的设计思想，前端框架的设计思想也一直在发生变更，现代 Web 前端框架提供的最经典的能力莫过于将 MVC 中的 Constroller 变为了 Router，目前几乎主流的前端框架都支持路由驱动视图，仅提供一个 Router Map 路由表，无需关注控制任何路由状态即可完成跳转后的路由更新。</p>
+<p>通过微前端出现的背景和意义，可以了解到微前端主要是用于解决：应用增量升级、多技术体系并存、构建大规模企业级 Web 应用而诞生的。那么在基于 SPA 的微前端架构中也可以了解到，目前微前端主要是采用应用分而治之 + 动态加载 + SPA 应用的模式来解决大规模应用带来的一系列问题。在以组件为颗粒度的 SPA 应用中组件内部是不需要关心路由的，但是在微前端中主要通过应用维度来拆分，那么拆分的应用也可能是一个独立的 SPA 应用，那么此时主应用与子应用的关系如何编排呢？</p>
+<h4 id="微前端应用中理想的路由调度">微前端应用中理想的路由调度</h4>
+<p>假设存在一个 Garfish 站点，这个站点它是由主应用+三个子应用构成，主应用的 basename 为 <code>/demo</code>，并存在三个 Tab 分别指向跳转至不同的应用，理想的路由效果：</p>
+<ol>
+<li>在点击 vue-app Tab，跳转至 <code>/demo/vue-app</code> 路由后，分别激活 <code>vue-app</code> 下，为 Vue 类型的 A 应用和 B 应用，并激活 A 应用和 B 应用中的 Home 组件</li>
+<li>点击 React-app Tab 进入到 <code>/demo/react-app</code> 路由后，分别激活 <code>react-app</code> 下，为 React 类型的 C 应用，并激活 C 应用的 Home 组件</li>
+<li>在激活 C 应用的基础上，点击 Detail 按钮，跳转至 <code>/demo/react-app/detail</code>，并激活 C 应用的 detail 组件。</li>
+<li>点击浏览器返回按钮展示，跳转 <code>/demo/react-app/detail</code>，并激活 C 应用的 Home 组件，至此完成浏览器的基本路由跳转能力。</li>
+</ol>
+<p><img src="640.gif" alt="640"></p>
+<h4 id="不考虑任何路由处理的场景">不考虑任何路由处理的场景</h4>
+<p>假设存在一个 Garfish 站点，这个站点它是由主应用+一个子应用构成。由于 Garfish 采用的是  SPA 架构，子应用与主应用所处于同一个执行上下文，子应用的路由原样反应在主应用上。</p>
+<p><img src="image-20211001141742662.png" alt="image-20211001141742662"></p>
+<p>那么此时分别跳转到：<code>/home</code>、<code>/detail</code>路由会发现哪些问题呢？</p>
+<ul>
+<li>
+<p>假定跳转的方法可以同时触发主子应用路由更新，主应用路由和子应用路由会同时发生抢占情况，后渲染的组件会覆盖先渲染的路由组件</p>
+</li>
+<li>
+<p>在触发路由跳转方后，只有主应用视图触发刷新、只有子应用视图刷新、或都不刷新</p>
+</li>
+<li>
+<ul>
+<li>「视图的路由状态维护在框架内部」，通过原生跳转无法触发视图更新</li>
+</ul>
+</li>
+</ul>
+<p>此时当分别跳转到：<code>/home</code>、<code>/detail</code>、<code>/test</code> 路由时分别触发对应的组件视图，但是倘若子应用路由中也存在 <code>/detail</code>视图呢，由于应用的开发采用分治的模式，应用的开发从空间和时间上都是分离的，无法保证应用间的路由不发生路由抢占的情况。</p>
+<p>「通过 history 路由跳转无法保证应用能够触发视图更新」，在通过 history api 进行路由跳转时，是无法触发应用视图更新，假设存在一个 React 应用 A，存在一个组件视图 Test，分别通过 React 提供的路由方法跳转和原生的路由跳转进行观察：</p>
+<p><img src="image-20211001144029266.png" alt="image-20211001144029266"></p>
+<h4 id="Hash-和-History-路由模式">Hash 和 History 路由模式</h4>
+<p>目前主流的 SPA 前端应用基本上都支持两种路由模式，一种是：hash 模式、另一种则是 History 路由模式，两者的优劣和使用并不在本文的讨论范围之内，这里仅做在微前端这种分离式开发模式下的介绍，在微前端这种分离式 SPA 应用开发的模式下该选择哪种路由模式，以及多 SPA 应用下他们的路由应该如何编排：</p>
+<p>假设站点地址为：<code>http://garfish.bytedance.net</code></p>
+<blockquote>
+<p>正常路由情况</p>
+</blockquote>
+<ul>
+<li>
+<p>主应用 history 模式、子应用 history 模式</p>
+</li>
+<li>
+<ul>
+<li>
+<p>主应用（<code>basename: /example</code>）：</p>
+</li>
+<li>
+<ul>
+<li>主应用所有路由基于：<code>http://garfish.bytedance.net/example</code>例</li>
+<li>例如跳转到：/appA，<code>http://garfish.bytedance.net/example/appA/</code>子</li>
+</ul>
+</li>
+<li>
+<p>子应用（<code>basename: /example/appA</code>）：</p>
+</li>
+<li>
+<ul>
+<li>子应用所有路由基于：<code>http://garfish.bytedance.net/example/appA</code></li>
+<li>跳转到子应用的 /detail 页，<code>http://garfish.bytedance.net/example/appA/detail</code></li>
+</ul>
+</li>
+<li>
+<p>特点：</p>
+</li>
+<li>
+<ul>
+<li>当主子应用分别为 history 模式时，子应用的路由基于主应用基础路由并带上自己的业务路由</li>
+<li>路由同步到主应用路由上，通过 子应用 scope 命名空间隔离（子应用 A，提供 appA 的 scope）主应用和其他应用的路由冲突，并将子应用</li>
+<li>路径符合用户和开发者认知和理解</li>
+<li>支持嵌套层级使用，并继续通过 scope 的命名空间保证路由可读</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>主应用 history 模式、子应用 hash 模式</p>
+</li>
+<li>
+<ul>
+<li>
+<p>主应用（<code>basename: /example</code>）：</p>
+</li>
+<li>
+<ul>
+<li>主应用所有路由基于：<code>http://garfish.bytedance.net/example</code></li>
+<li>例如跳转到：/appA，<code>http://garfish.bytedance.net/example/appA/</code></li>
+</ul>
+</li>
+<li>
+<p>子应用（<code>basename: /example/appA</code>）：</p>
+</li>
+<li>
+<ul>
+<li>子应用所有路由基于：<code>http://garfish.bytedance.net/example/appA</code></li>
+<li>从主应用：<code>http://garfish.bytedance.net/example/appA</code>，跳转到子应用的 /detail 页，<code>http://garfish.bytedance.net/example/appA#/detail</code>特</li>
+</ul>
+</li>
+<li>
+<p>特点：</p>
+</li>
+<li>
+<ul>
+<li>在一定程度上具备主子应用都为 history 模式的优势，不支持嵌套层级使用</li>
+<li>目前多数框架都不支持以 hash 值作为 basename</li>
+<li>可读性尚可</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>异常路由情况</p>
+</blockquote>
+<ul>
+<li>
+<p>主应用 hash 模式、子应用 history 模式</p>
+</li>
+<li>
+<ul>
+<li>
+<p>主应用（<code>basename: /example</code>）：</p>
+</li>
+<li>
+<ul>
+<li>主应用所有路由基于：<code>http://garfish.bytedance.net/example</code></li>
+<li>例如跳转到：/detail，<code>http://garfish.bytedance.net/example#/appA</code></li>
+</ul>
+</li>
+<li>
+<p>子应用（<code>basename: /example#/appA</code>）：</p>
+</li>
+<li>
+<ul>
+<li>子应用所有路由基于：<code>http://garfish.bytedance.net/example#/appA</code></li>
+<li>跳转到子应用的 /detail 页，<code>http://garfish.bytedance.net/example/detail#/appA</code></li>
+</ul>
+</li>
+<li>
+<p>特点：</p>
+</li>
+<li>
+<ul>
+<li>「路由混乱」，不符合用户和开发者直觉</li>
+<li>目前多数框架都不支持以 hash 值作为 basename</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
+<li>
+<p>主应用 hash 模式、子应用 hash 模式</p>
+</li>
+<li>
+<ul>
+<li>
+<p>主应用（<code>basename: /example</code>）：</p>
+</li>
+<li>
+<ul>
+<li>主应用所有路由基于：<code>http://garfish.bytedance.net/example</code></li>
+<li>例如跳转到：/detail，<code>http://garfish.bytedance.net/example#/appA</code></li>
+</ul>
+</li>
+<li>
+<p>子应用（<code>basename: /example#/appA</code>）：</p>
+</li>
+<li>
+<ul>
+<li>子应用所有路由基于：<code>http://garfish.bytedance.net/example#/appA</code></li>
+<li>跳转到子应用的 /detail 页，<code>http://garfish.bytedance.net/example#/detail</code></li>
+</ul>
+</li>
+<li>
+<p>特点：</p>
+</li>
+<li>
+<ul>
+<li>「路由混乱」，不符合用户和开发者直觉</li>
+<li>目前多数框架都不支持以 hash 值作为 basename</li>
+<li>可能与主应用或其他子应用发生路由冲突</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Garfish-Router-如何处理路由">Garfish  Router 如何处理路由</h4>
+<p>通过上面理想的路由模式案例发现，微前端应用拆分成子应用后，子应用路由应具备自治能力，可以充分的利用应用解耦后的开发优势，但与之对应的是应用间的路由可能会发生冲突、两种路由模式下可能产生用户难以理解的路由状态、无法激活不同前端框架的下带来的视图无法更新等问题。</p>
+<blockquote>
+<p>目前 Garfish 主要提供了以下四条策略</p>
+</blockquote>
+<ul>
+<li>提供 Router Map，减少典型中台应用下的开发者理解成本</li>
+<li>为不同子应用提供不同的 basename 用于隔离应用间的路由抢占问题</li>
+<li>路由发生变化时能准确激活并触发应用视图更新</li>
+</ul>
+<h5 id="Router-Map-降低开发者理解成本">Router Map 降低开发者理解成本</h5>
+<p>在典型的中台应用中，通常可以将应用的结构分为两块，一块是菜单另一块则是内容区域，依托于现代前端 Web 应用的设计理念的启发，通过提供路由表来自动化完成子应用的调度，将公共部分作为拆离后的子应用渲染区域。</p>
+<p><img src="image-20211001144051877.png" alt="image-20211001144051877"></p>
+<p><img src="image-20211001144104691.png" alt="image-20211001144104691"></p>
+<h5 id="自动计算出子应用所需的-basename">自动计算出子应用所需的 basename</h5>
+<p>当应用处于激活状态时，根据应用的激活条件自动计算出应用所需的基础路径，并在渲染时告诉框架，以便于应用间路由不发生冲突。</p>
+<p><img src="image-20211001144116627.png" alt="image-20211001144116627"></p>
+<h5 id="如何有效的触发不同应用间的视图更新">如何有效的触发不同应用间的视图更新</h5>
+<p>目前主流框架实现路由的方式并不是监听路由变化触发组件更新，让开发者通过框架包装后的 API 进行跳转，并内部维护路由状态，在使用框架提供 API 方法发生路由更新时，内部状态发生变更触发组件更新。</p>
+<p>由于框架的路由状态分别维护在各自的内部，那么如何保证在路由发生变化时能及时有效的触发应用的视图更新呢，答案是可以的，目前主要有两种实现策略：</p>
+<ol>
+<li>收集框架监听的 popstate 事件</li>
+<li>主动触发 popstate 事件</li>
+</ol>
+<p>因为目前支持 SPA 应用的前端框架都会监听浏览器后退事件，在浏览器后退时根据路由状态触发应用视图的更新，那么其实也可以利用这种能力主动触发应用视图的更新，可以通过收集框架的监听事件，也可以触发 popstate 来响应应用的 popstate 事件</p>
+<h3 id="基于「现代-Web-框架」的微前端最佳实践">基于「现代 Web 框架」的微前端最佳实践</h3>
+<p>微前端作为一种全新的 Web 应用类型，不同于以往传统的 Web 应用开发，微前端需要采用主子应用分治的开发模式后带来了一系列新的挑战，这些挑战包括但不限于：主子应用开发调试、普通 Web 应用如何快速变为微前端应用、如何支持微前端应用 SSR、主子应用数据通信触发视图更新。<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkxNDIzNTg4MA==&amp;mid=2247484407&amp;idx=1&amp;sn=c3706cdacefe4fd0ee372804ce53b4ce&amp;scene=21#wechat_redirect">Modern.js</a> 作为 Garfish 上层的现代 Web 框架，能够很好的解决这些问题，并提供开箱即用的开发体验。</p>
+<h4 id="微前端应用的调试开发">微前端应用的调试开发</h4>
+<p>由于微前端应用采用分治的开发策略，应用间的维护和开发可能在时间和空间上都是分离的，那么在开发环境时启动整个微前端项目的所有主子应用，是一个并不明智的策略，不仅需要 clone 其他仓库并完成应用的运行，还要保证其代码的时效性。Modern.js 提供了更优的的策略：</p>
+<ul>
+<li>
+<p>某些子应用需要更新时</p>
+</li>
+<li>
+<ul>
+<li>主应用线上环境</li>
+<li>需要开发的子应用线下环境</li>
+<li>不需要开发的子应用上线</li>
+</ul>
+</li>
+<li>
+<p>主应用需要更新时</p>
+</li>
+<li>
+<ul>
+<li>主应用线下环境</li>
+<li>所有子应用线上环境</li>
+</ul>
+</li>
+</ul>
+<p>通过以上更优的调试策略，可以保证开发者仅运行自己的关注的应用即可。那么如何达到这种更优的，可以采用应用列表的下发模式，框架运行时加载下发的应用列表，在开发主应用时拉取线上的应用列表，在开发某个子应用时代理代理列表中的资源为子应用的列表。</p>
+<h4 id="传统-Web-应用支持微前端模式">传统 Web 应用支持微前端模式</h4>
+<p>通过微前端运行时章节可以发现传统 Web 应用与微前端应用间进行切换成本并不高，但需要研发关注应用的路由的调度、应用的生命周期导出、额外的构建配置、应用通信数据触发视图更新，微前端模式应用和传统 Web 应用间如何进行切换都存在一定的学习和理解成本。</p>
+<p>在 Modern.js 中作为上层框架集成了 Garfish，原生支持微前端应用，可以通过简单配置即可完成微前端应用类型的转换，帮助用户快速搭建应用基础结构，以降低其学习成本，快速生成微前端应用。</p>
+<h4 id="微前端应用如何支持-SSR">微前端应用如何支持 SSR</h4>
+<p>微前端作为一种全新的架构模式，其分治设计模式除了带来的诸多优点外，但与之对应的是引入了新的问题，如何支持传统 Web 应用提供的 SSR 能力，由于微前端采用了分治的开发模式，应用拆分成了多个子应用，那么需要实现整体应用的 SSR 能力，则需要与具体的 Web 框架相结合，通过制定微前端应用的加载规则，达到微前端应用也能有效的实现 SSR 能力。</p>
+<p>Modern.js 作为 Garfish 的上层框架，提供更开箱即用的上层能力 ，并解决了以上微前端不同于传统 Web 应用开发后带来的弊端，文末有关于 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkxNDIzNTg4MA==&amp;mid=2247484407&amp;idx=1&amp;sn=c3706cdacefe4fd0ee372804ce53b4ce&amp;scene=21#wechat_redirect">Modern.js</a> 的发布预告，可以了解并关注。</p>
+<h2 id="微前端的优点">微前端的优点</h2>
+<ul>
+<li>适用于大规模 Web 应用的开发</li>
+<li>更快的开发速度</li>
+<li>支持迭代可开发和增强升级</li>
+<li>拆解后的部分降低了开发者的理解成本</li>
+<li>同时具备 UX 和 DX 的开发模式</li>
+</ul>
+<h2 id="微前端的缺点">微前端的缺点</h2>
+<ul>
+<li>
+<p>复杂度从代码转向基础设施</p>
+</li>
+<li>
+<p>整个应用的稳定性和安全性变得更加不可控</p>
+</li>
+<li>
+<p>具备一定的学习和了解成本</p>
+</li>
+<li>
+<p>需要建立全面的微前端周边设施，才能充分发挥其架构的优势</p>
+</li>
+<li>
+<ul>
+<li>调试工具</li>
+<li>监控系统</li>
+<li>上层 Web 框架</li>
+<li>部署平台</li>
+</ul>
+</li>
+</ul>
+<h2 id="何时使用微前端">何时使用微前端</h2>
+<ul>
+<li>
+<p>大规模企业级 Web 应用开发</p>
+</li>
+<li>
+<p>跨团队及企业级应用协作开发</p>
+</li>
+<li>
+<p>长期收益高于短期收益</p>
+</li>
+<li>
+<p>不同技术选型的项目</p>
+</li>
+<li>
+<p>内聚的单个产品中部分需要独立发布、灰度等能力</p>
+</li>
+<li>
+<p>微前端的目标并非用于取代 iframe</p>
+</li>
+<li>
+<ul>
+<li>应用的来源必须可信</li>
+<li>用户体验要求更高</li>
+</ul>
+</li>
+</ul>
+<h1>总结</h1>
+<p>微前端概念的出现是前端发展的必然阶段，PC 互联网转向移动互联网时代时，PC 的场景并未完全被消灭，反而转向了衍生出了更多沉浸感更高、体验感更强的应用，与之对应的应该是出现新的架构模式来应对这些应用规模的增长。</p>
+<p>微前端也并非银弹，采用微前端后复杂度并未凭空消失，而是由代码转向了基础设施，对架构设计带来了更大的挑战，并且在新的架构下需要设计并提供更多的周边工具和生态来助力这一新的研发模式。</p>
+<p>本文更多的是从背景和设计层面讲清楚微前端解决方案应具备哪些能力，以及核心模块的设计。每一部分并未包含过于详细的细节，如果想要了解「微前端运行时」详细设计，可以通过 <a target="_blank" rel="noopener" href="https://github.com/modern-js-dev/garfish">https://github.com/modern-js-dev/garfish</a> 仓库了解细节。</p>
+<h1>参考</h1>
+<ul>
+<li>如何设计微前端中的主子路由调度：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TAXP7ipDdtb2Jb-L3QHszA">https://mp.weixin.qq.com/s/TAXP7ipDdtb2Jb-L3QHszA</a></li>
+<li>如何取巧实现一个沙箱：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Mg3fU0WvZUQnlWHdxc-b5A">https://mp.weixin.qq.com/s/Mg3fU0WvZUQnlWHdxc-b5A</a></li>
+<li>微服务架构及其最重要的 10 个设计模式：<a target="_blank" rel="noopener" href="https://www.infoq.cn/article/kdw69bdimlx6fsgz1bg3">https://www.infoq.cn/article/kdw69bdimlx6fsgz1bg3</a></li>
+<li>single-spa：<a target="_blank" rel="noopener" href="https://github.com/single-spa/single-spa">https://github.com/single-spa/single-spa</a></li>
+</ul>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/en/vue3-【源码解读】AST 生成可运行代码/" data-toggle="tooltip" data-placement="top" title="[vue3 源码解读] AST生成可运行代码">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Fri Oct 01 2021 15:21:45 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">字节跳动是如何落地微前端的</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%A7%E8%A7%84%E6%A8%A1-Web-%E5%BA%94%E7%94%A8%E7%9A%84%E5%9B%B0%E5%B1%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">大规模 Web 应用的困局</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BC%A0%E7%BB%9F-Web-%E5%BA%94%E7%94%A8%E7%9A%84%E5%88%A9%E4%B8%8E%E5%BC%8A"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">传统 Web 应用的利与弊</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%83%8C%E6%99%AF%E5%92%8C%E6%84%8F%E4%B9%89%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">背景和意义总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">微前端解决方案</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">微前端的整体架构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2%E5%B9%B3%E5%8F%B0"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">微前端部署平台</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E8%BF%90%E8%A1%8C%E6%97%B6"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">微前端运行时</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E-SPA-%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">基于 SPA 的微前端架构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">应用生命周期</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%8A%A0%E8%BD%BD%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">加载器的设计</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B2%99%E7%AE%B1%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-nav-number">2.3.4.</span> <span class="toc-nav-text">沙箱的设计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%B2%99%E7%AE%B1"><span class="toc-nav-number">2.3.4.1.</span> <span class="toc-nav-text">为什么需要沙箱</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%B2%99%E7%AE%B1%E7%9A%84%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B"><span class="toc-nav-number">2.3.4.2.</span> <span class="toc-nav-text">沙箱的核心能力</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%B2%99%E7%AE%B1%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">2.3.4.3.</span> <span class="toc-nav-text">沙箱设计的两种思路</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BF%AB%E7%85%A7%E6%B2%99%E7%AE%B1"><span class="toc-nav-number">2.3.4.4.</span> <span class="toc-nav-text">快照沙箱</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#VM-%E6%B2%99%E7%AE%B1"><span class="toc-nav-number">2.3.4.5.</span> <span class="toc-nav-text">VM 沙箱</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BF%AB%E7%85%A7%E6%B2%99%E7%AE%B1%E5%92%8C-VM-%E6%B2%99%E7%AE%B1%E8%83%BD%E5%8A%9B%E5%AF%B9%E6%AF%94"><span class="toc-nav-number">2.3.4.6.</span> <span class="toc-nav-text">快照沙箱和 VM 沙箱能力对比</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%B7%AF%E7%94%B1%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-nav-number">2.3.5.</span> <span class="toc-nav-text">路由系统的设计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%BA%94%E7%94%A8%E4%B8%AD%E7%90%86%E6%83%B3%E7%9A%84%E8%B7%AF%E7%94%B1%E8%B0%83%E5%BA%A6"><span class="toc-nav-number">2.3.5.1.</span> <span class="toc-nav-text">微前端应用中理想的路由调度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%8D%E8%80%83%E8%99%91%E4%BB%BB%E4%BD%95%E8%B7%AF%E7%94%B1%E5%A4%84%E7%90%86%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="toc-nav-number">2.3.5.2.</span> <span class="toc-nav-text">不考虑任何路由处理的场景</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Hash-%E5%92%8C-History-%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">2.3.5.3.</span> <span class="toc-nav-text">Hash 和 History 路由模式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Garfish-Router-%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E8%B7%AF%E7%94%B1"><span class="toc-nav-number">2.3.5.4.</span> <span class="toc-nav-text">Garfish  Router 如何处理路由</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Router-Map-%E9%99%8D%E4%BD%8E%E5%BC%80%E5%8F%91%E8%80%85%E7%90%86%E8%A7%A3%E6%88%90%E6%9C%AC"><span class="toc-nav-number">2.3.5.4.1.</span> <span class="toc-nav-text">Router Map 降低开发者理解成本</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E8%87%AA%E5%8A%A8%E8%AE%A1%E7%AE%97%E5%87%BA%E5%AD%90%E5%BA%94%E7%94%A8%E6%89%80%E9%9C%80%E7%9A%84-basename"><span class="toc-nav-number">2.3.5.4.2.</span> <span class="toc-nav-text">自动计算出子应用所需的 basename</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E7%9A%84%E8%A7%A6%E5%8F%91%E4%B8%8D%E5%90%8C%E5%BA%94%E7%94%A8%E9%97%B4%E7%9A%84%E8%A7%86%E5%9B%BE%E6%9B%B4%E6%96%B0"><span class="toc-nav-number">2.3.5.4.3.</span> <span class="toc-nav-text">如何有效的触发不同应用间的视图更新</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E4%BA%8E%E3%80%8C%E7%8E%B0%E4%BB%A3-Web-%E6%A1%86%E6%9E%B6%E3%80%8D%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-nav-number">2.3.6.</span> <span class="toc-nav-text">基于「现代 Web 框架」的微前端最佳实践</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%BA%94%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E5%BC%80%E5%8F%91"><span class="toc-nav-number">2.3.6.1.</span> <span class="toc-nav-text">微前端应用的调试开发</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BC%A0%E7%BB%9F-Web-%E5%BA%94%E7%94%A8%E6%94%AF%E6%8C%81%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">2.3.6.2.</span> <span class="toc-nav-text">传统 Web 应用支持微前端模式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%BA%94%E7%94%A8%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81-SSR"><span class="toc-nav-number">2.3.6.3.</span> <span class="toc-nav-text">微前端应用如何支持 SSR</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">微前端的优点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">微前端的缺点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8%E5%BE%AE%E5%89%8D%E7%AB%AF"><span class="toc-nav-number">2.6.</span> <span class="toc-nav-text">何时使用微前端</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">总结</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">参考</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#微前端" title="微前端">微前端</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='我要变强，为此不惜一切...,一念往，尽作尘泥罢...,玻璃晴朗，橘子辉煌...,我心即地狱，管他罪孽滔天...,我要这天，再遮不住我眼...,我要这地，再埋不了我心...,斯若晴空，何惧冰寒...,这灯红酒绿的世界啊...,不要放弃，哪怕付出所有...' color='#CDF0EA,#F9F9F9,#F7DBF0,#BEAEE2,#F38181,#FCE38A,#EAFFD0,#95E1D3,#80D6FF'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://jasonluox.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

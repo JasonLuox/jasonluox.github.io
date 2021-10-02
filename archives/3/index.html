@@ -255,9 +255,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              TAGS
+              CATEGORIES
               
               
             </a>
@@ -266,9 +266,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/tags/">
               
-              CATEGORIES
+              TAGS
               
               
             </a>
@@ -448,26 +448,32 @@
   <!-- top end -->
   
 
-  <a href="/en/How-to-Use-Internationalization（i18n）/">
+  <a href="/en/vue3-vue2与vue3常用方法对比/">
     <h2 class="post-title">
-      [Hexo] How to Use Internationalization（i18n）
+      [vue3] vue2与vue3常用方法对比
     </h2>
     <h3 class="post-subtitle">
-      Hexo-Theme-LiveMyLife supports multiple languages...
+      对比vue2与vue3的不同
     </h3>
     <div class="post-content-preview">
-      
-Hexo: You can use internationalization to present your site in different languages. The default language is set by modifying the language setting in _config.yml. You can also set multiple language......
+      vue2与vue3常用方法对比
+参考 https://juejin.cn/post/6901087576195760141
+获取数据
+vue2
+在Vue2的各个组件中，我们频繁地使用 this ，即获取当前组件实例，是因为每个组件的数据变量、方法都要通过组件实例去获取。
+12345678910111213141516171819&lt;script&gt;export default &#1......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2021-04-03
+    2021-06-05
   </p>
   <div class="tags">
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#vue2" title="vue2">vue2</a>
+    
+    <a href="/tags/#vue3" title="vue3">vue3</a>
     
   </div>
   
@@ -482,27 +488,37 @@ Hexo: You can use internationalization to present your site in different languag
   <!-- top end -->
   
 
-  <a href="/en/How-to-Use-Mathjax/">
+  <a href="/en/vue3-渲染器原理及实现/">
     <h2 class="post-title">
-      [Hexo] How to Use Mathjax
+      [vue3] 渲染器原理及实现
     </h2>
     <h3 class="post-subtitle">
-      Beautiful and accessible math in all browsers...
+      深度探究vue渲染器原理及实现
     </h3>
     <div class="post-content-preview">
-      博主本人自己改编的 hexo-theme-livemylife 主题，有小伙伴在用时，问我是否支持 Mathjax 数学公式，由于工作原因未能增加此功能，在此次的 hexo-theme-livemylife 主题升级中，博主对之前小伙伴们提出的问题做了一个统一的修复和升级。那么让我们来看看 Mathjax 在 hexo-theme-livemylife 主题中是如何应用的。
+      深度好文 http://hcysun.me/vue-design/zh/essence-of-comp.html
+编译器和渲染器 API 初探
+Complier和 Renderer
 
-Mathjax......
+
+编译器 Complier 是用来处理模板（template）的，它把模板编译成 render 函数
+
+
+渲染器 Render 处理 VNoder，把组件渲染到 web 页面上
+
+
+我们有这样一段 HTML
+1......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2021-04-03
+    2021-06-05
   </p>
   <div class="tags">
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
     
   </div>
   
@@ -517,65 +533,52 @@ Mathjax......
   <!-- top end -->
   
 
-  <a href="/en/Echarts-tooltip完美位置函数/">
+  <a href="/en/vue3-渲染器的核心diff算法/">
     <h2 class="post-title">
-      [Echarts] tooltip完美位置函数
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      tooltip完美位置函数
-123456789101112131415161718192021222324252627282930313233343536tooltip: &#123;    position: function (point, params, dom, rect, size) &#123;        // 鼠标坐标和提示框位置的参考坐标系是：以外层div的左上角那一点为......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-11-03
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Echarts" title="Echarts">Echarts</a>
-    
-    <a href="/tags/#tooltips" title="tooltips">tooltips</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/JS-防抖与节流/">
-    <h2 class="post-title">
-      [JS] 防抖与节流
+      [vue3] 渲染器的核心diff算法
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      简述
-debounce（防抖）和throttle（节流）能减少调用频率，同时不影响实际效果。
-在对浏览器窗口进行弹出、滚动、更改窗口大小、输入框内容校验等操作时，如果不对event事件处理函数进行限制的话，会加重浏览器的负担，导致浏览器卡顿等，对用户的体验非常糟糕。
-在VUE中，若循环调用方法创建新组件，则会造成组件的重叠。
-此时我们可以使用debounce（防抖）和throttle（节流）......
+      渲染器的核心diff算法
+TODO 暂时鸽了，以后抽空整理
+减小DOM操作的性能开销
+尽可能复用DOM
+
+react采用的算法
+
+key的作用
+找到需要移动的节点
+移动节点
+添加新元素
+移除不存在的元素
+双端比较
+
+vue2采用的算法
+
+双端比较的原理
+双端比较的优势
+非理想情况的处理方式
+添加新元素
+移除不存在的元素
+Interno 核心 Diff  算法及原理
+
+vue3采用的算法
+
+相......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-08-13
+    2021-06-04
   </p>
   <div class="tags">
     
-    <a href="/tags/#JS" title="JS">JS</a>
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+    
+    <a href="/tags/#vue3" title="vue3">vue3</a>
     
   </div>
   
@@ -590,33 +593,30 @@ debounce（防抖）和throttle（节流）能减少调用频率，同时不影�
   <!-- top end -->
   
 
-  <a href="/en/JSPlugin-导出pdf/">
+  <a href="/en/vue3-渲染机制/">
     <h2 class="post-title">
-      [JSPlugin] 导出Pdf
+      [vue3] 渲染机制
     </h2>
     <h3 class="post-subtitle">
-      如何将页面元素导出至PDF文件？
+      探究vue渲染机制
     </h3>
     <div class="post-content-preview">
-      安装
-npm install html2canvas --save
-npm install jspdf--save
-导入
-import html2canvas from 'html2canvas';
-import JsPDF from 'jspdf'
-导出pdf
-把要导出的区域给个id
-1&lt;div id=&quot;imageDom&quot; style=&quot;height: ......
+      vue3渲染机制
+Virtual Dom
+Virtual DOM简介
+Virtual DOM 就是用 JavaScript 对象来描述真实的 DOM 节点。
+例如，有这样一段 HTML：
+123&lt;div id=&quot;div&quot;&gt;  &lt;button @click=&quot;click&quot;&gt;click&lt;/button&gt;&lt;/div&......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-08-13
+    2021-06-04
   </p>
   <div class="tags">
     
-    <a href="/tags/#JSPlugin" title="JSPlugin">JSPlugin</a>
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
     
   </div>
   
@@ -631,63 +631,29 @@ import JsPDF from 'jspdf'
   <!-- top end -->
   
 
-  <a href="/en/JSPlugin-mockjs使用指南/">
+  <a href="/en/TS-Decorator装饰器/">
     <h2 class="post-title">
-      [JSPlugin] Mockjs使用指南
-    </h2>
-    <h3 class="post-subtitle">
-      Mock.js 是一款模拟数据生成器，旨在帮助前端攻城师独立于后端进行开发，帮助编写单元测试...
-    </h3>
-    <div class="post-content-preview">
-      官方文档： https://github.com/nuysoft/Mock/wiki
-开始 &amp; 安装 &amp; 使用示例
-12# 安装npm install mockjs --save-dev
-使用示例
-12345678910111213141516171819const origin = window.location.originconst url = origin + &#x......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-08-13
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#JSPlugin" title="JSPlugin">JSPlugin</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/JS-Object.create()、new Object()和{}的区别/">
-    <h2 class="post-title">
-      [JS] Object.create()、new Object()和{}的区别
+      [TypeScript] Decorator装饰器
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      直接字面量创建
-123456789var obj1 = &#123;&#125;;obj1.name = &#x27;a&#x27;;obj1.sayName = function() &#123;    console.log(`My name is $&#123;this.name&#125; !`);&#125;obj1.sayName();		// My name is a !con......
+      TS Decorator装饰器
+介绍
+背景
+随着TypeScript和ES6里引入了类，在一些场景下我们需要额外的特性来支持标注或修改类及其成员。 装饰器（Decorators）为我们在类的声明及成员上通过元编程语法添加标注提供了一种方式。 Javascript里的装饰器目前处在建议征集的第二阶段，但在TypeScript里已做为一项实验性特性予以支持。
+Decorator 是 ES7 添加......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-08-12
+    2021-05-16
   </p>
   <div class="tags">
     
-    <a href="/tags/#JS" title="JS">JS</a>
+    <a href="/tags/#TypeScript" title="TypeScript">TypeScript</a>
     
   </div>
   
@@ -702,36 +668,29 @@ import JsPDF from 'jspdf'
   <!-- top end -->
   
 
-  <a href="/en/JS-Object.defineProperty/">
+  <a href="/en/TS-TypeScript进阶/">
     <h2 class="post-title">
-      [JS] Object.defineProperty
+      [TypeScript] TypeScript进阶
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      语法
-1Object.defineProperty(obj, prop, descriptor)
-参数
-
-obj	要定义属性的对象
-prop  要定义或修改的属性的名称或Symbol
-descriptor    要定义或修改的属性描述符
-
-返回值
-被传递给函数对象
-描述
-该方法允许精确地添加或修改对象的属性。通过赋值操作添加的普通属性是可枚举的，在枚举对象属性时会被枚举到（for...in ......
+      TypeScript进阶
+类型别名
+类型别名用来给一个类型起个新名字。
+示例
+12345678910type Name = string;type NameResolver = () =&gt; string;type NameOrResolver = Name | NameResolver;function getName(n: NameOrResolver): Name &#123;  ......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-08-12
+    2021-05-15
   </p>
   <div class="tags">
     
-    <a href="/tags/#JS" title="JS">JS</a>
+    <a href="/tags/#TypeScript" title="TypeScript">TypeScript</a>
     
   </div>
   
@@ -746,65 +705,150 @@ descriptor    要定义或修改的属性描述符
   <!-- top end -->
   
 
-  <a href="/en/JS-bind, apply, call的区别/">
+  <a href="/en/TS-typescript基础/">
     <h2 class="post-title">
-      [JS] bind, apply, call的区别
-    </h2>
-    <h3 class="post-subtitle">
-      我们知道bind，call，apply的作用都是用来改变this指向的...
-    </h3>
-    <div class="post-content-preview">
-      参考 https://zhuanlan.zhihu.com/p/82340026
-我们知道bind，call，apply的作用都是用来改变this指向的，那为什么要改变this指向呢？请看下面的例子:
-123456789var name=&quot;lucy&quot;;let obj=&#123;    name:&quot;martin&quot;,    say:function ()......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2020-08-12
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#JS" title="JS">JS</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/ES6-剩余参数/">
-    <h2 class="post-title">
-      [ES6] 剩余参数
+      [TypeScript] TypeScript基础
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      语法
-123function(a, b, ...theArgs) &#123;  // ...&#125;
-简述
-如果函数的最后一个命名参数以...为前缀，则它将成为一个由剩余参数组成的真数组，其中从0（包括）到theArgs.length（排除）的元素由传递给函数的实际参数提供。
-剩余参数语法允许我们将一个不定数量的参数表示为一个数组。
-1234567891011function sum(......
+      JavaScript 毕竟是一门弱类型语言，与强类型语言相比，其最大的编程陋习就是可能会造成我们类型思维的缺失（高级词汇，我从极客时间学到的）。而思维方式决定了编程习惯，编程习惯奠定了编程质量，工程质量划定了能力边界，而学习 Typescript，最重要的就是我们类型思维的重塑。
+推荐笔者收藏的四个网站：
+
+Typescript 中文网 https://www.tslang.cn/docs/......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2020-08-11
+    2021-05-10
   </p>
   <div class="tags">
     
-    <a href="/tags/#ES6" title="ES6">ES6</a>
+    <a href="/tags/#TypeScript" title="TypeScript">TypeScript</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue-vue单页面应用刷新网页后vuex的state数据丢失的解决方案/">
+    <h2 class="post-title">
+      [vue] vuex缓存
+    </h2>
+    <h3 class="post-subtitle">
+      vue单页面应用刷新网页后vuex的state数据丢失的解决方案
+    </h3>
+    <div class="post-content-preview">
+      问题
+用vuex做全局的状态管理时，刷新网页后，保存在vuex示例store里的数据会丢失
+产生原因
+store里的数据是保存在运行内存中的,当页面刷新时，页面会重新加载vue实例，store里面的数据就会被重新赋值。
+解决思路
+将state里的数据保存一份到本地存储(localStorage、sessionStorage、cookie）中
+解决方案
+
+localStorage
+sessio......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-04-11
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue2" title="vue2">vue2</a>
+    
+    <a href="/tags/#vuex" title="vuex">vuex</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/css-css实现文字图标旋转90度水平翻转垂直翻转/">
+    <h2 class="post-title">
+      [CSS] css实现文字/图标旋转90度/水平翻转/垂直翻转
+    </h2>
+    <h3 class="post-subtitle">
+      css各种翻转效果的实现...
+    </h3>
+    <div class="post-content-preview">
+      css实现文字/图标旋转90度/水平翻转/垂直翻转
+一 、css实现图片旋转90度
+1234.icon&#123;  -moz-transform:rotate(-90deg);  -webkit-transform:rotate(-90deg);&#125;
+二、 水平翻转
+123456789.icon &#123;    color: #f64e78;    font-size: 20p......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-04-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#css" title="css">css</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue-Vue Router进阶/">
+    <h2 class="post-title">
+      [vue] Vue Router进阶
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      导航守卫
+
+导航表示路由正在发生变化
+
+全局前置守卫
+可以使用router.beforeEach注册一个前置守卫
+12345678910111213const router &#x3D; new VueRouter(&#123;...&#125;)router.beforeEach((to, from, next) &#x3D;&gt; &#123;&#125;)&#x2F;&#x2F; t......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-04-10
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue router" title="vue router">vue router</a>
+    
+    <a href="/tags/#vue2" title="vue2">vue2</a>
     
   </div>
   
@@ -864,7 +908,7 @@ descriptor    要定义或修改的属性描述符
   <div class="tags">
     
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="5">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
     
     
     
@@ -884,7 +928,7 @@ descriptor    要定义或修改的属性描述符
     
     
     
-    <a href="/tags/#Hexo" title="Hexo" rel="9">Hexo</a>
+    <a href="/tags/#Hexo" title="Hexo" rel="2">Hexo</a>
     
     
     
@@ -936,11 +980,11 @@ descriptor    要定义或修改的属性描述符
     
     
     
-    <a href="/tags/#vue3源码" title="vue3源码" rel="8">vue3源码</a>
+    <a href="/tags/#vue3源码" title="vue3源码" rel="19">vue3源码</a>
     
     
     
-    <a href="/tags/#vue3" title="vue3" rel="7">vue3</a>
+    <a href="/tags/#vue3" title="vue3" rel="19">vue3</a>
     
     
     
@@ -981,6 +1025,10 @@ descriptor    要定义或修改的属性描述符
     
     
     <a href="/tags/#浏览器" title="浏览器" rel="1">浏览器</a>
+    
+    
+    
+    <a href="/tags/#微前端" title="微前端" rel="1">微前端</a>
     
     
   </div>
@@ -1034,24 +1082,24 @@ descriptor    要定义或修改的属性描述符
 <div class="widget">
   <ul>
     
-    <a href="../../en/%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-      <li>[浏览器] 前端常见跨域解决方案</li>
+    <a href="../../en/%E5%BE%AE%E5%89%8D%E7%AB%AF-%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84/">
+      <li>[微前端] 字节跳动是如何落地微前端的</li>
     </a>
     
-    <a href="../../en/vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
-      <li>[vue3] 响应性API</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91AST%20%E7%94%9F%E6%88%90%E5%8F%AF%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81/">
+      <li>[vue3 源码解读] AST生成可运行代码</li>
     </a>
     
-    <a href="../../en/vue3-%E6%B7%B1%E5%85%A5%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">
-      <li>[vue3] 深入响应式原理</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91AST%E8%BD%AC%E6%8D%A2/">
+      <li>[vue3 源码解读] AST转换</li>
     </a>
     
-    <a href="../../en/vue3-vue3%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84%E3%80%81%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E5%8F%8A%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B/">
-      <li>[vue3] vue3源码结构、核心模块及运行过程</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91%E5%90%84%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E5%92%8C%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">
+      <li>[vue3 源码解读] 各个生命周期的执行时机和应用场景</li>
     </a>
     
-    <a href="../../en/vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
-      <li>[vue3] effect源码解析</li>
+    <a href="../../en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%EF%BC%9A%E5%AD%90%E5%AD%99%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%EF%BC%9F/">
+      <li>[vue3 源码解读] 依赖注入：子孙组件如何共享数据？</li>
     </a>
     
   </ul>
@@ -1069,7 +1117,7 @@ descriptor    要定义或修改的属性描述符
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/09/">September 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/08/">August 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../2019/07/">July 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 
@@ -1139,6 +1187,10 @@ descriptor    要定义或修改的属性描述符
     
     <a href="/categories/#浏览器">
       <li>浏览器</li>
+    </a>
+    
+    <a href="/categories/#微前端">
+      <li>微前端</li>
     </a>
     
   </ul>

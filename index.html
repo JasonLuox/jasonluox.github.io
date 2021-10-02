@@ -255,9 +255,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              TAGS
+              CATEGORIES
               
               
             </a>
@@ -266,9 +266,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/tags/">
               
-              CATEGORIES
+              TAGS
               
               
             </a>
@@ -496,78 +496,32 @@ github新建一个仓库命名为&lt;你的用户名&gt;.github.io，例如jason
   <!-- top end -->
   
 
-  <a href="/en/vue3-渲染器原理及实现/">
+  <a href="/en/vue3-Vuejs3.2新特性及部分优化/">
     <h2 class="post-title">
-      [vue3] 渲染器原理及实现
-    </h2>
-    <h3 class="post-subtitle">
-      深度探究vue渲染器原理及实现
-    </h3>
-    <div class="post-content-preview">
-      深度好文 http://hcysun.me/vue-design/zh/essence-of-comp.html
-编译器和渲染器 API 初探
-Complier和 Renderer
-
-
-编译器 Complier 是用来处理模板（template）的，它把模板编译成 render 函数
-
-
-渲染器 Render 处理 VNoder，把组件渲染到 web 页面上
-
-
-我们有这样一段 HTML
-1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2021-06-05
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <div class="top">
-    <div class="iconfont icon-hot animated infinite tada"></div>
-  </div>
-  
-  <!-- top end -->
-  
-
-  <a href="/en/TS-TypeScript进阶/">
-    <h2 class="post-title">
-      [TypeScript] TypeScript进阶
+      [vue3 源码解读] Vuejs3.2新特性及优化
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      TypeScript进阶
-类型别名
-类型别名用来给一个类型起个新名字。
-示例
-12345678910type Name = string;type NameResolver = () =&gt; string;type NameOrResolver = Name | NameResolver;function getName(n: NameOrResolver): Name &#123;  ......
+      更新日志： https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md
+原版文章： https://blog.vuejs.org/posts/vue-3.2.html
+新特性
+新的单文件组件功能
+
+&lt;script setup&gt; 是一种编译时语法糖，可在 SFC 内使用 Composition API 时极大地提升工作效率。......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2021-05-15
+    2021-09-05
   </p>
   <div class="tags">
     
-    <a href="/tags/#TypeScript" title="TypeScript">TypeScript</a>
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+    
+    <a href="/tags/#vue3" title="vue3">vue3</a>
     
   </div>
   
@@ -582,68 +536,64 @@ Complier和 Renderer
   <!-- top end -->
   
 
-  <a href="/en/浏览器-前端常见跨域解决方案/">
+  <a href="/en/微前端-字节跳动是如何落地微前端的/">
     <h2 class="post-title">
-      [浏览器] 前端常见跨域解决方案
+      [微前端] 字节跳动是如何落地微前端的
+    </h2>
+    <h3 class="post-subtitle">
+      微前端是一种类似于微服务的架构...
+    </h3>
+    <div class="post-content-preview">
+      转载 https://mp.weixin.qq.com/s/L9wbfNG5fTXF5bx7dcgj4Q
+字节跳动是如何落地微前端的
+微前端是什么：微前端是一种类似于微服务的架构，是一种由独立交付的多个前端应用组成整体的架构风格，将前端应用分解成一些更小、更简单的能够独立开发、测试、部署的应用，而在用户看来仍然是内聚的单个产品。
+微前端诞生在两个大的背景下，在提倡拥抱变化的前端社区可以看到新......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-10-01
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#微前端" title="微前端">微前端</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue3-【源码解读】AST 生成可运行代码/">
+    <h2 class="post-title">
+      [vue3 源码解读] AST生成可运行代码
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      什么是跨域
-跨域是指一个域下的文档或脚本试图去请求另一个域下的资源，这里跨域是广义的。
-广义的跨域：
+      源码地址
 
-资源跳转： A链接、重定向、表单提交
-资源嵌入： &lt;link&gt;、&lt;script&gt;、&lt;img&gt;、&lt;frame&gt;等dom标签，还有样式中background:url()、@font-face()等文件外链
-脚本请求： js发起的ajax请求、do......
+本节课的相关代码在源代码中的位置如下：
+packages/compiler-core/src/codegen.ts
+packages/runtime-core/src/vnode.ts
+packages/runtime-core/src/renderer.ts
+
+上一节课我们分析了 AST 节点转换的过程，也知道了 AST 节点转换的作用是通过语法分析，创建了语义和信息更加丰富的......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2021-08-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#跨域" title="跨域">跨域</a>
-    
-    <a href="/tags/#浏览器" title="浏览器">浏览器</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/vue3-响应性API/">
-    <h2 class="post-title">
-      [vue3] 响应性API
-    </h2>
-    <h3 class="post-subtitle">
-      一文带你深入理解响应性API
-    </h3>
-    <div class="post-content-preview">
-      响应性API
-好文： https://zhuanlan.zhihu.com/p/264373175
-响应性基础API
-reactive
-返回对象的响应式副本
-1const obj = reactive(&#123; count: 0 &#125;)
-响应式转换是“深层”的——它影响所有嵌套 property。在基于 ES2015 Proxy 的实现中，返回的代理是不等于原始对象。建议只使用响......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2021-06-08
+    2021-09-25
   </p>
   <div class="tags">
     
@@ -664,67 +614,28 @@ reactive
   <!-- top end -->
   
 
-  <a href="/en/vue3-深入响应式原理/">
+  <a href="/en/vue3-【源码解读】AST转换/">
     <h2 class="post-title">
-      [vue3] 深入响应式原理
-    </h2>
-    <h3 class="post-subtitle">
-      一文带你深入理解响应式原理
-    </h3>
-    <div class="post-content-preview">
-      深入响应式原理
-Vue 最独特的特性之一，是其非侵入性的响应性系统。数据模型是被代理的 JavaScript 对象。而当你修改它们时，视图会进行更新。这让状态管理非常简单直观
-概述
-响应式原理主要由 3 个部分构成：1. 初始化；2. 收集依赖；3. 触发依赖
-Vue3.0 观测数据提供4个方法：reactive, shallowReactive, readonly, shallowRead......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2021-06-08
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
-    
-    <a href="/tags/#vue3" title="vue3">vue3</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/vue3-vue3源码结构、核心模块及运行过程/">
-    <h2 class="post-title">
-      [vue3] vue3源码结构、核心模块及运行过程
+      [vue3 源码解读] AST转换
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      vue3总览-核心模块
-源码地址
+      源码地址
 
-主要目录结构
-vuejs/vue-next/packages/
-
-reactivity: 数据响应式系统，一个单独的系统，可以与任何框架结合使用
-runtime-core: 与平台无关的运行时。实现的功能：虚拟 DOM 渲染器，Vue 组建和 Vue 的各种 API，我们可以利用这个 runtime 实现真堵某个具体平台的高阶 runtime，比如自定义渲......
+本节课的相关代码在源代码中的位置如下：
+packages/compiler-core/src/compile.ts
+packages/compiler-core/src/transform.ts
+packages/compiler-core/src/ast.ts
+packages/compiler-core/src/transforms/transformElement.ts
+p......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2021-06-07
+    2021-09-20
   </p>
   <div class="tags">
     
@@ -745,67 +656,28 @@ runtime-core: 与平台无关的运行时。实现的功能：虚拟 DOM 渲染�
   <!-- top end -->
   
 
-  <a href="/en/vue3-effect源码解析/">
+  <a href="/en/vue3-【源码解读】各个生命周期的执行时机和应用场景/">
     <h2 class="post-title">
-      [vue3] effect源码解析
-    </h2>
-    <h3 class="post-subtitle">
-      分析vue3中effect的实现
-    </h3>
-    <div class="post-content-preview">
-      effect源码解析
-https://blog.csdn.net/qq_29582173/article/details/109851515
-Vue3 的核心就是响应式系统，effect是vue3响应式系统的核心。
-什么是effect
-effect 一直穿插在 tranger 和 track 之间。其实单纯的响应式原理，根本不需要 effect，那么 effect 到底是什么呢？
-下面我们来......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by Jason Luo on
-    2021-06-06
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
-    
-    <a href="/tags/#vue3" title="vue3">vue3</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/en/vue3-组合式API/">
-    <h2 class="post-title">
-      [vue3] 组合式API
+      [vue3 源码解读] 各个生命周期的执行时机和应用场景
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      组合式API
-setup
-setup是Vue3.x新增的一个选项，它是组件内使用Composition API的入口
-setup执行时机
-新的 setup 组件选项在创建组件之前（beforeCreate之前）执行，一旦 props 被解析，就作为组合式 API 的入口点。
+      源码地址
 
-由于在执行 setup 时，组件实例尚未被创建，因此在 setup 选项中没有 this。这意味着，除了 props......
+本节课的相关代码在源代码中的位置如下：
+packages/runtime-core/src/apiLifecycle.ts
+packages/runtime-core/src/renderer.ts
+packages/reactivity/src/effect.ts
+
+Vue.js 组件的生命周期包括创建、更新、销毁等过程。在这些过程中也会运行叫生命周期钩子的函数，这给了用户在不......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2021-06-06
+    2021-09-12
   </p>
   <div class="tags">
     
@@ -826,30 +698,152 @@ setup执行时机
   <!-- top end -->
   
 
-  <a href="/en/vue3-vue2与vue3常用方法对比/">
+  <a href="/en/vue3-【源码解读】依赖注入：子孙组件如何共享数据？/">
     <h2 class="post-title">
-      [vue3] vue2与vue3常用方法对比
+      [vue3 源码解读] 依赖注入：子孙组件如何共享数据？
     </h2>
     <h3 class="post-subtitle">
-      对比vue2与vue3的不同
+      
     </h3>
     <div class="post-content-preview">
-      vue2与vue3常用方法对比
-参考 https://juejin.cn/post/6901087576195760141
-获取数据
-vue2
-在Vue2的各个组件中，我们频繁地使用 this ，即获取当前组件实例，是因为每个组件的数据变量、方法都要通过组件实例去获取。
-12345678910111213141516171819&lt;script&gt;export default &#1......
+      【源码解读】
+Vue.js 为我们提供了很多组件通讯的方式，常见的是父子组件通过 prop 传递数据。但是有时，我们希望能跨父子组件通讯，比如，无论组件之间嵌套多少层级，我都希望在后代组件中能访问它们祖先组件的数据。
+Vue.js 2.x 给我们提供了一种依赖注入的解决方案，即在祖先组件提供一个 provide 选项，举个例子：
+12345678// Provider export defa......
     </div>
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by Jason Luo on
-    2021-06-05
+    2021-09-12
   </p>
   <div class="tags">
     
-    <a href="/tags/#vue2" title="vue2">vue2</a>
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+    
+    <a href="/tags/#vue3" title="vue3">vue3</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue3-【源码解读】侦听器的实现原理和使用场景/">
+    <h2 class="post-title">
+      [vue3 源码解读] 侦听器的实现原理和使用场景
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      源码地址
+
+本节课的相关代码在源代码中的位置如下：
+packages/runtime-core/src/apiWatch.ts
+packages/runtime-core/src/apiWatch.ts
+packages/runtime-core/src/scheduler.ts
+
+在平时的开发工作中，我们经常使用侦听器帮助我们去观察某个数据的变化然后去执行一段逻辑。
+在 Vue.js 2.......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-09-06
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+    
+    <a href="/tags/#vue3" title="vue3">vue3</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue3-【源码解读】计算属性/">
+    <h2 class="post-title">
+      [vue3 源码解读] 计算属性
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      计算属性 API: computed
+Vue.js 3.0 提供了一个 computed 函数作为计算属性 API，我们先来看看它是如何使用的。
+我们举个简单的例子：
+123456const count = ref(1) const plusOne = computed(() =&gt; count.value + 1) console.log(plusOne.value) // 2 plu......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-09-02
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+    
+    <a href="/tags/#vue3" title="vue3">vue3</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/en/vue3-【源码解读】响应式原理实现/">
+    <h2 class="post-title">
+      [vue3 源码解读] 响应式原理实现
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      源码地址
+
+本节课的相关代码在源代码中的位置如下：
+packages/reactivity/src/baseHandlers.ts
+packages/reactivity/src/effect.ts
+packages/reactivity/src/reactive.ts
+packages/reactivity/src/ref.ts
+
+除了组件化，Vue.js 另一个核心设计思想就是响应式。它......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Jason Luo on
+    2021-09-02
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
     
     <a href="/tags/#vue3" title="vue3">vue3</a>
     
@@ -907,7 +901,7 @@ vue2
   <div class="tags">
     
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="5">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
     
     
     
@@ -927,7 +921,7 @@ vue2
     
     
     
-    <a href="/tags/#Hexo" title="Hexo" rel="9">Hexo</a>
+    <a href="/tags/#Hexo" title="Hexo" rel="2">Hexo</a>
     
     
     
@@ -979,11 +973,11 @@ vue2
     
     
     
-    <a href="/tags/#vue3源码" title="vue3源码" rel="8">vue3源码</a>
+    <a href="/tags/#vue3源码" title="vue3源码" rel="19">vue3源码</a>
     
     
     
-    <a href="/tags/#vue3" title="vue3" rel="7">vue3</a>
+    <a href="/tags/#vue3" title="vue3" rel="19">vue3</a>
     
     
     
@@ -1024,6 +1018,10 @@ vue2
     
     
     <a href="/tags/#浏览器" title="浏览器" rel="1">浏览器</a>
+    
+    
+    
+    <a href="/tags/#微前端" title="微前端" rel="1">微前端</a>
     
     
   </div>
@@ -1077,24 +1075,24 @@ vue2
 <div class="widget">
   <ul>
     
-    <a href="en/%E6%B5%8F%E8%A7%88%E5%99%A8-%E5%89%8D%E7%AB%AF%E5%B8%B8%E8%A7%81%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-      <li>[浏览器] 前端常见跨域解决方案</li>
+    <a href="en/%E5%BE%AE%E5%89%8D%E7%AB%AF-%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84/">
+      <li>[微前端] 字节跳动是如何落地微前端的</li>
     </a>
     
-    <a href="en/vue3-%E5%93%8D%E5%BA%94%E6%80%A7API/">
-      <li>[vue3] 响应性API</li>
+    <a href="en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91AST%20%E7%94%9F%E6%88%90%E5%8F%AF%E8%BF%90%E8%A1%8C%E4%BB%A3%E7%A0%81/">
+      <li>[vue3 源码解读] AST生成可运行代码</li>
     </a>
     
-    <a href="en/vue3-%E6%B7%B1%E5%85%A5%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">
-      <li>[vue3] 深入响应式原理</li>
+    <a href="en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91AST%E8%BD%AC%E6%8D%A2/">
+      <li>[vue3 源码解读] AST转换</li>
     </a>
     
-    <a href="en/vue3-vue3%E6%BA%90%E7%A0%81%E7%BB%93%E6%9E%84%E3%80%81%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E5%8F%8A%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B/">
-      <li>[vue3] vue3源码结构、核心模块及运行过程</li>
+    <a href="en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91%E5%90%84%E4%B8%AA%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E5%92%8C%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">
+      <li>[vue3 源码解读] 各个生命周期的执行时机和应用场景</li>
     </a>
     
-    <a href="en/vue3-effect%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
-      <li>[vue3] effect源码解析</li>
+    <a href="en/vue3-%E3%80%90%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E3%80%91%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%EF%BC%9A%E5%AD%90%E5%AD%99%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE%EF%BC%9F/">
+      <li>[vue3 源码解读] 依赖注入：子孙组件如何共享数据？</li>
     </a>
     
   </ul>
@@ -1112,7 +1110,7 @@ vue2
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/07/">July 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/06/">June 2019</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/06/">June 2021</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/05/">May 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/08/">August 2020</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/03/">March 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/01/">January 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/11/">November 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2019/07/">July 2019</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 
@@ -1182,6 +1180,10 @@ vue2
     
     <a href="/categories/#浏览器">
       <li>浏览器</li>
+    </a>
+    
+    <a href="/categories/#微前端">
+      <li>微前端</li>
     </a>
     
   </ul>

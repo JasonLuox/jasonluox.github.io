@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="HTML,JavaScript,CSS,TypeScript,VUE,WEBPACK,VITE"/>
+  <link rel="shortcut icon" href="/img/avatar/logo.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://jasonluox.github.io/en/vue3-【源码解读】Composition API - Setup/">
+  <title>
+    
+      [vue3 源码解读] Composition API - Setup - 流年风尘 | 我的前端之路
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Jason Luo&#39;s Golden House</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/scenery/tree_stars.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/scenery/tree_stars.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/comic/about_stars3.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/scenery/tree_stars.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/scenery/tree_stars.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/scenery/tree_stars.jpg'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/jasonluo-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading" style="height: 200px;">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+              
+              <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
+              
+            </div>
+            <h1>[vue3 源码解读] Composition API - Setup</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by Jason Luo on
+              2021-09-01
+            </span>
+
+
+<!--            
+            &lt;!&ndash; WordCount start &ndash;&gt;
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">30</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            &lt;!&ndash; WordCount end &ndash;&gt;
+            
+            
+            &lt;!&ndash; 不蒜子统计 start &ndash;&gt;
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            &lt;!&ndash; 不蒜子统计 end &ndash;&gt;
+            -->
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <blockquote>
+<p><strong>本节课的相关代码在源代码中的位置如下：</strong><br>
+packages/runtime-core/src/renderer.ts<br>
+packages/runtime-core/src/component.ts<br>
+packages/runtime-core/src/componentProxy.ts<br>
+packages/runtime-core/src/errorHandling.ts</p>
+</blockquote>
+<p>Vue.js 3.0 允许我们在编写组件的时候添加一个 setup 启动函数，它是 Composition API 逻辑组织的入口，本节课我们就来分析一下这个函数。</p>
+<p>我们先通过一段代码认识它，在这里编写一个 button 组件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;increment&quot;</span>&gt;</span></span><br><span class="line">    Count is: &#123;&#123; state.count &#125;&#125;, double is: &#123;&#123; state.double &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; reactive, computed &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> state = reactive(&#123;</span></span><br><span class="line">      count: 0,</span><br><span class="line"><span class="javascript">      double: computed(<span class="function">() =&gt;</span> state.count * <span class="number">2</span>)</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">increment</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line">      state,</span><br><span class="line">      increment</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在 setup 函数内部，定义了一个响应式对象 state，它是通过 reactive API 创建的。state 对象有 count 和 double 两个属性，其中 count 对应一个数字属性的值；而double 通过 computed API 创建，对应一个计算属性的值。</p>
+<p><strong>模板中引用到的变量 state 和 increment 包含在 setup 函数的返回对象中，那么它们是如何建立联系的呢？</strong></p>
+<p>Vue.js 2.x 编写组件的时候，会在 props、data、methods、computed 等 options 中定义一些变量。在组件初始化阶段，Vue.js 内部会处理这些 options，即把定义的变量添加到了组件实例上。等模板编译成 render 函数的时候，内部通过 with(this){} 的语法去访问在组件实例中的变量。</p>
+<h3 id="创建和设置组件实例">创建和设置组件实例</h3>
+<p>我们来回顾一下组件的渲染流程：创建 vnode 、渲染 vnode 和生成 DOM。</p>
+<p><img src="image-20210831111232507.png" alt="image-20210831111232507"></p>
+<p>其中渲染 vnode 的过程主要就是在挂载组件：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mountComponent = <span class="function">(<span class="params">initialVNode, container, anchor, parentComponent, parentSuspense, isSVG, optimized</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 创建组件实例</span></span><br><span class="line">  <span class="keyword">const</span> instance = (initialVNode.component = createComponentInstance(initialVNode, parentComponent, parentSuspense))</span><br><span class="line">  <span class="comment">// 设置组件实例</span></span><br><span class="line">  setupComponent(instance)</span><br><span class="line">  <span class="comment">// 设置并运行带副作用的渲染函数</span></span><br><span class="line">  setupRenderEffect(instance, initialVNode, container, anchor, parentSuspense, isSVG, optimized)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，这段挂载组件的代码主要做了三件事情：创建组件实例、设置组件实例和设置并运行带副作用的渲染函数。今天重点分析前俩个流程。</p>
+<p>源码地址	<a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-next/blob/master/packages/runtime-core/src/component.ts">https://github.com/vuejs/vue-next/blob/master/packages/runtime-core/src/component.ts</a></p>
+<h4 id="创建组件流程">创建组件流程</h4>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createComponentInstance</span> (<span class="params">vnode, parent, suspense</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 继承父组件实例上的 appContext，如果是根组件，则直接从根 vnode 中取。</span></span><br><span class="line">  <span class="keyword">const</span> appContext = (parent ? parent.appContext : vnode.appContext) || emptyAppContext;</span><br><span class="line">  <span class="keyword">const</span> instance = &#123;</span><br><span class="line">    <span class="comment">// 组件唯一 id</span></span><br><span class="line">    uid: uid++,</span><br><span class="line">    <span class="comment">// 组件 vnode</span></span><br><span class="line">    vnode,</span><br><span class="line">    <span class="comment">// 父组件实例</span></span><br><span class="line">    parent,</span><br><span class="line">    <span class="comment">// app 上下文</span></span><br><span class="line">    appContext,</span><br><span class="line">    <span class="comment">// vnode 节点类型</span></span><br><span class="line">    <span class="keyword">type</span>: vnode.type,</span><br><span class="line">    <span class="comment">// 根组件实例</span></span><br><span class="line">    root: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 新的组件 vnode</span></span><br><span class="line">    next: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 子节点 vnode</span></span><br><span class="line">    subTree: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 带副作用更新函数</span></span><br><span class="line">    update: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 渲染函数</span></span><br><span class="line">    render: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 渲染上下文代理</span></span><br><span class="line">    proxy: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 带有 with 区块的渲染上下文代理</span></span><br><span class="line">    withProxy: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 响应式相关对象</span></span><br><span class="line">    effects: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 依赖注入相关</span></span><br><span class="line">    provides: parent ? parent.provides : <span class="built_in">Object</span>.create(appContext.provides),</span><br><span class="line">    <span class="comment">// 渲染代理的属性访问缓存</span></span><br><span class="line">    accessCache: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 渲染缓存</span></span><br><span class="line">    renderCache: [],</span><br><span class="line">    <span class="comment">// 渲染上下文</span></span><br><span class="line">    ctx: EMPTY_OBJ,</span><br><span class="line">    <span class="comment">// data 数据</span></span><br><span class="line">    data: EMPTY_OBJ,</span><br><span class="line">    <span class="comment">// props 数据</span></span><br><span class="line">    props: EMPTY_OBJ,</span><br><span class="line">    <span class="comment">// 普通属性</span></span><br><span class="line">    attrs: EMPTY_OBJ,</span><br><span class="line">    <span class="comment">// 插槽相关</span></span><br><span class="line">    slots: EMPTY_OBJ,</span><br><span class="line">    <span class="comment">// 组件或者 DOM 的 ref 引用</span></span><br><span class="line">    refs: EMPTY_OBJ,</span><br><span class="line">    <span class="comment">// setup 函数返回的响应式结果</span></span><br><span class="line">    setupState: EMPTY_OBJ,</span><br><span class="line">    <span class="comment">// setup 函数上下文数据</span></span><br><span class="line">    setupContext: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 注册的组件</span></span><br><span class="line">    components: <span class="built_in">Object</span>.create(appContext.components),</span><br><span class="line">    <span class="comment">// 注册的指令</span></span><br><span class="line">    directives: <span class="built_in">Object</span>.create(appContext.directives),</span><br><span class="line">    <span class="comment">// suspense 相关</span></span><br><span class="line">    suspense,</span><br><span class="line">    <span class="comment">// suspense 异步依赖</span></span><br><span class="line">    asyncDep: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// suspense 异步依赖是否都已处理</span></span><br><span class="line">    asyncResolved: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// 是否挂载</span></span><br><span class="line">    isMounted: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// 是否卸载</span></span><br><span class="line">    isUnmounted: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// 是否激活</span></span><br><span class="line">    isDeactivated: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// 生命周期，before create</span></span><br><span class="line">    bc: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期，created</span></span><br><span class="line">    c: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期，before mount</span></span><br><span class="line">    bm: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期，mounted</span></span><br><span class="line">    m: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期，before update</span></span><br><span class="line">    bu: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期，updated</span></span><br><span class="line">    u: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期，unmounted</span></span><br><span class="line">    um: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期，before unmount</span></span><br><span class="line">    bum: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期, deactivated</span></span><br><span class="line">    da: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期 activated</span></span><br><span class="line">    a: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期 render triggered</span></span><br><span class="line">    rtg: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期 render tracked</span></span><br><span class="line">    rtc: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 生命周期 error captured</span></span><br><span class="line">    ec: <span class="literal">null</span>,</span><br><span class="line">    <span class="comment">// 派发事件方法</span></span><br><span class="line">    emit: <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 初始化渲染上下文</span></span><br><span class="line">  instance.ctx = &#123; <span class="attr">_</span>: instance &#125;</span><br><span class="line">  <span class="comment">// 初始化根组件指针</span></span><br><span class="line">  instance.root = parent ? parent.root : instance</span><br><span class="line">  <span class="comment">// 初始化派发事件方法</span></span><br><span class="line">  instance.emit = emit.bind(<span class="literal">null</span>, instance)</span><br><span class="line">  <span class="keyword">return</span> instance</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上述代码中可以看到，组件实例 instance 上定义了很多属性，你千万不要被这茫茫多的属性吓到，因为其中一些属性是为了实现某个场景或者某个功能所定义的，你只需要通过我在代码中的注释大概知道它们是做什么的即可。</p>
+<p>Vue.js 2.x 使用 new Vue 来初始化一个组件的实例，到了 Vue.js 3.0，我们直接通过创建对象去创建组件的实例。这两种方式并无本质的区别，都是引用一个对象，在整个组件的生命周期中去维护组件的状态数据和上下文环境。</p>
+<p>创建好 instance 实例后，接下来就是设置它的一些属性。目前已完成了组件的上下文、根组件指针以及派发事件方法的设置。我们在后面会继续分析更多 instance 实例属性的设置逻辑。</p>
+<p>接着是组件实例的设置流程，对 setup 函数的处理就在这里完成，我们来看一下 setupComponent 方法的实现：</p>
+<h4 id="设置组件实例">设置组件实例</h4>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupComponent</span> (<span class="params">instance, isSSR = <span class="literal">false</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; props, children, shapeFlag &#125; = instance.vnode</span><br><span class="line">  <span class="comment">// 判断是否是一个有状态的组件</span></span><br><span class="line">  <span class="keyword">const</span> isStateful = shapeFlag &amp; <span class="number">4</span></span><br><span class="line">  <span class="comment">// 初始化 props</span></span><br><span class="line">  initProps(instance, props, isStateful, isSSR)</span><br><span class="line">  <span class="comment">// 初始化 插槽</span></span><br><span class="line">  initSlots(instance, children)</span><br><span class="line">  <span class="comment">// 设置有状态的组件实例</span></span><br><span class="line">  <span class="keyword">const</span> setupResult = isStateful</span><br><span class="line">    ? setupStatefulComponent(instance, isSSR)</span><br><span class="line">    : <span class="literal">undefined</span></span><br><span class="line">  <span class="keyword">return</span> setupResult</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，我们从组件 vnode 中获取了 props、children、shapeFlag 等属性，然后分别对 props 和插槽进行初始化，这两部分逻辑在后续的章节再详细分析。根据 shapeFlag 的值，我们可以判断这是不是一个有状态组件，如果是则要进一步去设置有状态组件的实例。</p>
+<p>接下来我们要关注到 setupStatefulComponent 函数，它主要做了三件事：创建渲染上下文代理、判断处理 setup 函数和完成组件实例设置。它代码如下所示：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setupStatefulComponent</span> (<span class="params">instance, isSSR</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> Component = instance.type</span><br><span class="line">  <span class="comment">// 创建渲染代理的属性访问缓存</span></span><br><span class="line">  instance.accessCache = &#123;&#125;</span><br><span class="line">  <span class="comment">// 创建渲染上下文代理</span></span><br><span class="line">  instance.proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(instance.ctx, PublicInstanceProxyHandlers)</span><br><span class="line">  <span class="comment">// 判断处理 setup 函数</span></span><br><span class="line">  <span class="keyword">const</span> &#123; setup &#125; = Component</span><br><span class="line">  <span class="keyword">if</span> (setup) &#123;</span><br><span class="line">    <span class="comment">// 如果 setup 函数带参数，则创建一个 setupContext</span></span><br><span class="line">    <span class="keyword">const</span> setupContext = (instance.setupContext =</span><br><span class="line">      setup.length &gt; <span class="number">1</span> ? createSetupContext(instance) : <span class="literal">null</span>)</span><br><span class="line">    <span class="comment">// 执行 setup 函数，获取结果</span></span><br><span class="line">    <span class="keyword">const</span> setupResult = callWithErrorHandling(setup, instance, <span class="number">0</span> <span class="comment">/* SETUP_FUNCTION */</span>, [instance.props, setupContext])</span><br><span class="line">    <span class="comment">// 处理 setup 执行结果</span></span><br><span class="line">    handleSetupResult(instance, setupResult)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 完成组件实例设置</span></span><br><span class="line">    finishComponentSetup(instance)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建渲染上下文代理">创建渲染上下文代理</h3>
+<p>首先是创建渲染上下文代理的流程，它主要对 instance.ctx 做了代理。在分析实现前，我们需要思考一个问题，这里为什么需要代理呢？</p>
+<p>其实在 Vue.js 2.x 中，也有类似的数据代理逻辑，比如 props 求值后的数据，实际上存储在 this._props 上，而 data 中定义的数据存储在 this._data 上。举个例子：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; msg &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    msg: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>在初始化组件的时候，data 中定义的 msg 在组件内部是存储在 this._data 上的，而模板渲染的时候访问 this.msg，实际上访问的是 this._data.msg，这是因为 Vue.js 2.x 在初始化 data 的时候，做了一层 proxy 代理。</p>
+<p>到了 Vue.js 3.0，为了方便维护，我们把组件中不同状态的数据存储到不同的属性中，比如存储到 setupState、ctx、data、props 中。我们在执行组件渲染函数的时候，为了方便用户使用，会直接访问渲染上下文 instance.ctx 中的属性，所以我们也要做一层 proxy，对渲染上下文 instance.ctx 属性的访问和修改，代理到对 setupState、ctx、data、props 中的数据的访问和修改。</p>
+<p>明确了代理的需求后，我们接下来就要分析 proxy 的几个方法： get、set 和 has。</p>
+<h4 id="get">get</h4>
+<p>当我们访问 instance.ctx 渲染上下文中的属性时，就会进入 get 函数。我们来看一下它的实现：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PublicInstanceProxyHandlers = &#123;</span><br><span class="line">    get (&#123; <span class="attr">_</span>: instance &#125;, key) &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; ctx, setupState, data, props, accessCache, <span class="keyword">type</span>, appContext &#125; = instance</span><br><span class="line">        <span class="keyword">if</span> (key[<span class="number">0</span>] !== <span class="string">&#x27;$&#x27;</span>) &#123;</span><br><span class="line">            <span class="comment">// setupState / data / props / ctx</span></span><br><span class="line">            <span class="comment">// 渲染代理的属性访问缓存中</span></span><br><span class="line">            <span class="keyword">const</span> n = accessCache[key]</span><br><span class="line">            <span class="keyword">if</span> (n !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">                <span class="comment">// 从缓存中取</span></span><br><span class="line">                <span class="keyword">switch</span> (n) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">0</span>: <span class="comment">/* SETUP */</span></span><br><span class="line">                        <span class="keyword">return</span> setupState[key]</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">1</span> :<span class="comment">/* DATA */</span></span><br><span class="line">                        <span class="keyword">return</span> data[key]</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">3</span> :<span class="comment">/* CONTEXT */</span></span><br><span class="line">                        <span class="keyword">return</span> ctx[key]</span><br><span class="line">                    <span class="keyword">case</span> <span class="number">2</span>: <span class="comment">/* PROPS */</span></span><br><span class="line">                        <span class="keyword">return</span> props[key]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (setupState !== EMPTY_OBJ &amp;&amp; hasOwn(setupState, key)) &#123;</span><br><span class="line">                accessCache[key] = <span class="number">0</span></span><br><span class="line">                <span class="comment">// 从 setupState 中取数据</span></span><br><span class="line">                <span class="keyword">return</span> setupState[key]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (data !== EMPTY_OBJ &amp;&amp; hasOwn(data, key)) &#123;</span><br><span class="line">                accessCache[key] = <span class="number">1</span></span><br><span class="line">                <span class="comment">// 从 data 中取数据</span></span><br><span class="line">                <span class="keyword">return</span> data[key]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">                <span class="keyword">type</span>.props &amp;&amp;</span><br><span class="line">                hasOwn(normalizePropsOptions(<span class="keyword">type</span>.props)[<span class="number">0</span>], key)) &#123;</span><br><span class="line">                accessCache[key] = <span class="number">2</span></span><br><span class="line">                <span class="comment">// 从 props 中取数据</span></span><br><span class="line">                <span class="keyword">return</span> props[key]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (ctx !== EMPTY_OBJ &amp;&amp; hasOwn(ctx, key)) &#123;</span><br><span class="line">                accessCache[key] = <span class="number">3</span></span><br><span class="line">                <span class="comment">// 从 ctx 中取数据</span></span><br><span class="line">                <span class="keyword">return</span> ctx[key]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 都取不到</span></span><br><span class="line">                accessCache[key] = <span class="number">4</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">const</span> publicGetter = publicPropertiesMap[key]</span><br><span class="line">        <span class="keyword">let</span> cssModule, globalProperties</span><br><span class="line">        <span class="comment">// 公开的 $xxx 属性或方法</span></span><br><span class="line">        <span class="keyword">if</span> (publicGetter) &#123;</span><br><span class="line">            <span class="keyword">return</span> publicGetter(instance)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">            <span class="comment">// css 模块，通过 vue-loader 编译的时候注入</span></span><br><span class="line">            (cssModule = <span class="keyword">type</span>.__cssModules) &amp;&amp;</span><br><span class="line">            (cssModule = cssModule[key])) &#123;</span><br><span class="line">            <span class="keyword">return</span> cssModule</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (ctx !== EMPTY_OBJ &amp;&amp; hasOwn(ctx, key)) &#123;</span><br><span class="line">            <span class="comment">// 用户自定义的属性，也用 `$` 开头</span></span><br><span class="line">            accessCache[key] = <span class="number">3</span></span><br><span class="line">            <span class="keyword">return</span> ctx[key]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (</span><br><span class="line">            <span class="comment">// 全局定义的属性</span></span><br><span class="line">            ((globalProperties = appContext.config.globalProperties),</span><br><span class="line">             hasOwn(globalProperties, key))) &#123;</span><br><span class="line">            <span class="keyword">return</span> globalProperties[key]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ((process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &amp;&amp;</span><br><span class="line">                 currentRenderingInstance &amp;&amp; key.indexOf(<span class="string">&#x27;__v&#x27;</span>) !== <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (data !== EMPTY_OBJ &amp;&amp; key[<span class="number">0</span>] === <span class="string">&#x27;$&#x27;</span> &amp;&amp; hasOwn(data, key)) &#123;</span><br><span class="line">                <span class="comment">// 如果在 data 中定义的数据以 $ 开头，会报警告，因为 $ 是保留字符，不会做代理</span></span><br><span class="line">                warn(<span class="string">`Property <span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(key)&#125;</span> must be accessed via $data because it starts with a reserved `</span> +</span><br><span class="line">                     <span class="string">`character and is not proxied on the render context.`</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 在模板中使用的变量如果没有定义，报警告</span></span><br><span class="line">                warn(<span class="string">`Property <span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(key)&#125;</span> was accessed during render `</span> +</span><br><span class="line">                     <span class="string">`but is not defined on instance.`</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，函数首先判断 key 不以 $ 开头的情况，这部分数据可能是 setupState、data、props、ctx 中的一种，其中 data、props 我们已经很熟悉了；setupState 就是 setup 函数返回的数据，稍后我们会详细说；ctx 包括了计算属性、组件方法和用户自定义的一些数据。</p>
+<p>如果 key 不以 $ 开头，那么就依次判断 setupState、data、props、ctx 中是否包含这个 key，如果包含就返回对应值。注意这个判断顺序很重要，在 key 相同时它会决定数据获取的优先级，举个例子：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            msg: <span class="string">&#x27;msg from data&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="title">setup</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> msg = ref(<span class="string">&#x27;msg from setup&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            msg</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到，函数首先判断 key 不以 $ 开头的情况，这部分数据可能是 setupState、data、props、ctx 中的一种，其中 data、props 我们已经很熟悉了；setupState 就是 setup 函数返回的数据，稍后我们会详细说；ctx 包括了计算属性、组件方法和用户自定义的一些数据。</p>
+<p>果 key 不以 $ 开头，<strong>那么就依次判断 setupState、data、props、ctx 中是否包含这个 key，如果包含就返回对应值。注意这个判断顺序很重要，在 key 相同时它会决定数据获取的优先级</strong>，举个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123;msg&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import &#123; ref &#125; from &#39;vue&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        msg: &#39;msg from data&#39;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    setup() &#123;</span><br><span class="line">      const msg &#x3D; ref(&#39;msg from setup&#39;)</span><br><span class="line">      return &#123;</span><br><span class="line">        msg</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>我们在 data 和 setup 中都定义了 msg 变量，但最终输出到界面上的是&quot;msg from setup&quot;，这是因为 setupState 的判断优先级要高于 data。</p>
+<p>再回到 get 函数中，我们可以看到这里定义了 accessCache 作为渲染代理的属性访问缓存，它具体是干什么的呢？组件在渲染时会经常访问数据进而触发 get 函数，这其中最昂贵的部分就是多次调用 hasOwn 去判断 key 在不在某个类型的数据中，但是在普通对象上执行简单的属性访问相对要快得多。所以在第一次获取 key 对应的数据后，我们利用 accessCache[key] 去缓存数据，下一次再次根据 key 查找数据，我们就可以直接通过 accessCache[key] 获取对应的值，就不需要依次调用 hasOwn 去判断了。这也是一个性能优化的小技巧。</p>
+<p>如果 key 以<code>$</code>开头，那么接下来又会有一系列的判断，首先判断是不是 Vue.js 内部公开的<code> $xxx</code> 属性或方法（比如 ​<code>$parent</code>）；然后判断是不是 vue-loader 编译注入的 css 模块内部的 key；接着判断是不是用户自定义以<code> $</code> 开头的 key；最后判断是不是全局属性。如果都不满足，就剩两种情况了，即在非生产环境下就会报两种类型的警告，第一种是在 data 中定义的数据以 <code>$</code> 开头的警告，因为<code> $</code> 是保留字符，不会做代理；第二种是在模板中使用的变量没有定义的警告。</p>
+<p>接下来是 set 代理过程，当我们修改 instance.ctx 渲染上下文中的属性的时候，就会进入 set 函数。我们来看一下 set 函数的实现：</p>
+<h4 id="set">set</h4>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PublicInstanceProxyHandlers = &#123;</span><br><span class="line">  set (&#123; <span class="attr">_</span>: instance &#125;, key, value) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; data, setupState, ctx &#125; = instance</span><br><span class="line">    <span class="keyword">if</span> (setupState !== EMPTY_OBJ &amp;&amp; hasOwn(setupState, key)) &#123;</span><br><span class="line">      <span class="comment">// 给 setupState 赋值</span></span><br><span class="line">      setupState[key] = value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (data !== EMPTY_OBJ &amp;&amp; hasOwn(data, key)) &#123;</span><br><span class="line">      <span class="comment">// 给 data 赋值</span></span><br><span class="line">      data[key] = value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (key <span class="keyword">in</span> instance.props) &#123;</span><br><span class="line">      <span class="comment">// 不能直接给 props 赋值</span></span><br><span class="line">      (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &amp;&amp;</span><br><span class="line">      warn(<span class="string">`Attempting to mutate prop &quot;<span class="subst">$&#123;key&#125;</span>&quot;. Props are readonly.`</span>, instance)</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key[<span class="number">0</span>] === <span class="string">&#x27;$&#x27;</span> &amp;&amp; key.slice(<span class="number">1</span>) <span class="keyword">in</span> instance) &#123;</span><br><span class="line">      <span class="comment">// 不能给 Vue 内部以 $ 开头的保留属性赋值</span></span><br><span class="line">      (process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &amp;&amp;</span><br><span class="line">      warn(<span class="string">`Attempting to mutate public property &quot;<span class="subst">$&#123;key&#125;</span>&quot;. `</span> +</span><br><span class="line">        <span class="string">`Properties starting with $ are reserved and readonly.`</span>, instance)</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 用户自定义数据赋值</span></span><br><span class="line">      ctx[key] = value</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结合代码来看，函数主要做的事情就是对渲染上下文 instance.ctx 中的属性赋值，它实际上是代理到对应的数据类型中去完成赋值操作的。<strong>这里仍然要注意顺序问题，和 get 一样，优先判断 setupState，然后是 data，接着是 props</strong>。</p>
+<p>我们对之前的例子做点修改，添加一个方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; msg &#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;button @click&#x3D;&quot;random&quot;&gt;Random msg&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import &#123; ref &#125; from &#39;vue&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        msg: &#39;msg from data&#39;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    setup() &#123;</span><br><span class="line">      const msg &#x3D; ref(&#39;msg from setup&#39;)</span><br><span class="line">      return &#123;</span><br><span class="line">        msg</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      random() &#123;</span><br><span class="line">        this.msg &#x3D; Math.random()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>我们点击按钮会执行 random 函数，这里的 this 指向的就是 instance.ctx，我们修改 this.msg 会触发 set 函数，所以最终修改的是 setupState 中的 msg 对应的值。</p>
+<p>注意，如果我们直接对 props 中的数据赋值，在非生产环境中会收到一条警告，这是因为直接修改 props 不符合数据单向流动的设计思想；如果对 Vue.js 内部以 $ 开头的保留属性赋值，同样也会收到一条警告。</p>
+<p>如果是用户自定义的数据，比如在 created 生命周期内定义的数据，它仅用于组件上下文的共享，如下所示：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">created</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.userMsg = <span class="string">&#x27;msg from user&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当执行 this.userMsg 赋值的时候，会触发 set 函数，最终 userMsg 会被保留到 ctx 中。</p>
+<p>最后是 has 代理过程，当我们判断属性是否存在于 instance.ctx 渲染上下文中时，就会进入 has 函数，这个在平时项目中用的比较少，同样来举个例子，当执行 created 钩子函数中的 ‘msg’ in this 时，就会触发 has 函数。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  created () &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;msg&#x27;</span> <span class="keyword">in</span> <span class="built_in">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面我们来看一下 has 函数的实现：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PublicInstanceProxyHandlers = &#123;</span><br><span class="line">  has</span><br><span class="line">    (&#123; <span class="attr">_</span>: &#123; data, setupState, accessCache, ctx, <span class="keyword">type</span>, appContext &#125; &#125;, key) &#123;</span><br><span class="line">    <span class="comment">// 依次判断</span></span><br><span class="line">    <span class="keyword">return</span> (accessCache[key] !== <span class="literal">undefined</span> ||</span><br><span class="line">      (data !== EMPTY_OBJ &amp;&amp; hasOwn(data, key)) ||</span><br><span class="line">      (setupState !== EMPTY_OBJ &amp;&amp; hasOwn(setupState, key)) ||</span><br><span class="line">      (<span class="keyword">type</span>.props &amp;&amp; hasOwn(normalizePropsOptions(<span class="keyword">type</span>.props)[<span class="number">0</span>], key)) ||</span><br><span class="line">      hasOwn(ctx, key) ||</span><br><span class="line">      hasOwn(publicPropertiesMap, key) ||</span><br><span class="line">      hasOwn(appContext.config.globalProperties, key))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数的实现很简单，依次判断 key 是否存在于 accessCache、data、setupState、props 、用户数据、公开属性以及全局属性中，然后返回结果。</p>
+<p>至此，我们就搞清楚了创建上下文代理的过程，让我们回到 setupStatefulComponent 函数中，接下来分析第二个流程——判断处理 setup 函数。</p>
+<h3 id="判断处理-setup-函数">判断处理 setup 函数</h3>
+<p>我们看一下整个逻辑涉及的代码：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断处理 setup 函数</span></span><br><span class="line"><span class="keyword">const</span> &#123; setup &#125; = Component</span><br><span class="line"><span class="keyword">if</span> (setup) &#123;</span><br><span class="line">  <span class="comment">// 如果 setup 函数带参数，则创建一个 setupContext</span></span><br><span class="line">  <span class="keyword">const</span> setupContext = (instance.setupContext =</span><br><span class="line">    setup.length &gt; <span class="number">1</span> ? createSetupContext(instance) : <span class="literal">null</span>)</span><br><span class="line">  <span class="comment">// 执行 setup 函数获取结果</span></span><br><span class="line">  <span class="keyword">const</span> setupResult = callWithErrorHandling(setup, instance, <span class="number">0</span> <span class="comment">/* SETUP_FUNCTION */</span>, [instance.props, setupContext])</span><br><span class="line">  <span class="comment">// 处理 setup 执行结果</span></span><br><span class="line">  handleSetupResult(instance, setupResult)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果我们在组件中定义了 setup 函数，接下来就是处理 setup 函数的流程，主要是三个步骤：创建 setup 函数上下文、执行 setup 函数并获取结果和处理 setup 函数的执行结果。接下来我们就逐个来分析。</p>
+<p><strong>首先判断 setup 函数的参数长度，如果大于 1，则创建 setupContext 上下文。</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> setupContext = (instance.setupContext =</span><br><span class="line">    setup.length &gt; <span class="number">1</span> ? createSetupContext(instance) : <span class="literal">null</span>)</span><br></pre></td></tr></table></figure>
+<p>示例，我们有个 HelloWorld 子组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; msg &#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;button @click&#x3D;&quot;onClick&quot;&gt;Toggle&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    props: &#123;</span><br><span class="line">      msg: String</span><br><span class="line">    &#125;,</span><br><span class="line">    setup (props, &#123; emit &#125;) &#123;</span><br><span class="line">      function onClick () &#123;</span><br><span class="line">        emit(&#39;toggle&#39;)</span><br><span class="line">      &#125;</span><br><span class="line">      return &#123;</span><br><span class="line">        onClick</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>我们在父组件引用这个组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;HelloWorld @toggle&#x3D;&quot;toggle&quot; :msg&#x3D;&quot;msg&quot;&gt;&lt;&#x2F;HelloWorld&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import &#123; ref &#125; from &#39;vue&#39;</span><br><span class="line">  import HelloWorld from &quot;.&#x2F;components&#x2F;HelloWorld&quot;;</span><br><span class="line">  export default &#123;</span><br><span class="line">    components: &#123; HelloWorld &#125;,</span><br><span class="line">    setup () &#123;</span><br><span class="line">      const msg &#x3D; ref(&#39;Hello World&#39;)</span><br><span class="line">      function toggle () &#123;</span><br><span class="line">        msg.value &#x3D; msg.value &#x3D;&#x3D;&#x3D; &#39;Hello World&#39; ? &#39;Hello Vue&#39; : &#39;Hello World&#39;</span><br><span class="line">      &#125;</span><br><span class="line">      return &#123;</span><br><span class="line">        toggle,</span><br><span class="line">        msg</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到，HelloWorld 子组件的 setup 函数接收两个参数，第一个参数 props 对应父组件传入的 props 数据，第二个参数 emit 是一个对象，实际上就是 setupContext。</p>
+<p>下面我们来看一下用 createSetupContext 函数来创建 setupContext：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createSetupContext</span> (<span class="params">instance</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    attrs: instance.attrs,</span><br><span class="line">    slots: instance.slots,</span><br><span class="line">    emit: instance.emit</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里返回了一个对象，包括 attrs、slots 和 emit 三个属性。setupContext 让我们在 setup 函数内部可以获取到组件的属性、插槽以及派发事件的方法 emit。</p>
+<p>可以预见的是，这个 setupContext 对应的就是 setup 函数第二个参数，我们接下来看一下 setup 函数具体是如何执行的。</p>
+<p>我们通过下面这行代码来<strong>执行 setup 函数并获取结果</strong>：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> setupResult = callWithErrorHandling(setup, instance, <span class="number">0</span> <span class="comment">/* SETUP_FUNCTION */</span>, [instance.props, setupContext])</span><br></pre></td></tr></table></figure>
+<p>我们具体来看一下 callWithErrorHandling 函数的实现：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callWithErrorHandling</span> (<span class="params">fn, instance, <span class="keyword">type</span>, args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    res = args ? fn(...args) : fn()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    handleError(err, instance, <span class="keyword">type</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，它其实就是对 fn 做的一层包装，内部还是执行了 fn，并在有参数的时候传入参数，所以 setup 的第一个参数是 instance.props，第二个参数是 setupContext。函数执行过程中如果有 JavaScript 执行错误就会捕获错误，并执行 handleError 函数来处理。</p>
+<p>执行 setup 函数并拿到了返回的结果，那么接下来就要用 <strong>handleSetupResult 函数来处理结果</strong>。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">handleSetupResult(instance, setupResult)</span><br></pre></td></tr></table></figure>
+<p>我们详细看一下 handleSetupResult 函数的实现：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleSetupResult</span>(<span class="params">instance, setupResult</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (isFunction(setupResult)) &#123;</span><br><span class="line">    <span class="comment">// setup 返回渲染函数</span></span><br><span class="line">    instance.render = setupResult</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (isObject(setupResult)) &#123;</span><br><span class="line">    <span class="comment">// 把 setup 返回结果变成响应式</span></span><br><span class="line">    instance.setupState = reactive(setupResult)</span><br><span class="line">  &#125;</span><br><span class="line">  finishComponentSetup(instance)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，当 setupResult 是一个对象的时候，我们把它变成了响应式并赋值给 instance.setupState，这样在模板渲染的时候，依据前面的代理规则，instance.ctx 就可以从 instance.setupState 上获取到对应的数据，这就在 setup 函数与模板渲染间建立了联系。</p>
+<p>另外 setup 不仅仅支持返回一个对象，也可以返回一个函数作为组件的渲染函数。我们可以改写前面的示例，来看一下这时的情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  import &#123; h &#125; from &#39;vue&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    props: &#123;</span><br><span class="line">      msg: String</span><br><span class="line">    &#125;,</span><br><span class="line">    setup (props, &#123; emit &#125;) &#123;</span><br><span class="line">      function onClick () &#123;</span><br><span class="line">        emit(&#39;toggle&#39;)</span><br><span class="line">      &#125;</span><br><span class="line">      return (ctx) &#x3D;&gt; &#123;</span><br><span class="line">        return [</span><br><span class="line">          h(&#39;p&#39;, null, ctx.msg),</span><br><span class="line">          h(&#39;button&#39;, &#123; onClick: onClick &#125;, &#39;Toggle&#39;)</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>这里，我们删除了 HelloWorld 子组件的 template 部分，并把 setup 函数的返回结果改成了函数，也就是说它会作为组件的渲染函数，一切运行正常。</p>
+<p>在 handleSetupResult 的最后，会执行 finishComponentSetup 函数完成组件实例的设置，其实这个函数和 setup 函数的执行结果已经没什么关系了，提取到外面放在 handleSetupResult 函数后面执行更合理一些。</p>
+<p>另外当组件没有定义的 setup 的时候，也会执行 finishComponentSetup 函数去完成组件实例的设置。</p>
+<h3 id="完成组件实例设置">完成组件实例设置</h3>
+<p>接下来我们来看一下 finishComponentSetup 函数的实现：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">finishComponentSetup</span> (<span class="params">instance</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> Component = instance.type</span><br><span class="line">  <span class="comment">// 对模板或者渲染函数的标准化</span></span><br><span class="line">  <span class="keyword">if</span> (!instance.render) &#123;</span><br><span class="line">    <span class="keyword">if</span> (compile &amp;&amp; Component.template &amp;&amp; !Component.render) &#123;</span><br><span class="line">      <span class="comment">// 运行时编译</span></span><br><span class="line">      Component.render = compile(Component.template, &#123;</span><br><span class="line">        isCustomElement: instance.appContext.config.isCustomElement || NO</span><br><span class="line">      &#125;)</span><br><span class="line">      Component.render._rc = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ((process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &amp;&amp; !Component.render) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!compile &amp;&amp; Component.template) &#123;</span><br><span class="line">        <span class="comment">// 只编写了 template 但使用了 runtime-only 的版本</span></span><br><span class="line">        warn(<span class="string">`Component provided template option but `</span> +</span><br><span class="line">          <span class="string">`runtime compilation is not supported in this build of Vue.`</span> +</span><br><span class="line">          (<span class="string">` Configure your bundler to alias &quot;vue&quot; to &quot;vue/dist/vue.esm-bundler.js&quot;.`</span></span><br><span class="line">          ) <span class="comment">/* should not happen */</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 既没有写 render 函数，也没有写 template 模板</span></span><br><span class="line">        warn(<span class="string">`Component is missing template or render function.`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 组件对象的 render 函数赋值给 instance</span></span><br><span class="line">    instance.render = (Component.render || NOOP)</span><br><span class="line">    <span class="keyword">if</span> (instance.render._rc) &#123;</span><br><span class="line">      <span class="comment">// 对于使用 with 块的运行时编译的渲染函数，使用新的渲染上下文的代理</span></span><br><span class="line">      instance.withProxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(instance.ctx, RuntimeCompiledPublicInstanceProxyHandlers)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 兼容 Vue.js 2.x Options API</span></span><br><span class="line">  &#123;</span><br><span class="line">    currentInstance = instance</span><br><span class="line">    applyOptions(instance, Component)</span><br><span class="line">    currentInstance = <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数主要做了两件事情：标准化模板或者渲染函数和兼容 Options API。接下来我们详细分析这两个流程。</p>
+<h4 id="标准化模板或者渲染函数">标准化模板或者渲染函数</h4>
+<p>在分析这个过程之前，我们需要了解一些背景知识。组件最终通过运行 render 函数生成子树 vnode，但是我们很少直接去编写 render 函数，通常会使用两种方式开发组件。</p>
+<p><strong>第一种是使用 SFC（Single File Components）单文件的开发方式来开发组件</strong>，即通过编写组件的 template 模板去描述一个组件的 DOM 结构。我们知道 .vue 类型的文件无法在 Web 端直接加载，因此在 webpack 的编译阶段，它会通过 vue-loader 编译生成组件相关的 JavaScript 和 CSS，并把 template 部分转换成 render 函数添加到组件对象的属性中。</p>
+<p><strong>另外一种开发方式是不借助 webpack 编译</strong>，直接引入 Vue.js，开箱即用，我们直接在组件对象 template 属性中编写组件的模板，然后在运行阶段编译生成 render 函数，这种方式通常用于有一定历史包袱的古老项目。</p>
+<p>因此 Vue.js 在 Web 端有两个版本：runtime-only 和 runtime-compiled。我们更推荐用 runtime-only 版本的 Vue.js，因为相对而言它体积更小，而且在运行时不用编译，不仅耗时更少而且性能更优秀。遇到一些不得已的情况比如上述提到的古老项目，我们也可以选择 runtime-compiled 版本。</p>
+<p>runtime-only 和 runtime-compiled 的主要区别在于是否注册了这个 compile 方法。</p>
+<p>在 Vue.js 3.0 中，compile 方法是通过外部注册的：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> compile;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">registerRuntimeCompiler</span>(<span class="params">_compile</span>) </span>&#123;</span><br><span class="line">    compile = _compile;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>回到标准化模板或者渲染函数逻辑，我们先看 instance.render 是否存在，如果不存在则开始标准化流程，这里主要需要处理以下三种情况。</p>
+<ul>
+<li>compile 和组件 template 属性存在，render 方法不存在的情况。此时， runtime-compiled 版本会在 JavaScript 运行时进行模板编译，生成 render 函数。</li>
+<li>compile 和 render 方法不存在，组件 template 属性存在的情况。此时由于没有 compile，这里用的是 runtime-only 的版本，因此要报一个警告来告诉用户，想要运行时编译得使用 runtime-compiled 版本的 Vue.js。</li>
+<li>组件既没有写 render 函数，也没有写 template 模板，此时要报一个警告，告诉用户组件缺少了 render 函数或者 template 模板。</li>
+</ul>
+<p>处理完以上情况后，就要把组件的 render 函数赋值给 instance.render。到了组件渲染的时候，就可以运行 instance.render 函数生成组件的子树 vnode 了。</p>
+<p>另外对于使用 with 块运行时编译的渲染函数，渲染上下文的代理是 RuntimeCompiledPublicInstanceProxyHandlers，它是在之前渲染上下文代理 PublicInstanceProxyHandlers 的基础上进行的扩展，主要对 has 函数的实现做了优化：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RuntimeCompiledPublicInstanceProxyHandlers = &#123;</span><br><span class="line">  ...PublicInstanceProxyHandlers,</span><br><span class="line">  <span class="function"><span class="title">get</span>(<span class="params">target, key</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (key === <span class="built_in">Symbol</span>.unscopables) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> PublicInstanceProxyHandlers.get(target, key, target)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">has</span>(<span class="params">_, key</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 如果 key 以 _ 开头或者 key 在全局变量白名单内，则 has 为 false</span></span><br><span class="line">    <span class="keyword">const</span> has = key[<span class="number">0</span>] !== <span class="string">&#x27;_&#x27;</span> &amp;&amp; !isGloballyWhitelisted(key)</span><br><span class="line">    <span class="keyword">if</span> ((process.env.NODE_ENV !== <span class="string">&#x27;production&#x27;</span>) &amp;&amp; !has &amp;&amp; PublicInstanceProxyHandlers.has(_, key)) &#123;</span><br><span class="line">      warn(<span class="string">`Property <span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(key)&#125;</span> should not start with _ which is a reserved prefix for Vue internals.`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> has</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里如果 key 以 _ 开头，或者 key 在全局变量的白名单内，则 has 为 false，此时则直接命中警告，不用再进行之前那一系列的判断了。</p>
+<p>了解完标准化模板或者渲染函数流程，我们来看完成组件实例设置的最后一个流程——兼容 Vue.js 2.x 的 Options API。</p>
+<h4 id="Options-API：兼容-Vue-js-2-x">Options API：兼容 Vue.js 2.x</h4>
+<p>我们知道 Vue.js 2.x 是通过组件对象的方式去描述一个组件，之前我们也说过，Vue.js 3.0 仍然支持 Vue.js 2.x Options API 的写法，这主要就是通过 applyOptions方法实现的。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">applyOptions</span>(<span class="params">instance, options, deferredData = [], deferredWatch = [], asMixin = <span class="literal">false</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="comment">// 组合</span></span><br><span class="line">    mixins, <span class="attr">extends</span>: extendsOptions,</span><br><span class="line">    <span class="comment">// 数组状态</span></span><br><span class="line">    props: propsOptions, <span class="attr">data</span>: dataOptions, <span class="attr">computed</span>: computedOptions, methods, <span class="attr">watch</span>: watchOptions, <span class="attr">provide</span>: provideOptions, <span class="attr">inject</span>: injectOptions,</span><br><span class="line">    <span class="comment">// 组件和指令</span></span><br><span class="line">    components, directives,</span><br><span class="line">    <span class="comment">// 生命周期</span></span><br><span class="line">    beforeMount, mounted, beforeUpdate, updated, activated, deactivated, beforeUnmount, unmounted, renderTracked, renderTriggered, errorCaptured &#125; = options;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// instance.proxy 作为 this</span></span><br><span class="line">  <span class="keyword">const</span> publicThis = instance.proxy;</span><br><span class="line">  <span class="keyword">const</span> ctx = instance.ctx;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 处理全局 mixin</span></span><br><span class="line">  <span class="comment">// 处理 extend</span></span><br><span class="line">  <span class="comment">// 处理本地 mixins</span></span><br><span class="line">  <span class="comment">// props 已经在外面处理过了</span></span><br><span class="line">  <span class="comment">// 处理 inject</span></span><br><span class="line">  <span class="comment">// 处理 方法</span></span><br><span class="line">  <span class="comment">// 处理 data</span></span><br><span class="line">  <span class="comment">// 处理计算属性</span></span><br><span class="line">  <span class="comment">// 处理 watch</span></span><br><span class="line">  <span class="comment">// 处理 provide</span></span><br><span class="line">  <span class="comment">// 处理组件</span></span><br><span class="line">  <span class="comment">// 处理指令</span></span><br><span class="line">  <span class="comment">// 处理生命周期 option</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于 applyOptions 的代码特别长，所以这里我用注释列出了它主要做的事情，感兴趣的同学可以去翻阅它的源码。</p>
+<h3 id="总结">总结</h3>
+<p>这节课我们主要分析了组件的初始化流程，主要包括创建组件实例和设置组件实例。通过进一步细节的深入，我们也了解了渲染上下文的代理过程；了解了 Composition API 中的 setup 启动函数执行的时机，以及如何建立 setup 返回结果和模板渲染之间的联系；了解了组件定义的模板或者渲染函数的标准化过程；了解了如何兼容 Vue.js 2.x 的 Options API。</p>
+<p>我们通过一张图再直观感受一下 Vue.js 3.0 组件的初始化流程：</p>
+<p><img src="image-20210831155507131.png" alt="image-20210831155507131"></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/vue3-【源码解读】响应式原理实现/" data-toggle="tooltip" data-placement="top" title="[vue3 源码解读] 响应式原理实现">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/vue3-【源码解读】Vuejs核心组件的实现 - 组件更新 - 完整的DOM diff流程/" data-toggle="tooltip" data-placement="top" title="[vue3 源码解读] Vuejs核心组件的实现 - 组件更新 - 完整的DOM diff流程">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'be77013e3cb3cb9e89f1',
+      clientSecret: '39e9b02a8070f1366c5e87418220c8f375864ab8',
+      repo: 'jasonluox',
+      owner: 'JasonLuox',
+      admin: 'JasonLuox',
+      id: 'Wed Sep 01 2021 12:34:17 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">创建和设置组件实例</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">创建组件流程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">设置组件实例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E6%B8%B2%E6%9F%93%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BB%A3%E7%90%86"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">创建渲染上下文代理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#get"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">get</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#set"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">set</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%A4%E6%96%AD%E5%A4%84%E7%90%86-setup-%E5%87%BD%E6%95%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">判断处理 setup 函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%8C%E6%88%90%E7%BB%84%E4%BB%B6%E5%AE%9E%E4%BE%8B%E8%AE%BE%E7%BD%AE"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">完成组件实例设置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%A0%87%E5%87%86%E5%8C%96%E6%A8%A1%E6%9D%BF%E6%88%96%E8%80%85%E6%B8%B2%E6%9F%93%E5%87%BD%E6%95%B0"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">标准化模板或者渲染函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Options-API%EF%BC%9A%E5%85%BC%E5%AE%B9-Vue-js-2-x"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Options API：兼容 Vue.js 2.x</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">总结</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#vue3源码" title="vue3源码">vue3源码</a>
+            
+            <a class="tag" href="/tags/#vue3" title="vue3">vue3</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Jason Luo
+          2021
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='我要变强，为此不惜一切...,一念往，尽作尘泥罢...,玻璃晴朗，橘子辉煌...,我心即地狱，管他罪孽滔天...,我要这天，再遮不住我眼...,我要这地，再埋不了我心...,斯若晴空，何惧冰寒...,这灯红酒绿的世界啊...,不要放弃，哪怕付出所有...' color='#CDF0EA,#F9F9F9,#F7DBF0,#BEAEE2,#F38181,#FCE38A,#EAFFD0,#95E1D3,#80D6FF'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://jasonluox.github.io/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"mobile":{"show":"fasle"},"display":{"hOffset":-40,"vOffset":-80},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
